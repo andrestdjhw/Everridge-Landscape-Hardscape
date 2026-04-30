@@ -112,12 +112,12 @@ $faqs = [
   <div class="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10 flex flex-col justify-center" style="min-height:88vh;padding-top:140px;padding-bottom:80px;">
     <div class="max-w-2xl">
       <div class="flex items-center gap-3 mb-5">
-        <span class="block w-9 h-px bg-[#d4aa6a]"></span>
-        <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#d4aa6a]">Landscape Design & Installation</span>
+        <span class="block w-9 h-px bg-[#8a6a45]"></span>
+        <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45]">Landscape Design & Installation</span>
       </div>
-      <h1 class="font-['Playfair_Display'] text-[clamp(36px,5.5vw,70px)] font-bold text-[#f0ece6] leading-[1.06] tracking-tight mb-5">
+      <h1 class="font-['Playfair_Display'] text-[clamp(36px,5.5vw,70px)] font-bold text-[#e6e3df] leading-[1.06] tracking-tight mb-5">
         Premium Outdoor Living<br>
-        <em class="italic text-[#d4aa6a]">Starts Here.</em>
+        <em class="italic text-[#8a6a45]">Starts Here.</em>
       </h1>
       <p class="text-[clamp(14px,1.7vw,18px)] font-light text-[rgba(240,236,230,.65)] leading-relaxed max-w-xl mb-10">
         Custom landscape design, seasonal care, and year-round maintenance for homeowners who want their property to make a statement.
@@ -125,12 +125,12 @@ $faqs = [
       <div class="flex flex-wrap gap-3">
         <a href="/contact"
            class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-7 py-4 rounded-md hover:opacity-85 transition-opacity"
-           style="background:linear-gradient(135deg,#d4aa6a,#c4983e);">
+           style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
           Request a Free Estimate
           <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
         </a>
         <a href="#ev-seasonal"
-           class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.75)] border border-[rgba(240,236,230,.2)] px-7 py-4 rounded-md hover:text-[#d4aa6a] hover:border-[#d4aa6a] transition-colors">
+           class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.75)] border border-[rgba(240,236,230,.2)] px-7 py-4 rounded-md hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
           Maintenance Programs
         </a>
       </div>
@@ -140,7 +140,7 @@ $faqs = [
     <div class="absolute bottom-10 right-6 md:right-10 hidden md:flex flex-col gap-3">
       <?php foreach ( [['Year-Round','Maintenance Programs'],['Michigan','Climate Expertise'],['Priority','For Maintenance Clients']] as $b ) : ?>
       <div class="bg-[rgba(10,10,8,.75)] backdrop-blur-md border border-[rgba(255,255,255,.08)] rounded-xl px-5 py-3 text-right">
-        <div class="font-['Playfair_Display'] text-[16px] font-bold text-[#d4aa6a] leading-none"><?php echo $b[0]; ?></div>
+        <div class="font-['Playfair_Display'] text-[16px] font-bold text-[#8a6a45] leading-none"><?php echo $b[0]; ?></div>
         <div class="text-[10px] text-[rgba(240,236,230,.45)] mt-1 tracking-[.04em]"><?php echo $b[1]; ?></div>
       </div>
       <?php endforeach; ?>
@@ -165,15 +165,15 @@ $faqs = [
 
       <!-- Text -->
       <div class="ev-reveal-left">
-        <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#d4aa6a] mb-4">What We Do</span>
-        <h2 class="font-['Playfair_Display'] text-[clamp(28px,3.5vw,44px)] font-bold text-[#1a1814] leading-[1.12] mb-7">
+        <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-4">What We Do</span>
+        <h2 class="font-['Playfair_Display'] text-[clamp(28px,3.5vw,44px)] font-bold text-[#0b0b0c] leading-[1.12] mb-7">
           Not Just Landscaping.<br>
-          <span class="text-[#d4aa6a]">Designed Outdoor Environments.</span>
+          <span class="text-[#8a6a45]">Designed Outdoor Environments.</span>
         </h2>
-        <div class="space-y-5 text-[15px] font-light text-[#6a6560] leading-[1.8]">
-          <p>Everridge provides complete landscape design, installation, and seasonal maintenance for residential properties across Southeast Michigan. Our landscaping work includes <strong class="font-semibold text-[#1a1814]">custom planting designs</strong> using trees, shrubs, perennials, and seasonal annuals selected specifically for Michigan's climate and your property's sun, shade, and soil conditions.</p>
-          <p>We install sod for new lawns and lawn renovation projects. We design and install mulch beds with <strong class="font-semibold text-[#1a1814]">clean, defined edging</strong> that gives your property a polished, well-maintained appearance year round. Our seasonal maintenance programs cover spring cleanups, fall leaf removal, mulch replenishment, trimming and pruning, lawn treatment, and debris removal.</p>
-          <p>What separates Everridge from a typical landscaping company is that we approach every project as a design opportunity. <strong class="font-semibold text-[#1a1814]">We do not just plant shrubs and spread mulch.</strong> We design outdoor environments that complement your home's architecture, enhance your curb appeal, and increase your property's value. Every planting plan is intentional. Every material is selected with purpose.</p>
+        <div class="space-y-5 text-[15px] font-light text-[#7a7f85] leading-[1.8]">
+          <p>Everridge provides complete landscape design, installation, and seasonal maintenance for residential properties across Southeast Michigan. Our landscaping work includes <strong class="font-semibold text-[#0b0b0c]">custom planting designs</strong> using trees, shrubs, perennials, and seasonal annuals selected specifically for Michigan's climate and your property's sun, shade, and soil conditions.</p>
+          <p>We install sod for new lawns and lawn renovation projects. We design and install mulch beds with <strong class="font-semibold text-[#0b0b0c]">clean, defined edging</strong> that gives your property a polished, well-maintained appearance year round. Our seasonal maintenance programs cover spring cleanups, fall leaf removal, mulch replenishment, trimming and pruning, lawn treatment, and debris removal.</p>
+          <p>What separates Everridge from a typical landscaping company is that we approach every project as a design opportunity. <strong class="font-semibold text-[#0b0b0c]">We do not just plant shrubs and spread mulch.</strong> We design outdoor environments that complement your home's architecture, enhance your curb appeal, and increase your property's value. Every planting plan is intentional. Every material is selected with purpose.</p>
         </div>
 
         <!-- Services checklist -->
@@ -192,11 +192,11 @@ $faqs = [
             'Irrigation Coordination',
           ];
           foreach ( $services as $svc ) : ?>
-          <div class="flex items-center gap-3 bg-[#f7f3ee] border border-[#e8e2da] rounded-lg px-4 py-3">
-            <svg class="w-4 h-4 text-[#d4aa6a] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+          <div class="flex items-center gap-3 bg-[#f5f2ef] border border-[#e6e3df] rounded-lg px-4 py-3">
+            <svg class="w-4 h-4 text-[#8a6a45] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
             </svg>
-            <span class="text-[13px] font-medium text-[#1a1814]"><?php echo $svc; ?></span>
+            <span class="text-[13px] font-medium text-[#0b0b0c]"><?php echo $svc; ?></span>
           </div>
           <?php endforeach; ?>
         </div>
@@ -204,31 +204,31 @@ $faqs = [
 
       <!-- Side image + value prop card -->
       <div class="ev-reveal-right flex flex-col gap-4 lg:sticky lg:top-32">
-        <div class="rounded-2xl overflow-hidden border border-[#e8e2da] aspect-[3/4] bg-[#d8e8d0] flex items-center justify-center text-[11px] text-[#b0aaa2] text-center px-8">
+        <div class="rounded-2xl overflow-hidden border border-[#e6e3df] aspect-[3/4] bg-[#d8e8d0] flex items-center justify-center text-[11px] text-[#7a7f85] text-center px-8">
           {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/landscape-detail.jpg" class="w-full h-full object-cover" alt="Premium landscape planting detail"> --}}
           Layered planting beds — trees, shrubs, perennials, and seasonal color with fresh mulch and clean steel edging
         </div>
 
         <!-- Design-first card -->
-        <div class="bg-[#f7f3ee] border border-[#e8e2da] rounded-xl p-5">
+        <div class="bg-[#f5f2ef] border border-[#e6e3df] rounded-xl p-5">
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 rounded-lg bg-white border border-[#e0dad2] flex items-center justify-center flex-shrink-0">
-              <svg class="w-5 h-5 text-[#d4aa6a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+            <div class="w-10 h-10 rounded-lg bg-white border border-[#d8d4ce] flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-[#8a6a45]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/>
               </svg>
             </div>
             <div>
-              <div class="text-[12px] font-semibold text-[#1a1814] mb-1">Design-First Approach</div>
-              <p class="text-[12px] font-light text-[#6a6560] leading-relaxed">Every landscape project starts with an intentional design. We consider your home's architecture, sight lines, sun patterns, and how you use your outdoor space before recommending a single plant.</p>
+              <div class="text-[12px] font-semibold text-[#0b0b0c] mb-1">Design-First Approach</div>
+              <p class="text-[12px] font-light text-[#7a7f85] leading-relaxed">Every landscape project starts with an intentional design. We consider your home's architecture, sight lines, sun patterns, and how you use your outdoor space before recommending a single plant.</p>
             </div>
           </div>
         </div>
 
         <!-- Maintenance upsell card -->
         <div class="bg-[#1a1814] rounded-xl p-5">
-          <div class="text-[10px] font-semibold tracking-[.15em] uppercase text-[#d4aa6a] mb-2">Maintenance Clients</div>
+          <div class="text-[10px] font-semibold tracking-[.15em] uppercase text-[#8a6a45] mb-2">Maintenance Clients</div>
           <p class="text-[13px] font-light text-[rgba(240,236,230,.7)] leading-relaxed mb-3">Get priority scheduling for hardscape, lighting, and larger project additions — plus first access to spring planting slots.</p>
-          <a href="#ev-seasonal" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#d4aa6a] tracking-[.06em]">
+          <a href="#ev-seasonal" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#8a6a45] tracking-[.06em]">
             See Maintenance Programs
             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
           </a>
@@ -240,12 +240,12 @@ $faqs = [
     <!-- Photo grid -->
     <div class="mt-20">
       <div class="text-center mb-10 ev-reveal">
-        <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#d4aa6a] mb-3">Project Gallery</span>
-        <h3 class="font-['Playfair_Display'] text-[clamp(22px,3vw,34px)] font-bold text-[#1a1814]">Our Landscape Work</h3>
+        <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">Project Gallery</span>
+        <h3 class="font-['Playfair_Display'] text-[clamp(22px,3vw,34px)] font-bold text-[#0b0b0c]">Our Landscape Work</h3>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <?php foreach ( $gallery_items as $i => $g ) : ?>
-        <div class="ev-reveal group relative overflow-hidden rounded-xl border border-[#e8e2da] aspect-[4/3] cursor-pointer bg-[#d8e8d0]"
+        <div class="ev-reveal group relative overflow-hidden rounded-xl border border-[#e6e3df] aspect-[4/3] cursor-pointer bg-[#d8e8d0]"
              style="transition-delay:<?php echo $i * 80; ?>ms;">
           {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ls-<?php echo $i+1; ?>.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" alt="<?php echo esc_attr($g['label']); ?> - <?php echo esc_attr($g['city']); ?>"> --}}
           <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a9a7a] text-center px-6 transition-transform duration-500 group-hover:scale-105">
@@ -268,24 +268,24 @@ $faqs = [
 <!-- ════════════════════════════════════════════════
      SECTION 2 — BEFORE & AFTER
      ════════════════════════════════════════════════ -->
-<section class="bg-[#f7f3ee] border-t border-b border-[#e8e2da] py-24">
+<section class="bg-[#f5f2ef] border-t border-b border-[#e6e3df] py-24">
   <div class="max-w-[1280px] mx-auto px-6 md:px-10">
 
     <div class="text-center mb-14 ev-reveal">
-      <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#d4aa6a] mb-3">Transformations</span>
-      <h2 class="font-['Playfair_Display'] text-[clamp(26px,3.5vw,42px)] font-bold text-[#1a1814]">
+      <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">Transformations</span>
+      <h2 class="font-['Playfair_Display'] text-[clamp(26px,3.5vw,42px)] font-bold text-[#0b0b0c]">
         The Everridge Difference,<br>
-        <span class="text-[#d4aa6a]">Side by Side.</span>
+        <span class="text-[#8a6a45]">Side by Side.</span>
       </h2>
-      <p class="mt-3 text-[14px] text-[#8a8680] font-light">Drag the handle to reveal the transformation.</p>
+      <p class="mt-3 text-[14px] text-[#7a7f85] font-light">Drag the handle to reveal the transformation.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <?php foreach ( $ba_projects as $i => $p ) : ?>
       <div class="ev-reveal" style="transition-delay:<?php echo $i * 100; ?>ms;">
-        <div class="ev-ba relative overflow-hidden rounded-2xl border border-[#e8e2da] cursor-col-resize select-none" data-ba="<?php echo $i; ?>">
+        <div class="ev-ba relative overflow-hidden rounded-2xl border border-[#e6e3df] cursor-col-resize select-none" data-ba="<?php echo $i; ?>">
           <!-- Before -->
-          <div class="aspect-[4/3] bg-[#d8d4cc] flex items-center justify-center text-[10px] text-[#b0aaa2] text-center px-6">
+          <div class="aspect-[4/3] bg-[#d8d4cc] flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6">
             {{-- Before: background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/ls-before-<?php echo $i+1; ?>.jpg') --}}
             <?php echo $p['ph_b']; ?>
           </div>
@@ -298,7 +298,7 @@ $faqs = [
           <!-- Handle -->
           <div class="ev-ba-handle absolute top-0 bottom-0 w-0.5 bg-white left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none">
             <div class="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-[0_2px_12px_rgba(0,0,0,.2)]">
-              <svg class="w-4 h-4 text-[#1a1814]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <svg class="w-4 h-4 text-[#0b0b0c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15M15.75 9L12 5.25 8.25 9"/>
               </svg>
             </div>
@@ -307,8 +307,8 @@ $faqs = [
           <span class="absolute top-3 right-3 text-[9px] font-bold tracking-widest uppercase text-[rgba(255,255,255,.65)]">After</span>
         </div>
         <div class="flex items-center justify-between pt-3 px-1">
-          <span class="font-['Playfair_Display'] text-[15px] font-semibold text-[#1a1814]"><?php echo $p['label']; ?></span>
-          <span class="text-[11px] text-[#8a8680]"><?php echo $p['city']; ?></span>
+          <span class="font-['Playfair_Display'] text-[15px] font-semibold text-[#0b0b0c]"><?php echo $p['label']; ?></span>
+          <span class="text-[11px] text-[#7a7f85]"><?php echo $p['city']; ?></span>
         </div>
       </div>
       <?php endforeach; ?>
@@ -325,12 +325,12 @@ $faqs = [
   <div class="max-w-[1280px] mx-auto px-6 md:px-10">
 
     <div class="text-center mb-14 ev-reveal">
-      <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#d4aa6a] mb-3">Maintenance Programs</span>
-      <h2 class="font-['Playfair_Display'] text-[clamp(26px,3.5vw,42px)] font-bold text-[#1a1814] leading-[1.15]">
+      <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">Maintenance Programs</span>
+      <h2 class="font-['Playfair_Display'] text-[clamp(26px,3.5vw,42px)] font-bold text-[#0b0b0c] leading-[1.15]">
         Your Property, Looked After<br>
-        <span class="text-[#d4aa6a]">Through Every Season.</span>
+        <span class="text-[#8a6a45]">Through Every Season.</span>
       </h2>
-      <p class="mt-4 text-[15px] text-[#6a6560] font-light max-w-2xl mx-auto leading-relaxed">
+      <p class="mt-4 text-[15px] text-[#7a7f85] font-light max-w-2xl mx-auto leading-relaxed">
         We handle everything so your property looks its best year round — without you having to think about it. Maintenance clients get priority scheduling for all larger project work.
       </p>
     </div>
@@ -339,7 +339,7 @@ $faqs = [
     <div class="flex justify-center gap-2 mb-10 ev-reveal">
       <?php foreach ( $seasonal as $key => $season ) : ?>
       <button class="ev-season-btn flex items-center gap-2 text-[12px] font-semibold tracking-[.06em] uppercase px-6 py-3 rounded-full border transition-all duration-200
-        <?php echo $key === 'spring' ? 'bg-[#1a1814] text-white border-[#1a1814]' : 'bg-white text-[#6a6560] border-[#e0dad2] hover:border-[#1a1814] hover:text-[#1a1814]'; ?>"
+        <?php echo $key === 'spring' ? 'bg-[#1a1814] text-white border-[#1a1814]' : 'bg-white text-[#7a7f85] border-[#d8d4ce] hover:border-[#1a1814] hover:text-[#0b0b0c]'; ?>"
              data-season="<?php echo $key; ?>">
         <span><?php echo $season['icon']; ?></span>
         <?php echo $season['label']; ?>
@@ -353,25 +353,25 @@ $faqs = [
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10 items-start">
 
         <!-- Items list -->
-        <div class="bg-[#f7f3ee] border border-[#e8e2da] rounded-2xl p-8 md:p-10">
+        <div class="bg-[#f5f2ef] border border-[#e6e3df] rounded-2xl p-8 md:p-10">
           <div class="flex items-center gap-3 mb-6">
             <span class="text-3xl"><?php echo $season['icon']; ?></span>
-            <h3 class="font-['Playfair_Display'] text-[22px] font-bold text-[#1a1814]"><?php echo $season['label']; ?> Services</h3>
+            <h3 class="font-['Playfair_Display'] text-[22px] font-bold text-[#0b0b0c]"><?php echo $season['label']; ?> Services</h3>
           </div>
           <div class="space-y-3">
             <?php foreach ( $season['items'] as $item ) : ?>
             <div class="flex items-start gap-3">
-              <svg class="w-4 h-4 flex-shrink-0 mt-0.5 text-[#d4aa6a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+              <svg class="w-4 h-4 flex-shrink-0 mt-0.5 text-[#8a6a45]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
               </svg>
-              <span class="text-[14px] text-[#4a4542] leading-relaxed"><?php echo $item; ?></span>
+              <span class="text-[14px] text-[#2f3133] leading-relaxed"><?php echo $item; ?></span>
             </div>
             <?php endforeach; ?>
           </div>
-          <div class="mt-8 pt-6 border-t border-[#e0dad2]">
+          <div class="mt-8 pt-6 border-t border-[#d8d4ce]">
             <a href="/contact"
                class="inline-flex items-center gap-2 text-[11px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-6 py-3 rounded-md hover:opacity-85 transition-opacity"
-               style="background:linear-gradient(135deg,#d4aa6a,#c4983e);">
+               style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
               Schedule <?php echo $season['label']; ?> Service
               <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
             </a>
@@ -380,15 +380,15 @@ $faqs = [
 
         <!-- Season property photo -->
         <div class="flex flex-col gap-4">
-          <div class="rounded-2xl overflow-hidden border border-[#e8e2da] aspect-[4/3] flex items-center justify-center text-[11px] text-[#b0aaa2] text-center px-8"
+          <div class="rounded-2xl overflow-hidden border border-[#e6e3df] aspect-[4/3] flex items-center justify-center text-[11px] text-[#7a7f85] text-center px-8"
                style="background:<?php echo $key === 'spring' ? '#d0e8c0' : ($key === 'summer' ? '#c8e4b0' : '#d4c8a0'); ?>">
             {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/season-<?php echo $key; ?>.jpg" class="w-full h-full object-cover" alt="Property in <?php echo $season['label']; ?>"> --}}
             Property in <?php echo $season['label']; ?> — showing the same home looking maintained and polished
           </div>
           <!-- Maintenance value prop -->
-          <div class="bg-[#f7f3ee] border border-[#e8e2da] rounded-xl p-5">
-            <div class="text-[11px] font-semibold text-[#d4aa6a] tracking-[.1em] uppercase mb-2">Why Ongoing Maintenance Matters</div>
-            <p class="text-[13px] font-light text-[#6a6560] leading-relaxed">Regular maintenance protects your landscape investment, prevents weed and pest damage, and ensures your property looks its best when you pull into your driveway — and when a buyer or guest does too. Maintenance clients also receive <strong class="font-semibold text-[#1a1814]">priority scheduling</strong> for hardscape and lighting additions.</p>
+          <div class="bg-[#f5f2ef] border border-[#e6e3df] rounded-xl p-5">
+            <div class="text-[11px] font-semibold text-[#8a6a45] tracking-[.1em] uppercase mb-2">Why Ongoing Maintenance Matters</div>
+            <p class="text-[13px] font-light text-[#7a7f85] leading-relaxed">Regular maintenance protects your landscape investment, prevents weed and pest damage, and ensures your property looks its best when you pull into your driveway — and when a buyer or guest does too. Maintenance clients also receive <strong class="font-semibold text-[#0b0b0c]">priority scheduling</strong> for hardscape and lighting additions.</p>
           </div>
         </div>
 
@@ -403,20 +403,20 @@ $faqs = [
 <!-- ════════════════════════════════════════════════
      SECTION 4A — TESTIMONIAL
      ════════════════════════════════════════════════ -->
-<section class="bg-[#f7f3ee] border-t border-[#e8e2da] py-24">
+<section class="bg-[#f5f2ef] border-t border-[#e6e3df] py-24">
   <div class="max-w-[860px] mx-auto px-6 md:px-10 ev-reveal">
-    <div class="bg-white border border-[#e8e2da] rounded-2xl p-10 md:p-14 text-center relative overflow-hidden">
+    <div class="bg-white border border-[#e6e3df] rounded-2xl p-10 md:p-14 text-center relative overflow-hidden">
       <div class="absolute top-6 left-8 opacity-[.05]">
-        <svg class="w-24 h-24 text-[#1a1814]" fill="currentColor" viewBox="0 0 24 24">
+        <svg class="w-24 h-24 text-[#0b0b0c]" fill="currentColor" viewBox="0 0 24 24">
           <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
         </svg>
       </div>
       <div class="flex justify-center gap-1 mb-6">
         <?php for ( $s = 0; $s < 5; $s++ ) : ?>
-        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#d4aa6a"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#8a6a45"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         <?php endfor; ?>
       </div>
-      <p class="font-['Playfair_Display'] italic text-[clamp(16px,2.5vw,21px)] text-[#1a1814] leading-[1.65] mb-8 relative z-10">
+      <p class="font-['Playfair_Display'] italic text-[clamp(16px,2.5vw,21px)] text-[#0b0b0c] leading-[1.65] mb-8 relative z-10">
         "Our front yard was embarrassing before Everridge. Now I genuinely look forward to pulling into my driveway every day. They came out, walked the space with us, showed us a planting plan, and executed it exactly as promised. The edging alone makes the whole property look like it belongs in a magazine. We signed up for their maintenance program the same week."
       </p>
       <div class="flex items-center justify-center gap-4">
@@ -424,12 +424,12 @@ $faqs = [
           <span class="font-['Playfair_Display'] text-[15px] font-bold text-[#4a7a4a]">KL</span>
         </div>
         <div class="text-left">
-          <div class="font-semibold text-[14px] text-[#1a1814]">Karen L.</div>
-          <div class="text-[11px] text-[#8a8680]">Front Yard Redesign + Maintenance Program · Bloomfield Hills, MI</div>
+          <div class="font-semibold text-[14px] text-[#0b0b0c]">Karen L.</div>
+          <div class="text-[11px] text-[#7a7f85]">Front Yard Redesign + Maintenance Program · Bloomfield Hills, MI</div>
         </div>
-        <div class="ml-4 flex items-center gap-1.5 bg-[#f7f3ee] border border-[#e8e2da] rounded-full px-3 py-1.5">
+        <div class="ml-4 flex items-center gap-1.5 bg-[#f5f2ef] border border-[#e6e3df] rounded-full px-3 py-1.5">
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#8a8680"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-          <span class="text-[10px] text-[#8a8680] font-medium">Google Review</span>
+          <span class="text-[10px] text-[#7a7f85] font-medium">Google Review</span>
         </div>
       </div>
     </div>
@@ -440,32 +440,32 @@ $faqs = [
 <!-- ════════════════════════════════════════════════
      SECTION 4B — FAQ
      ════════════════════════════════════════════════ -->
-<section class="bg-white border-t border-[#e8e2da] py-24">
+<section class="bg-white border-t border-[#e6e3df] py-24">
   <div class="max-w-[800px] mx-auto px-6 md:px-10">
 
     <div class="text-center mb-14 ev-reveal">
-      <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#d4aa6a] mb-3">FAQ</span>
-      <h2 class="font-['Playfair_Display'] text-[clamp(24px,3.5vw,38px)] font-bold text-[#1a1814] leading-[1.15]">
+      <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">FAQ</span>
+      <h2 class="font-['Playfair_Display'] text-[clamp(24px,3.5vw,38px)] font-bold text-[#0b0b0c] leading-[1.15]">
         Common Questions About<br>
-        <span class="text-[#d4aa6a]">Landscape Design & Care</span>
+        <span class="text-[#8a6a45]">Landscape Design & Care</span>
       </h2>
     </div>
 
     <div id="ev-faq" class="flex flex-col gap-3 ev-reveal">
       <?php foreach ( $faqs as $i => $faq ) : ?>
-      <div class="ev-faq-item bg-[#f7f3ee] border border-[#e8e2da] rounded-xl overflow-hidden hover:border-[#d4aa6a] transition-colors">
+      <div class="ev-faq-item bg-[#f5f2ef] border border-[#e6e3df] rounded-xl overflow-hidden hover:border-[#8a6a45] transition-colors">
         <button class="ev-faq-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
                 aria-expanded="<?php echo $i === 0 ? 'true' : 'false'; ?>">
-          <span class="font-semibold text-[14px] text-[#1a1814] leading-snug"><?php echo $faq['q']; ?></span>
-          <span class="ev-faq-icon flex-shrink-0 w-7 h-7 rounded-full border border-[#e0dad2] flex items-center justify-center transition-all duration-300 <?php echo $i === 0 ? 'bg-[#1a1814] border-[#1a1814]' : 'bg-white'; ?>">
-            <svg class="w-3.5 h-3.5 transition-transform duration-300 <?php echo $i === 0 ? 'rotate-45 text-white' : 'text-[#8a8680]'; ?>" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <span class="font-semibold text-[14px] text-[#0b0b0c] leading-snug"><?php echo $faq['q']; ?></span>
+          <span class="ev-faq-icon flex-shrink-0 w-7 h-7 rounded-full border border-[#d8d4ce] flex items-center justify-center transition-all duration-300 <?php echo $i === 0 ? 'bg-[#1a1814] border-[#1a1814]' : 'bg-white'; ?>">
+            <svg class="w-3.5 h-3.5 transition-transform duration-300 <?php echo $i === 0 ? 'rotate-45 text-white' : 'text-[#7a7f85]'; ?>" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
             </svg>
           </span>
         </button>
         <div class="ev-faq-body overflow-hidden transition-all duration-300" style="max-height:<?php echo $i === 0 ? '400px' : '0'; ?>;">
           <div class="px-6 pb-5 pt-1">
-            <p class="text-[13px] font-light text-[#6a6560] leading-[1.8]"><?php echo $faq['a']; ?></p>
+            <p class="text-[13px] font-light text-[#7a7f85] leading-[1.8]"><?php echo $faq['a']; ?></p>
           </div>
         </div>
       </div>
@@ -489,27 +489,27 @@ $faqs = [
   <div class="absolute inset-0" style="background:rgba(0,0,0,.66);"></div>
 
   <div class="relative z-10 max-w-[720px] mx-auto px-6 md:px-10 text-center">
-    <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#d4aa6a] mb-4">Get Started</span>
-    <h2 class="font-['Playfair_Display'] text-[clamp(28px,5vw,52px)] font-bold text-[#f0ece6] leading-[1.1] mb-5">
+    <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-4">Get Started</span>
+    <h2 class="font-['Playfair_Display'] text-[clamp(28px,5vw,52px)] font-bold text-[#e6e3df] leading-[1.1] mb-5">
       Ready to Make Your Property<br>
-      <em class="italic text-[#d4aa6a]">Look Its Absolute Best?</em>
+      <em class="italic text-[#8a6a45]">Look Its Absolute Best?</em>
     </h2>
     <p class="text-[15px] font-light text-[rgba(240,236,230,.58)] leading-relaxed mb-10 max-w-lg mx-auto">
       Request a free consultation. We'll walk your property, discuss your vision, and provide a custom planting plan and estimate.
     </p>
     <a href="tel:+17705550192"
-       class="block font-['Playfair_Display'] font-bold text-[#d4aa6a] text-[clamp(24px,4vw,40px)] mb-9 hover:opacity-75 transition-opacity">
+       class="block font-['Playfair_Display'] font-bold text-[#8a6a45] text-[clamp(24px,4vw,40px)] mb-9 hover:opacity-75 transition-opacity">
       (770) 555-0192
     </a>
     <div class="flex flex-wrap gap-3 justify-center">
       <a href="/contact"
          class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-9 py-4 rounded-md hover:opacity-85 transition-opacity"
-         style="background:linear-gradient(135deg,#d4aa6a,#c4983e);">
+         style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
         Request a Free Estimate
         <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
       </a>
       <a href="/our-work"
-         class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.75)] border border-[rgba(240,236,230,.2)] px-8 py-4 rounded-md hover:text-[#d4aa6a] hover:border-[#d4aa6a] transition-colors">
+         class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.75)] border border-[rgba(240,236,230,.2)] px-8 py-4 rounded-md hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
         View Our Work
       </a>
     </div>
@@ -551,9 +551,9 @@ $faqs = [
       // Buttons
       document.querySelectorAll('.ev-season-btn').forEach(b => {
         const active = b.dataset.season === key;
-        b.className = b.className.replace('bg-[#1a1814] text-white border-[#1a1814]','bg-white text-[#6a6560] border-[#e0dad2] hover:border-[#1a1814] hover:text-[#1a1814]');
+        b.className = b.className.replace('bg-[#1a1814] text-white border-[#1a1814]','bg-white text-[#7a7f85] border-[#d8d4ce] hover:border-[#1a1814] hover:text-[#0b0b0c]');
         if (active) {
-          b.classList.remove('bg-white','text-[#6a6560]','border-[#e0dad2]','hover:border-[#1a1814]','hover:text-[#1a1814]');
+          b.classList.remove('bg-white','text-[#7a7f85]','border-[#d8d4ce]','hover:border-[#1a1814]','hover:text-[#0b0b0c]');
           b.classList.add('bg-[#1a1814]','text-white','border-[#1a1814]');
         }
       });
@@ -604,7 +604,7 @@ $faqs = [
         ic.classList.remove('bg-[#1a1814]','border-[#1a1814]');
         ic.classList.add('bg-white');
         s.classList.remove('rotate-45','text-white');
-        s.classList.add('text-[#8a8680]');
+        s.classList.add('text-[#7a7f85]');
       });
 
       if (!isOpen) {
@@ -613,7 +613,7 @@ $faqs = [
         icon.classList.add('bg-[#1a1814]','border-[#1a1814]');
         icon.classList.remove('bg-white');
         svg.classList.add('rotate-45','text-white');
-        svg.classList.remove('text-[#8a8680]');
+        svg.classList.remove('text-[#7a7f85]');
       }
     });
   });

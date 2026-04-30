@@ -204,12 +204,12 @@ $categories = [
 
   <div class="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10 flex flex-col justify-end pb-16 md:pb-20" style="min-height:46vh;padding-top:130px;">
     <div class="flex items-center gap-3 mb-4">
-      <span class="block w-9 h-px bg-[#d4aa6a]"></span>
-      <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#d4aa6a]">Portfolio</span>
+      <span class="block w-9 h-px bg-[#8a6a45]"></span>
+      <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45]">Portfolio</span>
     </div>
-    <h1 class="font-['Playfair_Display'] text-[clamp(34px,5vw,64px)] font-bold text-[#f0ece6] leading-[1.08] tracking-tight max-w-2xl">
+    <h1 class="font-['Playfair_Display'] text-[clamp(34px,5vw,64px)] font-bold text-[#e6e3df] leading-[1.08] tracking-tight max-w-2xl">
       Real Projects.<br>
-      <em class="italic text-[#d4aa6a]">Real Results.</em>
+      <em class="italic text-[#8a6a45]">Real Results.</em>
     </h1>
     <p class="mt-4 text-[15px] font-light text-[rgba(240,236,230,.62)] max-w-lg leading-relaxed">
       Every project below started with a 3D rendering and was delivered to match it exactly. Browse by category to find work similar to your vision.
@@ -221,13 +221,13 @@ $categories = [
 <!-- ════════════════════════════════════════════════
      FILTER BAR
      ════════════════════════════════════════════════ -->
-<div class="bg-white border-b border-[#e8e2da] sticky top-0 z-40" id="ev-filter-bar">
+<div class="bg-white border-b border-[#e6e3df] sticky top-0 z-40" id="ev-filter-bar">
   <div class="max-w-[1280px] mx-auto px-6 md:px-10">
     <div class="flex items-center gap-2 overflow-x-auto py-4 scrollbar-hide" id="ev-filters" style="scrollbar-width:none;-webkit-overflow-scrolling:touch;">
       <?php foreach ( $categories as $key => $label ) : ?>
       <button
         class="ev-filter-btn flex-shrink-0 text-[11px] font-semibold tracking-[.08em] uppercase px-5 py-2.5 rounded-full border transition-all duration-200 whitespace-nowrap
-          <?php echo $key === 'all' ? 'bg-[#1a1814] text-white border-[#1a1814]' : 'bg-white text-[#6a6560] border-[#e0dad2] hover:border-[#1a1814] hover:text-[#1a1814]'; ?>"
+          <?php echo $key === 'all' ? 'bg-[#1a1814] text-white border-[#1a1814]' : 'bg-white text-[#7a7f85] border-[#d8d4ce] hover:border-[#1a1814] hover:text-[#0b0b0c]'; ?>"
         data-filter="<?php echo $key; ?>">
         <?php echo $label; ?>
         <?php if ( $key !== 'all' ) : ?>
@@ -247,15 +247,15 @@ $categories = [
 <!-- ════════════════════════════════════════════════
      MASONRY GRID
      ════════════════════════════════════════════════ -->
-<section class="bg-[#f7f3ee] py-14">
+<section class="bg-[#f5f2ef] py-14">
   <div class="max-w-[1280px] mx-auto px-6 md:px-10">
 
     <!-- Results count -->
     <div class="flex items-center justify-between mb-8">
-      <p class="text-[13px] text-[#8a8680]">
-        Showing <span id="ev-count" class="font-semibold text-[#1a1814]"><?php echo count($projects); ?></span> projects
+      <p class="text-[13px] text-[#7a7f85]">
+        Showing <span id="ev-count" class="font-semibold text-[#0b0b0c]"><?php echo count($projects); ?></span> projects
       </p>
-      <a href="/contact" class="hidden md:inline-flex items-center gap-2 text-[11px] font-bold tracking-[.08em] uppercase text-[#0f0f0f] px-5 py-2.5 rounded-md" style="background:linear-gradient(135deg,#d4aa6a,#c4983e);">
+      <a href="/contact" class="hidden md:inline-flex items-center gap-2 text-[11px] font-bold tracking-[.08em] uppercase text-[#0f0f0f] px-5 py-2.5 rounded-md" style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
         Start Your Project
         <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
       </a>
@@ -264,7 +264,7 @@ $categories = [
     <!-- Grid -->
     <div id="ev-grid" class="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5">
       <?php foreach ( $projects as $p ) : ?>
-      <div class="ev-project-card break-inside-avoid bg-white border border-[#e8e2da] rounded-2xl overflow-hidden cursor-pointer group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,.1)]"
+      <div class="ev-project-card break-inside-avoid bg-white border border-[#e6e3df] rounded-2xl overflow-hidden cursor-pointer group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,.1)]"
            data-category="<?php echo $p['category']; ?>"
            data-id="<?php echo $p['id']; ?>">
 
@@ -275,14 +275,14 @@ $categories = [
                loading="lazy" alt="<?php echo esc_attr($p['title']); ?> - <?php echo esc_attr($p['city']); ?>"> --}}
 
           <!-- Placeholder -->
-          <div class="absolute inset-0 flex items-end justify-center pb-4 text-[10px] text-[#b0aaa2] text-center px-4 transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 flex items-end justify-center pb-4 text-[10px] text-[#7a7f85] text-center px-4 transition-transform duration-500 group-hover:scale-105">
             <?php echo $p['ph_after']; ?>
           </div>
 
           <!-- Category badge -->
           <div class="absolute top-3 left-3 z-10">
             <span class="text-[9px] font-bold tracking-[.12em] uppercase text-[#0f0f0f] px-2.5 py-1 rounded-full"
-                  style="background:linear-gradient(135deg,#d4aa6a,#c4983e);">
+                  style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
               <?php echo $p['cat_label']; ?>
             </span>
           </div>
@@ -300,7 +300,7 @@ $categories = [
           <!-- Hover overlay -->
           <div class="absolute inset-0 bg-[rgba(0,0,0,0)] group-hover:bg-[rgba(0,0,0,.25)] transition-all duration-300 flex items-center justify-center">
             <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white rounded-full p-3 shadow-lg">
-              <svg class="w-5 h-5 text-[#1a1814]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <svg class="w-5 h-5 text-[#0b0b0c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/>
               </svg>
             </div>
@@ -310,15 +310,15 @@ $categories = [
         <!-- Card body -->
         <div class="p-5">
           <div class="flex items-start justify-between gap-2 mb-2">
-            <h3 class="font-['Playfair_Display'] text-[16px] font-bold text-[#1a1814] leading-snug"><?php echo $p['title']; ?></h3>
+            <h3 class="font-['Playfair_Display'] text-[16px] font-bold text-[#0b0b0c] leading-snug"><?php echo $p['title']; ?></h3>
           </div>
           <div class="flex items-center gap-1.5 mb-3">
-            <svg class="w-3 h-3 text-[#d4aa6a] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg class="w-3 h-3 text-[#8a6a45] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0zM19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
             </svg>
-            <span class="text-[11px] text-[#8a8680]"><?php echo $p['city']; ?></span>
+            <span class="text-[11px] text-[#7a7f85]"><?php echo $p['city']; ?></span>
           </div>
-          <p class="text-[12px] text-[#6a6560] leading-[1.65] line-clamp-2"><?php echo $p['desc']; ?></p>
+          <p class="text-[12px] text-[#7a7f85] leading-[1.65] line-clamp-2"><?php echo $p['desc']; ?></p>
         </div>
       </div>
       <?php endforeach; ?>
@@ -329,7 +329,7 @@ $categories = [
       <svg class="w-12 h-12 text-[#e0dad2] mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5z"/>
       </svg>
-      <p class="text-[#8a8680] text-[14px]">No projects in this category yet.</p>
+      <p class="text-[#7a7f85] text-[14px]">No projects in this category yet.</p>
     </div>
 
   </div>
@@ -347,10 +347,10 @@ $categories = [
   </button>
 
   <!-- Prev / Next -->
-  <button id="ev-lb-prev" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[rgba(255,255,255,.1)] border border-[rgba(255,255,255,.12)] flex items-center justify-center text-white hover:bg-[rgba(212,170,106,.3)] transition-colors z-10">
+  <button id="ev-lb-prev" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[rgba(255,255,255,.1)] border border-[rgba(255,255,255,.12)] flex items-center justify-center text-white hover:bg-[rgba(138,106,69,.3)] transition-colors z-10">
     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
   </button>
-  <button id="ev-lb-next" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[rgba(255,255,255,.1)] border border-[rgba(255,255,255,.12)] flex items-center justify-center text-white hover:bg-[rgba(212,170,106,.3)] transition-colors z-10">
+  <button id="ev-lb-next" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[rgba(255,255,255,.1)] border border-[rgba(255,255,255,.12)] flex items-center justify-center text-white hover:bg-[rgba(138,106,69,.3)] transition-colors z-10">
     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
   </button>
 
@@ -368,23 +368,23 @@ $categories = [
       </div>
 
       <!-- Image display -->
-      <div id="ev-lb-img" class="w-full h-full min-h-[280px] md:min-h-[420px] flex items-center justify-center text-[11px] text-[#b0aaa2] text-center px-8" style="background:#ddd8d0;">
+      <div id="ev-lb-img" class="w-full h-full min-h-[280px] md:min-h-[420px] flex items-center justify-center text-[11px] text-[#7a7f85] text-center px-8" style="background:#ddd8d0;">
         <!-- Image rendered by JS -->
       </div>
 
       <!-- B&A drag slider (shown when has_ba) -->
       <div id="ev-lb-ba-wrap" class="hidden absolute inset-0 cursor-col-resize select-none">
-        <div id="ev-lb-ba-before" class="absolute inset-0 bg-[#c8c4bc] flex items-center justify-center text-[11px] text-[#b0aaa2]" style="background-size:cover;background-position:center;"></div>
-        <div id="ev-lb-ba-after"  class="absolute inset-0 bg-[#d4d0c8] flex items-center justify-center text-[11px] text-[#b0aaa2]" style="clip-path:inset(0 50% 0 0);background-size:cover;background-position:center;"></div>
+        <div id="ev-lb-ba-before" class="absolute inset-0 bg-[#c8c4bc] flex items-center justify-center text-[11px] text-[#7a7f85]" style="background-size:cover;background-position:center;"></div>
+        <div id="ev-lb-ba-after"  class="absolute inset-0 bg-[#d4d0c8] flex items-center justify-center text-[11px] text-[#7a7f85]" style="clip-path:inset(0 50% 0 0);background-size:cover;background-position:center;"></div>
         <div id="ev-lb-ba-handle" class="absolute top-0 bottom-0 w-0.5 bg-white left-1/2 -translate-x-1/2 flex items-center justify-center">
           <div class="w-9 h-9 rounded-full bg-white shadow-lg flex items-center justify-center pointer-events-none">
-            <svg class="w-4 h-4 text-[#1a1814]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15M15.75 9L12 5.25 8.25 9"/></svg>
+            <svg class="w-4 h-4 text-[#0b0b0c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15M15.75 9L12 5.25 8.25 9"/></svg>
           </div>
         </div>
         <span class="absolute top-3 left-3 text-[9px] font-bold tracking-widest uppercase text-[rgba(255,255,255,.6)]">Before</span>
         <span class="absolute top-3 right-3 text-[9px] font-bold tracking-widest uppercase text-[rgba(255,255,255,.6)]">After</span>
         <!-- Toggle back to tabs -->
-        <button id="ev-lb-ba-exit" class="absolute bottom-3 right-3 text-[9px] font-bold tracking-[.08em] uppercase bg-white text-[#1a1814] px-3 py-1.5 rounded-full shadow">
+        <button id="ev-lb-ba-exit" class="absolute bottom-3 right-3 text-[9px] font-bold tracking-[.08em] uppercase bg-white text-[#0b0b0c] px-3 py-1.5 rounded-full shadow">
           View Photos
         </button>
       </div>
@@ -396,27 +396,27 @@ $categories = [
 
       <!-- Category + city -->
       <div class="flex items-center gap-2 mb-3">
-        <span id="ev-lb-cat" class="text-[9px] font-bold tracking-[.12em] uppercase text-[#0f0f0f] px-2.5 py-1 rounded-full" style="background:linear-gradient(135deg,#d4aa6a,#c4983e);"></span>
-        <div class="flex items-center gap-1 text-[11px] text-[#8a8680]">
-          <svg class="w-3 h-3 text-[#d4aa6a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0zM19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+        <span id="ev-lb-cat" class="text-[9px] font-bold tracking-[.12em] uppercase text-[#0f0f0f] px-2.5 py-1 rounded-full" style="background:linear-gradient(135deg,#8a6a45,#7a5c38);"></span>
+        <div class="flex items-center gap-1 text-[11px] text-[#7a7f85]">
+          <svg class="w-3 h-3 text-[#8a6a45]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0zM19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
           <span id="ev-lb-city"></span>
         </div>
       </div>
 
-      <h2 id="ev-lb-title" class="font-['Playfair_Display'] text-[22px] font-bold text-[#1a1814] leading-snug mb-4"></h2>
-      <p id="ev-lb-desc" class="text-[13px] text-[#6a6560] leading-[1.75] mb-5"></p>
+      <h2 id="ev-lb-title" class="font-['Playfair_Display'] text-[22px] font-bold text-[#0b0b0c] leading-snug mb-4"></h2>
+      <p id="ev-lb-desc" class="text-[13px] text-[#7a7f85] leading-[1.75] mb-5"></p>
 
       <!-- Materials -->
-      <div class="bg-[#f7f3ee] border border-[#e8e2da] rounded-xl p-4 mb-5">
-        <div class="text-[10px] font-semibold tracking-[.12em] uppercase text-[#8a8680] mb-2">Materials Used</div>
-        <p id="ev-lb-materials" class="text-[12px] text-[#4a4542] leading-relaxed"></p>
+      <div class="bg-[#f5f2ef] border border-[#e6e3df] rounded-xl p-4 mb-5">
+        <div class="text-[10px] font-semibold tracking-[.12em] uppercase text-[#7a7f85] mb-2">Materials Used</div>
+        <p id="ev-lb-materials" class="text-[12px] text-[#2f3133] leading-relaxed"></p>
       </div>
 
       <!-- B&A toggle -->
       <div id="ev-lb-ba-toggle-wrap" class="hidden mb-5">
         <button id="ev-lb-ba-toggle"
-          class="w-full flex items-center justify-center gap-2 text-[11px] font-bold tracking-[.08em] uppercase border border-[#e0dad2] text-[#1a1814] rounded-xl py-3 hover:border-[#d4aa6a] hover:bg-[#fdf8ee] transition-colors">
-          <svg class="w-4 h-4 text-[#d4aa6a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
+          class="w-full flex items-center justify-center gap-2 text-[11px] font-bold tracking-[.08em] uppercase border border-[#d8d4ce] text-[#0b0b0c] rounded-xl py-3 hover:border-[#8a6a45] hover:bg-[#fdf8ee] transition-colors">
+          <svg class="w-4 h-4 text-[#8a6a45]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
           Drag Before & After
         </button>
       </div>
@@ -424,13 +424,13 @@ $categories = [
       <!-- CTA -->
       <a href="/contact"
          class="flex items-center justify-center gap-2 text-[11px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] py-3.5 rounded-xl transition-opacity hover:opacity-85"
-         style="background:linear-gradient(135deg,#d4aa6a,#c4983e);">
+         style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
         Request a Similar Project
         <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
       </a>
 
       <!-- Nav counter -->
-      <p class="text-center text-[11px] text-[#b0aaa2] mt-4">
+      <p class="text-center text-[11px] text-[#7a7f85] mt-4">
         <span id="ev-lb-pos"></span>
       </p>
 
@@ -449,10 +449,10 @@ $categories = [
   </div>
   <div class="absolute inset-0" style="background:rgba(0,0,0,.65);"></div>
   <div class="relative z-10 max-w-[700px] mx-auto px-6 text-center">
-    <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#d4aa6a] mb-4">Your Project</span>
-    <h2 class="font-['Playfair_Display'] text-[clamp(28px,4.5vw,50px)] font-bold text-[#f0ece6] leading-[1.12] mb-5">
+    <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-4">Your Project</span>
+    <h2 class="font-['Playfair_Display'] text-[clamp(28px,4.5vw,50px)] font-bold text-[#e6e3df] leading-[1.12] mb-5">
       See Your Property in This Gallery.<br>
-      <em class="italic text-[#d4aa6a]">Let's Make It Happen.</em>
+      <em class="italic text-[#8a6a45]">Let's Make It Happen.</em>
     </h2>
     <p class="text-[14px] font-light text-[rgba(240,236,230,.58)] leading-relaxed mb-10">
       Every project starts with a free consultation and a 3D rendering. You approve the design before we break ground.
@@ -460,12 +460,12 @@ $categories = [
     <div class="flex flex-wrap gap-3 justify-center">
       <a href="/contact"
          class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-9 py-4 rounded-md hover:opacity-85 transition-opacity"
-         style="background:linear-gradient(135deg,#d4aa6a,#c4983e);">
+         style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
         Request a Free Estimate
         <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
       </a>
       <a href="tel:+17705550192"
-         class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.04em] text-[rgba(240,236,230,.75)] border border-[rgba(240,236,230,.2)] px-8 py-4 rounded-md hover:text-[#d4aa6a] hover:border-[#d4aa6a] transition-colors">
+         class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.04em] text-[rgba(240,236,230,.75)] border border-[rgba(240,236,230,.2)] px-8 py-4 rounded-md hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd"/></svg>
         (770) 555-0192
       </a>
@@ -523,10 +523,10 @@ const EV_PROJECTS = <?php echo json_encode( array_map( function($p) {
       btns.forEach(b => {
         const active = b.dataset.filter === f;
         b.className = b.className
-          .replace(/bg-\[#1a1814\] text-white border-\[#1a1814\]/g, 'bg-white text-[#6a6560] border-[#e0dad2] hover:border-[#1a1814] hover:text-[#1a1814]')
-          .replace(/bg-white text-\[#6a6560\] border-\[#e0dad2\] hover:border-\[#1a1814\] hover:text-\[#1a1814\]/g, 'bg-white text-[#6a6560] border-[#e0dad2] hover:border-[#1a1814] hover:text-[#1a1814]');
+          .replace(/bg-\[#1a1814\] text-white border-\[#1a1814\]/g, 'bg-white text-[#7a7f85] border-[#d8d4ce] hover:border-[#1a1814] hover:text-[#0b0b0c]')
+          .replace(/bg-white text-\[#6a6560\] border-\[#e0dad2\] hover:border-\[#1a1814\] hover:text-\[#1a1814\]/g, 'bg-white text-[#7a7f85] border-[#d8d4ce] hover:border-[#1a1814] hover:text-[#0b0b0c]');
         if (active) {
-          b.classList.remove('bg-white', 'text-[#6a6560]', 'border-[#e0dad2]', 'hover:border-[#1a1814]', 'hover:text-[#1a1814]');
+          b.classList.remove('bg-white', 'text-[#7a7f85]', 'border-[#d8d4ce]', 'hover:border-[#1a1814]', 'hover:text-[#0b0b0c]');
           b.classList.add('bg-[#1a1814]', 'text-white', 'border-[#1a1814]');
         }
       });

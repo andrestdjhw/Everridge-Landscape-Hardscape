@@ -66,7 +66,7 @@ const GOLD_DK = "#b8924a"
 const BG      = "#0f0f0f"
 const BG2     = "#1a1a1a"
 const BG3     = "#242424"
-const GREEN   = "#2d4a35"
+const GREEN   = "#1f3a32"
 const BORDER  = "#2a2a2a"
 
 // ── Fonts ─────────────────────────────────────────────────────────────────────
@@ -214,7 +214,7 @@ function MobileMenu({ isOpen, onClose }) {
           <a href="/" onClick={onClose} style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
             <div style={{
               width: 30, height: 30,
-              background: `linear-gradient(150deg, ${GREEN}, #1a3025)`,
+              background: `linear-gradient(150deg, ${GREEN}, #152a22)`,
               borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center",
             }}>
               <svg viewBox="0 0 24 24" fill="none" width="15" height="15" stroke={GOLD} strokeWidth="2">
@@ -477,8 +477,8 @@ function Navbar() {
             {/* Swap for <img src={logoUrl} alt="Everridge" style={{height:36}} /> when logo is ready */}
             <div style={{
               width: 36, height: 36,
-              background: `linear-gradient(150deg, ${GREEN} 0%, #1a3025 100%)`,
-              borderRadius: 6, border: `1px solid #3a5a3a`,
+              background: `linear-gradient(150deg, ${GREEN} 0%, #152a22 100%)`,
+              borderRadius: 6, border: `1px solid #1f3a32`,
               display: "flex", alignItems: "center", justifyContent: "center",
               flexShrink: 0,
             }}>

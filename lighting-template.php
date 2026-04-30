@@ -58,12 +58,12 @@ $faqs = [
   <div class="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10 flex flex-col justify-center" style="min-height:100vh;padding-top:140px;padding-bottom:80px;">
     <div class="max-w-2xl">
       <div class="flex items-center gap-3 mb-6">
-        <span class="block w-9 h-px bg-[#d4aa6a]"></span>
-        <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#d4aa6a]">Outdoor Lighting Systems</span>
+        <span class="block w-9 h-px bg-[#8a6a45]"></span>
+        <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45]">Outdoor Lighting Systems</span>
       </div>
-      <h1 class="font-['Playfair_Display'] text-[clamp(38px,6vw,74px)] font-bold text-[#f0ece6] leading-[1.05] tracking-tight mb-6">
+      <h1 class="font-['Playfair_Display'] text-[clamp(38px,6vw,74px)] font-bold text-[#e6e3df] leading-[1.05] tracking-tight mb-6">
         Illuminate Your<br>
-        <em class="italic text-[#d4aa6a]">Outdoor Living.</em>
+        <em class="italic text-[#8a6a45]">Outdoor Living.</em>
       </h1>
       <p class="text-[clamp(15px,1.8vw,18px)] font-light text-[rgba(240,236,230,.65)] leading-relaxed max-w-xl mb-3">
         Professional landscape lighting design and installation that transforms your property after dark.
@@ -72,19 +72,19 @@ $faqs = [
         Security, ambiance, and visual impact — in one system designed specifically for your property.
       </p>
       <div class="flex flex-wrap gap-3">
-        <a href="/contact" class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-7 py-4 rounded-md hover:opacity-85 transition-opacity" style="background:linear-gradient(135deg,#d4aa6a,#c4983e);">
+        <a href="/contact" class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-7 py-4 rounded-md hover:opacity-85 transition-opacity" style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
           Schedule a Lighting Consultation
           <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
         </a>
-        <a href="#ev-impact" class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.7)] border border-[rgba(240,236,230,.18)] px-7 py-4 rounded-md hover:text-[#d4aa6a] hover:border-[#d4aa6a] transition-colors">
+        <a href="#ev-impact" class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.7)] border border-[rgba(240,236,230,.18)] px-7 py-4 rounded-md hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
           Why Lighting Matters
         </a>
       </div>
     </div>
     <div class="absolute bottom-12 right-6 md:right-10 hidden lg:flex flex-col gap-3">
       <?php foreach ( [['LED','Commercial-grade fixtures'],['80%','Less energy than halogen'],['20yr','Fixture lifespan']] as $s ) : ?>
-      <div class="bg-[rgba(8,8,16,.8)] backdrop-blur-md border border-[rgba(212,170,106,.2)] rounded-xl px-5 py-3 text-right">
-        <div class="font-['Playfair_Display'] text-[22px] font-bold text-[#d4aa6a] leading-none"><?php echo $s[0]; ?></div>
+      <div class="bg-[rgba(8,8,16,.8)] backdrop-blur-md border border-[rgba(138,106,69,.2)] rounded-xl px-5 py-3 text-right">
+        <div class="font-['Playfair_Display'] text-[22px] font-bold text-[#8a6a45] leading-none"><?php echo $s[0]; ?></div>
         <div class="text-[10px] text-[rgba(240,236,230,.38)] mt-1 tracking-[.04em]"><?php echo $s[1]; ?></div>
       </div>
       <?php endforeach; ?>
@@ -92,7 +92,7 @@ $faqs = [
   </div>
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
     <span class="text-[9px] tracking-[.2em] uppercase text-white">Scroll</span>
-    <div class="w-px h-8 bg-[#d4aa6a] animate-pulse"></div>
+    <div class="w-px h-8 bg-[#8a6a45] animate-pulse"></div>
   </div>
 </section>
 
@@ -104,32 +104,32 @@ $faqs = [
 
       <!-- Text -->
       <div class="ev-reveal-left">
-        <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#d4aa6a] mb-4">What We Install</span>
-        <h2 class="font-['Playfair_Display'] text-[clamp(28px,3.5vw,44px)] font-bold text-[#1a1814] leading-[1.12] mb-7">
+        <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-4">What We Install</span>
+        <h2 class="font-['Playfair_Display'] text-[clamp(28px,3.5vw,44px)] font-bold text-[#0b0b0c] leading-[1.12] mb-7">
           Lighting Is a Design Discipline.<br>
-          <span class="text-[#d4aa6a]">We Treat It That Way.</span>
+          <span class="text-[#8a6a45]">We Treat It That Way.</span>
         </h2>
-        <div class="space-y-5 text-[15px] font-light text-[#6a6560] leading-[1.8]">
-          <p>Everridge designs and installs complete outdoor lighting systems for residential properties across Southeast Michigan. Our services include landscape lighting design, professional installation, <strong class="font-semibold text-[#1a1814]">accent lighting for trees and garden features</strong>, pathway illumination, architectural uplighting for home facades, and energy-efficient LED systems built for Michigan's climate.</p>
-          <p>We approach lighting as a design discipline, not an afterthought. Every lighting plan is custom designed to complement your property's architecture, landscaping, and hardscape. <strong class="font-semibold text-[#1a1814]">We consider sight lines from the street, from the front door, and from inside the home looking out.</strong> The goal is not just to add light — it is to create a visual experience that transforms how your property looks and feels after the sun goes down.</p>
-          <p>Lighting is also the service that elevates everything else we do. A paver patio looks good during the day. At night, with the right lighting, <strong class="font-semibold text-[#1a1814]">it becomes an outdoor living room.</strong> A garden looks beautiful in sunlight. Under carefully placed accent lights, it becomes a work of art. Lighting is the visual signature that separates an ordinary property from an extraordinary one.</p>
+        <div class="space-y-5 text-[15px] font-light text-[#7a7f85] leading-[1.8]">
+          <p>Everridge designs and installs complete outdoor lighting systems for residential properties across Southeast Michigan. Our services include landscape lighting design, professional installation, <strong class="font-semibold text-[#0b0b0c]">accent lighting for trees and garden features</strong>, pathway illumination, architectural uplighting for home facades, and energy-efficient LED systems built for Michigan's climate.</p>
+          <p>We approach lighting as a design discipline, not an afterthought. Every lighting plan is custom designed to complement your property's architecture, landscaping, and hardscape. <strong class="font-semibold text-[#0b0b0c]">We consider sight lines from the street, from the front door, and from inside the home looking out.</strong> The goal is not just to add light — it is to create a visual experience that transforms how your property looks and feels after the sun goes down.</p>
+          <p>Lighting is also the service that elevates everything else we do. A paver patio looks good during the day. At night, with the right lighting, <strong class="font-semibold text-[#0b0b0c]">it becomes an outdoor living room.</strong> A garden looks beautiful in sunlight. Under carefully placed accent lights, it becomes a work of art. Lighting is the visual signature that separates an ordinary property from an extraordinary one.</p>
         </div>
-        <div class="mt-8 flex items-start gap-4 bg-[#f7f3ee] border border-[#e8e2da] rounded-xl p-5">
-          <div class="w-10 h-10 rounded-lg bg-white border border-[#e0dad2] flex items-center justify-center flex-shrink-0">
-            <svg class="w-5 h-5 text-[#d4aa6a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+        <div class="mt-8 flex items-start gap-4 bg-[#f5f2ef] border border-[#e6e3df] rounded-xl p-5">
+          <div class="w-10 h-10 rounded-lg bg-white border border-[#d8d4ce] flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-[#8a6a45]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
           </div>
           <div>
-            <div class="text-[12px] font-semibold text-[#1a1814] mb-1">Commercial-Grade Fixtures Only</div>
-            <p class="text-[12px] font-light text-[#6a6560] leading-relaxed">We work exclusively with professional brass and aluminum fixtures from Kichler, FX Luminaire, and VOLT. No hardware store products. The difference in light quality, color temperature, and 20-year performance is significant.</p>
+            <div class="text-[12px] font-semibold text-[#0b0b0c] mb-1">Commercial-Grade Fixtures Only</div>
+            <p class="text-[12px] font-light text-[#7a7f85] leading-relaxed">We work exclusively with professional brass and aluminum fixtures from Kichler, FX Luminaire, and VOLT. No hardware store products. The difference in light quality, color temperature, and 20-year performance is significant.</p>
           </div>
         </div>
       </div>
 
       <!-- Day / Night drag slider -->
       <div class="ev-reveal-right flex flex-col gap-4 lg:sticky lg:top-32">
-        <p class="text-[11px] text-[#8a8680] text-center">Drag to reveal the nighttime transformation</p>
-        <div class="ev-ba relative overflow-hidden rounded-2xl border border-[#e8e2da] cursor-col-resize select-none">
-          <div class="aspect-[4/3] bg-[#d8e0d0] flex items-center justify-center text-[10px] text-[#b0aaa2] text-center px-6">
+        <p class="text-[11px] text-[#7a7f85] text-center">Drag to reveal the nighttime transformation</p>
+        <div class="ev-ba relative overflow-hidden rounded-2xl border border-[#e6e3df] cursor-col-resize select-none">
+          <div class="aspect-[4/3] bg-[#d8e0d0] flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6">
             {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/property-day.jpg" class="absolute inset-0 w-full h-full object-cover" loading="lazy"> --}}
             Property daytime — before lighting
           </div>
@@ -139,11 +139,11 @@ $faqs = [
           </div>
           <div class="ev-ba-handle absolute top-0 bottom-0 w-0.5 bg-white left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none">
             <div class="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-[0_2px_12px_rgba(0,0,0,.25)]">
-              <svg class="w-4 h-4 text-[#1a1814]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15M15.75 9L12 5.25 8.25 9"/></svg>
+              <svg class="w-4 h-4 text-[#0b0b0c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15M15.75 9L12 5.25 8.25 9"/></svg>
             </div>
           </div>
           <span class="absolute top-3 left-3 bg-[rgba(0,0,0,.45)] backdrop-blur-sm text-[9px] font-bold tracking-widest uppercase text-white px-2.5 py-1 rounded-full">Day</span>
-          <span class="absolute top-3 right-3 bg-[rgba(0,0,0,.45)] backdrop-blur-sm text-[9px] font-bold tracking-widest uppercase text-[#d4aa6a] px-2.5 py-1 rounded-full">Night</span>
+          <span class="absolute top-3 right-3 bg-[rgba(0,0,0,.45)] backdrop-blur-sm text-[9px] font-bold tracking-widest uppercase text-[#8a6a45] px-2.5 py-1 rounded-full">Night</span>
         </div>
         <div class="bg-[#0f0f18] border border-[#1e1e2a] rounded-xl p-5">
           <p class="font-['Playfair_Display'] italic text-[13px] text-[rgba(240,236,230,.6)] leading-[1.7]">
@@ -157,17 +157,17 @@ $faqs = [
     <!-- Light types grid -->
     <div class="mt-20">
       <div class="text-center mb-10 ev-reveal">
-        <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#d4aa6a] mb-3">System Components</span>
-        <h3 class="font-['Playfair_Display'] text-[clamp(22px,3vw,34px)] font-bold text-[#1a1814]">Every Element of a Complete System</h3>
+        <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">System Components</span>
+        <h3 class="font-['Playfair_Display'] text-[clamp(22px,3vw,34px)] font-bold text-[#0b0b0c]">Every Element of a Complete System</h3>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         <?php foreach ( $light_types as $i => $lt ) : ?>
-        <div class="ev-reveal group bg-[#f7f3ee] border border-[#e8e2da] rounded-2xl p-7 hover:bg-white hover:border-[#d4aa6a] hover:shadow-[0_8px_32px_rgba(212,170,106,.1)] transition-all duration-300" style="transition-delay:<?php echo $i * 80; ?>ms;">
-          <div class="w-10 h-10 rounded-xl bg-white border border-[#e0dad2] flex items-center justify-center mb-5 group-hover:bg-[#0f0f18] group-hover:border-[#1e1e2a] transition-all duration-300">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#d4aa6a" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="<?php echo $lt['icon']; ?>"/></svg>
+        <div class="ev-reveal group bg-[#f5f2ef] border border-[#e6e3df] rounded-2xl p-7 hover:bg-white hover:border-[#8a6a45] hover:shadow-[0_8px_32px_rgba(138,106,69,.1)] transition-all duration-300" style="transition-delay:<?php echo $i * 80; ?>ms;">
+          <div class="w-10 h-10 rounded-xl bg-white border border-[#d8d4ce] flex items-center justify-center mb-5 group-hover:bg-[#0f0f18] group-hover:border-[#1e1e2a] transition-all duration-300">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#8a6a45" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="<?php echo $lt['icon']; ?>"/></svg>
           </div>
-          <h3 class="font-['Playfair_Display'] text-[17px] font-bold text-[#1a1814] mb-3 leading-snug"><?php echo $lt['title']; ?></h3>
-          <p class="text-[13px] font-light text-[#6a6560] leading-[1.75]"><?php echo $lt['copy']; ?></p>
+          <h3 class="font-['Playfair_Display'] text-[17px] font-bold text-[#0b0b0c] mb-3 leading-snug"><?php echo $lt['title']; ?></h3>
+          <p class="text-[13px] font-light text-[#7a7f85] leading-[1.75]"><?php echo $lt['copy']; ?></p>
         </div>
         <?php endforeach; ?>
       </div>
@@ -176,11 +176,11 @@ $faqs = [
     <!-- Nighttime gallery -->
     <div class="mt-16">
       <div class="text-center mb-10 ev-reveal">
-        <h3 class="font-['Playfair_Display'] text-[clamp(22px,2.8vw,34px)] font-bold text-[#1a1814]">Lighting in Action</h3>
+        <h3 class="font-['Playfair_Display'] text-[clamp(22px,2.8vw,34px)] font-bold text-[#0b0b0c]">Lighting in Action</h3>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <?php foreach ( $gallery_items as $i => $g ) : ?>
-        <div class="ev-reveal group relative overflow-hidden rounded-xl border border-[#e8e2da] bg-[#0c0c18]"
+        <div class="ev-reveal group relative overflow-hidden rounded-xl border border-[#e6e3df] bg-[#0c0c18]"
              style="transition-delay:<?php echo $i * 80; ?>ms;aspect-ratio:<?php echo ($i === 0 || $i === 5) ? '16/9' : '4/3'; ?>">
           {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/lighting-<?php echo $i+1; ?>.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy"> --}}
           <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#3a3a58] text-center px-6 transition-transform duration-500 group-hover:scale-105"><?php echo $g['ph']; ?></div>
@@ -201,10 +201,10 @@ $faqs = [
 <section id="ev-impact" class="bg-[#0f0f18] py-24">
   <div class="max-w-[1280px] mx-auto px-6 md:px-10">
     <div class="text-center mb-16 ev-reveal">
-      <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#d4aa6a] mb-3">The Investment Case</span>
-      <h2 class="font-['Playfair_Display'] text-[clamp(26px,3.5vw,44px)] font-bold text-[#f0ece6] leading-[1.15]">
+      <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">The Investment Case</span>
+      <h2 class="font-['Playfair_Display'] text-[clamp(26px,3.5vw,44px)] font-bold text-[#e6e3df] leading-[1.15]">
         Lighting Is Not an Expense.<br>
-        <span class="text-[#d4aa6a]">It Is an Investment.</span>
+        <span class="text-[#8a6a45]">It Is an Investment.</span>
       </h2>
       <p class="mt-4 text-[15px] text-[rgba(240,236,230,.45)] font-light max-w-2xl mx-auto leading-relaxed">
         The right outdoor lighting system delivers measurable returns: higher property value, extended outdoor living hours, reduced energy costs, and a property that makes an impression every single night.
@@ -212,14 +212,14 @@ $faqs = [
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
       <?php foreach ( $impact_pillars as $i => $p ) : ?>
-      <div class="ev-reveal group border border-[#1e1e2a] rounded-2xl p-8 hover:border-[rgba(212,170,106,.3)] hover:bg-[#14141e] transition-all duration-300"
+      <div class="ev-reveal group border border-[#1e1e2a] rounded-2xl p-8 hover:border-[rgba(138,106,69,.3)] hover:bg-[#14141e] transition-all duration-300"
            style="background:#131320;transition-delay:<?php echo $i * 100; ?>ms;">
         <div class="flex items-start gap-5 mb-5">
-          <div class="w-11 h-11 rounded-xl bg-[#0c0c18] border border-[#1e1e2a] flex items-center justify-center flex-shrink-0 group-hover:border-[rgba(212,170,106,.3)] transition-colors">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#d4aa6a" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="<?php echo $p['icon']; ?>"/></svg>
+          <div class="w-11 h-11 rounded-xl bg-[#0c0c18] border border-[#1e1e2a] flex items-center justify-center flex-shrink-0 group-hover:border-[rgba(138,106,69,.3)] transition-colors">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#8a6a45" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="<?php echo $p['icon']; ?>"/></svg>
           </div>
           <div>
-            <div class="font-['Playfair_Display'] text-[clamp(26px,3vw,36px)] font-bold text-[#d4aa6a] leading-none mb-1"><?php echo $p['stat']; ?></div>
+            <div class="font-['Playfair_Display'] text-[clamp(26px,3vw,36px)] font-bold text-[#8a6a45] leading-none mb-1"><?php echo $p['stat']; ?></div>
             <div class="text-[11px] font-semibold tracking-[.08em] uppercase text-[rgba(240,236,230,.4)]"><?php echo $p['label']; ?></div>
           </div>
         </div>
@@ -228,10 +228,10 @@ $faqs = [
       <?php endforeach; ?>
     </div>
     <!-- Retrofit pitch -->
-    <div class="ev-reveal border border-[rgba(212,170,106,.2)] rounded-2xl p-8 md:p-10 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-center" style="background:linear-gradient(135deg,#141420 0%,#1a1428 100%);">
+    <div class="ev-reveal border border-[rgba(138,106,69,.2)] rounded-2xl p-8 md:p-10 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-center" style="background:linear-gradient(135deg,#141420 0%,#1a1428 100%);">
       <div>
-        <div class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#d4aa6a] mb-3">Pairs Perfectly With Any Existing Hardscape</div>
-        <h3 class="font-['Playfair_Display'] text-[clamp(20px,2.5vw,28px)] font-bold text-[#f0ece6] leading-[1.2] mb-3">
+        <div class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">Pairs Perfectly With Any Existing Hardscape</div>
+        <h3 class="font-['Playfair_Display'] text-[clamp(20px,2.5vw,28px)] font-bold text-[#e6e3df] leading-[1.2] mb-3">
           Already Have a Patio or Garden?<br>
           Lighting Makes It 10x More Impressive.
         </h3>
@@ -239,7 +239,7 @@ $faqs = [
           We retrofit complete lighting systems to existing installations without touching hardscape or disturbing landscaping. If you have a patio, mature trees, or an established garden you want lit, we can design and install a full system around it.
         </p>
       </div>
-      <a href="/contact" class="flex-shrink-0 inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-7 py-4 rounded-md hover:opacity-85 transition-opacity whitespace-nowrap" style="background:linear-gradient(135deg,#d4aa6a,#c4983e);">
+      <a href="/contact" class="flex-shrink-0 inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-7 py-4 rounded-md hover:opacity-85 transition-opacity whitespace-nowrap" style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
         Add Lighting to My Property
         <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
       </a>
@@ -252,11 +252,11 @@ $faqs = [
 <section class="bg-white py-24">
   <div class="max-w-[860px] mx-auto px-6 md:px-10 ev-reveal">
     <div class="bg-[#0f0f18] border border-[#1e1e2a] rounded-2xl p-10 md:p-14 text-center relative overflow-hidden">
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-px" style="background:linear-gradient(90deg,transparent,#d4aa6a,transparent);"></div>
-      <div class="absolute -top-16 left-1/2 -translate-x-1/2 w-48 h-48 rounded-full blur-3xl opacity-10" style="background:#d4aa6a;"></div>
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-px" style="background:linear-gradient(90deg,transparent,#8a6a45,transparent);"></div>
+      <div class="absolute -top-16 left-1/2 -translate-x-1/2 w-48 h-48 rounded-full blur-3xl opacity-10" style="background:#8a6a45;"></div>
       <div class="flex justify-center gap-1 mb-6 relative z-10">
         <?php for ( $s = 0; $s < 5; $s++ ) : ?>
-        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#d4aa6a"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#8a6a45"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         <?php endfor; ?>
       </div>
       <p class="font-['Playfair_Display'] italic text-[clamp(16px,2.5vw,21px)] text-[rgba(240,236,230,.85)] leading-[1.65] mb-8 relative z-10">
@@ -264,10 +264,10 @@ $faqs = [
       </p>
       <div class="flex items-center justify-center gap-4 relative z-10">
         <div class="w-12 h-12 rounded-full border border-[#2a2a38] flex items-center justify-center" style="background:#131320;">
-          <span class="font-['Playfair_Display'] text-[15px] font-bold text-[#d4aa6a]">RB</span>
+          <span class="font-['Playfair_Display'] text-[15px] font-bold text-[#8a6a45]">RB</span>
         </div>
         <div class="text-left">
-          <div class="font-semibold text-[14px] text-[#f0ece6]">Robert B.</div>
+          <div class="font-semibold text-[14px] text-[#e6e3df]">Robert B.</div>
           <div class="text-[11px] text-[rgba(240,236,230,.3)] mt-0.5">Full Property Lighting System · Bloomfield Hills, MI</div>
         </div>
         <div class="ml-4 flex items-center gap-1.5 border border-[#2a2a38] rounded-full px-3 py-1.5" style="background:#131320;">
@@ -281,26 +281,26 @@ $faqs = [
 
 
 <!-- ════════ SECTION 3B — FAQ ════════ -->
-<section class="bg-[#f7f3ee] border-t border-[#e8e2da] py-24">
+<section class="bg-[#f5f2ef] border-t border-[#e6e3df] py-24">
   <div class="max-w-[800px] mx-auto px-6 md:px-10">
     <div class="text-center mb-14 ev-reveal">
-      <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#d4aa6a] mb-3">FAQ</span>
-      <h2 class="font-['Playfair_Display'] text-[clamp(24px,3.5vw,38px)] font-bold text-[#1a1814] leading-[1.15]">
+      <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">FAQ</span>
+      <h2 class="font-['Playfair_Display'] text-[clamp(24px,3.5vw,38px)] font-bold text-[#0b0b0c] leading-[1.15]">
         Questions About<br>
-        <span class="text-[#d4aa6a]">Outdoor Lighting Systems</span>
+        <span class="text-[#8a6a45]">Outdoor Lighting Systems</span>
       </h2>
     </div>
     <div id="ev-faq" class="flex flex-col gap-3 ev-reveal">
       <?php foreach ( $faqs as $i => $faq ) : ?>
-      <div class="ev-faq-item bg-white border border-[#e8e2da] rounded-xl overflow-hidden hover:border-[#d4aa6a] transition-colors">
+      <div class="ev-faq-item bg-white border border-[#e6e3df] rounded-xl overflow-hidden hover:border-[#8a6a45] transition-colors">
         <button class="ev-faq-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="<?php echo $i === 0 ? 'true' : 'false'; ?>">
-          <span class="font-semibold text-[14px] text-[#1a1814] leading-snug"><?php echo $faq['q']; ?></span>
-          <span class="ev-faq-icon flex-shrink-0 w-7 h-7 rounded-full border border-[#e0dad2] flex items-center justify-center transition-all duration-300 <?php echo $i === 0 ? 'bg-[#1a1814] border-[#1a1814]' : 'bg-[#f7f3ee]'; ?>">
-            <svg class="w-3.5 h-3.5 transition-transform duration-300 <?php echo $i === 0 ? 'rotate-45 text-white' : 'text-[#8a8680]'; ?>" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+          <span class="font-semibold text-[14px] text-[#0b0b0c] leading-snug"><?php echo $faq['q']; ?></span>
+          <span class="ev-faq-icon flex-shrink-0 w-7 h-7 rounded-full border border-[#d8d4ce] flex items-center justify-center transition-all duration-300 <?php echo $i === 0 ? 'bg-[#1a1814] border-[#1a1814]' : 'bg-[#f5f2ef]'; ?>">
+            <svg class="w-3.5 h-3.5 transition-transform duration-300 <?php echo $i === 0 ? 'rotate-45 text-white' : 'text-[#7a7f85]'; ?>" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
           </span>
         </button>
         <div class="ev-faq-body overflow-hidden transition-all duration-300" style="max-height:<?php echo $i === 0 ? '500px' : '0'; ?>;">
-          <div class="px-6 pb-5 pt-1"><p class="text-[13px] font-light text-[#6a6560] leading-[1.8]"><?php echo $faq['a']; ?></p></div>
+          <div class="px-6 pb-5 pt-1"><p class="text-[13px] font-light text-[#7a7f85] leading-[1.8]"><?php echo $faq['a']; ?></p></div>
         </div>
       </div>
       <?php endforeach; ?>
@@ -318,21 +318,21 @@ $faqs = [
   <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-64 blur-[80px] opacity-15 pointer-events-none" style="background:radial-gradient(ellipse,#c9a96e 0%,transparent 70%);"></div>
   <div class="absolute inset-0" style="background:rgba(0,0,0,.72);"></div>
   <div class="relative z-10 max-w-[720px] mx-auto px-6 md:px-10 text-center">
-    <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#d4aa6a] mb-4">See Your Property at Night</span>
-    <h2 class="font-['Playfair_Display'] text-[clamp(28px,5vw,52px)] font-bold text-[#f0ece6] leading-[1.1] mb-5">
+    <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-4">See Your Property at Night</span>
+    <h2 class="font-['Playfair_Display'] text-[clamp(28px,5vw,52px)] font-bold text-[#e6e3df] leading-[1.1] mb-5">
       Ready to See What Your<br>
-      <em class="italic text-[#d4aa6a]">Property Can Look Like?</em>
+      <em class="italic text-[#8a6a45]">Property Can Look Like?</em>
     </h2>
     <p class="text-[15px] font-light text-[rgba(240,236,230,.52)] leading-relaxed mb-10 max-w-lg mx-auto">
       Schedule a free lighting consultation. We walk your property at dusk, assess your architecture and landscaping, and design a custom system that makes your home look like it belongs in a magazine — every night.
     </p>
-    <a href="tel:+17705550192" class="block font-['Playfair_Display'] font-bold text-[#d4aa6a] text-[clamp(24px,4vw,40px)] mb-9 hover:opacity-75 transition-opacity">(770) 555-0192</a>
+    <a href="tel:+17705550192" class="block font-['Playfair_Display'] font-bold text-[#8a6a45] text-[clamp(24px,4vw,40px)] mb-9 hover:opacity-75 transition-opacity">(770) 555-0192</a>
     <div class="flex flex-wrap gap-3 justify-center">
-      <a href="/contact" class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-9 py-4 rounded-md hover:opacity-85 transition-opacity" style="background:linear-gradient(135deg,#d4aa6a,#c4983e);">
+      <a href="/contact" class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-9 py-4 rounded-md hover:opacity-85 transition-opacity" style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
         Schedule a Lighting Consultation
         <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
       </a>
-      <a href="/our-work" class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.7)] border border-[rgba(240,236,230,.18)] px-8 py-4 rounded-md hover:text-[#d4aa6a] hover:border-[#d4aa6a] transition-colors">
+      <a href="/our-work" class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.7)] border border-[rgba(240,236,230,.18)] px-8 py-4 rounded-md hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
         See Lighting Projects
       </a>
     </div>
@@ -384,14 +384,14 @@ $faqs = [
         i.querySelector('.ev-faq-btn').setAttribute('aria-expanded','false');
         i.querySelector('.ev-faq-body').style.maxHeight = '0';
         const ic = i.querySelector('.ev-faq-icon'); const s = ic.querySelector('svg');
-        ic.classList.remove('bg-[#1a1814]','border-[#1a1814]'); ic.classList.add('bg-[#f7f3ee]');
-        s.classList.remove('rotate-45','text-white'); s.classList.add('text-[#8a8680]');
+        ic.classList.remove('bg-[#1a1814]','border-[#1a1814]'); ic.classList.add('bg-[#f5f2ef]');
+        s.classList.remove('rotate-45','text-white'); s.classList.add('text-[#7a7f85]');
       });
       if (!isOpen) {
         btn.setAttribute('aria-expanded','true');
         body.style.maxHeight = body.scrollHeight + 'px';
-        icon.classList.add('bg-[#1a1814]','border-[#1a1814]'); icon.classList.remove('bg-[#f7f3ee]');
-        svg.classList.add('rotate-45','text-white'); svg.classList.remove('text-[#8a8680]');
+        icon.classList.add('bg-[#1a1814]','border-[#1a1814]'); icon.classList.remove('bg-[#f5f2ef]');
+        svg.classList.add('rotate-45','text-white'); svg.classList.remove('text-[#7a7f85]');
       }
     });
   });

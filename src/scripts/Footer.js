@@ -80,7 +80,7 @@ const BG      = "#0c0c0c"
 const BG2     = "#141414"
 const BG3     = "#1e1e1e"
 const BORDER  = "#222222"
-const GREEN   = "#2d4a35"
+const GREEN   = "#1f3a32"
 const TEXT_DIM = "#4a4a44"
 const TEXT_MID = "#787870"
 const TEXT_LT  = "#a8a49e"
@@ -144,7 +144,7 @@ function Footer() {
 
       {/* ── CTA Banner ── */}
       <div style={{
-        background: `linear-gradient(135deg, ${GREEN} 0%, #1a3025 60%, #0f1f18 100%)`,
+        background: `linear-gradient(135deg, ${GREEN} 0%, #152a22 60%, #0f1f18 100%)`,
         borderBottom: `1px solid #2a3a2a`,
       }}>
         <div style={{
@@ -222,8 +222,8 @@ function Footer() {
             <a href="/" style={{ display: "inline-flex", alignItems: "center", gap: 12, textDecoration: "none", marginBottom: 24 }}>
               <div style={{
                 width: 38, height: 38,
-                background: `linear-gradient(150deg, ${GREEN} 0%, #1a3025 100%)`,
-                borderRadius: 6, border: "1px solid #3a5a3a",
+                background: `linear-gradient(150deg, ${GREEN} 0%, #152a22 100%)`,
+                borderRadius: 6, border: "1px solid #1f3a32",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 flexShrink: 0,
               }}>
