@@ -14,25 +14,15 @@ const NAV_LINKS = [
       { label: "Outdoor Lighting Systems",          href: "/services/outdoor-lighting-systems"    },
     ],
   },
-  { label: "Our Work", href: "/our-work" },
-  {
-    label: "Locations",
-    href: "/locations",
-    dropdown: [
-      { label: "Atlanta, GA",    href: "/locations/atlanta"    },
-      { label: "Marietta, GA",   href: "/locations/marietta"   },
-      { label: "Roswell, GA",    href: "/locations/roswell"    },
-      { label: "Alpharetta, GA", href: "/locations/alpharetta" },
-      { label: "Kennesaw, GA",   href: "/locations/kennesaw"   },
-    ],
-  },
+  { label: "Our Work", href: "#" },
+  { label: "Locations", href: "/locations" },
   { label: "Contact", href: "/contact" },
 ]
 
 const PHONE      = "(770) 555-0192"
 const PHONE_HREF = "tel:+17705550192"
-const EMAIL      = "info@everridgelandscape.com"
-const EMAIL_HREF = "mailto:info@everridgelandscape.com"
+const EMAIL      = "info@everridgeus.com"
+const EMAIL_HREF = "mailto:info@everridgeus.com"
 const ADDRESS    = "Clinton Township, MI"
 const MAPS_HREF  = "https://maps.google.com/?q=Clinton+Township+MI"
 const CTA_HREF   = "/contact"

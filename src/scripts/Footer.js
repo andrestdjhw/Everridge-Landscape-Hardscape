@@ -5,7 +5,7 @@ const COMPANY = {
   name:    "Everridge Landscape & Hardscape",
   tagline: "Crafting Outdoor Spaces with Precision.",
   phone:   "(770) 555-0192",
-  email:   "info@everridgelandscape.com",
+  email:   "info@everridgeus.com",
   address: "1245 Peachtree Industrial Blvd,\nSuite 300, Atlanta, GA 30338",
   license: "GA Contractor License #CN-204817",
 }
@@ -18,14 +18,14 @@ const SERVICES = [
 ]
 
 const CITIES = [
-  { label: "Atlanta",    href: "/locations/atlanta"    },
-  { label: "Marietta",   href: "/locations/marietta"   },
-  { label: "Roswell",    href: "/locations/roswell"    },
-  { label: "Alpharetta", href: "/locations/alpharetta" },
-  { label: "Kennesaw",   href: "/locations/kennesaw"   },
-  { label: "Smyrna",     href: "/locations/smyrna"     },
-  { label: "Dunwoody",   href: "/locations/dunwoody"   },
-  { label: "Woodstock",  href: "/locations/woodstock"  },
+  { label: "Atlanta",    href: ""    },
+  { label: "Marietta",   href: ""   },
+  { label: "Roswell",    href: ""    },
+  { label: "Alpharetta", href: "" },
+  { label: "Kennesaw",   href: ""   },
+  { label: "Smyrna",     href: ""     },
+  { label: "Dunwoody",   href: ""   },
+  { label: "Woodstock",  href: ""  },
 ]
 
 const LEGAL = [
@@ -394,7 +394,7 @@ function Footer() {
             <ColLabel>Company</ColLabel>
             {[
               { label: "About Us",       href: "/about"     },
-              { label: "Our Work",       href: "/our-work"  },
+              { label: "Our Work",       href: "#"  },
               { label: "Testimonials",   href: "/reviews"   },
               { label: "Free Estimate",  href: "/contact"   },
               { label: "Contact",        href: "/contact"   },

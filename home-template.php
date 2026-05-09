@@ -8,47 +8,165 @@ get_header(); ?>
 
 <?php
 /* ── Data ─────────────────────────────────────────────────────────────────── */
+
+// ── HERO SLIDES — img: URL copiada desde Media > Copy URL
 $slides = [
   [
     'eyebrow' => 'Premium Hardscape',
-    'img'     => 'https://everridgelandscape.com/wp-content/uploads/hero-1.jpg', // Replace with actual URL from Media > Copy URL
+    'img'     => '/wp-content/uploads/2026/05/PremiunHardscapeHero-scaled.jpg',
     'ph'      => 'Paver patio at golden hour — outdoor furniture, polymeric sand finish, wide angle',
   ],
   [
     'eyebrow' => 'Landscape Transformation',
-    'img'     => 'https://everridgelandscape.com/wp-content/uploads/hero-2.jpg',
+    'img'     => '/wp-content/uploads/2026/05/LandscapeTransformationHero-scaled.jpg',
     'ph'      => 'Full front yard before & after — mulch, plantings, trimmed hedges, new walkway',
   ],
   [
     'eyebrow' => 'Outdoor Lighting',
-    'img'     => 'https://everridgelandscape.com/wp-content/uploads/hero-3.jpg',
+    'img'     => '/wp-content/uploads/2026/05/OutdoorLightningHero-scaled.jpg',
     'ph'      => 'Nighttime property — accent lights on trees, pathway illumination, architectural uplighting',
   ],
   [
     'eyebrow' => '3D Design Proof',
-    'img'     => 'https://everridgelandscape.com/wp-content/uploads/hero-4.jpg',
+    'img'     => '/wp-content/uploads/2026/05/3DRenderingHero-scaled.jpg',
     'ph'      => '3D rendering (left) vs completed project (right) — same angle',
   ],
   [
     'eyebrow' => 'Retaining Walls',
-    'img'     => 'https://everridgelandscape.com/wp-content/uploads/hero-5.jpg',
+    'img'     => '/wp-content/uploads/2026/05/RetainingWalls-scaled.jpg',
     'ph'      => 'Hardscape retaining wall integrated with garden design — multi-element project',
   ],
 ];
 
+// ── SECTION 2: FORM — left side image
+// img: crew working on premium project — clean uniforms, organized material staging
+$form_img = '/wp-content/uploads/2026/05/crew-work-scaled.jpg'; // /wp-content/uploads/2026/05/crew-work.jpg
+
+// ── SECTION 3: WHO WE ARE — two stacked images
+// img_1: 3D rendering visualization | img_2: completed project (same angle)
+$who_imgs = [
+  '/wp-content/uploads/2026/05/rendering-preview.png',
+  '/wp-content/uploads/2026/05/completed-match.png',
+];
+
+// ── SECTION 4: SERVICES — one image per card
+$services = [
+  [
+    'href'  => '/services/hardscape-patios',
+    'title' => 'Brick & Hardscapes',
+    'img'   => '/wp-content/uploads/2026/05/BrickandHardscapesService-scaled.jpg',
+    'ph'    => 'Close-up of premium paver patio — clean joint lines, polymeric sand, border pattern',
+    'copy'  => 'Paver patios, walkways, driveways, outdoor fireplaces, and retaining walls crafted with premium materials and precision. Built to last. Designed to impress.',
+  ],
+  [
+    'href'  => '/services/landscape-design',
+    'title' => 'Landscape Design & Installation',
+    'img'   => '/wp-content/uploads/2026/04/terrazzo-product-display-podium-in-the-middle-of-t-2026-03-24-07-21-27-utc-scaled.jpg',
+    'ph'    => 'Lush front yard — fresh mulch, seasonal plantings, trimmed hedges, clean edge line',
+    'copy'  => 'Custom landscape design, seasonal planting, sod installation, and year-round care that keeps your property looking its absolute best. From first impression to lasting impact.',
+  ],
+  [
+    'href'  => '/services/3d-renderings',
+    'title' => 'Garden Design & 3D Renderings',
+    'img'   => '/wp-content/uploads/2026/04/Landscaping3DModeling-.png',
+    'ph'    => 'Split: 3D rendering on left, completed project on right — same angle',
+    'copy'  => 'See your outdoor transformation before it happens. We create photorealistic 3D renderings so you can approve every detail before we break ground.',
+  ],
+  [
+    'href'  => '/services/outdoor-lighting',
+    'title' => 'Outdoor Lighting Systems',
+    'img'   => '/wp-content/uploads/2026/04/OutdoorLightingSystemHero-scaled.jpg',
+    'ph'    => 'Nighttime property — accent lights on trees, pathway illumination, architectural uplighting',
+    'copy'  => 'Professional landscape lighting design and installation. Accent, pathway, and architectural uplighting that transforms your property after dark.',
+  ],
+];
+
+// ── SECTION 6: PROCESS — one image per step
+$steps = [
+  [
+    'num'  => '01',
+    'title'=> 'Free Consultation',
+    'side' => 'left',
+    'img'  => '/wp-content/uploads/2026/05/Process1-scaled.jpg',
+    'ph'   => 'Founder meeting with homeowners in their backyard — clipboard in hand, casual but professional',
+    'copy' => 'We visit your property in person. We walk the space with you, listen to your vision, and assess the scope. No obligation, no pressure, no cost. Just a conversation about what is possible for your property and your budget.',
+  ],
+  [
+    'num'  => '02',
+    'title'=> '3D Design & Proposal',
+    'side' => 'right',
+    'img'  => '/wp-content/uploads/2026/05/Process2-scaled.jpg',
+    'ph'   => '3D rendering displayed on laptop or monitor — software interface or clean export. Alternatively: rendering reviewed at a table with homeowner',
+    'copy' => 'Within days you receive a photorealistic 3D rendering showing exactly how your property will look when finished — the materials, layout, colors, and proportions from multiple angles. Alongside it: a detailed proposal with clear scope, timeline, and pricing. No hidden costs.',
+  ],
+  [
+    'num'  => '03',
+    'title'=> 'Expert Execution',
+    'side' => 'left',
+    'img'  => '/wp-content/uploads/2026/05/crew-work-scaled.jpg',
+    'ph'   => 'Crew installing pavers or building retaining wall — clean organized site, materials neatly staged, branded Everridge shirts',
+    'copy' => 'Our crew mobilizes on the scheduled date with all materials staged and ready. You receive progress updates and photos at the end of each work day. Job sites are clean, organized, and professional. We build exactly what you approved.',
+  ],
+  [
+    'num'  => '04',
+    'title'=> 'Final Walkthrough',
+    'side' => 'right',
+    'img'  => '/wp-content/uploads/2026/05/3DRenderingComparison-e1778351002474.png',
+    'ph'   => 'Completed project hero shot at golden hour — clean, finished, no equipment visible. The kind of photo that makes someone stop scrolling',
+    'copy' => 'When construction is complete, we walk the entire project with you. The project is not finished until you tell us it is perfect. After your approval, we clean the entire site and leave your property better than you imagined.',
+  ],
+];
+
+// ── SECTION 7: BEFORE & AFTER — img_before + img_after per pair
+$ba_projects = [
+  [
+    'label'      => 'Paver Patio',
+    'city'       => 'Birmingham, MI',
+    'img_before' => '/wp-content/uploads/2026/05/BeforeAfter-1-e1778352789260.png', // /wp-content/uploads/2026/05/before-patio.jpg
+    'img_after'  => '/wp-content/uploads/2026/05/BeforeAfter-e1778352619870.png', // /wp-content/uploads/2026/05/after-patio.jpg
+  ],
+  [
+    'label'      => 'Front Yard Transformation',
+    'city'       => 'Troy, MI',
+    'img_before' => '/wp-content/uploads/2026/05/BeforeAfter-1-e1778352789260.png', // /wp-content/uploads/2026/05/before-frontyard.jpg
+    'img_after'  => '/wp-content/uploads/2026/05/BeforeAfter-e1778352619870.png', // /wp-content/uploads/2026/05/after-frontyard.jpg
+  ],
+  [
+    'label'      => 'Landscape Lighting',
+    'city'       => 'Rochester Hills, MI',
+    'img_before' => '/wp-content/uploads/2026/05/BeforeAfter-1-e1778352789260.png', // /wp-content/uploads/2026/05/before-lighting.jpg
+    'img_after'  => '/wp-content/uploads/2026/05/BeforeAfter-e1778352619870.png', // /wp-content/uploads/2026/05/after-lighting.jpg
+  ],
+  [
+    'label'      => 'Retaining Wall & Garden',
+    'city'       => 'Bloomfield Hills, MI',
+    'img_before' => '/wp-content/uploads/2026/05/BeforeAfter-1-e1778352789260.png', // /wp-content/uploads/2026/05/before-wall.jpg
+    'img_after'  => '/wp-content/uploads/2026/05/BeforeAfter-e1778352619870.png', // /wp-content/uploads/2026/05/after-wall.jpg
+  ],
+];
+
+// ── SECTION 9: CITY CARDS
+$cities = [
+  [ 'name' => 'Birmingham',       'href' => '', 'img' => '' ], // /wp-content/uploads/2026/05/city-birmingham.jpg
+  [ 'name' => 'Bloomfield Hills', 'href' => '', 'img' => '' ], // /wp-content/uploads/2026/05/city-bloomfield.jpg
+  [ 'name' => 'Troy',             'href' => '', 'img' => '' ], // /wp-content/uploads/2026/05/city-troy.jpg
+  [ 'name' => 'Rochester Hills',  'href' => '', 'img' => '' ], // /wp-content/uploads/2026/05/city-rochester.jpg
+  [ 'name' => 'Shelby Township',  'href' => '', 'img' => '' ], // /wp-content/uploads/2026/05/city-shelby.jpg
+  [ 'name' => 'Washington Twp.',  'href' => '', 'img' => '' ], // /wp-content/uploads/2026/05/city-washington.jpg
+  [ 'name' => 'Farmington Hills', 'href' => '', 'img' => '' ], // /wp-content/uploads/2026/05/city-farmington.jpg
+  [ 'name' => 'Clinton Township', 'href' => '', 'img' => '' ], // /wp-content/uploads/2026/05/city-clinton.jpg
+];
+
+// ── SECTION 10: FINAL CTA background
+$cta_img = ''; // /wp-content/uploads/2026/05/cta-hero.jpg
+
+// ── Unchanged data arrays ──────────────────────────────────────────────────────
 $badges = [
   [ 'label' => 'Licensed & Insured',     'path' => 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z' ],
   [ 'label' => '17+ Years Experience',   'path' => 'M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z' ],
   [ 'label' => '3D Design Renderings',   'path' => 'M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3' ],
   [ 'label' => '5-Star Rated',           'path' => 'M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z' ],
   [ 'label' => 'Residential & Commercial','path' => 'M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z' ],
-];
-
-$services = [
-  [ 'href' => '/services/hardscape-patios',   'title' => 'Brick & Hardscapes',               'ph' => 'Close-up of premium paver patio — clean joint lines, polymeric sand, border pattern',          'copy' => 'Paver patios, walkways, driveways, outdoor fireplaces, and retaining walls crafted with premium materials and precision. Built to last. Designed to impress.' ],
-  [ 'href' => '/services/landscape-design',   'title' => 'Landscape Design & Installation',  'ph' => 'Lush front yard — fresh mulch, seasonal plantings, trimmed hedges, clean edge line',           'copy' => 'Custom landscape design, seasonal planting, sod installation, and year-round care that keeps your property looking its absolute best. From first impression to lasting impact.' ],
-  [ 'href' => '/services/3d-renderings',      'title' => 'Garden Design & 3D Renderings',    'ph' => 'Split: 3D rendering on left, completed project on right — same angle',                          'copy' => 'See your outdoor transformation before it happens. We create photorealistic 3D renderings so you can approve every detail before we break ground.' ],
-  [ 'href' => '/services/outdoor-lighting',   'title' => 'Outdoor Lighting Systems',         'ph' => 'Nighttime property — accent lights on trees, pathway illumination, architectural uplighting',   'copy' => 'Professional landscape lighting design and installation. Accent, pathway, and architectural uplighting that transforms your property after dark.' ],
 ];
 
 $pillars = [
@@ -58,38 +176,31 @@ $pillars = [
   [ 'title' => 'Licensed & Insured', 'path' => 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z', 'copy' => 'Everridge is fully licensed and insured with general liability and workers compensation coverage. Your property and your investment are completely protected from day one through final walkthrough.' ],
 ];
 
-$steps = [
-  [ 'num' => '01', 'title' => 'Free Consultation',      'side' => 'left',  'ph' => 'Founder meeting with homeowners in their backyard — clipboard in hand, casual but professional',                                             'copy' => 'We visit your property in person. We walk the space with you, listen to your vision, and assess the scope. No obligation, no pressure, no cost. Just a conversation about what is possible for your property and your budget.' ],
-  [ 'num' => '02', 'title' => '3D Design & Proposal',   'side' => 'right', 'ph' => '3D rendering displayed on laptop or monitor — software interface or clean export. Alternatively: rendering reviewed at a table with homeowner', 'copy' => 'Within days you receive a photorealistic 3D rendering showing exactly how your property will look when finished — the materials, layout, colors, and proportions from multiple angles. Alongside it: a detailed proposal with clear scope, timeline, and pricing. No hidden costs.' ],
-  [ 'num' => '03', 'title' => 'Expert Execution',       'side' => 'left',  'ph' => 'Crew installing pavers or building retaining wall — clean organized site, materials neatly staged, branded Everridge shirts',                 'copy' => 'Our crew mobilizes on the scheduled date with all materials staged and ready. You receive progress updates and photos at the end of each work day. Job sites are clean, organized, and professional. We build exactly what you approved.' ],
-  [ 'num' => '04', 'title' => 'Final Walkthrough',      'side' => 'right', 'ph' => 'Completed project hero shot at golden hour — clean, finished, no equipment visible. The kind of photo that makes someone stop scrolling',      'copy' => 'When construction is complete, we walk the entire project with you. The project is not finished until you tell us it is perfect. After your approval, we clean the entire site and leave your property better than you imagined.' ],
-];
-
-$ba_projects = [
-  [ 'label' => 'Paver Patio',               'city' => 'Birmingham, MI' ],
-  [ 'label' => 'Front Yard Transformation', 'city' => 'Troy, MI' ],
-  [ 'label' => 'Landscape Lighting',        'city' => 'Rochester Hills, MI' ],
-  [ 'label' => 'Retaining Wall & Garden',   'city' => 'Bloomfield Hills, MI' ],
-];
-
 $reviews = [
-  [ 'name' => 'Michael T.', 'project' => 'Paver Patio · Troy, MI',              'text' => 'Everridge completely transformed our backyard. The 3D rendering process was incredible — we knew exactly what we were getting before they even started. The finished patio exceeded our expectations in every way.' ],
-  [ 'name' => 'Sarah L.',   'project' => 'Full Landscape · Birmingham, MI',     'text' => 'From first consultation to final walkthrough, the professionalism was unmatched. They showed up on time every day, kept the site spotless, and delivered exactly what the rendering showed.' ],
+  [ 'name' => 'Michael T.', 'project' => 'Paver Patio · Troy, MI',                   'text' => 'Everridge completely transformed our backyard. The 3D rendering process was incredible — we knew exactly what we were getting before they even started. The finished patio exceeded our expectations in every way.' ],
+  [ 'name' => 'Sarah L.',   'project' => 'Full Landscape · Birmingham, MI',           'text' => 'From first consultation to final walkthrough, the professionalism was unmatched. They showed up on time every day, kept the site spotless, and delivered exactly what the rendering showed.' ],
   [ 'name' => 'David R.',   'project' => 'Landscape Lighting · Bloomfield Hills, MI', 'text' => 'The lighting system they designed is breathtaking. We had no idea what was possible until we saw the 3D mockup. Now every time we pull into the driveway at night we feel like we live in a luxury home.' ],
-  [ 'name' => 'Jennifer K.','project' => 'Retaining Wall · Rochester Hills, MI','text' => 'After getting quotes from five contractors, Everridge stood apart immediately. The 3D rendering gave us confidence no one else could match. The wall turned out perfect and they finished ahead of schedule.' ],
-  [ 'name' => 'Robert M.',  'project' => 'Hardscape & Garden · Shelby Township, MI', 'text' => 'I was skeptical about the 3D rendering promise but it is completely real. What we saw on screen is exactly what got built. The craftsmanship is outstanding and the crew was respectful throughout.' ],
+  [ 'name' => 'Jennifer K.','project' => 'Retaining Wall · Rochester Hills, MI',      'text' => 'After getting quotes from five contractors, Everridge stood apart immediately. The 3D rendering gave us confidence no one else could match. The wall turned out perfect and they finished ahead of schedule.' ],
+  [ 'name' => 'Robert M.',  'project' => 'Hardscape & Garden · Shelby Township, MI',  'text' => 'I was skeptical about the 3D rendering promise but it is completely real. What we saw on screen is exactly what got built. The craftsmanship is outstanding and the crew was respectful throughout.' ],
 ];
 
-$cities = [
-  [ 'name' => 'Birmingham',        'href' => '/locations/birmingham' ],
-  [ 'name' => 'Bloomfield Hills',  'href' => '/locations/bloomfield-hills' ],
-  [ 'name' => 'Troy',              'href' => '/locations/troy' ],
-  [ 'name' => 'Rochester Hills',   'href' => '/locations/rochester-hills' ],
-  [ 'name' => 'Shelby Township',   'href' => '/locations/shelby-township' ],
-  [ 'name' => 'Washington Twp.',   'href' => '/locations/washington-township' ],
-  [ 'name' => 'Farmington Hills',  'href' => '/locations/farmington-hills' ],
-  [ 'name' => 'Clinton Township',  'href' => '/locations/clinton-township' ],
-];
+// ── Helper: render a WP media image or a placeholder ─────────────────────────
+// Usage: ev_img( $url, $alt, $classes, $ph_text, $ph_bg )
+function ev_img( $url, $alt = '', $classes = 'absolute inset-0 w-full h-full object-cover', $ph = '', $ph_bg = '#ddd8d0' ) {
+  if ( ! empty( $url ) ) {
+    echo '<img src="' . esc_url( $url ) . '" alt="' . esc_attr( $alt ) . '" class="' . esc_attr( $classes ) . '" loading="lazy">';
+  } else {
+    echo '<div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6 pointer-events-none" style="background:' . esc_attr( $ph_bg ) . ';">' . esc_html( $ph ) . '</div>';
+  }
+}
+
+// ── Helper: inline background-image style or fallback bg-color ─────────────
+function ev_bg_style( $url, $fallback_color = '#0e0e0e' ) {
+  if ( ! empty( $url ) ) {
+    return 'background-image:url(' . esc_url( $url ) . ');background-size:cover;background-position:center;';
+  }
+  return 'background-color:' . $fallback_color . ';';
+}
 ?>
 
 
@@ -104,16 +215,13 @@ $cities = [
        data-index="<?php echo $i; ?>">
 
     <?php if ( empty( $slide['img'] ) ) : ?>
-    <!-- Placeholder — visible only when no image URL is set -->
     <div class="absolute inset-0 flex items-center justify-center text-[#5a5a54] text-xs tracking-widest uppercase text-center px-8 pointer-events-none">
       <?php echo esc_html( $slide['ph'] ); ?>
     </div>
     <?php endif; ?>
 
-    <!-- Dark overlay for text readability over the photo -->
     <div class="absolute inset-0" style="background:linear-gradient(to right,rgba(0,0,0,.60) 0%,rgba(0,0,0,.28) 60%,rgba(0,0,0,.10) 100%);"></div>
 
-    <!-- Slide content -->
     <div class="absolute inset-0 flex flex-col justify-center px-[8vw] max-w-3xl pt-[104px]">
       <div class="flex items-center gap-3 mb-5">
         <span class="block w-9 h-px bg-[#8a6a45]"></span>
@@ -127,7 +235,7 @@ $cities = [
         Premium outdoor transformation across Southeast Michigan. Hardscape, landscape design, 3D renderings, and lighting systems built for properties that demand more.
       </p>
       <div class="flex flex-wrap gap-3">
-        <a href="/contact" class="inline-flex items-center gap-2 text-[11px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-7 py-4 rounded-[5px]" style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
+        <a href="/contact" class="inline-flex items-center gap-2 text-[11px] font-bold tracking-[.1em] uppercase text-white px-7 py-4 rounded-[5px]" style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
           Request a Free Estimate
           <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
         </a>
@@ -139,7 +247,6 @@ $cities = [
   </div>
   <?php endforeach; ?>
 
-  <!-- Prev / Next arrows -->
   <button class="ev-arrow-prev absolute left-6 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full flex items-center justify-center border border-[rgba(255,255,255,.12)] bg-[rgba(0,0,0,.4)] text-[rgba(255,255,255,.7)] hover:bg-[rgba(138,106,69,.25)] hover:border-[#8a6a45] hover:text-[#8a6a45] transition-all">
     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
   </button>
@@ -147,10 +254,8 @@ $cities = [
     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
   </button>
 
-  <!-- Dots -->
   <div id="ev-dots" class="absolute bottom-8 left-[8vw] z-10 flex gap-2"></div>
 
-  <!-- Progress bar -->
   <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-[rgba(255,255,255,.07)] z-10">
     <div id="ev-progress" class="h-full bg-[#8a6a45] w-0"></div>
   </div>
@@ -161,8 +266,6 @@ $cities = [
      TRUST BADGE BAR
      ════════════════════════════════════════════════ -->
 <div class="bg-[#f5f2ef] border-b border-[#e6e3df] overflow-hidden">
-
-  <!-- Desktop -->
   <div class="hidden md:flex items-center justify-between max-w-[1280px] mx-auto px-10 h-14">
     <?php foreach ( $badges as $i => $badge ) : ?>
       <div class="flex items-center gap-2">
@@ -170,12 +273,10 @@ $cities = [
         <span class="text-[11px] font-medium text-[#2f3133] tracking-[.04em]"><?php echo $badge['label']; ?></span>
       </div>
       <?php if ( $i < count( $badges ) - 1 ) : ?>
-        <span class="w-px h-5 bg-[#d8d2ca]"></span>
+        <span class="w-px h-5 bg-[#d8d4ce]"></span>
       <?php endif; ?>
     <?php endforeach; ?>
   </div>
-
-  <!-- Mobile ticker -->
   <div class="md:hidden py-3 overflow-hidden">
     <div class="flex gap-10 w-max animate-[ticker_18s_linear_infinite]">
       <?php foreach ( array_merge( $badges, $badges ) as $badge ) : ?>
@@ -187,7 +288,6 @@ $cities = [
     </div>
   </div>
 </div>
-
 <style>@keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }</style>
 
 
@@ -198,112 +298,28 @@ $cities = [
   <div class="max-w-[1280px] mx-auto px-6">
     <div class="grid grid-cols-1 md:grid-cols-2 border border-[#e6e3df] rounded-xl overflow-hidden">
 
-      <!-- Left — image + stats -->
-      <div class="relative min-h-[400px] md:min-h-[580px] flex items-center justify-center" style="background:linear-gradient(135deg,#1f3a32,#1a2e20);">
-        {{-- Replace div above with: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/crew-work.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Everridge crew"> --}}
-        <span class="text-[11px] text-[#7a7f85] tracking-widest text-center px-10 uppercase">
-          Crew working on premium project —<br>clean uniforms, organized material staging
-        </span>
-        <!-- Right-edge fade -->
-        <div class="absolute inset-0 hidden md:block" style="background:linear-gradient(to right,transparent 70%,#1a1a1a 100%);"></div>
-        <!-- Stat cards -->
+      <!-- Left — image -->
+      <div class="relative min-h-[400px] md:min-h-[580px] overflow-hidden" style="background:linear-gradient(135deg,#1f3a32,#1a2e20);">
+        <?php ev_img( $form_img, 'Everridge crew at work', 'absolute inset-0 w-full h-full object-cover', 'Crew working on premium project — clean uniforms, organized material staging', '#1f3a32' ); ?>
+        <div class="absolute inset-0 hidden md:block" style="background:linear-gradient(to right,transparent 70%,#f5f2ef 100%);"></div>
         <div class="absolute bottom-8 left-8 right-8 grid grid-cols-2 gap-3">
-          <div class="bg-[rgba(255,255,255,.9)] backdrop-blur-sm border border-[#e6e3df] rounded-lg p-4">
+          <div class="bg-[rgba(255,255,255,.92)] backdrop-blur-sm border border-[#e6e3df] rounded-lg p-4">
             <div class="font-['Playfair_Display'] text-2xl font-bold text-[#8a6a45]">17+</div>
             <div class="text-[10px] text-[#7a7f85] mt-1">Years of Experience</div>
           </div>
-          <div class="bg-[rgba(255,255,255,.9)] backdrop-blur-sm border border-[#e6e3df] rounded-lg p-4">
+          <div class="bg-[rgba(255,255,255,.92)] backdrop-blur-sm border border-[#e6e3df] rounded-lg p-4">
             <div class="font-['Playfair_Display'] text-2xl font-bold text-[#8a6a45]">500+</div>
             <div class="text-[10px] text-[#7a7f85] mt-1">Projects Completed</div>
           </div>
         </div>
       </div>
 
-      <!-- Right — form -->
-      <div class="bg-[#f5f2ef] p-10 md:p-12">
-        <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">Get Started</span>
-        <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#0b0b0c] leading-tight mb-2">Request a Free Estimate</h2>
-        <p class="text-[13px] text-[#7a7f85] mb-8 leading-relaxed">Tell us about your project and we'll reach out within 24–48 hours.</p>
-
-        <form id="ev-form" novalidate class="space-y-4">
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <!-- Name -->
-            <div>
-              <label class="block text-[10px] font-semibold tracking-[.08em] uppercase text-[#7a7f85] mb-1.5">Full Name *</label>
-              <input type="text" name="full_name" placeholder="John Smith"
-                class="w-full bg-white border border-[#d8d4ce] rounded-md text-[#0b0b0c] text-sm px-4 py-3 placeholder-[#787870] focus:outline-none focus:border-[#8a6a45] transition-colors" required>
-              <p class="ev-err hidden text-[11px] text-red-400 mt-1">Please enter your name.</p>
-            </div>
-            <!-- Phone -->
-            <div>
-              <label class="block text-[10px] font-semibold tracking-[.08em] uppercase text-[#7a7f85] mb-1.5">Phone Number *</label>
-              <input type="tel" name="phone" placeholder="(248) 555-0100"
-                class="w-full bg-white border border-[#d8d4ce] rounded-md text-[#0b0b0c] text-sm px-4 py-3 placeholder-[#787870] focus:outline-none focus:border-[#8a6a45] transition-colors" required>
-              <p class="ev-err hidden text-[11px] text-red-400 mt-1">Please enter your phone number.</p>
-            </div>
-          </div>
-
-          <!-- Email -->
-          <div>
-            <label class="block text-[10px] font-semibold tracking-[.08em] uppercase text-[#7a7f85] mb-1.5">Email Address *</label>
-            <input type="email" name="email" placeholder="john@email.com"
-              class="w-full bg-white border border-[#d8d4ce] rounded-md text-[#0b0b0c] text-sm px-4 py-3 placeholder-[#787870] focus:outline-none focus:border-[#8a6a45] transition-colors" required>
-            <p class="ev-err hidden text-[11px] text-red-400 mt-1">Please enter a valid email.</p>
-          </div>
-
-          <!-- Service -->
-          <div>
-            <label class="block text-[10px] font-semibold tracking-[.08em] uppercase text-[#7a7f85] mb-1.5">Service Needed *</label>
-            <select name="service" required
-              class="w-full bg-white border border-[#d8d4ce] rounded-md text-[#0b0b0c] text-sm px-4 py-3 focus:outline-none focus:border-[#8a6a45] transition-colors">
-              <option value="" disabled selected>Select a service...</option>
-              <option>Hardscape</option>
-              <option>Landscaping</option>
-              <option>Garden Design</option>
-              <option>Outdoor Lighting</option>
-              <option>Full Transformation</option>
-              <option>Other</option>
-            </select>
-            <p class="ev-err hidden text-[11px] text-red-400 mt-1">Please select a service.</p>
-          </div>
-
-          <!-- Address -->
-          <div>
-            <label class="block text-[10px] font-semibold tracking-[.08em] uppercase text-[#7a7f85] mb-1.5">Property Address or City *</label>
-            <input type="text" name="address" placeholder="Troy, MI or 1234 Oak St, Birmingham MI"
-              class="w-full bg-white border border-[#d8d4ce] rounded-md text-[#0b0b0c] text-sm px-4 py-3 placeholder-[#787870] focus:outline-none focus:border-[#8a6a45] transition-colors" required>
-            <p class="ev-err hidden text-[11px] text-red-400 mt-1">Please enter your address or city.</p>
-          </div>
-
-          <!-- Message -->
-          <div>
-            <label class="block text-[10px] font-semibold tracking-[.08em] uppercase text-[#7a7f85] mb-1.5">Tell Us About Your Project</label>
-            <textarea name="message" rows="4" placeholder="Describe your vision, timeline, or any specific requirements..."
-              class="w-full bg-white border border-[#d8d4ce] rounded-md text-[#0b0b0c] text-sm px-4 py-3 placeholder-[#787870] focus:outline-none focus:border-[#8a6a45] transition-colors resize-y min-h-[96px]"></textarea>
-          </div>
-
-          <button type="submit"
-            class="w-full flex items-center justify-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] py-4 rounded-md transition-opacity hover:opacity-85"
-            style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
-            Send My Request
-            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-          </button>
-
-          <!-- Success -->
-          <div id="ev-form-success" class="hidden text-center py-8">
-            <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 border border-[#1f3a32] bg-[rgba(45,74,53,.08)]">
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#8a6a45" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            </div>
-            <div class="font-['Playfair_Display'] text-xl text-[#0b0b0c] mb-2">Request Received</div>
-            <p class="text-[13px] text-[#7a7f85] leading-relaxed">We'll review your request and reach out within<br><strong class="text-[#2f3133]">24 to 48 business hours.</strong></p>
-          </div>
-
-        </form>
-
-        <p class="text-[11px] text-[#7a7f85] mt-5 text-center leading-relaxed">
-          No pressure. Just clarity. · Licensed · Insured · 17+ Years Experience
-        </p>
+      <!-- Right — ContactForm React component -->
+      <!-- data-compact="true" porque el título ya está en la franja oscura de arriba -->
+      <div id="render-contact-form-here"
+           data-compact="true"
+           data-show-title="false"
+           class="bg-[#f5f2ef] p-8 md:p-10 min-h-[580px]">
       </div>
     </div>
   </div>
@@ -329,8 +345,6 @@ $cities = [
           <p class="text-[15px] font-light text-[#7a7f85] leading-[1.75]">We are not a lawn care company. We are a design and build firm specializing in four core disciplines: custom hardscape construction, landscape design and installation, photorealistic 3D renderings, and professional outdoor lighting systems.</p>
           <p class="text-[15px] font-light text-[#7a7f85] leading-[1.75]">Every project begins with a personalized 3D rendering that shows you exactly how your property will look when we are finished. No guesswork. No anxiety about the outcome. Just certainty.</p>
         </div>
-
-        <!-- Stats -->
         <div class="grid grid-cols-3 gap-5 mt-11 pt-9 border-t border-[#d8d4ce]">
           <?php foreach ( [ ['17+','Years in Business'], ['500+','Projects Delivered'], ['5★','Google Rated'] ] as $stat ) : ?>
           <div>
@@ -339,8 +353,7 @@ $cities = [
           </div>
           <?php endforeach; ?>
         </div>
-
-        <a href="/about" class="inline-flex items-center gap-2 mt-9 text-[11px] font-medium tracking-[.08em] uppercase text-[#e6e3df] border border-[rgba(230,227,223,.2)] px-7 py-3.5 rounded-md hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
+        <a href="/about" class="inline-flex items-center gap-2 mt-9 text-[11px] font-medium tracking-[.08em] uppercase text-[#0b0b0c] border border-[#c8c3bc] px-7 py-3.5 rounded-md hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
           Learn Our Story
           <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
         </a>
@@ -348,13 +361,13 @@ $cities = [
 
       <!-- Image stack -->
       <div class="ev-reveal-right flex flex-col gap-3">
-        <div class="rounded-xl border border-[#e6e3df] overflow-hidden aspect-video flex items-center justify-center bg-[#e8ede6] text-[11px] text-[#7a7f85] text-center px-6">
-          {{-- Replace with: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/rendering-preview.jpg" class="w-full h-full object-cover" alt="3D Rendering"> --}}
-          3D Rendering — project visualization
+        <!-- Image 1: 3D Rendering -->
+        <div class="rounded-xl border border-[#e6e3df] overflow-hidden aspect-video relative bg-[#e8ede6]">
+          <?php ev_img( $who_imgs[0], '3D Rendering — project visualization', 'absolute inset-0 w-full h-full object-cover', '3D Rendering — project visualization', '#e8ede6' ); ?>
         </div>
-        <div class="rounded-xl border border-[#e6e3df] overflow-hidden flex items-center justify-center bg-[#e8e4de] text-[11px] text-[#7a7f85] text-center px-6 py-16">
-          {{-- Replace with: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/completed-match.jpg" class="w-full h-full object-cover" alt="Completed project"> --}}
-          Completed project — same angle as rendering
+        <!-- Image 2: Completed project -->
+        <div class="rounded-xl border border-[#e6e3df] overflow-hidden relative bg-[#e8e4de]" style="min-height:160px;">
+          <?php ev_img( $who_imgs[1], 'Completed project — same angle as rendering', 'absolute inset-0 w-full h-full object-cover', 'Completed project — same angle as rendering', '#e8e4de' ); ?>
         </div>
       </div>
 
@@ -368,7 +381,6 @@ $cities = [
      ════════════════════════════════════════════════ -->
 <section class="bg-white py-24">
   <div class="max-w-[1280px] mx-auto px-10">
-
     <div class="text-center mb-14 ev-reveal">
       <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">What We Do</span>
       <h2 class="font-['Playfair_Display'] text-[clamp(28px,3.5vw,44px)] font-bold text-[#0b0b0c] leading-[1.15]">
@@ -376,23 +388,26 @@ $cities = [
         <span class="text-[#8a6a45]">One Team You Can Trust.</span>
       </h2>
     </div>
-
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
       <?php foreach ( $services as $i => $svc ) : ?>
-      <div class="ev-reveal group bg-[#f5f2ef] border border-[#e6e3df] rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,.5)]"
+      <div class="ev-reveal group bg-[#f5f2ef] border border-[#e6e3df] rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,.1)]"
            style="transition-delay:<?php echo $i * 120; ?>ms;">
         <!-- Image -->
-        <div class="overflow-hidden">
-          <div class="aspect-video bg-[#ddd8d0] flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-4 transition-transform duration-500 group-hover:scale-105">
-            {{-- Replace with: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/service-<?php echo $i + 1; ?>.jpg" class="w-full h-full object-cover" alt="<?php echo $svc['title']; ?>"> --}}
-            <?php echo $svc['ph']; ?>
+        <div class="overflow-hidden aspect-video relative bg-[#ddd8d0]">
+          <?php if ( ! empty( $svc['img'] ) ) : ?>
+          <img src="<?php echo esc_url( $svc['img'] ); ?>" alt="<?php echo esc_attr( $svc['title'] ); ?>"
+               class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+          <?php else : ?>
+          <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-4 transition-transform duration-500 group-hover:scale-105">
+            <?php echo esc_html( $svc['ph'] ); ?>
           </div>
+          <?php endif; ?>
         </div>
         <!-- Body -->
         <div class="p-5 pb-6">
           <h3 class="font-['Playfair_Display'] text-[17px] font-bold text-[#0b0b0c] mb-2.5 leading-snug"><?php echo $svc['title']; ?></h3>
           <p class="text-[13px] font-light text-[#7a7f85] leading-[1.7] mb-4"><?php echo $svc['copy']; ?></p>
-          <a href="<?php echo $svc['href']; ?>" class="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-[.08em] uppercase text-[#8a6a45] hover:opacity-70 transition-opacity">
+          <a href="<?php echo esc_url( $svc['href'] ); ?>" class="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-[.08em] uppercase text-[#8a6a45] hover:opacity-70 transition-opacity">
             Learn More
             <svg class="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
           </a>
@@ -409,7 +424,6 @@ $cities = [
      ════════════════════════════════════════════════ -->
 <section class="bg-[#f5f2ef] border-t border-b border-[#e6e3df] py-24">
   <div class="max-w-[1280px] mx-auto px-10">
-
     <div class="text-center mb-14 ev-reveal">
       <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">Why Choose Us</span>
       <h2 class="font-['Playfair_Display'] text-[clamp(26px,3.5vw,42px)] font-bold text-[#0b0b0c] leading-[1.18]">
@@ -417,12 +431,11 @@ $cities = [
         <span class="text-[#8a6a45]">We Deliver Certainty.</span>
       </h2>
     </div>
-
     <div id="ev-pillars" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       <?php foreach ( $pillars as $i => $p ) : ?>
       <div class="ev-pillar ev-reveal border border-[#d8d4ce] rounded-xl p-8 bg-white transition-all duration-500 <?php echo $i === 0 ? 'ev-pillar-lit' : ''; ?>"
            style="transition-delay:<?php echo $i * 100; ?>ms;" data-pillar="<?php echo $i; ?>">
-        <div class="w-10 h-10 rounded-lg bg-white border border-[#d8d4ce] flex items-center justify-center mb-5">
+        <div class="w-10 h-10 rounded-lg bg-[#f5f2ef] border border-[#d8d4ce] flex items-center justify-center mb-5">
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#8a6a45" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="<?php echo $p['path']; ?>"/></svg>
         </div>
         <h3 class="font-['Playfair_Display'] text-[17px] font-bold text-[#0b0b0c] mb-3"><?php echo $p['title']; ?></h3>
@@ -432,13 +445,8 @@ $cities = [
     </div>
   </div>
 </section>
-
 <style>
-.ev-pillar-lit {
-  border-color: rgba(138,106,69,.55) !important;
-  box-shadow: 0 0 40px rgba(138,106,69,.08);
-  background: #fdf8f4 !important;
-}
+.ev-pillar-lit { border-color:rgba(138,106,69,.55)!important; box-shadow:0 0 40px rgba(138,106,69,.08); background:#fdf8f4!important; }
 </style>
 
 
@@ -447,7 +455,6 @@ $cities = [
      ════════════════════════════════════════════════ -->
 <section class="bg-white py-24">
   <div class="max-w-[1100px] mx-auto px-10">
-
     <div class="text-center mb-20 ev-reveal">
       <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">Our Process</span>
       <h2 class="font-['Playfair_Display'] text-[clamp(26px,3.5vw,42px)] font-bold text-[#0b0b0c] leading-[1.18]">
@@ -455,10 +462,7 @@ $cities = [
         <span class="text-[#8a6a45]">No Guesswork. No Surprises.</span>
       </h2>
     </div>
-
-    <!-- Timeline -->
     <div class="relative">
-      <!-- Center line (desktop) -->
       <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-[#e6e3df] -translate-x-1/2"></div>
 
       <?php foreach ( $steps as $i => $step ) : ?>
@@ -466,37 +470,29 @@ $cities = [
            data-step="<?php echo $i; ?>">
 
         <?php if ( $step['side'] === 'left' ) : ?>
-          <!-- Content LEFT -->
           <div class="md:pr-14 md:text-right mb-6 md:mb-0">
             <div class="text-[10px] font-semibold tracking-[.18em] uppercase text-[#8a6a45] mb-2">Step <?php echo $step['num']; ?></div>
             <h3 class="font-['Playfair_Display'] text-xl font-bold text-[#0b0b0c] mb-3"><?php echo $step['title']; ?></h3>
             <p class="text-[13px] font-light text-[#7a7f85] leading-[1.75]"><?php echo $step['copy']; ?></p>
           </div>
-          <!-- Dot -->
           <div class="ev-step-dot hidden md:flex w-[52px] h-[52px] flex-shrink-0 rounded-full items-center justify-center bg-[#f5f2ef] border-2 border-[#e6e3df] z-10 transition-all duration-500 mx-auto">
             <span class="font-['Playfair_Display'] text-[13px] font-bold text-[#8a6a45]"><?php echo $step['num']; ?></span>
           </div>
-          <!-- Image RIGHT -->
           <div class="md:pl-14">
-            <div class="rounded-xl border border-[#e6e3df] bg-white h-44 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6">
-              {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/step-<?php echo $i+1; ?>.jpg" class="w-full h-full object-cover rounded-xl"> --}}
-              <?php echo $step['ph']; ?>
+            <div class="rounded-xl border border-[#e6e3df] overflow-hidden h-44 relative bg-white">
+              <?php ev_img( $step['img'], $step['title'], 'absolute inset-0 w-full h-full object-cover rounded-xl', $step['ph'], '#f0ece8' ); ?>
             </div>
           </div>
 
         <?php else : ?>
-          <!-- Image LEFT -->
           <div class="md:pr-14 mb-6 md:mb-0">
-            <div class="rounded-xl border border-[#e6e3df] bg-white h-44 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6">
-              {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/step-<?php echo $i+1; ?>.jpg" class="w-full h-full object-cover rounded-xl"> --}}
-              <?php echo $step['ph']; ?>
+            <div class="rounded-xl border border-[#e6e3df] overflow-hidden h-44 relative bg-white">
+              <?php ev_img( $step['img'], $step['title'], 'absolute inset-0 w-full h-full object-cover rounded-xl', $step['ph'], '#f0ece8' ); ?>
             </div>
           </div>
-          <!-- Dot -->
           <div class="ev-step-dot hidden md:flex w-[52px] h-[52px] flex-shrink-0 rounded-full items-center justify-center bg-[#f5f2ef] border-2 border-[#e6e3df] z-10 transition-all duration-500 mx-auto">
             <span class="font-['Playfair_Display'] text-[13px] font-bold text-[#8a6a45]"><?php echo $step['num']; ?></span>
           </div>
-          <!-- Content RIGHT -->
           <div class="md:pl-14">
             <div class="text-[10px] font-semibold tracking-[.18em] uppercase text-[#8a6a45] mb-2">Step <?php echo $step['num']; ?></div>
             <h3 class="font-['Playfair_Display'] text-xl font-bold text-[#0b0b0c] mb-3"><?php echo $step['title']; ?></h3>
@@ -516,39 +512,37 @@ $cities = [
      ════════════════════════════════════════════════ -->
 <section class="bg-[#f5f2ef] border-t border-b border-[#e6e3df] py-24">
   <div class="max-w-[1280px] mx-auto px-10">
-
     <div class="text-center mb-14 ev-reveal">
       <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">Portfolio</span>
       <h2 class="font-['Playfair_Display'] text-[clamp(26px,3.5vw,42px)] font-bold text-[#0b0b0c]">
         Real Projects. <span class="text-[#8a6a45]">Real Results.</span>
       </h2>
     </div>
-
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <?php foreach ( $ba_projects as $i => $proj ) : ?>
       <div class="ev-reveal" style="transition-delay:<?php echo ( $i % 2 ) * 120; ?>ms;">
-        <!-- B&A drag wrapper -->
         <div class="ev-ba relative overflow-hidden rounded-xl border border-[#e6e3df] cursor-col-resize select-none" data-ba="<?php echo $i; ?>">
-          <!-- Before -->
-          <div class="aspect-video bg-[#ddd8d0] flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6">
-            {{-- Before image: background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/before-<?php echo $i+1; ?>.jpg') --}}
-            BEFORE — <?php echo $proj['label']; ?>
+          <!-- Before layer -->
+          <div class="aspect-video relative bg-[#ddd8d0]">
+            <?php ev_img( $proj['img_before'], 'Before — ' . $proj['label'], 'absolute inset-0 w-full h-full object-cover', 'BEFORE — ' . $proj['label'], '#ddd8d0' ); ?>
           </div>
-          <!-- After (clipped) -->
-          <div class="ev-ba-after absolute inset-0 bg-[#c8d4b8] flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6"
-               style="clip-path:inset(0 50% 0 0);background-size:cover;background-position:center;">
-            {{-- After image: background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/after-<?php echo $i+1; ?>.jpg') --}}
-            AFTER — <?php echo $proj['label']; ?>
+          <!-- After layer (clipped) -->
+          <div class="ev-ba-after absolute inset-0 bg-[#c8d4b8]"
+               style="clip-path:inset(0 50% 0 0);background-size:cover;background-position:center;<?php if ( ! empty( $proj['img_after'] ) ) echo 'background-image:url(' . esc_url( $proj['img_after'] ) . ');'; ?>">
+            <?php if ( empty( $proj['img_after'] ) ) : ?>
+            <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6">
+              AFTER — <?php echo esc_html( $proj['label'] ); ?>
+            </div>
+            <?php endif; ?>
           </div>
           <!-- Handle -->
           <div class="ev-ba-handle absolute top-0 bottom-0 w-0.5 bg-[#8a6a45] left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none">
             <div class="w-9 h-9 rounded-full bg-[#8a6a45] flex items-center justify-center shadow-[0_2px_12px_rgba(138,106,69,.4)]">
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="#0f0f0f" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15M15.75 9L12 5.25 8.25 9"/></svg>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15M15.75 9L12 5.25 8.25 9"/></svg>
             </div>
           </div>
-          <!-- Labels -->
-          <span class="absolute top-3 left-4 text-[9px] font-bold tracking-[.12em] uppercase text-[rgba(255,255,255,.4)]">Before</span>
-          <span class="absolute top-3 right-4 text-[9px] font-bold tracking-[.12em] uppercase text-[rgba(255,255,255,.4)]">After</span>
+          <span class="absolute top-3 left-4 text-[9px] font-bold tracking-[.12em] uppercase text-[rgba(255,255,255,.55)]">Before</span>
+          <span class="absolute top-3 right-4 text-[9px] font-bold tracking-[.12em] uppercase text-[rgba(255,255,255,.55)]">After</span>
         </div>
         <div class="flex items-center justify-between pt-3 px-1">
           <span class="font-['Playfair_Display'] text-[15px] font-semibold text-[#0b0b0c]"><?php echo $proj['label']; ?></span>
@@ -557,7 +551,6 @@ $cities = [
       </div>
       <?php endforeach; ?>
     </div>
-
     <div class="text-center mt-12">
       <a href="/our-work" class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[.08em] uppercase text-[#0b0b0c] border border-[#d8d4ce] px-8 py-3.5 rounded-md hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
         View Full Portfolio
@@ -572,7 +565,6 @@ $cities = [
      ════════════════════════════════════════════════ -->
 <section class="bg-white py-24">
   <div class="max-w-[1280px] mx-auto px-10">
-
     <div class="text-center mb-12 ev-reveal">
       <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">Client Reviews</span>
       <h2 class="font-['Playfair_Display'] text-[clamp(26px,3.5vw,42px)] font-bold text-[#0b0b0c] mb-4">What Our Clients Say</h2>
@@ -585,7 +577,6 @@ $cities = [
         <span class="text-[13px] text-[#7a7f85]">5.0 · 80+ Google Reviews</span>
       </div>
     </div>
-
     <div class="overflow-hidden" id="ev-reviews-vp">
       <div id="ev-reviews-track" class="flex gap-5 transition-transform duration-500 ease-[cubic-bezier(.25,.46,.45,.94)] will-change-transform">
         <?php foreach ( $reviews as $r ) : ?>
@@ -608,9 +599,8 @@ $cities = [
       </div>
     </div>
     <div id="ev-review-dots" class="flex justify-center gap-2 mt-8"></div>
-
     <div class="text-center mt-7">
-      <a href="https://g.page/r/everridge" target="_blank" rel="noopener" class="text-[11px] font-medium text-[#7a7f85] border-b border-[#e6e3df] pb-px hover:text-[#7a7f85] transition-colors">
+      <a href="https://g.page/r/everridge" target="_blank" rel="noopener" class="text-[11px] font-medium text-[#7a7f85] border-b border-[#e6e3df] pb-px hover:text-[#8a6a45] transition-colors">
         Read all reviews on Google ↗
       </a>
     </div>
@@ -623,7 +613,6 @@ $cities = [
      ════════════════════════════════════════════════ -->
 <section class="bg-[#f5f2ef] border-t border-b border-[#e6e3df] py-24">
   <div class="max-w-[1280px] mx-auto px-10">
-
     <div class="text-center mb-14 ev-reveal">
       <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">Where We Work</span>
       <h2 class="font-['Playfair_Display'] text-[clamp(24px,3vw,40px)] font-bold text-[#0b0b0c]">
@@ -631,22 +620,21 @@ $cities = [
         <span class="text-[#8a6a45]">Most Valued Communities</span>
       </h2>
     </div>
-
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
       <?php foreach ( $cities as $i => $city ) : ?>
-      <a href="<?php echo $city['href']; ?>"
+      <a href="<?php echo esc_url( $city['href'] ); ?>"
          class="ev-reveal group relative overflow-hidden rounded-lg aspect-[4/3] block"
          style="transition-delay:<?php echo ( $i % 4 ) * 80; ?>ms;"
-         aria-label="<?php echo $city['name']; ?>">
-        <!-- BG image placeholder -->
-        <div class="absolute inset-0 bg-[#c8c0b0] transition-transform duration-500 group-hover:scale-105">
-          {{-- Replace with: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/city-<?php echo $i+1; ?>.jpg" class="w-full h-full object-cover"> --}}
+         aria-label="<?php echo esc_attr( $city['name'] ); ?>">
+        <!-- City background image -->
+        <div class="absolute inset-0 bg-[#c8c0b0] transition-transform duration-500 group-hover:scale-105 bg-cover bg-center"
+             style="<?php if ( ! empty( $city['img'] ) ) echo 'background-image:url(' . esc_url( $city['img'] ) . ');'; ?>">
         </div>
         <!-- Overlay -->
-        <div class="absolute inset-0 bg-[rgba(0,0,0,.55)] group-hover:bg-[rgba(0,0,0,.42)] transition-colors duration-300 flex flex-col items-start justify-end p-5">
+        <div class="absolute inset-0 bg-[rgba(0,0,0,.52)] group-hover:bg-[rgba(0,0,0,.38)] transition-colors duration-300 flex flex-col items-start justify-end p-5">
           <span class="text-[9px] font-semibold tracking-[.18em] uppercase text-[#8a6a45] mb-1">Michigan</span>
           <span class="font-['Playfair_Display'] text-base font-bold text-[#e6e3df]"><?php echo $city['name']; ?></span>
-          <span class="text-[10px] text-[rgba(240,236,230,.35)] mt-1">Premium hardscape & landscape</span>
+          <span class="text-[10px] text-[rgba(230,227,223,.38)] mt-1">Premium hardscape & landscape</span>
         </div>
       </a>
       <?php endforeach; ?>
@@ -659,44 +647,39 @@ $cities = [
      SECTION 10 — FINAL CTA
      ════════════════════════════════════════════════ -->
 <section class="relative overflow-hidden py-28 md:py-36">
-  <!-- BG image placeholder -->
-  <div class="absolute inset-0 bg-[#080808]" style="background-attachment:fixed;background-size:cover;background-position:center;">
-    {{-- Replace: background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/cta-hero.jpg') --}}
-    <div class="absolute inset-0 flex items-center justify-center text-[11px] text-[#2a2a2a] tracking-widest uppercase">Most impressive completed project — golden hour hero shot</div>
+  <div class="absolute inset-0 bg-[#0b0b0c]"
+       style="background-size:cover;background-position:center;background-attachment:fixed;<?php if ( ! empty( $cta_img ) ) echo 'background-image:url(' . esc_url( $cta_img ) . ');'; ?>">
+    <?php if ( empty( $cta_img ) ) : ?>
+    <div class="absolute inset-0 flex items-center justify-center text-[11px] text-[#2a2a2a] tracking-widest uppercase">
+      Most impressive completed project — golden hour hero shot
+    </div>
+    <?php endif; ?>
   </div>
   <div class="absolute inset-0 bg-[rgba(0,0,0,.68)]"></div>
-
   <div class="relative z-10 max-w-[760px] mx-auto px-10 text-center">
     <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-4">Get Started Today</span>
     <h2 class="font-['Playfair_Display'] text-[clamp(30px,5vw,58px)] font-bold text-[#e6e3df] leading-[1.1] mb-5">
       Ready to See Your Property<br>
       <em class="italic text-[#8a6a45]">Redesigned?</em>
     </h2>
-    <p class="text-[15px] font-light text-[rgba(240,236,230,.62)] leading-relaxed mb-10 max-w-lg mx-auto">
+    <p class="text-[15px] font-light text-[rgba(230,227,223,.62)] leading-relaxed mb-10 max-w-lg mx-auto">
       Whether you're planning a paver patio, a complete landscape transformation, or want to see what outdoor lighting can do for your home — request a free estimate and see your project in 3D before we break ground.
     </p>
-
-    <a href="tel:+17705550192"
-       class="block font-['Playfair_Display'] font-bold text-[#8a6a45] text-[clamp(28px,4vw,44px)] tracking-tight mb-9 hover:opacity-75 transition-opacity">
+    <a href="tel:+17705550192" class="block font-['Playfair_Display'] font-bold text-[#8a6a45] text-[clamp(28px,4vw,44px)] tracking-tight mb-9 hover:opacity-75 transition-opacity">
       (770) 555-0192
     </a>
-
     <div class="flex flex-wrap gap-3 justify-center">
-      <a href="/contact"
-         class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-9 py-4 rounded-md hover:opacity-85 transition-opacity"
-         style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
+      <a href="/contact" class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-white px-9 py-4 rounded-md hover:opacity-85 transition-opacity" style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
         Request a Free Estimate
         <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
       </a>
-      <a href="/our-work"
-         class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.82)] border border-[rgba(240,236,230,.18)] px-8 py-4 rounded-md hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
+      <a href="/our-work" class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(230,227,223,.82)] border border-[rgba(230,227,223,.18)] px-8 py-4 rounded-md hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
         View Our Work
       </a>
     </div>
-
     <div class="flex items-center justify-center gap-6 flex-wrap mt-10">
       <?php foreach ( [ 'Licensed & Insured', '17+ Years Experience', '5-Star Rated', 'SE Michigan' ] as $b ) : ?>
-      <span class="text-[10px] text-[rgba(240,236,230,.22)] tracking-[.06em]"><?php echo $b; ?></span>
+      <span class="text-[10px] text-[rgba(230,227,223,.22)] tracking-[.06em]"><?php echo $b; ?></span>
       <?php endforeach; ?>
     </div>
   </div>
@@ -710,14 +693,13 @@ $cities = [
 (function () {
 
   /* ── HERO SLIDER ─────────────────────── */
-  const hero     = document.getElementById('ev-hero');
-  const slides   = hero.querySelectorAll('.ev-slide');
+  const hero = document.getElementById('ev-hero');
+  const slides = hero.querySelectorAll('.ev-slide');
   const dotsWrap = document.getElementById('ev-dots');
   const progress = document.getElementById('ev-progress');
   const INTERVAL = 5000;
   let cur = 0, paused = false, timer;
 
-  // Build dots
   slides.forEach((_, i) => {
     const d = document.createElement('button');
     d.className = 'h-[3px] rounded-[2px] border-none p-0 cursor-pointer transition-all duration-300 ' + (i === 0 ? 'w-11 bg-[#8a6a45]' : 'w-7 bg-[rgba(255,255,255,.25)]');
@@ -751,10 +733,9 @@ $cities = [
   hero.addEventListener('mouseenter', () => paused = true);
   hero.addEventListener('mouseleave', () => paused = false);
 
-  // Touch swipe
   let tx = 0;
   hero.addEventListener('touchstart', e => tx = e.touches[0].clientX, { passive: true });
-  hero.addEventListener('touchend',   e => { if (Math.abs(e.changedTouches[0].clientX - tx) > 44) { go(cur + (e.changedTouches[0].clientX < tx ? 1 : -1)); reset(); } });
+  hero.addEventListener('touchend', e => { if (Math.abs(e.changedTouches[0].clientX - tx) > 44) { go(cur + (e.changedTouches[0].clientX < tx ? 1 : -1)); reset(); } });
 
   startProgress();
   reset();
@@ -762,25 +743,15 @@ $cities = [
 
   /* ── SCROLL REVEAL ───────────────────── */
   const ro = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('opacity-100', 'translate-y-0', 'translate-x-0'); e.target.classList.remove('opacity-0', 'translate-y-7', '-translate-x-8', 'translate-x-8'); ro.unobserve(e.target); } });
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('opacity-100','translate-y-0','translate-x-0'); e.target.classList.remove('opacity-0','translate-y-7','-translate-x-8','translate-x-8'); ro.unobserve(e.target); } });
   }, { threshold: 0.12 });
-
-  document.querySelectorAll('.ev-reveal').forEach(el => {
-    el.classList.add('opacity-0', 'translate-y-7', 'transition-all', 'duration-700');
-    ro.observe(el);
-  });
-  document.querySelectorAll('.ev-reveal-left').forEach(el => {
-    el.classList.add('opacity-0', '-translate-x-8', 'transition-all', 'duration-700');
-    ro.observe(el);
-  });
-  document.querySelectorAll('.ev-reveal-right').forEach(el => {
-    el.classList.add('opacity-0', 'translate-x-8', 'transition-all', 'duration-700');
-    ro.observe(el);
-  });
+  document.querySelectorAll('.ev-reveal').forEach(el => { el.classList.add('opacity-0','translate-y-7','transition-all','duration-700'); ro.observe(el); });
+  document.querySelectorAll('.ev-reveal-left').forEach(el => { el.classList.add('opacity-0','-translate-x-8','transition-all','duration-700'); ro.observe(el); });
+  document.querySelectorAll('.ev-reveal-right').forEach(el => { el.classList.add('opacity-0','translate-x-8','transition-all','duration-700'); ro.observe(el); });
 
 
   /* ── PROCESS STEP LIGHTS ─────────────── */
-  const stepEls  = document.querySelectorAll('.ev-step');
+  const stepEls = document.querySelectorAll('.ev-step');
   const stepDots = document.querySelectorAll('.ev-step-dot');
   const so = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -797,43 +768,37 @@ $cities = [
   /* ── PILLAR CYCLING ──────────────────── */
   const pillars = document.querySelectorAll('.ev-pillar');
   let ap = 0;
-  if (pillars.length) setInterval(() => {
-    pillars[ap].classList.remove('ev-pillar-lit');
-    ap = (ap + 1) % pillars.length;
-    pillars[ap].classList.add('ev-pillar-lit');
-  }, 4000);
+  if (pillars.length) setInterval(() => { pillars[ap].classList.remove('ev-pillar-lit'); ap = (ap + 1) % pillars.length; pillars[ap].classList.add('ev-pillar-lit'); }, 4000);
 
 
   /* ── BEFORE / AFTER DRAG ─────────────── */
   document.querySelectorAll('.ev-ba').forEach(wrap => {
-    const after  = wrap.querySelector('.ev-ba-after');
+    const after = wrap.querySelector('.ev-ba-after');
     const handle = wrap.querySelector('.ev-ba-handle');
     let drag = false;
-
     const setPos = x => {
-      const r   = wrap.getBoundingClientRect();
+      const r = wrap.getBoundingClientRect();
       const pct = Math.min(Math.max((x - r.left) / r.width, 0), 1) * 100;
       after.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
-      handle.style.left    = pct + '%';
+      handle.style.left = pct + '%';
     };
-
-    wrap.addEventListener('mousedown',  e => { drag = true; setPos(e.clientX); });
+    wrap.addEventListener('mousedown', e => { drag = true; setPos(e.clientX); });
     wrap.addEventListener('touchstart', e => { drag = true; setPos(e.touches[0].clientX); }, { passive: true });
-    window.addEventListener('mousemove',  e => { if (drag) setPos(e.clientX); });
-    window.addEventListener('touchmove',  e => { if (drag) setPos(e.touches[0].clientX); }, { passive: true });
-    window.addEventListener('mouseup',   () => drag = false);
-    window.addEventListener('touchend',  () => drag = false);
+    window.addEventListener('mousemove', e => { if (drag) setPos(e.clientX); });
+    window.addEventListener('touchmove', e => { if (drag) setPos(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('mouseup', () => drag = false);
+    window.addEventListener('touchend', () => drag = false);
   });
 
 
   /* ── TESTIMONIAL CAROUSEL ────────────── */
-  const rvp   = document.getElementById('ev-reviews-vp');
+  const rvp = document.getElementById('ev-reviews-vp');
   const track = document.getElementById('ev-reviews-track');
   const rdots = document.getElementById('ev-review-dots');
   if (track && rdots) {
-    const cards   = track.querySelectorAll(':scope > div');
-    const vis     = window.innerWidth < 768 ? 1 : 3;
-    const pages   = Math.ceil(cards.length / vis);
+    const cards = track.querySelectorAll(':scope > div');
+    const vis = window.innerWidth < 768 ? 1 : 3;
+    const pages = Math.ceil(cards.length / vis);
     let rp = 0, rpaused = false, rtimer;
 
     for (let i = 0; i < pages; i++) {
@@ -847,67 +812,19 @@ $cities = [
       rp = (n + pages) % pages;
       const w = (cards[0].offsetWidth + 20) * vis;
       track.style.transform = 'translateX(-' + (rp * w) + 'px)';
-      rdots.querySelectorAll('button').forEach((d, i) => {
-        d.style.background = i === rp ? '#8a6a45' : 'rgba(0,0,0,.15)';
-        d.style.width      = i === rp ? '42px'    : '28px';
-      });
+      rdots.querySelectorAll('button').forEach((d, i) => { d.style.background = i === rp ? '#8a6a45' : 'rgba(0,0,0,.15)'; d.style.width = i === rp ? '42px' : '28px'; });
     }
 
     function rReset() { clearInterval(rtimer); rtimer = setInterval(() => { if (!rpaused) rGo(rp + 1); }, 6000); }
-
     rvp.addEventListener('mouseenter', () => rpaused = true);
     rvp.addEventListener('mouseleave', () => rpaused = false);
     let rtx = 0;
     rvp.addEventListener('touchstart', e => rtx = e.touches[0].clientX, { passive: true });
-    rvp.addEventListener('touchend',   e => { if (Math.abs(e.changedTouches[0].clientX - rtx) > 44) { rGo(rp + (e.changedTouches[0].clientX < rtx ? 1 : -1)); rReset(); } });
-
+    rvp.addEventListener('touchend', e => { if (Math.abs(e.changedTouches[0].clientX - rtx) > 44) { rGo(rp + (e.changedTouches[0].clientX < rtx ? 1 : -1)); rReset(); } });
     rReset();
   }
 
-
-  /* ── FORM VALIDATION ─────────────────── */
-  const form = document.getElementById('ev-form');
-  if (form) {
-    const rules = {
-      full_name: { test: v => v.length > 1,                         msg: 'Please enter your name.' },
-      phone:     { test: v => v.replace(/\D/g,'').length >= 7,      msg: 'Please enter your phone number.' },
-      email:     { test: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), msg: 'Please enter a valid email.' },
-      service:   { test: v => v !== '',                              msg: 'Please select a service.' },
-      address:   { test: v => v.length > 2,                         msg: 'Please enter your address or city.' },
-    };
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      let ok = true;
-      Object.entries(rules).forEach(([name, rule]) => {
-        const el  = form.querySelector('[name="' + name + '"]');
-        const err = el?.nextElementSibling;
-        if (!el) return;
-        if (!rule.test(el.value.trim())) {
-          el.classList.add('border-red-500'); el.classList.remove('border-[#e6e3df]');
-          if (err) { err.textContent = rule.msg; err.classList.remove('hidden'); }
-          ok = false;
-        } else {
-          el.classList.remove('border-red-500'); el.classList.add('border-[#e6e3df]');
-          if (err) err.classList.add('hidden');
-        }
-      });
-
-      if (ok) {
-        form.querySelector('button[type="submit"]').style.display = 'none';
-        document.getElementById('ev-form-success').classList.remove('hidden');
-        // TODO: submit via fetch to admin-ajax.php or CF7 / WPForms endpoint
-      }
-    });
-
-    form.querySelectorAll('input, select, textarea').forEach(el => {
-      el.addEventListener('input', () => {
-        el.classList.remove('border-red-500');
-        const err = el.nextElementSibling;
-        if (err?.classList.contains('ev-err')) err.classList.add('hidden');
-      });
-    });
-  }
+  // Form validation handled by ContactForm.js React component
 
 })();
 </script>

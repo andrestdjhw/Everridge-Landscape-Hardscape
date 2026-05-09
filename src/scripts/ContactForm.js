@@ -5,10 +5,10 @@ import React, { useState, useEffect, useRef } from "react"
 //  EmailJS  → https://emailjs.com  (free up to 200 emails/month)
 //  reCAPTCHA → https://www.google.com/recaptcha/admin  (v2 "I'm not a robot")
 // ══════════════════════════════════════════════════════════════════════════════
-const EMAILJS_PUBLIC_KEY  = "YOUR_EMAILJS_PUBLIC_KEY"   // Account > API Keys
-const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID"           // Email Services tab
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"          // Email Templates tab
-const RECAPTCHA_SITE_KEY  = "YOUR_RECAPTCHA_SITE_KEY"   // reCAPTCHA Admin Console
+const EMAILJS_PUBLIC_KEY  = "stbQfV1XDrMzJ1pCJ"   // Account > API Keys
+const EMAILJS_SERVICE_ID  = "service_d1i83um"           // Email Services tab
+const EMAILJS_TEMPLATE_ID = "template_ve4aw08"          // Email Templates tab
+const RECAPTCHA_SITE_KEY  = "6Lcf0OEsAAAAAPn21zHfnaJJlWaiJMFT7WGV_wyr"   // reCAPTCHA Admin Console
 
 // ══════════════════════════════════════════════════════════════════════════════
 //  EmailJS template variables expected:

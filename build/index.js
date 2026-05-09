@@ -24,10 +24,10 @@ __webpack_require__.r(__webpack_exports__);
 //  reCAPTCHA → https://www.google.com/recaptcha/admin  (v2 "I'm not a robot")
 // ══════════════════════════════════════════════════════════════════════════════
 
-const EMAILJS_PUBLIC_KEY = "YOUR_EMAILJS_PUBLIC_KEY"; // Account > API Keys
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID"; // Email Services tab
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Email Templates tab
-const RECAPTCHA_SITE_KEY = "YOUR_RECAPTCHA_SITE_KEY"; // reCAPTCHA Admin Console
+const EMAILJS_PUBLIC_KEY = "stbQfV1XDrMzJ1pCJ"; // Account > API Keys
+const EMAILJS_SERVICE_ID = "service_d1i83um"; // Email Services tab
+const EMAILJS_TEMPLATE_ID = "template_ve4aw08"; // Email Templates tab
+const RECAPTCHA_SITE_KEY = "6Lcf0OEsAAAAAPn21zHfnaJJlWaiJMFT7WGV_wyr"; // reCAPTCHA Admin Console
 
 // ══════════════════════════════════════════════════════════════════════════════
 //  EmailJS template variables expected:
@@ -670,7 +670,7 @@ const COMPANY = {
   name: "Everridge Landscape & Hardscape",
   tagline: "Crafting Outdoor Spaces with Precision.",
   phone: "(770) 555-0192",
-  email: "info@everridgelandscape.com",
+  email: "info@everridgeus.com",
   address: "1245 Peachtree Industrial Blvd,\nSuite 300, Atlanta, GA 30338",
   license: "GA Contractor License #CN-204817"
 };
@@ -689,28 +689,28 @@ const SERVICES = [{
 }];
 const CITIES = [{
   label: "Atlanta",
-  href: "/locations/atlanta"
+  href: ""
 }, {
   label: "Marietta",
-  href: "/locations/marietta"
+  href: ""
 }, {
   label: "Roswell",
-  href: "/locations/roswell"
+  href: ""
 }, {
   label: "Alpharetta",
-  href: "/locations/alpharetta"
+  href: ""
 }, {
   label: "Kennesaw",
-  href: "/locations/kennesaw"
+  href: ""
 }, {
   label: "Smyrna",
-  href: "/locations/smyrna"
+  href: ""
 }, {
   label: "Dunwoody",
-  href: "/locations/dunwoody"
+  href: ""
 }, {
   label: "Woodstock",
-  href: "/locations/woodstock"
+  href: ""
 }];
 const LEGAL = [{
   label: "Privacy Policy",
@@ -1282,7 +1282,7 @@ function Footer() {
             href: "/about"
           }, {
             label: "Our Work",
-            href: "/our-work"
+            href: "#"
           }, {
             label: "Testimonials",
             href: "/reviews"
@@ -1456,34 +1456,18 @@ const NAV_LINKS = [{
   }]
 }, {
   label: "Our Work",
-  href: "/our-work"
+  href: "#"
 }, {
   label: "Locations",
-  href: "/locations",
-  dropdown: [{
-    label: "Atlanta, GA",
-    href: "/locations/atlanta"
-  }, {
-    label: "Marietta, GA",
-    href: "/locations/marietta"
-  }, {
-    label: "Roswell, GA",
-    href: "/locations/roswell"
-  }, {
-    label: "Alpharetta, GA",
-    href: "/locations/alpharetta"
-  }, {
-    label: "Kennesaw, GA",
-    href: "/locations/kennesaw"
-  }]
+  href: "/locations"
 }, {
   label: "Contact",
   href: "/contact"
 }];
 const PHONE = "(770) 555-0192";
 const PHONE_HREF = "tel:+17705550192";
-const EMAIL = "info@everridgelandscape.com";
-const EMAIL_HREF = "mailto:info@everridgelandscape.com";
+const EMAIL = "info@everridgeus.com";
+const EMAIL_HREF = "mailto:info@everridgeus.com";
 const ADDRESS = "Clinton Township, MI";
 const MAPS_HREF = "https://maps.google.com/?q=Clinton+Township+MI";
 const CTA_HREF = "/contact";
