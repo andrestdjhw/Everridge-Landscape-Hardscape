@@ -39,11 +39,6 @@ const SOCIAL_LINKS = [
     icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>,
   },
   {
-    label: "Houzz",
-    href:  "https://houzz.com",
-    icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 0v9.7L12 7.4l5.5 2.3V0H6.5zm11 9.7L12 7.4l-5.5 2.3V24h4.6v-6.9h1.8V24H17.5V9.7z"/></svg>,
-  },
-  {
     label: "LinkedIn",
     href:  "https://linkedin.com/company/everridgelandscape",
     icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>,
@@ -51,24 +46,21 @@ const SOCIAL_LINKS = [
 ]
 
 // ── Tokens ────────────────────────────────────────────────────────────────────
-const GOLD    = "#c9a96e"
-const GOLD_DK = "#b8924a"
-const BG      = "#0f0f0f"
-const BG2     = "#1a1a1a"
-const BG3     = "#242424"
+const GOLD    = "#8a6a45"
+const GOLD_DK = "#7a5c38"
+const BG      = "#ffffff"
+const BG2     = "#f5f2ef"
+const BG3     = "#e6e3df"
 const GREEN   = "#1f3a32"
-const BORDER  = "#2a2a2a"
+const BORDER  = "#e0dbd4"
 
 // ── Fonts ─────────────────────────────────────────────────────────────────────
 function useFonts() {
-  useEffect(() => {
-    if (document.getElementById("everridge-fonts")) return
-    const link = document.createElement("link")
-    link.id   = "everridge-fonts"
-    link.rel  = "stylesheet"
-    link.href = "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
-    document.head.appendChild(link)
-  }, [])
+  // Fonts are self-hosted via fonts.css enqueued in functions.php.
+  // Gotham Book  → body / UI text
+  // Articulat CF → headings
+  // No Google Fonts needed.
+  useEffect(() => {}, [])
 }
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
@@ -130,7 +122,7 @@ function Dropdown({ items, isOpen }) {
       width: 220,
       background: BG2,
       border: `1px solid ${BORDER}`,
-      borderRadius: 8,
+      borderRadius: 0,
       overflow: "hidden",
       zIndex: 100,
       boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
@@ -145,14 +137,14 @@ function Dropdown({ items, isOpen }) {
           <a key={item.href} href={item.href} style={{
             display: "flex", alignItems: "center", justifyContent: "space-between",
             padding: "10px 18px",
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "'Gotham Book', sans-serif",
             fontSize: 13, fontWeight: 400,
-            color: "#808078", textDecoration: "none",
+            color: "#2f3133", textDecoration: "none",
             letterSpacing: "0.01em",
             transition: "color 0.15s, background 0.15s",
           }}
             onMouseEnter={e => { e.currentTarget.style.color = GOLD; e.currentTarget.style.background = BG3 }}
-            onMouseLeave={e => { e.currentTarget.style.color = "#808078"; e.currentTarget.style.background = "transparent" }}
+            onMouseLeave={e => { e.currentTarget.style.color = "#2f3133"; e.currentTarget.style.background = "transparent" }}
           >
             {item.label}
             <span style={{ color: GOLD, opacity: 0.4 }}><ArrowRight /></span>
@@ -201,25 +193,16 @@ function MobileMenu({ isOpen, onClose }) {
           borderBottom: `1px solid ${BORDER}`,
           flexShrink: 0,
         }}>
-          <a href="/" onClick={onClose} style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-            <div style={{
-              width: 30, height: 30,
-              background: `linear-gradient(150deg, ${GREEN}, #152a22)`,
-              borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center",
-            }}>
-              <svg viewBox="0 0 24 24" fill="none" width="15" height="15" stroke={GOLD} strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C6.5 2 2 7.5 2 13c0 4.4 3.6 8 8 8s8-3.6 8-8C18 7.5 13.5 2 12 2z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-9M8.5 16l3.5-4 3.5 4" />
-              </svg>
-            </div>
-            <span style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
-              fontSize: 16, fontWeight: 700, color: "#f0ece6",
-            }}>Everridge</span>
+          <a href="/" onClick={onClose} style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+            <img
+              src="/wp-content/uploads/2026/05/imagotipo_principal.png"
+              alt="Everridge Landscape & Hardscape"
+              style={{ height: 34, width: "auto", display: "block", objectFit: "contain" }}
+            />
           </a>
           <button onClick={onClose} style={{
-            background: BG3, border: "none", borderRadius: 6,
-            color: "#686860", padding: "7px 8px", cursor: "pointer",
+            background: BG3, border: "none", borderRadius: 0,
+            color: "#2f3133", padding: "7px 8px", cursor: "pointer",
             display: "flex", alignItems: "center",
           }}>
             <XIcon />
@@ -239,10 +222,10 @@ function MobileMenu({ isOpen, onClose }) {
                       justifyContent: "space-between",
                       padding: "13px 12px",
                       background: "none", border: "none", cursor: "pointer",
-                      fontFamily: "'DM Sans', sans-serif",
+                      fontFamily: "'Gotham Book', sans-serif",
                       fontSize: 15, fontWeight: 500,
-                      color: openSection === link.label ? GOLD : "#c8c4be",
-                      borderRadius: 8, transition: "color 0.15s",
+                      color: openSection === link.label ? GOLD : "#0b0b0c",
+                      borderRadius: 0, transition: "color 0.15s",
                     }}>
                     {link.label}
                     <ChevronDown open={openSection === link.label} />
@@ -256,13 +239,13 @@ function MobileMenu({ isOpen, onClose }) {
                       {link.dropdown.map(sub => (
                         <a key={sub.href} href={sub.href} style={{
                           display: "block", padding: "9px 12px",
-                          fontFamily: "'DM Sans', sans-serif",
+                          fontFamily: "'Gotham Book', sans-serif",
                           fontSize: 13, fontWeight: 400,
-                          color: "#585850", textDecoration: "none",
-                          borderRadius: 6, transition: "color 0.15s",
+                          color: "#7a7f85", textDecoration: "none",
+                          borderRadius: 0, transition: "color 0.15s",
                         }}
                           onMouseEnter={e => e.currentTarget.style.color = GOLD}
-                          onMouseLeave={e => e.currentTarget.style.color = "#585850"}
+                          onMouseLeave={e => e.currentTarget.style.color = "#7a7f85"}
                         >
                           — {sub.label}
                         </a>
@@ -273,9 +256,9 @@ function MobileMenu({ isOpen, onClose }) {
               ) : (
                 <a href={link.href} style={{
                   display: "block", padding: "13px 12px",
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Gotham Book', sans-serif",
                   fontSize: 15, fontWeight: 500,
-                  color: "#c8c4be", textDecoration: "none", borderRadius: 8,
+                  color: "#0b0b0c", textDecoration: "none", borderRadius: 0,
                 }}>
                   {link.label}
                 </a>
@@ -290,9 +273,9 @@ function MobileMenu({ isOpen, onClose }) {
             display: "block", textAlign: "center",
             background: `linear-gradient(135deg, ${GOLD}, ${GOLD_DK})`,
             color: "#0f0f0f",
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "'Gotham Book', sans-serif",
             fontSize: 12, fontWeight: 700,
-            padding: "14px 0", borderRadius: 8,
+            padding: "14px 0", borderRadius: 0,
             textDecoration: "none", letterSpacing: "0.1em",
             textTransform: "uppercase",
           }}>
@@ -301,7 +284,7 @@ function MobileMenu({ isOpen, onClose }) {
           <a href={PHONE_HREF} style={{
             display: "flex", alignItems: "center", justifyContent: "center", gap: 7,
             marginTop: 12,
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "'Gotham Book', sans-serif",
             fontSize: 13, fontWeight: 400,
             color: GOLD, textDecoration: "none", opacity: 0.8,
           }}>
@@ -310,7 +293,7 @@ function MobileMenu({ isOpen, onClose }) {
           <a href={EMAIL_HREF} style={{
             display: "flex", alignItems: "center", justifyContent: "center", gap: 7,
             marginTop: 8,
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "'Gotham Book', sans-serif",
             fontSize: 12, fontWeight: 400,
             color: "#686860", textDecoration: "none",
           }}>
@@ -325,11 +308,11 @@ function MobileMenu({ isOpen, onClose }) {
                   width: 36, height: 36,
                   display: "flex", alignItems: "center", justifyContent: "center",
                   background: BG3, border: `1px solid ${BORDER}`,
-                  borderRadius: 6, color: "#686860",
+                  borderRadius: 0, color: "#7a7f85",
                   textDecoration: "none", transition: "color 0.15s, border-color 0.15s",
                 }}
                 onMouseEnter={e => { e.currentTarget.style.color = GOLD; e.currentTarget.style.borderColor = GOLD }}
-                onMouseLeave={e => { e.currentTarget.style.color = "#686860"; e.currentTarget.style.borderColor = BORDER }}
+                onMouseLeave={e => { e.currentTarget.style.color = "#7a7f85"; e.currentTarget.style.borderColor = BORDER }}
               >
                 {s.icon}
               </a>
@@ -372,15 +355,15 @@ function Navbar() {
     <>
       <header ref={navRef} style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 50,
-        background: scrolled ? "rgba(10,10,10,0.96)" : BG,
+        background: scrolled ? "rgba(255,255,255,0.97)" : BG,
         borderBottom: `1px solid ${scrolled ? BORDER : "transparent"}`,
         backdropFilter: scrolled ? "blur(12px)" : "none",
-        boxShadow: scrolled ? "0 4px 40px rgba(0,0,0,0.5)" : "none",
+        boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.08)" : "none",
         transition: "background 0.35s, border-color 0.35s, box-shadow 0.35s",
       }}>
 
         {/* ── Top bar ── */}
-        <div style={{ background: BG2, borderBottom: `1px solid ${BORDER}` }}>
+        <div style={{ background: "#1a1a1a", borderBottom: "1px solid #2a2a2a" }}>
           <div style={{
             maxWidth: 1280, margin: "0 auto", padding: "0 24px",
             display: "flex", alignItems: "center", justifyContent: "space-between",
@@ -391,7 +374,7 @@ function Navbar() {
             <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
               <a href={PHONE_HREF} style={{
                 display: "flex", alignItems: "center", gap: 6,
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Gotham Book', sans-serif",
                 fontSize: 11, fontWeight: 500,
                 color: GOLD, textDecoration: "none",
                 transition: "opacity 0.15s",
@@ -403,7 +386,7 @@ function Navbar() {
               </a>
               <a href={EMAIL_HREF} className="hidden md:flex" style={{
                 alignItems: "center", gap: 6,
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Gotham Book', sans-serif",
                 fontSize: 11, fontWeight: 400,
                 color: "#686860", textDecoration: "none",
                 transition: "color 0.15s",
@@ -420,7 +403,7 @@ function Navbar() {
               className="hidden md:flex"
               style={{
                 alignItems: "center", gap: 6,
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Gotham Book', sans-serif",
                 fontSize: 11, fontWeight: 400,
                 color: "#686860", textDecoration: "none",
                 position: "absolute", left: "50%", transform: "translateX(-50%)",
@@ -441,7 +424,7 @@ function Navbar() {
                   style={{
                     width: 28, height: 28,
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    color: "#585850", textDecoration: "none", borderRadius: 4,
+                    color: "#585850", textDecoration: "none", borderRadius: 0,
                     transition: "color 0.15s",
                   }}
                   onMouseEnter={e => e.currentTarget.style.color = GOLD}
@@ -463,33 +446,17 @@ function Navbar() {
         }}>
 
           {/* Logo */}
-          <a href="/" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
-            {/* Swap for <img src={logoUrl} alt="Everridge" style={{height:36}} /> when logo is ready */}
-            <div style={{
-              width: 36, height: 36,
-              background: `linear-gradient(150deg, ${GREEN} 0%, #152a22 100%)`,
-              borderRadius: 6, border: `1px solid #1f3a32`,
-              display: "flex", alignItems: "center", justifyContent: "center",
-              flexShrink: 0,
-            }}>
-              <svg viewBox="0 0 24 24" fill="none" width="17" height="17" stroke={GOLD} strokeWidth="1.8">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C6.5 2 2 7.5 2 13c0 4.4 3.6 8 8 8s8-3.6 8-8C18 7.5 13.5 2 12 2z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-9M8.5 16l3.5-4 3.5 4" />
-              </svg>
-            </div>
-            <div>
-              <div style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: 18, fontWeight: 700,
-                color: "#f0ece6", letterSpacing: "-0.01em", lineHeight: 1.1,
-              }}>Everridge</div>
-              <div style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: 9, fontWeight: 400,
-                color: "#484840", letterSpacing: "0.2em",
-                textTransform: "uppercase", marginTop: 2,
-              }}>Landscape & Hardscape</div>
-            </div>
+          {/*
+            LOGO URL — pega la URL copiada desde WordPress Media Library
+            Ir a: Medios → click en tu logo → Copy URL to clipboard
+            Reemplaza la URL del src con la tuya
+          */}
+          <a href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+            <img
+              src="/wp-content/uploads/2026/05/imagotipo_principal.png"
+              alt="Everridge Landscape & Hardscape"
+              style={{ height: 44, width: "auto", display: "block", objectFit: "contain" }}
+            />
           </a>
 
           {/* Desktop links */}
@@ -507,21 +474,21 @@ function Navbar() {
                     style={{
                       display: "flex", alignItems: "center",
                       padding: isContact ? "9px 22px" : "9px 14px",
-                      fontFamily: "'DM Sans', sans-serif",
+                      fontFamily: "'Gotham Book', sans-serif",
                       fontSize: 13,
                       fontWeight: isContact ? 600 : 400,
                       letterSpacing: isContact ? "0.1em" : "0.02em",
                       textTransform: isContact ? "uppercase" : "none",
-                      color: isContact ? "#0f0f0f" : isOpen ? GOLD : "#888880",
+                      color: isContact ? "#ffffff" : isOpen ? GOLD : "#2f3133",
                       background: isContact ? `linear-gradient(135deg, ${GOLD}, ${GOLD_DK})` : "transparent",
-                      borderRadius: isContact ? 5 : 6,
+                      borderRadius: 0,
                       textDecoration: "none",
                       marginLeft: isContact ? 12 : 0,
                       cursor: "pointer",
                       transition: "color 0.15s",
                     }}
                     onMouseEnter={e => { if (!isContact) e.currentTarget.style.color = GOLD }}
-                    onMouseLeave={e => { if (!isContact) e.currentTarget.style.color = isOpen ? GOLD : "#888880" }}
+                    onMouseLeave={e => { if (!isContact) e.currentTarget.style.color = isOpen ? GOLD : "#2f3133" }}
                   >
                     {link.label}
                     {link.dropdown && <ChevronDown open={isOpen} />}
@@ -538,9 +505,9 @@ function Navbar() {
               display: "flex", alignItems: "center", gap: 6,
               background: `linear-gradient(135deg, ${GOLD}, ${GOLD_DK})`,
               color: "#0f0f0f",
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Gotham Book', sans-serif",
               fontSize: 11, fontWeight: 700,
-              padding: "8px 14px", borderRadius: 5,
+              padding: "8px 14px", borderRadius: 0,
               textDecoration: "none", letterSpacing: "0.05em",
               textTransform: "uppercase",
             }}>
@@ -548,7 +515,7 @@ function Navbar() {
             </a>
             <button onClick={() => setMenuOpen(true)} style={{
               background: BG3, border: `1px solid ${BORDER}`,
-              borderRadius: 6, color: "#888880",
+              borderRadius: 0, color: "#2f3133",
               padding: "8px 10px", cursor: "pointer",
               display: "flex", alignItems: "center",
             }}>

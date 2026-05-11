@@ -6,8 +6,8 @@ const COMPANY = {
   tagline: "Crafting Outdoor Spaces with Precision.",
   phone:   "(770) 555-0192",
   email:   "info@everridgeus.com",
-  address: "1245 Peachtree Industrial Blvd,\nSuite 300, Atlanta, GA 30338",
-  license: "GA Contractor License #CN-204817",
+  address: "Clinton Township, Michigan",
+  license: "MI Licensed & Insured Contractor",
 }
 
 const SERVICES = [
@@ -18,14 +18,14 @@ const SERVICES = [
 ]
 
 const CITIES = [
-  { label: "Atlanta",    href: ""    },
-  { label: "Marietta",   href: ""   },
-  { label: "Roswell",    href: ""    },
-  { label: "Alpharetta", href: "" },
-  { label: "Kennesaw",   href: ""   },
-  { label: "Smyrna",     href: ""     },
-  { label: "Dunwoody",   href: ""   },
-  { label: "Woodstock",  href: ""  },
+  { label: "Birmingham",        href: "/locations/birmingham"        },
+  { label: "Bloomfield Hills",  href: "/locations/bloomfield-hills"  },
+  { label: "Troy",              href: "/locations/troy"              },
+  { label: "Rochester Hills",   href: "/locations/rochester-hills"   },
+  { label: "Shelby Township",   href: "/locations/shelby-township"   },
+  { label: "Washington Twp.",   href: "/locations/washington-township"},
+  { label: "Farmington Hills",  href: "/locations/farmington-hills"  },
+  { label: "Clinton Township",  href: "/locations/clinton-township"  },
 ]
 
 const LEGAL = [
@@ -54,15 +54,6 @@ const SOCIAL = [
     ),
   },
   {
-    label: "Houzz",
-    href:  "https://houzz.com",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M6.5 0v9.7L12 7.4l5.5 2.3V0H6.5zm11 9.7L12 7.4l-5.5 2.3V24h4.6v-6.9h1.8V24H17.5V9.7z"/>
-      </svg>
-    ),
-  },
-  {
     label: "LinkedIn",
     href:  "https://linkedin.com",
     icon: (
@@ -74,34 +65,29 @@ const SOCIAL = [
 ]
 
 // ── Tokens ────────────────────────────────────────────────────────────────────
-const GOLD    = "#c9a96e"
-const GOLD_DK = "#b8924a"
-const BG      = "#0c0c0c"
-const BG2     = "#141414"
-const BG3     = "#1e1e1e"
-const BORDER  = "#222222"
+const GOLD    = "#8a6a45"
+const GOLD_DK = "#7a5c38"
+const BG      = "#0b0b0c"
+const BG2     = "#161618"
+const BG3     = "#1e1e20"
+const BORDER  = "#2a2a2c"
 const GREEN   = "#1f3a32"
-const TEXT_DIM = "#4a4a44"
-const TEXT_MID = "#787870"
-const TEXT_LT  = "#a8a49e"
+const TEXT_DIM = "#3a3a3c"
+const TEXT_MID = "#6a6a6c"
+const TEXT_LT  = "#909092"
 
 // ── Font loader ───────────────────────────────────────────────────────────────
 function useFonts() {
-  useEffect(() => {
-    if (document.getElementById("everridge-fonts")) return
-    const link = document.createElement("link")
-    link.id   = "everridge-fonts"
-    link.rel  = "stylesheet"
-    link.href = "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
-    document.head.appendChild(link)
-  }, [])
+  // Fonts are self-hosted via fonts.css enqueued in functions.php
+  // Gotham Book  → body / UI text
+  // Articulat CF → headings
 }
 
 // ── Sub-components ────────────────────────────────────────────────────────────
 function ColLabel({ children }) {
   return (
     <div style={{
-      fontFamily: "'DM Sans', sans-serif",
+      fontFamily: "'Gotham Book', sans-serif",
       fontSize: 9, fontWeight: 600,
       color: TEXT_DIM,
       letterSpacing: "0.22em",
@@ -118,19 +104,36 @@ function ColLabel({ children }) {
 function FooterLink({ href, children }) {
   return (
     <a href={href} style={{
-      display: "block",
-      fontFamily: "'DM Sans', sans-serif",
+      display: "flex", alignItems: "center", gap: 5,
+      fontFamily: "'Gotham Book', sans-serif",
       fontSize: 13, fontWeight: 400,
-      color: TEXT_MID,
+      color: TEXT_LT,
       textDecoration: "none",
       lineHeight: 1,
-      padding: "6px 0",
+      padding: "7px 0",
       transition: "color 0.15s",
+      cursor: "pointer",
     }}
-      onMouseEnter={e => e.currentTarget.style.color = GOLD}
-      onMouseLeave={e => e.currentTarget.style.color = TEXT_MID}
+      onMouseEnter={e => {
+        e.currentTarget.style.color = GOLD
+        const arrow = e.currentTarget.querySelector(".fl-arrow")
+        if (arrow) { arrow.style.opacity = "1"; arrow.style.transform = "translateX(2px)" }
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.color = TEXT_LT
+        const arrow = e.currentTarget.querySelector(".fl-arrow")
+        if (arrow) { arrow.style.opacity = "0"; arrow.style.transform = "translateX(0)" }
+      }}
     >
       {children}
+      <span className="fl-arrow" style={{
+        opacity: 0, transition: "opacity 0.15s, transform 0.15s",
+        display: "inline-flex", alignItems: "center",
+      }}>
+        <svg width="9" height="9" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+        </svg>
+      </span>
     </a>
   )
 }
@@ -155,7 +158,7 @@ function Footer() {
         }}>
           <div>
             <div style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
+              fontFamily: "'Articulat CF', sans-serif",
               fontSize: 28, fontWeight: 700,
               color: "#f0ece6", lineHeight: 1.2,
               marginBottom: 8,
@@ -164,7 +167,7 @@ function Footer() {
             </div>
             <p style={{
               margin: 0,
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Gotham Book', sans-serif",
               fontSize: 14, fontWeight: 300,
               color: "rgba(240,236,230,0.5)",
               letterSpacing: "0.02em",
@@ -175,11 +178,11 @@ function Footer() {
           <div style={{ display: "flex", alignItems: "center", gap: 12, flexShrink: 0 }}>
             <a href="/contact" style={{
               display: "inline-block",
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Gotham Book', sans-serif",
               fontSize: 12, fontWeight: 700,
               color: "#0f0f0f",
               background: `linear-gradient(135deg, ${GOLD}, ${GOLD_DK})`,
-              padding: "14px 28px", borderRadius: 6,
+              padding: "14px 28px", borderRadius: 0,
               textDecoration: "none", letterSpacing: "0.1em",
               textTransform: "uppercase",
               whiteSpace: "nowrap",
@@ -188,11 +191,11 @@ function Footer() {
             </a>
             <a href={`tel:${COMPANY.phone.replace(/\D/g,"")}`} style={{
               display: "inline-block",
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Gotham Book', sans-serif",
               fontSize: 12, fontWeight: 500,
               color: "rgba(240,236,230,0.6)",
               border: "1px solid rgba(240,236,230,0.15)",
-              padding: "13px 24px", borderRadius: 6,
+              padding: "13px 24px", borderRadius: 0,
               textDecoration: "none", letterSpacing: "0.04em",
               whiteSpace: "nowrap",
               transition: "color 0.2s, border-color 0.2s",
@@ -219,36 +222,16 @@ function Footer() {
           {/* Col 1 — Brand */}
           <div>
             {/* Logo */}
-            <a href="/" style={{ display: "inline-flex", alignItems: "center", gap: 12, textDecoration: "none", marginBottom: 24 }}>
-              <div style={{
-                width: 38, height: 38,
-                background: `linear-gradient(150deg, ${GREEN} 0%, #152a22 100%)`,
-                borderRadius: 6, border: "1px solid #1f3a32",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                flexShrink: 0,
-              }}>
-                <svg viewBox="0 0 24 24" fill="none" width="18" height="18" stroke={GOLD} strokeWidth="1.8">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C6.5 2 2 7.5 2 13c0 4.4 3.6 8 8 8s8-3.6 8-8C18 7.5 13.5 2 12 2z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-9M8.5 16l3.5-4 3.5 4" />
-                </svg>
-              </div>
-              <div>
-                <div style={{
-                  fontFamily: "'Playfair Display', Georgia, serif",
-                  fontSize: 18, fontWeight: 700,
-                  color: "#f0ece6", lineHeight: 1.1,
-                }}>Everridge</div>
-                <div style={{
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontSize: 9, fontWeight: 400,
-                  color: TEXT_DIM, letterSpacing: "0.2em",
-                  textTransform: "uppercase", marginTop: 2,
-                }}>Landscape & Hardscape</div>
-              </div>
+            <a href="/" style={{ display: "inline-flex", alignItems: "center", textDecoration: "none", marginBottom: 24 }}>
+              <img
+                src="/wp-content/uploads/2026/05/imagotipo_principal.png"
+                alt="Everridge Landscape & Hardscape"
+                style={{ height: 44, width: "auto", display: "block", objectFit: "contain" }}
+              />
             </a>
 
             <p style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
+              fontFamily: "'Articulat CF', sans-serif",
               fontStyle: "italic",
               fontSize: 15, fontWeight: 400,
               color: TEXT_MID, lineHeight: 1.6,
@@ -264,7 +247,7 @@ function Footer() {
                 textDecoration: "none",
               }}>
                 <div style={{
-                  width: 30, height: 30, borderRadius: 6,
+                  width: 30, height: 30, borderRadius: 0,
                   background: BG3, border: `1px solid ${BORDER}`,
                   display: "flex", alignItems: "center", justifyContent: "center",
                   flexShrink: 0,
@@ -274,7 +257,7 @@ function Footer() {
                   </svg>
                 </div>
                 <span style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Gotham Book', sans-serif",
                   fontSize: 13, fontWeight: 500, color: TEXT_LT,
                 }}>{COMPANY.phone}</span>
               </a>
@@ -284,7 +267,7 @@ function Footer() {
                 textDecoration: "none",
               }}>
                 <div style={{
-                  width: 30, height: 30, borderRadius: 6,
+                  width: 30, height: 30, borderRadius: 0,
                   background: BG3, border: `1px solid ${BORDER}`,
                   display: "flex", alignItems: "center", justifyContent: "center",
                   flexShrink: 0,
@@ -294,14 +277,14 @@ function Footer() {
                   </svg>
                 </div>
                 <span style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Gotham Book', sans-serif",
                   fontSize: 13, fontWeight: 400, color: TEXT_MID,
                 }}>{COMPANY.email}</span>
               </a>
 
               <div style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
                 <div style={{
-                  width: 30, height: 30, borderRadius: 6,
+                  width: 30, height: 30, borderRadius: 0,
                   background: BG3, border: `1px solid ${BORDER}`,
                   display: "flex", alignItems: "center", justifyContent: "center",
                   flexShrink: 0, marginTop: 1,
@@ -312,7 +295,7 @@ function Footer() {
                   </svg>
                 </div>
                 <span style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Gotham Book', sans-serif",
                   fontSize: 12, fontWeight: 300, color: TEXT_DIM,
                   lineHeight: 1.6, whiteSpace: "pre-line",
                 }}>{COMPANY.address}</span>
@@ -328,7 +311,7 @@ function Footer() {
                     width: 36, height: 36,
                     display: "flex", alignItems: "center", justifyContent: "center",
                     background: BG3, border: `1px solid ${BORDER}`,
-                    borderRadius: 6, color: TEXT_MID,
+                    borderRadius: 0, color: TEXT_MID,
                     textDecoration: "none",
                     transition: "color 0.15s, border-color 0.15s, background 0.15s",
                   }}
@@ -356,7 +339,7 @@ function Footer() {
             <div style={{ marginTop: 16 }}>
               <a href="/services" style={{
                 display: "inline-flex", alignItems: "center", gap: 6,
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Gotham Book', sans-serif",
                 fontSize: 11, fontWeight: 600,
                 color: GOLD, textDecoration: "none",
                 letterSpacing: "0.08em", textTransform: "uppercase",
@@ -376,7 +359,7 @@ function Footer() {
             <div style={{ marginTop: 16 }}>
               <a href="/locations" style={{
                 display: "inline-flex", alignItems: "center", gap: 6,
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Gotham Book', sans-serif",
                 fontSize: 11, fontWeight: 600,
                 color: GOLD, textDecoration: "none",
                 letterSpacing: "0.08em", textTransform: "uppercase",
@@ -394,7 +377,7 @@ function Footer() {
             <ColLabel>Company</ColLabel>
             {[
               { label: "About Us",       href: "/about"     },
-              { label: "Our Work",       href: "#"  },
+              { label: "Our Work",       href: "/our-work"  },
               { label: "Testimonials",   href: "/reviews"   },
               { label: "Free Estimate",  href: "/contact"   },
               { label: "Contact",        href: "/contact"   },
@@ -406,14 +389,14 @@ function Footer() {
               padding: "14px 16px",
               background: BG3,
               border: `1px solid ${BORDER}`,
-              borderRadius: 8,
+              borderRadius: 0,
             }}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={GOLD} strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
                 </svg>
                 <span style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Gotham Book', sans-serif",
                   fontSize: 9, fontWeight: 600,
                   color: GOLD, letterSpacing: "0.15em",
                   textTransform: "uppercase",
@@ -421,7 +404,7 @@ function Footer() {
               </div>
               <p style={{
                 margin: 0,
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Gotham Book', sans-serif",
                 fontSize: 11, fontWeight: 300,
                 color: TEXT_DIM, lineHeight: 1.5,
               }}>
@@ -443,7 +426,7 @@ function Footer() {
         }}>
           <p style={{
             margin: 0,
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "'Gotham Book', sans-serif",
             fontSize: 11, fontWeight: 300,
             color: TEXT_DIM, letterSpacing: "0.03em",
           }}>
@@ -452,7 +435,7 @@ function Footer() {
           <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
             {LEGAL.map(l => (
               <a key={l.href} href={l.href} style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Gotham Book', sans-serif",
                 fontSize: 11, fontWeight: 400,
                 color: TEXT_DIM, textDecoration: "none",
                 transition: "color 0.15s",

@@ -1,0 +1,68 @@
+/*
+ * ── Everridge Brand Fonts ────────────────────────────────────────────────────
+ *
+ * Folder: /wp-content/themes/everridge/assets/fonts/
+ *
+ * Files expected (rename yours to match exactly):
+ *   GothamBook.ttf         → UI / body text
+ *   GothamBook-Italic.ttf  → italic variant (if you have it)
+ *   articulatcft-regular.ttf → headings
+ *
+ * If you only have .otf files, change format('truetype') to format('opentype')
+ * and the extension to .otf below.
+ */
+
+
+/* ── Gotham Book — UI / body ──────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Gotham Book';
+  src: url('../fonts/GothamBook.otf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+@font-face {
+  font-family: 'Gotham Book';
+  src: url('../fonts/GothamBook-Italic.otf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+   Remove this block if you don't have an italic variant 
+}
+*/
+
+/* ── Articulat CF — headings ──────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Articulat CF';
+  src: url('../fonts/articulatcft-regular.otf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ── Site-wide defaults ───────────────────────────────────────────────────── */
+:root {
+  --font-heading : 'Articulat CF', sans-serif;
+  --font-body    : 'Gotham Book', sans-serif;
+}
+
+/* Override WordPress / theme defaults */
+body,
+p, span, a, button, input, select, textarea, label,
+.font-sans {
+  font-family: var(--font-body) !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.font-serif,
+.font-\[\'Playfair_Display\'\] {
+  font-family: var(--font-heading) !important;
+}
+
+/* Tailwind arbitrary value override */
+[class*="font-\["] {
+  font-family: var(--font-heading) !important;
+}

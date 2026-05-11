@@ -13,3 +13,20 @@ function boilerplate_add_support() {
 }
 
 add_action('after_setup_theme', 'boilerplate_add_support');
+
+add_action( 'wp_enqueue_scripts', 'everridge_fonts', 5 );
+function everridge_fonts() {
+ 
+    // ── Remove Google Fonts if loaded elsewhere ───────────────────────────────
+    wp_dequeue_style( 'everridge-google-fonts' );
+    wp_deregister_style( 'everridge-google-fonts' );
+ 
+    // ── Enqueue self-hosted brand fonts ───────────────────────────────────────
+    wp_enqueue_style(
+        'everridge-fonts',
+        get_template_directory_uri() . '/assets/css/fonts.css',
+        [],
+        '1.0.0'
+    );
+
+}    
