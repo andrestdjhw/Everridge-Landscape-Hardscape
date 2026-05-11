@@ -104,7 +104,7 @@ $faqs = [
     </div>
     <!-- Handle -->
     <div id="ev-hero-handle" class="absolute top-0 bottom-0 w-0.5 bg-white left-1/2 -translate-x-1/2 flex items-center justify-center z-20 pointer-events-none">
-      <div class="w-12 h-12 rounded-full bg-white shadow-[0_4px_24px_rgba(0,0,0,.4)] flex items-center justify-center">
+      <div class="w-12 h-12 bg-white shadow-[0_4px_24px_rgba(0,0,0,.4)] flex items-center justify-center">
         <svg class="w-5 h-5 text-[#0b0b0c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15M15.75 9L12 5.25 8.25 9"/>
         </svg>
@@ -112,14 +112,14 @@ $faqs = [
     </div>
     <!-- Side labels -->
     <div class="absolute top-[120px] md:top-[140px] left-6 z-10">
-      <span class="bg-[rgba(0,0,0,.55)] backdrop-blur-sm text-[9px] font-bold tracking-[.16em] uppercase text-[rgba(255,255,255,.65)] px-3 py-1.5 rounded-full">3D Rendering</span>
+      <span class="bg-[rgba(0,0,0,.55)] backdrop-blur-sm text-[9px] font-bold tracking-[.16em] uppercase text-[rgba(255,255,255,.65)] px-3 py-1.5">3D Rendering</span>
     </div>
     <div class="absolute top-[120px] md:top-[140px] right-6 z-10">
-      <span class="bg-[rgba(0,0,0,.55)] backdrop-blur-sm text-[9px] font-bold tracking-[.16em] uppercase text-[rgba(255,255,255,.65)] px-3 py-1.5 rounded-full">Completed Project</span>
+      <span class="bg-[rgba(0,0,0,.55)] backdrop-blur-sm text-[9px] font-bold tracking-[.16em] uppercase text-[rgba(255,255,255,.65)] px-3 py-1.5">Completed Project</span>
     </div>
     <!-- Drag hint -->
     <div id="ev-hero-hint" class="absolute bottom-32 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 transition-opacity duration-500">
-      <div class="bg-[rgba(0,0,0,.6)] backdrop-blur-sm border border-[rgba(255,255,255,.15)] rounded-full px-4 py-2 flex items-center gap-2">
+      <div class="bg-[rgba(0,0,0,.6)] backdrop-blur-sm border border-[rgba(255,255,255,.15)] px-4 py-2 flex items-center gap-2">
         <svg class="w-3.5 h-3.5 text-[#8a6a45]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/>
         </svg>
@@ -143,7 +143,7 @@ $faqs = [
         <span class="block w-9 h-px bg-[#8a6a45]"></span>
         <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45]">Garden Design & 3D Renderings</span>
       </div>
-      <h1 class="font-['Playfair_Display'] text-[clamp(36px,5.5vw,68px)] font-bold text-[#e6e3df] leading-[1.06] tracking-tight mb-5">
+      <h1 class="font-['Articulat_CF'] text-[clamp(36px,5.5vw,68px)] font-bold text-[#e6e3df] leading-[1.06] tracking-tight mb-5">
         Your Vision,<br>
         <em class="italic text-[#8a6a45]">Realized in 3D.</em>
       </h1>
@@ -155,13 +155,13 @@ $faqs = [
     <!-- Bottom: CTAs -->
     <div class="flex flex-wrap gap-3 pointer-events-auto">
       <a href="/contact"
-         class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-7 py-4 rounded-md hover:opacity-85 transition-opacity"
+         class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-7 py-4 hover:opacity-85 transition-opacity"
          style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
         Schedule a Design Consultation
         <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
       </a>
       <a href="#ev-gallery"
-         class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.75)] border border-[rgba(240,236,230,.2)] px-7 py-4 rounded-md hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
+         class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.75)] border border-[rgba(240,236,230,.2)] px-7 py-4 hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
         See Rendering Examples
       </a>
     </div>
@@ -183,7 +183,7 @@ $faqs = [
       ];
       foreach ( $facts as $f ) : ?>
       <div class="ev-reveal">
-        <div class="font-['Playfair_Display'] text-[clamp(36px,4vw,52px)] font-bold text-[#8a6a45] leading-none mb-2"><?php echo $f['stat']; ?></div>
+        <div class="font-['Articulat_CF'] text-[clamp(36px,4vw,52px)] font-bold text-[#8a6a45] leading-none mb-2"><?php echo $f['stat']; ?></div>
         <p class="text-[13px] font-light text-[rgba(240,236,230,.55)] leading-relaxed max-w-[220px] mx-auto"><?php echo $f['label']; ?></p>
       </div>
       <?php endforeach; ?>
@@ -200,7 +200,7 @@ $faqs = [
 
     <div class="text-center mb-16 ev-reveal">
       <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">The Process</span>
-      <h2 class="font-['Playfair_Display'] text-[clamp(28px,3.5vw,44px)] font-bold text-[#0b0b0c] leading-[1.12] mb-5">
+      <h2 class="font-['Articulat_CF'] text-[clamp(28px,3.5vw,44px)] font-bold text-[#0b0b0c] leading-[1.12] mb-5">
         How the 3D Design<br>
         <span class="text-[#8a6a45]">Process Works</span>
       </h2>
@@ -219,16 +219,16 @@ $faqs = [
         <div class="ev-reveal text-center relative" style="transition-delay:<?php echo $i * 120; ?>ms;">
           <!-- Step image -->
           <div class="relative mb-6">
-            <div class="rounded-2xl overflow-hidden border border-[#e6e3df] aspect-[4/3] bg-[#e8e4de] flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-4 mb-4">
+            <div class="overflow-hidden border border-[#e6e3df] aspect-[4/3] bg-[#e8e4de] flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-4 mb-4">
               {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/process-3d-<?php echo $i+1; ?>.jpg" class="w-full h-full object-cover" loading="lazy" alt="Step <?php echo $step['num']; ?>"> --}}
               <?php echo $step['ph']; ?>
             </div>
             <!-- Step number circle — sits on top of the connecting line -->
-            <div class="relative z-10 w-14 h-14 rounded-full bg-white border-2 border-[#d8d4ce] flex items-center justify-center mx-auto shadow-sm transition-all duration-500 ev-step-dot" data-step="<?php echo $i; ?>">
-              <span class="font-['Playfair_Display'] text-[15px] font-bold text-[#8a6a45]"><?php echo $step['num']; ?></span>
+            <div class="relative z-10 w-14 h-14 bg-white border-2 border-[#d8d4ce] flex items-center justify-center mx-auto shadow-sm transition-all duration-500 ev-step-dot" data-step="<?php echo $i; ?>">
+              <span class="font-['Articulat_CF'] text-[15px] font-bold text-[#8a6a45]"><?php echo $step['num']; ?></span>
             </div>
           </div>
-          <h3 class="font-['Playfair_Display'] text-[17px] font-bold text-[#0b0b0c] mb-2"><?php echo $step['title']; ?></h3>
+          <h3 class="font-['Articulat_CF'] text-[17px] font-bold text-[#0b0b0c] mb-2"><?php echo $step['title']; ?></h3>
           <p class="text-[13px] font-light text-[#7a7f85] leading-[1.7]"><?php echo $step['copy']; ?></p>
         </div>
         <?php endforeach; ?>
@@ -237,10 +237,10 @@ $faqs = [
 
     <!-- The why — editorial block -->
     <div class="mt-20 ev-reveal">
-      <div class="bg-[#f5f2ef] border border-[#e6e3df] rounded-2xl p-10 md:p-14 grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-10 items-center">
+      <div class="bg-[#f5f2ef] border border-[#e6e3df] p-10 md:p-14 grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-10 items-center">
         <div>
           <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-4">Why This Matters</span>
-          <h3 class="font-['Playfair_Display'] text-[clamp(22px,3vw,32px)] font-bold text-[#0b0b0c] leading-[1.2] mb-5">
+          <h3 class="font-['Articulat_CF'] text-[clamp(22px,3vw,32px)] font-bold text-[#0b0b0c] leading-[1.2] mb-5">
             You Approve the Design<br>
             Before We Touch Your Property.
           </h3>
@@ -252,11 +252,11 @@ $faqs = [
           <svg class="absolute -top-3 -left-2 w-10 h-10 text-[#8a6a45] opacity-25" fill="currentColor" viewBox="0 0 24 24">
             <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
           </svg>
-          <blockquote class="font-['Playfair_Display'] italic text-[18px] text-[#2f3133] leading-[1.65] relative z-10 pl-4">
+          <blockquote class="font-['Articulat_CF'] italic text-[18px] text-[#2f3133] leading-[1.65] relative z-10 pl-4">
             "We can request changes, swap materials, adjust layouts, and approve the final design before any construction begins. You see exactly what you are getting — from multiple angles — before a single paver is placed."
           </blockquote>
           <div class="mt-5 pl-4 flex items-center gap-2">
-            <div class="w-1 h-8 bg-[#8a6a45] rounded-full flex-shrink-0"></div>
+            <div class="w-1 h-8 bg-[#8a6a45] flex-shrink-0"></div>
             <div>
               <div class="text-[12px] font-semibold text-[#0b0b0c]">The Everridge Design Standard</div>
               <div class="text-[11px] text-[#7a7f85]">Applied to every project, every time</div>
@@ -278,7 +278,7 @@ $faqs = [
 
     <div class="text-center mb-14 ev-reveal">
       <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">Proof</span>
-      <h2 class="font-['Playfair_Display'] text-[clamp(26px,3.5vw,42px)] font-bold text-[#0b0b0c] leading-[1.15]">
+      <h2 class="font-['Articulat_CF'] text-[clamp(26px,3.5vw,42px)] font-bold text-[#0b0b0c] leading-[1.15]">
         Rendering vs. Reality.<br>
         <span class="text-[#8a6a45]">See the Match for Yourself.</span>
       </h2>
@@ -294,7 +294,7 @@ $faqs = [
         <div class="ev-rv-pair relative group" data-pair="<?php echo $i; ?>">
 
           <!-- Desktop: drag slider -->
-          <div class="hidden md:block ev-ba relative overflow-hidden rounded-2xl border border-[#e6e3df] cursor-col-resize select-none" data-ba="<?php echo $i; ?>">
+          <div class="hidden md:block ev-ba relative overflow-hidden border border-[#e6e3df] cursor-col-resize select-none" data-ba="<?php echo $i; ?>">
             <!-- Rendering (base) -->
             <div class="aspect-[16/9] bg-[#dcd8e0] flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-8">
               {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/render-<?php echo $i+1; ?>.jpg" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="3D Rendering - <?php echo esc_attr($pair['label']); ?>"> --}}
@@ -308,18 +308,18 @@ $faqs = [
             </div>
             <!-- Handle -->
             <div class="ev-ba-handle absolute top-0 bottom-0 w-0.5 bg-white left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none">
-              <div class="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-[0_2px_12px_rgba(0,0,0,.2)]">
+              <div class="w-9 h-9 bg-white flex items-center justify-center shadow-[0_2px_12px_rgba(0,0,0,.2)]">
                 <svg class="w-4 h-4 text-[#0b0b0c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15M15.75 9L12 5.25 8.25 9"/>
                 </svg>
               </div>
             </div>
-            <span class="absolute top-3 left-3 bg-[rgba(0,0,0,.5)] backdrop-blur-sm text-[9px] font-bold tracking-[.12em] uppercase text-white px-2.5 py-1 rounded-full">Rendering</span>
-            <span class="absolute top-3 right-3 bg-[rgba(0,0,0,.5)] backdrop-blur-sm text-[9px] font-bold tracking-[.12em] uppercase text-white px-2.5 py-1 rounded-full">Completed</span>
+            <span class="absolute top-3 left-3 bg-[rgba(0,0,0,.5)] backdrop-blur-sm text-[9px] font-bold tracking-[.12em] uppercase text-white px-2.5 py-1">Rendering</span>
+            <span class="absolute top-3 right-3 bg-[rgba(0,0,0,.5)] backdrop-blur-sm text-[9px] font-bold tracking-[.12em] uppercase text-white px-2.5 py-1">Completed</span>
           </div>
 
           <!-- Mobile: stacked side-by-side -->
-          <div class="md:hidden grid grid-cols-2 gap-2 rounded-2xl overflow-hidden border border-[#e6e3df]">
+          <div class="md:hidden grid grid-cols-2 gap-2 overflow-hidden border border-[#e6e3df]">
             <div class="aspect-[4/3] bg-[#dcd8e0] flex items-center justify-center text-[9px] text-[#7a7f85] text-center px-3 relative">
               {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/render-<?php echo $i+1; ?>.jpg" class="absolute inset-0 w-full h-full object-cover" loading="lazy"> --}}
               <?php echo $pair['ph_r']; ?>
@@ -336,7 +336,7 @@ $faqs = [
 
         <!-- Label -->
         <div class="flex items-center justify-between mt-3 px-1">
-          <span class="font-['Playfair_Display'] text-[15px] font-semibold text-[#0b0b0c]"><?php echo $pair['label']; ?></span>
+          <span class="font-['Articulat_CF'] text-[15px] font-semibold text-[#0b0b0c]"><?php echo $pair['label']; ?></span>
           <span class="text-[11px] text-[#7a7f85]"><?php echo $pair['city']; ?></span>
         </div>
       </div>
@@ -355,7 +355,7 @@ $faqs = [
 
     <div class="text-center mb-14 ev-reveal">
       <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">The Service</span>
-      <h2 class="font-['Playfair_Display'] text-[clamp(26px,3.5vw,42px)] font-bold text-[#0b0b0c] leading-[1.15]">
+      <h2 class="font-['Articulat_CF'] text-[clamp(26px,3.5vw,42px)] font-bold text-[#0b0b0c] leading-[1.15]">
         What Is Included in<br>
         <span class="text-[#8a6a45]">Every Garden Design Package</span>
       </h2>
@@ -366,12 +366,12 @@ $faqs = [
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       <?php foreach ( $whats_included as $i => $item ) : ?>
-      <div class="ev-reveal group bg-[#f5f2ef] border border-[#e6e3df] rounded-2xl p-7 hover:bg-white hover:border-[#8a6a45] hover:shadow-[0_8px_32px_rgba(138,106,69,.1)] transition-all duration-300"
+      <div class="ev-reveal group bg-[#f5f2ef] border border-[#e6e3df] p-7 hover:bg-white hover:border-[#8a6a45] hover:shadow-[0_8px_32px_rgba(138,106,69,.1)] transition-all duration-300"
            style="transition-delay:<?php echo $i * 80; ?>ms;">
-        <div class="w-9 h-9 rounded-lg bg-white border border-[#d8d4ce] flex items-center justify-center mb-5 group-hover:bg-[#fdf8ee] group-hover:border-[#e8d8a0] transition-colors">
-          <span class="font-['Playfair_Display'] text-[13px] font-bold text-[#8a6a45]"><?php printf('%02d', $i + 1); ?></span>
+        <div class="w-9 h-9 bg-white border border-[#d8d4ce] flex items-center justify-center mb-5 group-hover:bg-[#fdf8ee] group-hover:border-[#e8d8a0] transition-colors">
+          <span class="font-['Articulat_CF'] text-[13px] font-bold text-[#8a6a45]"><?php printf('%02d', $i + 1); ?></span>
         </div>
-        <h3 class="font-['Playfair_Display'] text-[17px] font-bold text-[#0b0b0c] mb-3 leading-snug"><?php echo $item['title']; ?></h3>
+        <h3 class="font-['Articulat_CF'] text-[17px] font-bold text-[#0b0b0c] mb-3 leading-snug"><?php echo $item['title']; ?></h3>
         <p class="text-[13px] font-light text-[#7a7f85] leading-[1.75]"><?php echo $item['copy']; ?></p>
       </div>
       <?php endforeach; ?>
@@ -379,10 +379,10 @@ $faqs = [
 
     <!-- No design fee callout -->
     <div class="mt-10 ev-reveal">
-      <div class="bg-[#1a1814] rounded-2xl p-8 md:p-10 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-center">
+      <div class="bg-[#1a1814] p-8 md:p-10 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-center">
         <div>
           <div class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">Included With Every Project</div>
-          <h3 class="font-['Playfair_Display'] text-[clamp(20px,2.5vw,28px)] font-bold text-[#e6e3df] leading-[1.2] mb-3">
+          <h3 class="font-['Articulat_CF'] text-[clamp(20px,2.5vw,28px)] font-bold text-[#e6e3df] leading-[1.2] mb-3">
             The 3D Rendering Is Not an Add-On.<br>
             It Is How We Work.
           </h3>
@@ -391,7 +391,7 @@ $faqs = [
           </p>
         </div>
         <a href="/contact"
-           class="flex-shrink-0 inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-7 py-4 rounded-md hover:opacity-85 transition-opacity whitespace-nowrap"
+           class="flex-shrink-0 inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-7 py-4 hover:opacity-85 transition-opacity whitespace-nowrap"
            style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
           Start Your Design
           <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
@@ -408,7 +408,7 @@ $faqs = [
      ════════════════════════════════════════════════ -->
 <section class="bg-[#f5f2ef] border-t border-[#e6e3df] py-24">
   <div class="max-w-[860px] mx-auto px-6 md:px-10 ev-reveal">
-    <div class="bg-white border border-[#e6e3df] rounded-2xl p-10 md:p-14 text-center relative overflow-hidden">
+    <div class="bg-white border border-[#e6e3df] p-10 md:p-14 text-center relative overflow-hidden">
       <div class="absolute top-6 left-8 opacity-[.05]">
         <svg class="w-24 h-24 text-[#0b0b0c]" fill="currentColor" viewBox="0 0 24 24">
           <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
@@ -419,18 +419,18 @@ $faqs = [
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#8a6a45"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         <?php endfor; ?>
       </div>
-      <p class="font-['Playfair_Display'] italic text-[clamp(16px,2.5vw,21px)] text-[#0b0b0c] leading-[1.65] mb-8 relative z-10">
+      <p class="font-['Articulat_CF'] italic text-[clamp(16px,2.5vw,21px)] text-[#0b0b0c] leading-[1.65] mb-8 relative z-10">
         "I had been putting off this project for three years because I was scared of committing to something I couldn't visualize. When Hernan sent me the 3D rendering, I sat at my computer and just stared at it. It was exactly what I had described, but better. I could see the pavers, the plantings, the lighting — everything. I signed the proposal that afternoon. The finished project is a perfect match to the rendering. That rendering is the reason I hired them."
       </p>
       <div class="flex items-center justify-center gap-4">
-        <div class="w-12 h-12 rounded-full bg-[#e8e8e0] flex items-center justify-center flex-shrink-0">
-          <span class="font-['Playfair_Display'] text-[15px] font-bold text-[#6a6870]">TW</span>
+        <div class="w-12 h-12 bg-[#e8e8e0] flex items-center justify-center flex-shrink-0">
+          <span class="font-['Articulat_CF'] text-[15px] font-bold text-[#6a6870]">TW</span>
         </div>
         <div class="text-left">
           <div class="font-semibold text-[14px] text-[#0b0b0c]">Thomas W.</div>
           <div class="text-[11px] text-[#7a7f85]">Full Backyard Transformation with 3D Rendering · Troy, MI</div>
         </div>
-        <div class="ml-4 flex items-center gap-1.5 bg-[#f5f2ef] border border-[#e6e3df] rounded-full px-3 py-1.5">
+        <div class="ml-4 flex items-center gap-1.5 bg-[#f5f2ef] border border-[#e6e3df] px-3 py-1.5">
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#8a8680"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
           <span class="text-[10px] text-[#7a7f85] font-medium">Google Review</span>
         </div>
@@ -447,7 +447,7 @@ $faqs = [
   <div class="max-w-[800px] mx-auto px-6 md:px-10">
     <div class="text-center mb-14 ev-reveal">
       <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">FAQ</span>
-      <h2 class="font-['Playfair_Display'] text-[clamp(24px,3.5vw,38px)] font-bold text-[#0b0b0c] leading-[1.15]">
+      <h2 class="font-['Articulat_CF'] text-[clamp(24px,3.5vw,38px)] font-bold text-[#0b0b0c] leading-[1.15]">
         Questions About the<br>
         <span class="text-[#8a6a45]">3D Design Process</span>
       </h2>
@@ -455,11 +455,11 @@ $faqs = [
 
     <div id="ev-faq" class="flex flex-col gap-3 ev-reveal">
       <?php foreach ( $faqs as $i => $faq ) : ?>
-      <div class="ev-faq-item bg-[#f5f2ef] border border-[#e6e3df] rounded-xl overflow-hidden hover:border-[#8a6a45] transition-colors">
+      <div class="ev-faq-item bg-[#f5f2ef] border border-[#e6e3df] overflow-hidden hover:border-[#8a6a45] transition-colors">
         <button class="ev-faq-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
                 aria-expanded="<?php echo $i === 0 ? 'true' : 'false'; ?>">
           <span class="font-semibold text-[14px] text-[#0b0b0c] leading-snug"><?php echo $faq['q']; ?></span>
-          <span class="ev-faq-icon flex-shrink-0 w-7 h-7 rounded-full border border-[#d8d4ce] flex items-center justify-center transition-all duration-300 <?php echo $i === 0 ? 'bg-[#1a1814] border-[#1a1814]' : 'bg-white'; ?>">
+          <span class="ev-faq-icon flex-shrink-0 w-7 h-7 border border-[#d8d4ce] flex items-center justify-center transition-all duration-300 <?php echo $i === 0 ? 'bg-[#1a1814] border-[#1a1814]' : 'bg-white'; ?>">
             <svg class="w-3.5 h-3.5 transition-transform duration-300 <?php echo $i === 0 ? 'rotate-45 text-white' : 'text-[#7a7f85]'; ?>" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
             </svg>
@@ -491,7 +491,7 @@ $faqs = [
 
   <div class="relative z-10 max-w-[720px] mx-auto px-6 md:px-10 text-center">
     <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-4">See Your Property in 3D</span>
-    <h2 class="font-['Playfair_Display'] text-[clamp(28px,5vw,52px)] font-bold text-[#e6e3df] leading-[1.1] mb-5">
+    <h2 class="font-['Articulat_CF'] text-[clamp(28px,5vw,52px)] font-bold text-[#e6e3df] leading-[1.1] mb-5">
       Ready to See Your Property<br>
       <em class="italic text-[#8a6a45]">Before We Build It?</em>
     </h2>
@@ -499,18 +499,18 @@ $faqs = [
       Schedule a design consultation. We'll visit your property, listen to your vision, and deliver a photorealistic 3D rendering within days. No obligation. No pressure.
     </p>
     <a href="tel:+17705550192"
-       class="block font-['Playfair_Display'] font-bold text-[#8a6a45] text-[clamp(24px,4vw,40px)] mb-9 hover:opacity-75 transition-opacity">
+       class="block font-['Articulat_CF'] font-bold text-[#8a6a45] text-[clamp(24px,4vw,40px)] mb-9 hover:opacity-75 transition-opacity">
       (770) 555-0192
     </a>
     <div class="flex flex-wrap gap-3 justify-center">
       <a href="/contact"
-         class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-9 py-4 rounded-md hover:opacity-85 transition-opacity"
+         class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-9 py-4 hover:opacity-85 transition-opacity"
          style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
         Schedule a Design Consultation
         <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
       </a>
       <a href="/our-work"
-         class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.75)] border border-[rgba(240,236,230,.2)] px-8 py-4 rounded-md hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
+         class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.75)] border border-[rgba(240,236,230,.2)] px-8 py-4 hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
         See More Renderings
       </a>
     </div>

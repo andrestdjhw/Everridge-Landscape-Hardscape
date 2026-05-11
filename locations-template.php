@@ -101,7 +101,7 @@ $locations = [
       <span class="block w-9 h-px bg-[#8a6a45]"></span>
       <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45]">Service Areas</span>
     </div>
-    <h1 class="font-['Playfair_Display'] text-[clamp(30px,5vw,58px)] font-bold text-[#e6e3df] leading-[1.08] max-w-2xl">
+    <h1 class="font-['Articulat_CF'] text-[clamp(30px,5vw,58px)] font-bold text-[#e6e3df] leading-[1.08] max-w-2xl">
       Serving Southeast Michigan's<br>
       <em class="italic text-[#8a6a45]">Most Valued Communities</em>
     </h1>
@@ -127,7 +127,7 @@ $locations = [
       ];
       foreach ( $stats as $i => $s ) : ?>
       <div class="flex items-center gap-3">
-        <span class="font-['Playfair_Display'] text-[20px] font-bold text-[#8a6a45]"><?php echo $s['val']; ?></span>
+        <span class="font-['Articulat_CF'] text-[20px] font-bold text-[#8a6a45]"><?php echo $s['val']; ?></span>
         <span class="text-[11px] font-medium text-[#7a7f85] tracking-[.04em]"><?php echo $s['label']; ?></span>
       </div>
       <?php if ( $i < count($stats) - 1 ) : ?>
@@ -147,7 +147,7 @@ $locations = [
 
     <div class="text-center mb-14 ev-reveal">
       <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">Where We Work</span>
-      <h2 class="font-['Playfair_Display'] text-[clamp(26px,3.5vw,40px)] font-bold text-[#0b0b0c] leading-[1.15]">
+      <h2 class="font-['Articulat_CF'] text-[clamp(26px,3.5vw,40px)] font-bold text-[#0b0b0c] leading-[1.15]">
         Find Your Community
       </h2>
       <p class="mt-4 text-[14px] text-[#7a7f85] font-light max-w-xl mx-auto leading-relaxed">
@@ -158,7 +158,7 @@ $locations = [
     <!-- Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <?php foreach ( $locations as $i => $loc ) : ?>
-      <div class="ev-reveal group border border-[#e6e3df] rounded-2xl overflow-hidden bg-white hover:shadow-[0_8px_40px_rgba(0,0,0,.08)] hover:-translate-y-0.5 transition-all duration-300"
+      <div class="ev-reveal group border border-[#e6e3df] overflow-hidden bg-white hover:shadow-[0_8px_40px_rgba(0,0,0,.08)] hover:-translate-y-0.5 transition-all duration-300"
            style="transition-delay:<?php echo ( $i % 2 ) * 80; ?>ms;"
            id="location-<?php echo sanitize_title( $loc['name'] ); ?>">
 
@@ -188,7 +188,7 @@ $locations = [
           <!-- Location badge overlay -->
           <?php if ( ! empty( $loc['badge'] ) ) : ?>
           <div class="absolute top-3 left-3 z-10">
-            <span class="text-[9px] font-bold tracking-[.12em] uppercase text-[#0f0f0f] px-2.5 py-1 rounded-full"
+            <span class="text-[9px] font-bold tracking-[.12em] uppercase text-[#0f0f0f] px-2.5 py-1"
                   style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
               <?php echo esc_html( $loc['badge'] ); ?>
             </span>
@@ -198,7 +198,7 @@ $locations = [
           <!-- Open in Google Maps button — always visible on the map -->
           <a href="<?php echo esc_url( $loc['maps_link'] ); ?>"
              target="_blank" rel="noopener noreferrer"
-             class="absolute bottom-3 right-3 z-10 flex items-center gap-1.5 bg-white text-[#0b0b0c] text-[10px] font-bold tracking-[.08em] uppercase px-3 py-2 rounded-lg shadow-md hover:bg-[#8a6a45] hover:text-white transition-colors">
+             class="absolute bottom-3 right-3 z-10 flex items-center gap-1.5 bg-white text-[#0b0b0c] text-[10px] font-bold tracking-[.08em] uppercase px-3 py-2 shadow-md hover:bg-[#8a6a45] hover:text-white transition-colors">
             <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0zM19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
             </svg>
@@ -210,7 +210,7 @@ $locations = [
         <div class="p-6 md:p-7">
           <div class="flex items-start justify-between gap-4 mb-3">
             <div>
-              <h3 class="font-['Playfair_Display'] text-[20px] font-bold text-[#0b0b0c] leading-snug">
+              <h3 class="font-['Articulat_CF'] text-[20px] font-bold text-[#0b0b0c] leading-snug">
                 <?php echo esc_html( $loc['name'] ); ?>
                 <span class="text-[#8a6a45]">, <?php echo esc_html( $loc['state'] ); ?></span>
               </h3>
@@ -225,7 +225,7 @@ $locations = [
             <a href="<?php echo esc_url( $loc['maps_link'] ); ?>"
                target="_blank" rel="noopener noreferrer"
                title="Get directions to <?php echo esc_attr( $loc['name'] ); ?>"
-               class="flex-shrink-0 w-10 h-10 rounded-xl border border-[#e6e3df] bg-[#f5f2ef] flex items-center justify-center text-[#7a7f85] hover:bg-[#8a6a45] hover:border-[#8a6a45] hover:text-white transition-all">
+               class="flex-shrink-0 w-10 h-10 border border-[#e6e3df] bg-[#f5f2ef] flex items-center justify-center text-[#7a7f85] hover:bg-[#8a6a45] hover:border-[#8a6a45] hover:text-white transition-all">
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"/>
               </svg>
@@ -241,7 +241,7 @@ $locations = [
             <?php
             $tags = ['Brick + Hardscapes', 'Landscape Design', '3D Renderings', 'Outdoor Lighting'];
             foreach ( $tags as $tag ) : ?>
-            <span class="text-[10px] font-medium text-[#2f3133] bg-[#f5f2ef] border border-[#e6e3df] rounded-full px-3 py-1">
+            <span class="text-[10px] font-medium text-[#2f3133] bg-[#f5f2ef] border border-[#e6e3df] px-3 py-1">
               <?php echo $tag; ?>
             </span>
             <?php endforeach; ?>
@@ -250,13 +250,13 @@ $locations = [
           <!-- CTAs -->
           <div class="flex items-center gap-3 pt-4 border-t border-[#e6e3df]">
             <a href="/contact"
-               class="flex-1 text-center text-[11px] font-bold tracking-[.08em] uppercase text-white py-3 rounded-lg hover:opacity-85 transition-opacity"
+               class="flex-1 text-center text-[11px] font-bold tracking-[.08em] uppercase text-white py-3 hover:opacity-85 transition-opacity"
                style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
               Free Estimate
             </a>
             <a href="<?php echo esc_url( $loc['maps_link'] ); ?>"
                target="_blank" rel="noopener noreferrer"
-               class="flex-1 text-center text-[11px] font-bold tracking-[.08em] uppercase text-[#0b0b0c] py-3 rounded-lg border border-[#d8d4ce] hover:border-[#8a6a45] hover:text-[#8a6a45] transition-colors">
+               class="flex-1 text-center text-[11px] font-bold tracking-[.08em] uppercase text-[#0b0b0c] py-3 border border-[#d8d4ce] hover:border-[#8a6a45] hover:text-[#8a6a45] transition-colors">
               Open in Google Maps
             </a>
           </div>
@@ -277,7 +277,7 @@ $locations = [
   <div class="max-w-[1280px] mx-auto px-6 md:px-10">
     <div class="text-center mb-10 ev-reveal">
       <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">Full Coverage</span>
-      <h2 class="font-['Playfair_Display'] text-[clamp(22px,3vw,34px)] font-bold text-[#0b0b0c]">
+      <h2 class="font-['Articulat_CF'] text-[clamp(22px,3vw,34px)] font-bold text-[#0b0b0c]">
         Our Complete Service Area
       </h2>
       <p class="mt-3 text-[13px] text-[#7a7f85] font-light">
@@ -286,7 +286,7 @@ $locations = [
     </div>
 
     <!-- Full width map centered on Clinton Township -->
-    <div class="rounded-2xl overflow-hidden border border-[#e6e3df] shadow-sm ev-reveal">
+    <div class="overflow-hidden border border-[#e6e3df] shadow-sm ev-reveal">
       <iframe
         title="Everridge Landscape Service Area — Clinton Township, MI"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188730.!2d-83.0338!3d42.5884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824e8a9b0c1d2e3%3A0xfedcba0987654321!2sClinton+Township%2C+MI!5e0!3m2!1sen!2sus!4v1700000000007"
@@ -310,7 +310,7 @@ $locations = [
     <div class="mt-8 flex flex-wrap items-center justify-center gap-2">
       <?php foreach ( $locations as $loc ) : ?>
       <a href="#location-<?php echo sanitize_title( $loc['name'] ); ?>"
-         class="text-[12px] font-medium text-[#2f3133] bg-white border border-[#e6e3df] rounded-full px-4 py-2 hover:border-[#8a6a45] hover:text-[#8a6a45] transition-colors">
+         class="text-[12px] font-medium text-[#2f3133] bg-white border border-[#e6e3df] px-4 py-2 hover:border-[#8a6a45] hover:text-[#8a6a45] transition-colors">
         <?php echo esc_html( $loc['name'] ); ?>, MI
       </a>
       <?php endforeach; ?>
@@ -325,7 +325,7 @@ $locations = [
 <section class="bg-[#0b0b0c] py-20">
   <div class="max-w-[760px] mx-auto px-6 md:px-10 text-center">
     <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-4">Don't See Your City?</span>
-    <h2 class="font-['Playfair_Display'] text-[clamp(26px,4vw,44px)] font-bold text-[#e6e3df] leading-[1.15] mb-5">
+    <h2 class="font-['Articulat_CF'] text-[clamp(26px,4vw,44px)] font-bold text-[#e6e3df] leading-[1.15] mb-5">
       We May Still Serve<br>
       <em class="italic text-[#8a6a45]">Your Area.</em>
     </h2>
@@ -334,13 +334,13 @@ $locations = [
     </p>
     <div class="flex flex-wrap gap-3 justify-center">
       <a href="/contact"
-         class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-white px-9 py-4 rounded-md hover:opacity-85 transition-opacity"
+         class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-white px-9 py-4 hover:opacity-85 transition-opacity"
          style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
         Request a Free Estimate
         <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
       </a>
       <a href="tel:+17705550192"
-         class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.04em] text-[rgba(230,227,223,.75)] border border-[rgba(230,227,223,.2)] px-8 py-4 rounded-md hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
+         class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.04em] text-[rgba(230,227,223,.75)] border border-[rgba(230,227,223,.2)] px-8 py-4 hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd"/></svg>
         (770) 555-0192
       </a>
