@@ -5,10 +5,6 @@ import React, { useState, useEffect, useRef } from "react"
 //  EmailJS  → https://emailjs.com  (free up to 200 emails/month)
 //  reCAPTCHA → https://www.google.com/recaptcha/admin  (v2 "I'm not a robot")
 // ══════════════════════════════════════════════════════════════════════════════
-const EMAILJS_PUBLIC_KEY  = "stbQfV1XDrMzJ1pCJ"   // Account > API Keys
-const EMAILJS_SERVICE_ID  = "service_d1i83um"           // Email Services tab
-const EMAILJS_TEMPLATE_ID = "template_ve4aw08"          // Email Templates tab
-const RECAPTCHA_SITE_KEY  = "6Lcf0OEsAAAAAPn21zHfnaJJlWaiJMFT7WGV_wyr"   // reCAPTCHA Admin Console
 
 // ══════════════════════════════════════════════════════════════════════════════
 //  EmailJS template variables expected:
@@ -36,6 +32,12 @@ const INITIAL = {
 }
 
 // ── Design tokens ─────────────────────────────────────────────────────────────
+// ── EmailJS + reCAPTCHA config ────────────────────────────────────────────────
+const EMAILJS_PUBLIC_KEY  = "stbQfV1XDrMzJ1pCJ"
+const EMAILJS_SERVICE_ID  = "service_d1i83um"
+const EMAILJS_TEMPLATE_ID = "template_ve4aw08"
+const RECAPTCHA_SITE_KEY  = "6Lcf0OEsAAAAAPn21zHfnaJJlWaiJMFT7WGV_wyr"
+
 const C = {
   gold:    "#8a6a45",
   goldDk:  "#7a5c38",
@@ -116,15 +118,15 @@ const SpinnerIcon = () => (
 )
 
 // ── Field component ────────────────────────────────────────────────────────────
-function Field({ label, required, error, children }) {
+function Field({ label, required, error, children, darkMode = false }) {
   return (
     <div>
       <label style={{
         display: "block",
-        fontFamily: "'DM Sans', sans-serif",
+        fontFamily: "'Gotham Book', sans-serif",
         fontSize: 10, fontWeight: 600,
         letterSpacing: ".08em", textTransform: "uppercase",
-        color: C.slate, marginBottom: 6,
+        color: darkMode ? "rgba(230,227,223,.6)" : C.slate, marginBottom: 6,
       }}>
         {label} {required && <span style={{ color: C.gold }}>*</span>}
       </label>
@@ -143,18 +145,18 @@ function Field({ label, required, error, children }) {
 }
 
 // ── Input / Select / Textarea styles ──────────────────────────────────────────
-function inputStyle(hasError) {
+function inputStyle(hasError, darkMode = false) {
   return {
     width: "100%", boxSizing: "border-box",
-    fontFamily: "'DM Sans', sans-serif",
+    fontFamily: "'Gotham Book', sans-serif",
     fontSize: 14, fontWeight: 400,
-    color: C.dark,
-    background: C.white,
-    border: `1px solid ${hasError ? C.error : C.border}`,
-    borderRadius: 7,
+    color:      darkMode ? "rgba(230,227,223,.9)" : C.dark,
+    background: darkMode ? "rgba(255,255,255,.08)" : C.white,
+    border: `1px solid ${hasError ? C.error : darkMode ? "rgba(255,255,255,.18)" : C.border}`,
+    borderRadius: 0,
     padding: "12px 16px",
     outline: "none",
-    transition: "border-color .2s",
+    transition: "border-color .2s, background .2s",
   }
 }
 
@@ -165,7 +167,8 @@ function ContactForm({
   subtitle      = "Tell us about your project and we'll reach out within 24–48 hours.",
   showTitle     = true,
   bgColor       = C.bg,
-  compact       = false,   // compact=true removes padding/title for inline use
+  compact       = false,   // compact=true → no padding, transparent bg
+  darkMode      = false,   // darkMode=true → inputs/labels optimised for dark backgrounds
 }) {
   useFonts()
   const ejsReady = useEmailJS()
@@ -309,13 +312,12 @@ function ContactForm({
       <style>{`
         @keyframes spin { to { transform: rotate(360deg); } }
         .ev-input:focus { border-color: ${C.borderF} !important; }
-        .ev-input::placeholder { color: ${C.slate}; opacity: .7; }
+        .ev-input::placeholder { color: ${darkMode ? "rgba(230,227,223,.35)" : C.slate}; opacity: 1; }
         .ev-select option { color: ${C.dark}; background: ${C.white}; }
       `}</style>
 
       <div style={{
-        background: compact ? "transparent" : bgColor,
-        borderRadius: compact ? 0 : 14,
+        background: "transparent",
         padding: compact ? 0 : "40px 36px",
       }}>
 
@@ -352,24 +354,24 @@ function ContactForm({
             {/* Name + Phone */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}
                  className="ev-form-2col">
-              <Field label="Full Name" required error={errors.full_name}>
+              <Field darkMode={darkMode} label="Full Name" required error={errors.full_name}>
                 <input
                   type="text" value={fields.full_name}
                   onChange={set("full_name")}
                   placeholder="John Smith"
                   className="ev-input"
-                  style={inputStyle(!!errors.full_name)}
+                  style={inputStyle(!!errors.full_name, darkMode)}
                   onFocus={e => e.target.style.borderColor = C.borderF}
                   onBlur={e  => e.target.style.borderColor = errors.full_name ? C.error : C.border}
                 />
               </Field>
-              <Field label="Phone Number" required error={errors.phone}>
+              <Field darkMode={darkMode} label="Phone Number" required error={errors.phone}>
                 <input
                   type="tel" value={fields.phone}
                   onChange={set("phone")}
                   placeholder="(248) 555-0100"
                   className="ev-input"
-                  style={inputStyle(!!errors.phone)}
+                  style={inputStyle(!!errors.phone, darkMode)}
                   onFocus={e => e.target.style.borderColor = C.borderF}
                   onBlur={e  => e.target.style.borderColor = errors.phone ? C.error : C.border}
                 />
@@ -377,25 +379,25 @@ function ContactForm({
             </div>
 
             {/* Email */}
-            <Field label="Email Address" required error={errors.email}>
+            <Field darkMode={darkMode} label="Email Address" required error={errors.email}>
               <input
                 type="email" value={fields.email}
                 onChange={set("email")}
                 placeholder="john@email.com"
                 className="ev-input"
-                style={inputStyle(!!errors.email)}
+                style={inputStyle(!!errors.email, darkMode)}
                 onFocus={e => e.target.style.borderColor = C.borderF}
                 onBlur={e  => e.target.style.borderColor = errors.email ? C.error : C.border}
               />
             </Field>
 
             {/* Service */}
-            <Field label="Service Needed" required error={errors.service}>
+            <Field darkMode={darkMode} label="Service Needed" required error={errors.service}>
               <select
                 value={fields.service}
                 onChange={set("service")}
                 className="ev-input ev-select"
-                style={{ ...inputStyle(!!errors.service), cursor: "pointer" }}
+                style={{ ...inputStyle(!!errors.service, darkMode), cursor: "pointer" }}
                 onFocus={e => e.target.style.borderColor = C.borderF}
                 onBlur={e  => e.target.style.borderColor = errors.service ? C.error : C.border}
               >
@@ -405,27 +407,27 @@ function ContactForm({
             </Field>
 
             {/* Address */}
-            <Field label="Property Address or City" required error={errors.address}>
+            <Field darkMode={darkMode} label="Property Address or City" required error={errors.address}>
               <input
                 type="text" value={fields.address}
                 onChange={set("address")}
                 placeholder="Troy, MI or 1234 Oak St, Birmingham MI"
                 className="ev-input"
-                style={inputStyle(!!errors.address)}
+                style={inputStyle(!!errors.address, darkMode)}
                 onFocus={e => e.target.style.borderColor = C.borderF}
                 onBlur={e  => e.target.style.borderColor = errors.address ? C.error : C.border}
               />
             </Field>
 
             {/* Message */}
-            <Field label="Tell Us About Your Project" error={errors.message}>
+            <Field darkMode={darkMode} label="Tell Us About Your Project" error={errors.message}>
               <textarea
                 value={fields.message}
                 onChange={set("message")}
                 placeholder="Describe your vision, timeline, or any specific requirements..."
                 rows={4}
                 className="ev-input"
-                style={{ ...inputStyle(false), resize: "vertical", minHeight: 96 }}
+                style={{ ...inputStyle(false, darkMode), resize: "vertical", minHeight: 96 }}
                 onFocus={e => e.target.style.borderColor = C.borderF}
                 onBlur={e  => e.target.style.borderColor = C.border}
               />
@@ -504,7 +506,7 @@ function ContactForm({
         <p style={{
           fontFamily: "'DM Sans', sans-serif",
           fontSize: 11, fontWeight: 300,
-          color: C.slate, marginTop: 18,
+          color: darkMode ? "rgba(230,227,223,.35)" : C.slate, marginTop: 18,
           textAlign: "center", lineHeight: 1.7,
         }}>
           We respond within 24–48 hours · No pressure · Licensed & Insured · 17+ Years Experience

@@ -17,25 +17,22 @@ if (footEl) {
 }
 
 // ── ContactForm ───────────────────────────────────────────────────────────────
-// Mounts on ANY element whose id starts with "render-contact-form"
-// Supported data attributes:
-//   data-compact="true"       → removes internal padding and title (use when PHP provides the header)
-//   data-show-title="false"   → hides the form's own title row
-//   data-title="Custom Title" → overrides the default title text
-//
-// Examples:
-//   <div id="render-contact-form-here"></div>
-//   <div id="render-contact-form-sidebar" data-compact="true" data-show-title="false"></div>
+// data-compact="true"     → no padding, transparent bg
+// data-show-title="false" → hide internal title
+// data-title="..."        → custom title
+// data-dark-mode="true"   → transparent inputs for dark/hero backgrounds
 document.querySelectorAll('[id^="render-contact-form"]').forEach(el => {
   const compact   = el.dataset.compact    === "true"
-  const showTitle = el.dataset.showTitle  !== "false"   // default true unless explicitly false
+  const showTitle = el.dataset.showTitle  !== "false"
   const title     = el.dataset.title      || "Request a Free Estimate"
+  const darkMode  = el.dataset.darkMode   === "true"
 
   ReactDOM.createRoot(el).render(
     <ContactForm
       compact={compact}
       showTitle={showTitle}
       title={title}
+      darkMode={darkMode}
     />
   )
 })

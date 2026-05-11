@@ -24,11 +24,6 @@ __webpack_require__.r(__webpack_exports__);
 //  reCAPTCHA → https://www.google.com/recaptcha/admin  (v2 "I'm not a robot")
 // ══════════════════════════════════════════════════════════════════════════════
 
-const EMAILJS_PUBLIC_KEY = "stbQfV1XDrMzJ1pCJ"; // Account > API Keys
-const EMAILJS_SERVICE_ID = "service_d1i83um"; // Email Services tab
-const EMAILJS_TEMPLATE_ID = "template_ve4aw08"; // Email Templates tab
-const RECAPTCHA_SITE_KEY = "6Lcf0OEsAAAAAPn21zHfnaJJlWaiJMFT7WGV_wyr"; // reCAPTCHA Admin Console
-
 // ══════════════════════════════════════════════════════════════════════════════
 //  EmailJS template variables expected:
 //    {{from_name}}    — full name
@@ -51,6 +46,11 @@ const INITIAL = {
 };
 
 // ── Design tokens ─────────────────────────────────────────────────────────────
+// ── EmailJS + reCAPTCHA config ────────────────────────────────────────────────
+const EMAILJS_PUBLIC_KEY = "stbQfV1XDrMzJ1pCJ";
+const EMAILJS_SERVICE_ID = "service_d1i83um";
+const EMAILJS_TEMPLATE_ID = "template_ve4aw08";
+const RECAPTCHA_SITE_KEY = "6Lcf0OEsAAAAAPn21zHfnaJJlWaiJMFT7WGV_wyr";
 const C = {
   gold: "#8a6a45",
   goldDk: "#7a5c38",
@@ -166,18 +166,19 @@ function Field({
   label,
   required,
   error,
-  children
+  children,
+  darkMode = false
 }) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
       style: {
         display: "block",
-        fontFamily: "'DM Sans', sans-serif",
+        fontFamily: "'Gotham Book', sans-serif",
         fontSize: 10,
         fontWeight: 600,
         letterSpacing: ".08em",
         textTransform: "uppercase",
-        color: C.slate,
+        color: darkMode ? "rgba(230,227,223,.6)" : C.slate,
         marginBottom: 6
       },
       children: [label, " ", required && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
@@ -200,20 +201,20 @@ function Field({
 }
 
 // ── Input / Select / Textarea styles ──────────────────────────────────────────
-function inputStyle(hasError) {
+function inputStyle(hasError, darkMode = false) {
   return {
     width: "100%",
     boxSizing: "border-box",
-    fontFamily: "'DM Sans', sans-serif",
+    fontFamily: "'Gotham Book', sans-serif",
     fontSize: 14,
     fontWeight: 400,
-    color: C.dark,
-    background: C.white,
-    border: `1px solid ${hasError ? C.error : C.border}`,
-    borderRadius: 7,
+    color: darkMode ? "rgba(230,227,223,.9)" : C.dark,
+    background: darkMode ? "rgba(255,255,255,.08)" : C.white,
+    border: `1px solid ${hasError ? C.error : darkMode ? "rgba(255,255,255,.18)" : C.border}`,
+    borderRadius: 0,
     padding: "12px 16px",
     outline: "none",
-    transition: "border-color .2s"
+    transition: "border-color .2s, background .2s"
   };
 }
 
@@ -224,7 +225,9 @@ function ContactForm({
   subtitle = "Tell us about your project and we'll reach out within 24–48 hours.",
   showTitle = true,
   bgColor = C.bg,
-  compact = false // compact=true removes padding/title for inline use
+  compact = false,
+  // compact=true → no padding, transparent bg
+  darkMode = false // darkMode=true → inputs/labels optimised for dark backgrounds
 }) {
   useFonts();
   const ejsReady = useEmailJS();
@@ -390,13 +393,12 @@ function ContactForm({
       children: `
         @keyframes spin { to { transform: rotate(360deg); } }
         .ev-input:focus { border-color: ${C.borderF} !important; }
-        .ev-input::placeholder { color: ${C.slate}; opacity: .7; }
+        .ev-input::placeholder { color: ${darkMode ? "rgba(230,227,223,.35)" : C.slate}; opacity: 1; }
         .ev-select option { color: ${C.dark}; background: ${C.white}; }
       `
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       style: {
-        background: compact ? "transparent" : bgColor,
-        borderRadius: compact ? 0 : 14,
+        background: "transparent",
         padding: compact ? 0 : "40px 36px"
       },
       children: [showTitle && !compact && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -453,6 +455,7 @@ function ContactForm({
             },
             className: "ev-form-2col",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Field, {
+              darkMode: darkMode,
               label: "Full Name",
               required: true,
               error: errors.full_name,
@@ -462,11 +465,12 @@ function ContactForm({
                 onChange: set("full_name"),
                 placeholder: "John Smith",
                 className: "ev-input",
-                style: inputStyle(!!errors.full_name),
+                style: inputStyle(!!errors.full_name, darkMode),
                 onFocus: e => e.target.style.borderColor = C.borderF,
                 onBlur: e => e.target.style.borderColor = errors.full_name ? C.error : C.border
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Field, {
+              darkMode: darkMode,
               label: "Phone Number",
               required: true,
               error: errors.phone,
@@ -476,12 +480,13 @@ function ContactForm({
                 onChange: set("phone"),
                 placeholder: "(248) 555-0100",
                 className: "ev-input",
-                style: inputStyle(!!errors.phone),
+                style: inputStyle(!!errors.phone, darkMode),
                 onFocus: e => e.target.style.borderColor = C.borderF,
                 onBlur: e => e.target.style.borderColor = errors.phone ? C.error : C.border
               })
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Field, {
+            darkMode: darkMode,
             label: "Email Address",
             required: true,
             error: errors.email,
@@ -491,11 +496,12 @@ function ContactForm({
               onChange: set("email"),
               placeholder: "john@email.com",
               className: "ev-input",
-              style: inputStyle(!!errors.email),
+              style: inputStyle(!!errors.email, darkMode),
               onFocus: e => e.target.style.borderColor = C.borderF,
               onBlur: e => e.target.style.borderColor = errors.email ? C.error : C.border
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Field, {
+            darkMode: darkMode,
             label: "Service Needed",
             required: true,
             error: errors.service,
@@ -504,7 +510,7 @@ function ContactForm({
               onChange: set("service"),
               className: "ev-input ev-select",
               style: {
-                ...inputStyle(!!errors.service),
+                ...inputStyle(!!errors.service, darkMode),
                 cursor: "pointer"
               },
               onFocus: e => e.target.style.borderColor = C.borderF,
@@ -519,6 +525,7 @@ function ContactForm({
               }, s))]
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Field, {
+            darkMode: darkMode,
             label: "Property Address or City",
             required: true,
             error: errors.address,
@@ -528,11 +535,12 @@ function ContactForm({
               onChange: set("address"),
               placeholder: "Troy, MI or 1234 Oak St, Birmingham MI",
               className: "ev-input",
-              style: inputStyle(!!errors.address),
+              style: inputStyle(!!errors.address, darkMode),
               onFocus: e => e.target.style.borderColor = C.borderF,
               onBlur: e => e.target.style.borderColor = errors.address ? C.error : C.border
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Field, {
+            darkMode: darkMode,
             label: "Tell Us About Your Project",
             error: errors.message,
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("textarea", {
@@ -542,7 +550,7 @@ function ContactForm({
               rows: 4,
               className: "ev-input",
               style: {
-                ...inputStyle(false),
+                ...inputStyle(false, darkMode),
                 resize: "vertical",
                 minHeight: 96
               },
@@ -628,7 +636,7 @@ function ContactForm({
           fontFamily: "'DM Sans', sans-serif",
           fontSize: 11,
           fontWeight: 300,
-          color: C.slate,
+          color: darkMode ? "rgba(230,227,223,.35)" : C.slate,
           marginTop: 18,
           textAlign: "center",
           lineHeight: 1.7
@@ -2395,23 +2403,20 @@ if (footEl) {
 }
 
 // ── ContactForm ───────────────────────────────────────────────────────────────
-// Mounts on ANY element whose id starts with "render-contact-form"
-// Supported data attributes:
-//   data-compact="true"       → removes internal padding and title (use when PHP provides the header)
-//   data-show-title="false"   → hides the form's own title row
-//   data-title="Custom Title" → overrides the default title text
-//
-// Examples:
-//   <div id="render-contact-form-here"></div>
-//   <div id="render-contact-form-sidebar" data-compact="true" data-show-title="false"></div>
+// data-compact="true"     → no padding, transparent bg
+// data-show-title="false" → hide internal title
+// data-title="..."        → custom title
+// data-dark-mode="true"   → transparent inputs for dark/hero backgrounds
 document.querySelectorAll('[id^="render-contact-form"]').forEach(el => {
   const compact = el.dataset.compact === "true";
-  const showTitle = el.dataset.showTitle !== "false"; // default true unless explicitly false
+  const showTitle = el.dataset.showTitle !== "false";
   const title = el.dataset.title || "Request a Free Estimate";
+  const darkMode = el.dataset.darkMode === "true";
   react_dom_client__WEBPACK_IMPORTED_MODULE_4__.createRoot(el).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_scripts_ContactForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
     compact: compact,
     showTitle: showTitle,
-    title: title
+    title: title,
+    darkMode: darkMode
   }));
 });
 })();
