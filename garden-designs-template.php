@@ -16,26 +16,17 @@ $threed_hero_img = '/wp-content/uploads/2026/04/Landscaping3DModeling-.png'; // 
 
 // Process step images — one per step
 $threed_process_imgs = [
-  '', // image 1
-  '', // image 2
-  '', // image 3
-  '', // image 4
+  '/wp-content/uploads/2026/05/Process1-scaled.jpg', // image 1
+  '/wp-content/uploads/2026/05/3DRenderingHero-scaled.jpg', // image 2
+  '/wp-content/uploads/2026/05/Process2-scaled.jpg', // image 3
+  '/wp-content/uploads/2026/05/PremiunHardscapeHero-scaled.jpg', // image 4
 ];
 
-// Side/detail image
-$threed_detail_img = ''; // e.g. /wp-content/uploads/2026/05/threed-detail.jpg
+// Side/detail image (rendering side of gallery)
+$threed_detail_img = '/wp-content/uploads/2026/05/completed-match.png'; // e.g. /wp-content/uploads/2026/05/threed-detail.jpg
 
-// Side/detail image
-$threed_side_img_2 = ''; // e.g. /wp-content/uploads/2026/05/threed-detail.jpg
-?>
-
-
-
-<?php
-
-/* ── 3D Renderings IMAGE URLS ─────────────────────────────────────────────────────
- * Paste URLs from: WordPress Admin → Media → click image → Copy URL
- * ─────────────────────────────────────────────────────────────────────────── */
+// Side/detail image 2 (completed side of gallery)
+$threed_side_img_2 = '/wp-content/uploads/2026/05/rendering-preview.png'; // e.g. /wp-content/uploads/2026/05/threed-detail.jpg
 
 // Gallery images — one URL per project card
 $threed_gallery = [
@@ -47,8 +38,6 @@ $threed_gallery = [
   '', // image 6
 ];
 ?>
-
-
 
 <?php
 /* ── Data ─────────────────────────────────────────────────────────────────── */
@@ -127,7 +116,7 @@ $faqs = [
 
 
 <!-- ════════════════════════════════════════════════
-     PAGE HERO — Split rendering vs reality
+     PAGE HERO
      ════════════════════════════════════════════════ -->
 <section class="relative overflow-hidden -mt-[104px]" style="min-height:88vh;">
   <div class="absolute inset-0 bg-[#141018]"
@@ -210,21 +199,21 @@ $faqs = [
       </p>
     </div>
 
-    <!-- 4-step horizontal progression -->
     <div class="relative">
-      <!-- Connecting line (desktop) -->
       <div class="hidden lg:block absolute top-[72px] left-[12.5%] right-[12.5%] h-px bg-[#e8e2da] z-0"></div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <?php foreach ( $process_steps as $i => $step ) : ?>
         <div class="ev-reveal text-center relative" style="transition-delay:<?php echo $i * 120; ?>ms;">
-          <!-- Step image -->
           <div class="relative mb-6">
-            <div class="overflow-hidden border border-[#e6e3df] aspect-[4/3] bg-[#e8e4de] flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-4 mb-4">
-              <?php if(!empty($threed_process_imgs[$i])):?><img src="<?php echo esc_url($threed_process_imgs[$i]);?>" class="w-full h-full object-cover" loading="lazy" alt=""><?php endif;?>
-              <?php echo $step['ph']; ?>
+            <!-- FIX: relative wrapper + absolute img + else for placeholder -->
+            <div class="overflow-hidden border border-[#e6e3df] aspect-[4/3] bg-[#e8e4de] relative mb-4">
+              <?php if(!empty($threed_process_imgs[$i])):?>
+              <img src="<?php echo esc_url($threed_process_imgs[$i]);?>" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="">
+              <?php else:?>
+              <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-4"><?php echo $step['ph']; ?></div>
+              <?php endif;?>
             </div>
-            <!-- Step number circle — sits on top of the connecting line -->
             <div class="relative z-10 w-14 h-14 bg-white border-2 border-[#d8d4ce] flex items-center justify-center mx-auto shadow-sm transition-all duration-500 ev-step-dot" data-step="<?php echo $i; ?>">
               <span class="font-['Articulat_CF'] text-[15px] font-bold text-[#8a6a45]"><?php echo $step['num']; ?></span>
             </div>
@@ -236,7 +225,6 @@ $faqs = [
       </div>
     </div>
 
-    <!-- The why — editorial block -->
     <div class="mt-20 ev-reveal">
       <div class="bg-[#f5f2ef] border border-[#e6e3df] p-10 md:p-14 grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-10 items-center">
         <div>
@@ -248,7 +236,6 @@ $faqs = [
           <p class="text-[14px] font-light text-[#7a7f85] leading-[1.8] mb-4">This process exists because we believe you should never have to wonder how your project will turn out. With Everridge, you see what you are getting. You approve what you are getting. And then we build exactly what you approved.</p>
           <p class="text-[14px] font-light text-[#7a7f85] leading-[1.8]">No guesswork. No anxiety. No surprises at the final reveal. Just certainty — from the moment you see your first rendering to the moment we hand you the property.</p>
         </div>
-        <!-- Quote -->
         <div class="relative">
           <svg class="absolute -top-3 -left-2 w-10 h-10 text-[#8a6a45] opacity-25" fill="currentColor" viewBox="0 0 24 24">
             <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
@@ -286,26 +273,28 @@ $faqs = [
       <p class="mt-4 text-[14px] text-[#7a7f85] font-light">Each pair shows the 3D rendering on the left and the completed project on the right — same angle, same perspective.</p>
     </div>
 
-    <!-- Pairs grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <?php foreach ( $render_pairs as $i => $pair ) : ?>
       <div class="ev-reveal" style="transition-delay:<?php echo ($i%2)*100; ?>ms;">
 
-        <!-- Side-by-side comparison (static on mobile, drag on desktop) -->
         <div class="ev-rv-pair relative group" data-pair="<?php echo $i; ?>">
 
           <!-- Desktop: drag slider -->
           <div class="hidden md:block ev-ba relative overflow-hidden border border-[#e6e3df] cursor-col-resize select-none" data-ba="<?php echo $i; ?>">
-            <!-- Rendering (base) -->
-            <div class="aspect-[16/9] bg-[#dcd8e0] flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-8">
-              <?php if($threed_detail_img):?><img src="<?php echo esc_url($threed_detail_img);?>" class="w-full h-full object-cover" loading="lazy" alt="3D Rendering - <?php echo esc_attr($pair['label']); ?>"><?php endif;?>
-              <?php echo $pair['ph_r']; ?>
+            <!-- Rendering (base) — FIX: relative wrapper + absolute img + else -->
+            <div class="aspect-[16/9] bg-[#dcd8e0] relative overflow-hidden">
+              <?php if($threed_detail_img):?>
+              <img src="<?php echo esc_url($threed_detail_img);?>" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="3D Rendering - <?php echo esc_attr($pair['label']); ?>">
+              <?php else:?>
+              <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-8"><?php echo $pair['ph_r']; ?></div>
+              <?php endif;?>
             </div>
-            <!-- Completed (clipped) -->
-            <div class="ev-ba-after absolute inset-0 bg-[#c8d4b8] flex items-center justify-center text-[10px] text-[#7a9a7a] text-center px-8"
-                 style="clip-path:inset(0 50% 0 0);background-size:cover;background-position:center;">
-              <?php if($threed_side_img_2):?><img src="<?php echo esc_url($threed_side_img_2);?>" class="w-full h-full object-cover" loading="lazy" alt="Completed - <?php echo esc_attr($pair['label']); ?>"><?php endif;?>
-              <?php echo $pair['ph_c']; ?>
+            <!-- Completed (clipped) — FIX: background-image in style, else for placeholder -->
+            <div class="ev-ba-after absolute inset-0 bg-[#c8d4b8]"
+                 style="clip-path:inset(0 50% 0 0);background-size:cover;background-position:center;<?php if($threed_side_img_2) echo 'background-image:url('.esc_url($threed_side_img_2).');'; ?>">
+              <?php if(!$threed_side_img_2):?>
+              <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a9a7a] text-center px-8"><?php echo $pair['ph_c']; ?></div>
+              <?php endif;?>
             </div>
             <!-- Handle -->
             <div class="ev-ba-handle absolute top-0 bottom-0 w-0.5 bg-white left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none">
@@ -319,23 +308,28 @@ $faqs = [
             <span class="absolute top-3 right-3 bg-[rgba(0,0,0,.5)] backdrop-blur-sm text-[9px] font-bold tracking-[.12em] uppercase text-white px-2.5 py-1">Completed</span>
           </div>
 
-          <!-- Mobile: stacked side-by-side -->
+          <!-- Mobile: stacked side-by-side — FIX: else on both placeholders -->
           <div class="md:hidden grid grid-cols-2 gap-2 overflow-hidden border border-[#e6e3df]">
-            <div class="aspect-[4/3] bg-[#dcd8e0] flex items-center justify-center text-[9px] text-[#7a7f85] text-center px-3 relative">
-              <?php if(!empty($threed_gallery[$i])):?><img src="<?php echo esc_url($threed_gallery[$i]);?>" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" alt="<?php echo esc_attr($pt['label']??'Project');?>"><?php endif;?>
-              <?php echo $pair['ph_r']; ?>
-              <span class="absolute top-2 left-2 bg-[rgba(0,0,0,.5)] text-[8px] font-bold text-white px-2 py-0.5 rounded">Rendering</span>
+            <div class="aspect-[4/3] bg-[#dcd8e0] relative overflow-hidden">
+              <?php if(!empty($threed_gallery[$i])):?>
+              <img src="<?php echo esc_url($threed_gallery[$i]);?>" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="">
+              <?php else:?>
+              <div class="absolute inset-0 flex items-center justify-center text-[9px] text-[#7a7f85] text-center px-3"><?php echo $pair['ph_r']; ?></div>
+              <?php endif;?>
+              <span class="absolute top-2 left-2 bg-[rgba(0,0,0,.5)] text-[8px] font-bold text-white px-2 py-0.5">Rendering</span>
             </div>
-            <div class="aspect-[4/3] bg-[#c8d4b8] flex items-center justify-center text-[9px] text-[#7a9a7a] text-center px-3 relative">
-              <?php if(!empty($threed_gallery[$i])):?><img src="<?php echo esc_url($threed_gallery[$i]);?>" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" alt="<?php echo esc_attr($pt['label']??'Project');?>"><?php endif;?>
-              <?php echo $pair['ph_c']; ?>
-              <span class="absolute top-2 right-2 bg-[rgba(0,0,0,.5)] text-[8px] font-bold text-white px-2 py-0.5 rounded">Completed</span>
+            <div class="aspect-[4/3] bg-[#c8d4b8] relative overflow-hidden">
+              <?php if(!empty($threed_gallery[$i])):?>
+              <img src="<?php echo esc_url($threed_gallery[$i]);?>" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="">
+              <?php else:?>
+              <div class="absolute inset-0 flex items-center justify-center text-[9px] text-[#7a9a7a] text-center px-3"><?php echo $pair['ph_c']; ?></div>
+              <?php endif;?>
+              <span class="absolute top-2 right-2 bg-[rgba(0,0,0,.5)] text-[8px] font-bold text-white px-2 py-0.5">Completed</span>
             </div>
           </div>
 
         </div>
 
-        <!-- Label -->
         <div class="flex items-center justify-between mt-3 px-1">
           <span class="font-['Articulat_CF'] text-[15px] font-semibold text-[#0b0b0c]"><?php echo $pair['label']; ?></span>
           <span class="text-[11px] text-[#7a7f85]"><?php echo $pair['city']; ?></span>
@@ -378,7 +372,6 @@ $faqs = [
       <?php endforeach; ?>
     </div>
 
-    <!-- No design fee callout -->
     <div class="mt-10 ev-reveal">
       <div class="bg-[#1a1814] p-8 md:p-10 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-center">
         <div>
@@ -476,48 +469,6 @@ $faqs = [
     </div>
   </div>
 </section>
-
-
-<!-- ════════════════════════════════════════════════
-     SECTION 4C — CTA
-     ════════════════════════════════════════════════ -->
-<section class="relative overflow-hidden py-24 md:py-32">
-  <div class="absolute inset-0 bg-[#12101a]" style="background-size:cover;background-position:center;background-attachment:fixed;">
-    <?php if($threed_hero_img) echo "background-image:url(".esc_url($threed_hero_img).");"; ?>
-    <div class="absolute inset-0 flex items-center justify-center text-[#2a2838] text-xs tracking-widest uppercase">
-      3D rendering and completed project side by side — most dramatic transformation available
-    </div>
-  </div>
-  <div class="absolute inset-0" style="background:rgba(0,0,0,.7);"></div>
-
-  <div class="relative z-10 max-w-[720px] mx-auto px-6 md:px-10 text-center">
-    <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-4">See Your Property in 3D</span>
-    <h2 class="font-['Articulat_CF'] text-[clamp(28px,5vw,52px)] font-bold text-[#e6e3df] leading-[1.1] mb-5">
-      Ready to See Your Property<br>
-      <em class="italic text-[#8a6a45]">Before We Build It?</em>
-    </h2>
-    <p class="text-[15px] font-light text-[rgba(240,236,230,.58)] leading-relaxed mb-10 max-w-lg mx-auto">
-      Schedule a design consultation. We'll visit your property, listen to your vision, and deliver a photorealistic 3D rendering within days. No obligation. No pressure.
-    </p>
-    <a href="tel:+17705550192"
-       class="block font-['Articulat_CF'] font-bold text-[#8a6a45] text-[clamp(24px,4vw,40px)] mb-9 hover:opacity-75 transition-opacity">
-      (770) 555-0192
-    </a>
-    <div class="flex flex-wrap gap-3 justify-center">
-      <a href="/contact"
-         class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-9 py-4 hover:opacity-85 transition-opacity"
-         style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
-        Schedule a Design Consultation
-        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-      </a>
-      <a href="/our-work"
-         class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.75)] border border-[rgba(240,236,230,.2)] px-8 py-4 hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
-        See More Renderings
-      </a>
-    </div>
-  </div>
-</section>
-
 
 <!-- ════════════════════════════════════════════════
      JAVASCRIPT
