@@ -14,7 +14,7 @@ const NAV_LINKS = [
       { label: "Outdoor Lighting Systems",          href: "/services/outdoor-lighting-systems"    },
     ],
   },
-  { label: "Our Work", href: "#" },
+  { label: "Our Work", href: "/our-work" },
   { label: "Locations", href: "/locations" },
   { label: "Contact", href: "/contact" },
 ]

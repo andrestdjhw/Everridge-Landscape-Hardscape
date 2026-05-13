@@ -7,6 +7,45 @@
 get_header(); ?>
 
 <?php
+/* ── Landscape Design — IMAGE URLS ────────────────────────────────────────────────────
+ * Paste URLs from: WP Admin → Media → click image → Copy URL to clipboard
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+// Hero background image
+$landscape_hero_img = '/wp-content/uploads/2026/05/LandscapeTransformationHero-scaled.jpg'; // e.g. /wp-content/uploads/2026/05/landscape-hero.jpg
+
+// Gallery project images — one per card
+$landscape_gallery = [
+  '', // image 1
+  '', // image 2
+  '', // image 3
+  '', // image 4
+  '', // image 5
+  '', // image 6
+];
+
+// CTA/section background
+$landscape_cta_img = ''; // e.g. /wp-content/uploads/2026/05/landscape-cta.jpg
+
+// Side/detail image
+$landscape_detail_img = ''; // e.g. /wp-content/uploads/2026/05/landscape-detail.jpg
+?>
+
+
+
+<?php
+
+/* ── Landscape Design IMAGE URLS ─────────────────────────────────────────────────────
+ * Paste URLs from: WordPress Admin → Media → click image → Copy URL
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+// Side detail image
+$landscape_detail_img = '';
+?>
+
+
+
+<?php
 /* ── Data ─────────────────────────────────────────────────────────────────── */
 $gallery_items = [
   [ 'label' => 'Seasonal Planting',     'city' => 'Birmingham, MI',      'ph' => 'Seasonal color planting installation — annuals and perennials in layered beds' ],
@@ -101,11 +140,8 @@ $faqs = [
      PAGE HERO
      ════════════════════════════════════════════════ -->
 <section class="relative overflow-hidden -mt-[104px]" style="min-height:88vh;">
-  <div class="absolute inset-0 bg-[#0e1a0c]" style="background-size:cover;background-position:center;">
-    {{-- Replace: background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/landscape-hero.jpg') --}}
-    <div class="absolute inset-0 flex items-center justify-center text-[#3a3a34] text-xs tracking-widest uppercase text-center px-10">
-      Hero — lush vibrant front yard, layered plantings, fresh mulch, clean edges. Magazine quality. Bloomfield Hills aesthetic.
-    </div>
+  <div class="absolute inset-0 bg-[#0e1a0c]" style="background-size:cover;background-position:center;<?php if($landscape_hero_img) echo 'background-image:url('.esc_url($landscape_hero_img).');'; ?>">
+    <?php if($landscape_hero_img) echo "background-image:url(".esc_url($landscape_hero_img).");"; ?>
   </div>
   <div class="absolute inset-0" style="background:linear-gradient(105deg,rgba(0,0,0,.76) 0%,rgba(0,0,0,.44) 55%,rgba(0,0,0,.14) 100%);"></div>
 
@@ -113,13 +149,13 @@ $faqs = [
     <div class="max-w-2xl">
       <div class="flex items-center gap-3 mb-5">
         <span class="block w-9 h-px bg-[#8a6a45]"></span>
-        <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45]">Landscape Design & Installation</span>
+        <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#ecebea]">Landscape Design & Installation</span>
       </div>
       <h1 class="font-['Articulat_CF'] text-[clamp(36px,5.5vw,70px)] font-bold text-[#e6e3df] leading-[1.06] tracking-tight mb-5">
         Premium Outdoor Living<br>
-        <em class="italic text-[#8a6a45]">Starts Here.</em>
+        <em class="italic text-[#dcc6ad]">Starts Here.</em>
       </h1>
-      <p class="text-[clamp(14px,1.7vw,18px)] font-light text-[rgba(240,236,230,.65)] leading-relaxed max-w-xl mb-10">
+      <p class="text-[clamp(14px,1.7vw,18px)] font-light text-[#ecebea] leading-relaxed max-w-xl mb-10">
         Custom landscape design, seasonal care, and year-round maintenance for homeowners who want their property to make a statement.
       </p>
       <div class="flex flex-wrap gap-3">
@@ -205,8 +241,8 @@ $faqs = [
       <!-- Side image + value prop card -->
       <div class="ev-reveal-right flex flex-col gap-4 lg:sticky lg:top-32">
         <div class="overflow-hidden border border-[#e6e3df] aspect-[3/4] bg-[#d8e8d0] flex items-center justify-center text-[11px] text-[#7a7f85] text-center px-8">
-          {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/landscape-detail.jpg" class="w-full h-full object-cover" alt="Premium landscape planting detail"> --}}
-          Layered planting beds — trees, shrubs, perennials, and seasonal color with fresh mulch and clean steel edging
+          <?php if($landscape_detail_img):?><img src="<?php echo esc_url($landscape_detail_img);?>" class="w-full h-full object-cover" loading="lazy" alt="Premium landscape planting detail"><?php else:?>
+          Layered planting beds — trees, shrubs, perennials, and seasonal color with fresh mulch and clean steel edging<?php endif;?>
         </div>
 
         <!-- Design-first card -->
@@ -247,7 +283,7 @@ $faqs = [
         <?php foreach ( $gallery_items as $i => $g ) : ?>
         <div class="ev-reveal group relative overflow-hidden border border-[#e6e3df] aspect-[4/3] cursor-pointer bg-[#d8e8d0]"
              style="transition-delay:<?php echo $i * 80; ?>ms;">
-          {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ls-<?php echo $i+1; ?>.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" alt="<?php echo esc_attr($g['label']); ?> - <?php echo esc_attr($g['city']); ?>"> --}}
+          <?php if(!empty($landscape_gallery[$i])):?><img src="<?php echo esc_url($landscape_gallery[$i]);?>" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" alt=""><?php endif;?>
           <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a9a7a] text-center px-6 transition-transform duration-500 group-hover:scale-105">
             <?php echo $g['ph']; ?>
           </div>
@@ -286,13 +322,13 @@ $faqs = [
         <div class="ev-ba relative overflow-hidden border border-[#e6e3df] cursor-col-resize select-none" data-ba="<?php echo $i; ?>">
           <!-- Before -->
           <div class="aspect-[4/3] bg-[#d8d4cc] flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6">
-            {{-- Before: background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/ls-before-<?php echo $i+1; ?>.jpg') --}}
+            <?php if($landscape_cta_img) echo "background-image:url(".esc_url($landscape_cta_img).");background-attachment:fixed;"; ?>
             <?php echo $p['ph_b']; ?>
           </div>
           <!-- After (clipped) -->
           <div class="ev-ba-after absolute inset-0 bg-[#b8d4a8] flex items-center justify-center text-[10px] text-[#7a9a7a] text-center px-6"
                style="clip-path:inset(0 50% 0 0);background-size:cover;background-position:center;">
-            {{-- After: background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/ls-after-<?php echo $i+1; ?>.jpg') --}}
+            <?php if($landscape_cta_img) echo "background-image:url(".esc_url($landscape_cta_img).");background-attachment:fixed;"; ?>
             <?php echo $p['ph_a']; ?>
           </div>
           <!-- Handle -->
@@ -382,7 +418,7 @@ $faqs = [
         <div class="flex flex-col gap-4">
           <div class="overflow-hidden border border-[#e6e3df] aspect-[4/3] flex items-center justify-center text-[11px] text-[#7a7f85] text-center px-8"
                style="background:<?php echo $key === 'spring' ? '#d0e8c0' : ($key === 'summer' ? '#c8e4b0' : '#d4c8a0'); ?>">
-            {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/season-<?php echo $key; ?>.jpg" class="w-full h-full object-cover" alt="Property in <?php echo $season['label']; ?>"> --}}
+            <?php if($landscape_detail_img):?><img src="<?php echo esc_url($landscape_detail_img);?>" class="w-full h-full object-cover" loading="lazy" alt="Property in <?php echo $season['label']; ?>"><?php endif;?>
             Property in <?php echo $season['label']; ?> — showing the same home looking maintained and polished
           </div>
           <!-- Maintenance value prop -->
@@ -474,48 +510,6 @@ $faqs = [
 
   </div>
 </section>
-
-
-<!-- ════════════════════════════════════════════════
-     SECTION 4C — CTA
-     ════════════════════════════════════════════════ -->
-<section class="relative overflow-hidden py-24 md:py-32">
-  <div class="absolute inset-0 bg-[#0c1a0a]" style="background-size:cover;background-position:center;background-attachment:fixed;">
-    {{-- Replace: background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/landscape-cta.jpg') --}}
-    <div class="absolute inset-0 flex items-center justify-center text-[#2a3a28] text-xs tracking-widest uppercase">
-      Completed landscape — lush, vibrant, golden hour, magazine quality
-    </div>
-  </div>
-  <div class="absolute inset-0" style="background:rgba(0,0,0,.66);"></div>
-
-  <div class="relative z-10 max-w-[720px] mx-auto px-6 md:px-10 text-center">
-    <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-4">Get Started</span>
-    <h2 class="font-['Articulat_CF'] text-[clamp(28px,5vw,52px)] font-bold text-[#e6e3df] leading-[1.1] mb-5">
-      Ready to Make Your Property<br>
-      <em class="italic text-[#8a6a45]">Look Its Absolute Best?</em>
-    </h2>
-    <p class="text-[15px] font-light text-[rgba(240,236,230,.58)] leading-relaxed mb-10 max-w-lg mx-auto">
-      Request a free consultation. We'll walk your property, discuss your vision, and provide a custom planting plan and estimate.
-    </p>
-    <a href="tel:+17705550192"
-       class="block font-['Articulat_CF'] font-bold text-[#8a6a45] text-[clamp(24px,4vw,40px)] mb-9 hover:opacity-75 transition-opacity">
-      (770) 555-0192
-    </a>
-    <div class="flex flex-wrap gap-3 justify-center">
-      <a href="/contact"
-         class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-9 py-4 hover:opacity-85 transition-opacity"
-         style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
-        Request a Free Estimate
-        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-      </a>
-      <a href="/our-work"
-         class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.75)] border border-[rgba(240,236,230,.2)] px-8 py-4 hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
-        View Our Work
-      </a>
-    </div>
-  </div>
-</section>
-
 
 <!-- ════════════════════════════════════════════════
      JAVASCRIPT

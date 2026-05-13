@@ -318,37 +318,6 @@ $locations = [
   </div>
 </section>
 
-
-<!-- ════════════════════════════════════════════════
-     CTA
-     ════════════════════════════════════════════════ -->
-<section class="bg-[#0b0b0c] py-20">
-  <div class="max-w-[760px] mx-auto px-6 md:px-10 text-center">
-    <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-4">Don't See Your City?</span>
-    <h2 class="font-['Articulat_CF'] text-[clamp(26px,4vw,44px)] font-bold text-[#e6e3df] leading-[1.15] mb-5">
-      We May Still Serve<br>
-      <em class="italic text-[#8a6a45]">Your Area.</em>
-    </h2>
-    <p class="text-[14px] font-light text-[rgba(230,227,223,.52)] leading-relaxed mb-10 max-w-lg mx-auto">
-      If your property is within 30 miles of Clinton Township, MI, we likely serve your area. Reach out and we'll confirm during your free consultation.
-    </p>
-    <div class="flex flex-wrap gap-3 justify-center">
-      <a href="/contact"
-         class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-white px-9 py-4 hover:opacity-85 transition-opacity"
-         style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
-        Request a Free Estimate
-        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-      </a>
-      <a href="tel:+17705550192"
-         class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.04em] text-[rgba(230,227,223,.75)] border border-[rgba(230,227,223,.2)] px-8 py-4 hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
-        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd"/></svg>
-        (770) 555-0192
-      </a>
-    </div>
-  </div>
-</section>
-
-
 <!-- ════════════════════════════════════════════════
      JAVASCRIPT — scroll reveal + smooth anchor scroll
      ════════════════════════════════════════════════ -->

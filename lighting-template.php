@@ -7,6 +7,45 @@
 get_header(); ?>
 
 <?php
+/* ── Outdoor Lighting — IMAGE URLS ────────────────────────────────────────────────────
+ * Paste URLs from: WP Admin → Media → click image → Copy URL to clipboard
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+// Hero background image
+$lighting_hero_img = '/wp-content/uploads/2026/04/OutdoorLightingSystemHero-scaled.jpg'; // e.g. /wp-content/uploads/2026/05/lighting-hero.jpg
+
+// Side/detail image
+$lighting_detail_img = ''; // e.g. /wp-content/uploads/2026/05/lighting-detail.jpg
+
+// Side/detail image
+$lighting_side_img_2 = ''; // e.g. /wp-content/uploads/2026/05/lighting-detail.jpg
+
+// CTA section background
+$lighting_cta_img = ''; // e.g. /wp-content/uploads/2026/05/lighting-cta.jpg
+?>
+
+
+
+<?php
+
+/* ── Outdoor Lighting IMAGE URLS ─────────────────────────────────────────────────────
+ * Paste URLs from: WordPress Admin → Media → click image → Copy URL
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+// Gallery images — one URL per project card
+$lighting_gallery = [
+  '', // image 1
+  '', // image 2
+  '', // image 3
+  '', // image 4
+  '', // image 5
+  '', // image 6
+];
+?>
+
+
+
+<?php
 $gallery_items = [
   [ 'label' => 'Architectural Uplighting', 'city' => 'Bloomfield Hills, MI', 'ph' => 'Home facade — warm architectural uplighting on stone columns and gable ends' ],
   [ 'label' => 'Tree Accent Lighting',     'city' => 'Birmingham, MI',       'ph' => 'Mature oak trees — dramatic uplighting from base, crown against night sky' ],
@@ -45,11 +84,8 @@ $faqs = [
 
 <!-- ════════ PAGE HERO ════════ -->
 <section class="relative overflow-hidden -mt-[104px]" style="min-height:100vh;">
-  <div class="absolute inset-0 bg-[#080810]" style="background-size:cover;background-position:center;">
-    {{-- Replace: background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/lighting-hero.jpg') --}}
-    <div class="absolute inset-0 flex items-center justify-center text-[#2a2838] text-xs tracking-widest uppercase text-center px-10">
-      Hero — stunning nighttime property: facade uplighting, tree accents, pathway illumination, patio ambient glow. Warm white tones. Emotional impact.
-    </div>
+  <div class="absolute inset-0 bg-[#080810]" style="background-size:cover;background-position:center;<?php if($lighting_hero_img) echo 'background-image:url('.esc_url($lighting_hero_img).');'; ?>">
+    <?php if($lighting_hero_img) echo "background-image:url(".esc_url($lighting_hero_img).");"; ?>
   </div>
   <div class="absolute top-0 left-0 right-0 h-48 pointer-events-none" style="background:linear-gradient(to bottom,rgba(0,0,0,.85),transparent);"></div>
   <div class="absolute bottom-0 left-0 right-0 h-64 pointer-events-none" style="background:linear-gradient(to top,rgba(0,0,0,.85),transparent);"></div>
@@ -59,13 +95,13 @@ $faqs = [
     <div class="max-w-2xl">
       <div class="flex items-center gap-3 mb-6">
         <span class="block w-9 h-px bg-[#8a6a45]"></span>
-        <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45]">Outdoor Lighting Systems</span>
+        <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#ecebea]">Outdoor Lighting Systems</span>
       </div>
       <h1 class="font-['Articulat_CF'] text-[clamp(38px,6vw,74px)] font-bold text-[#e6e3df] leading-[1.05] tracking-tight mb-6">
         Illuminate Your<br>
-        <em class="italic text-[#8a6a45]">Outdoor Living.</em>
+        <em class="italic text-[#dcc6ad]">Outdoor Living.</em>
       </h1>
-      <p class="text-[clamp(15px,1.8vw,18px)] font-light text-[rgba(240,236,230,.65)] leading-relaxed max-w-xl mb-3">
+      <p class="text-[clamp(15px,1.8vw,18px)] font-light text-[#ecebea] leading-relaxed max-w-xl mb-3">
         Professional landscape lighting design and installation that transforms your property after dark.
       </p>
       <p class="text-[14px] font-light text-[rgba(240,236,230,.42)] leading-relaxed max-w-lg mb-10">
@@ -130,11 +166,11 @@ $faqs = [
         <p class="text-[11px] text-[#7a7f85] text-center">Drag to reveal the nighttime transformation</p>
         <div class="ev-ba relative overflow-hidden border border-[#e6e3df] cursor-col-resize select-none">
           <div class="aspect-[4/3] bg-[#d8e0d0] flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6">
-            {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/property-day.jpg" class="absolute inset-0 w-full h-full object-cover" loading="lazy"> --}}
+            <?php if($lighting_detail_img):?><img src="<?php echo esc_url($lighting_detail_img);?>" class="w-full h-full object-cover" loading="lazy" alt=""><?php endif;?>
             Property daytime — before lighting
           </div>
           <div class="ev-ba-after absolute inset-0 bg-[#0c0c18] flex items-center justify-center text-[10px] text-[#4a4868] text-center px-6" style="clip-path:inset(0 50% 0 0);background-size:cover;background-position:center;">
-            {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/property-night.jpg" class="absolute inset-0 w-full h-full object-cover" loading="lazy"> --}}
+            <?php if($lighting_side_img_2):?><img src="<?php echo esc_url($lighting_side_img_2);?>" class="w-full h-full object-cover" loading="lazy" alt=""><?php endif;?>
             Same property at night — full system active
           </div>
           <div class="ev-ba-handle absolute top-0 bottom-0 w-0.5 bg-white left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none">
@@ -182,7 +218,7 @@ $faqs = [
         <?php foreach ( $gallery_items as $i => $g ) : ?>
         <div class="ev-reveal group relative overflow-hidden border border-[#e6e3df] bg-[#0c0c18]"
              style="transition-delay:<?php echo $i * 80; ?>ms;aspect-ratio:<?php echo ($i === 0 || $i === 5) ? '16/9' : '4/3'; ?>">
-          {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/lighting-<?php echo $i+1; ?>.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy"> --}}
+          <?php if(!empty($lighting_gallery[$i])):?><img src="<?php echo esc_url($lighting_gallery[$i]);?>" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" alt="<?php echo esc_attr($pt['label']??'Project');?>"><?php endif;?>
           <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#3a3a58] text-center px-6 transition-transform duration-500 group-hover:scale-105"><?php echo $g['ph']; ?></div>
           <div class="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,.7)] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -307,38 +343,6 @@ $faqs = [
     </div>
   </div>
 </section>
-
-
-<!-- ════════ SECTION 3C — CTA ════════ -->
-<section class="relative overflow-hidden py-24 md:py-32">
-  <div class="absolute inset-0 bg-[#060610]" style="background-size:cover;background-position:center;background-attachment:fixed;">
-    {{-- Replace: background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/lighting-cta.jpg') --}}
-    <div class="absolute inset-0 flex items-center justify-center text-[#1a1a2a] text-xs tracking-widest uppercase">Most dramatic nighttime property — architectural uplighting, tree accents, pathway glow</div>
-  </div>
-  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-64 blur-[80px] opacity-15 pointer-events-none" style="background:radial-gradient(ellipse,#c9a96e 0%,transparent 70%);"></div>
-  <div class="absolute inset-0" style="background:rgba(0,0,0,.72);"></div>
-  <div class="relative z-10 max-w-[720px] mx-auto px-6 md:px-10 text-center">
-    <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-4">See Your Property at Night</span>
-    <h2 class="font-['Articulat_CF'] text-[clamp(28px,5vw,52px)] font-bold text-[#e6e3df] leading-[1.1] mb-5">
-      Ready to See What Your<br>
-      <em class="italic text-[#8a6a45]">Property Can Look Like?</em>
-    </h2>
-    <p class="text-[15px] font-light text-[rgba(240,236,230,.52)] leading-relaxed mb-10 max-w-lg mx-auto">
-      Schedule a free lighting consultation. We walk your property at dusk, assess your architecture and landscaping, and design a custom system that makes your home look like it belongs in a magazine — every night.
-    </p>
-    <a href="tel:+17705550192" class="block font-['Articulat_CF'] font-bold text-[#8a6a45] text-[clamp(24px,4vw,40px)] mb-9 hover:opacity-75 transition-opacity">(770) 555-0192</a>
-    <div class="flex flex-wrap gap-3 justify-center">
-      <a href="/contact" class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-9 py-4 hover:opacity-85 transition-opacity" style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
-        Schedule a Lighting Consultation
-        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-      </a>
-      <a href="/our-work" class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.7)] border border-[rgba(240,236,230,.18)] px-8 py-4 hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
-        See Lighting Projects
-      </a>
-    </div>
-  </div>
-</section>
-
 
 <!-- ════════ JAVASCRIPT ════════ -->
 <script>

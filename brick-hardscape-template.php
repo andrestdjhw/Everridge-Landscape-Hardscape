@@ -7,6 +7,74 @@
 get_header(); ?>
 
 <?php
+/* ── Brick + Hardscapes — IMAGE URLS ────────────────────────────────────────────────────
+ * Paste URLs from: WP Admin → Media → click image → Copy URL to clipboard
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+// Hero background image
+$hardscape_hero_img = '/wp-content/uploads/2026/05/PremiunHardscapeHero-scaled.jpg'; // e.g. /wp-content/uploads/2026/05/hardscape-hero.jpg
+
+// Gallery project images — one per card
+$hardscape_gallery = [
+  '', // image 1
+  '', // image 2
+  '', // image 3
+  '', // image 4
+  '', // image 5
+  '', // image 6
+];
+
+// Material section images — one per material card
+$hardscape_material_imgs = [
+  '', // image 1
+  '', // image 2
+  '', // image 3
+  '', // image 4
+];
+
+// CTA/section background
+$hardscape_cta_img = '/wp-content/uploads/2026/05/EstampadoEverridge-scaled.png'; // e.g. /wp-content/uploads/2026/05/hardscape-cta.jpg
+
+// Process step images — one per step
+$hardscape_process_imgs = [
+  '', // image 1
+  '', // image 2
+  '', // image 3
+  '', // image 4
+];
+?>
+
+
+
+<?php
+
+/* ── Brick + Hardscapes IMAGE URLS ─────────────────────────────────────────────────────
+ * Paste URLs from: WordPress Admin → Media → click image → Copy URL
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+// Side detail image
+$hardscape_detail_img = '';
+
+// Before images — one per B&A pair
+$hardscape_ba_before = [
+  '', // image 1
+  '', // image 2
+  '', // image 3
+  '', // image 4
+];
+
+// After images — one per B&A pair
+$hardscape_ba_after = [
+  '', // image 1
+  '', // image 2
+  '', // image 3
+  '', // image 4
+];
+?>
+
+
+
+<?php
 /* ── Data ─────────────────────────────────────────────────────────────────── */
 $project_types = [
   [ 'label' => 'Paver Patio',        'city' => 'Birmingham, MI',      'ph' => 'Paver patio with outdoor furniture — clean lines, polymeric sand finish' ],
@@ -84,11 +152,8 @@ $faqs = [
      PAGE HERO
      ════════════════════════════════════════════════ -->
 <section class="relative overflow-hidden -mt-[104px]" style="min-height:88vh;">
-  <div class="absolute inset-0 bg-[#141008]" style="background-size:cover;background-position:center;">
-    {{-- Replace: background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/hardscape-hero.jpg') --}}
-    <div class="absolute inset-0 flex items-center justify-center text-[#3a3a34] text-xs tracking-widest uppercase text-center px-10">
-      Hero — wide angle multi-element hardscape project at golden hour (patio + walkway + retaining wall)
-    </div>
+  <div class="absolute inset-0 bg-[#141008]" style="background-size:cover;background-position:center;<?php if($hardscape_hero_img) echo 'background-image:url('.esc_url($hardscape_hero_img).');'; ?>">
+    <?php if($hardscape_hero_img) echo "background-image:url(".esc_url($hardscape_hero_img).");"; ?>
   </div>
   <div class="absolute inset-0" style="background:linear-gradient(105deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.48) 55%,rgba(0,0,0,.18) 100%);"></div>
 
@@ -97,13 +162,13 @@ $faqs = [
     <div class="max-w-2xl">
       <div class="flex items-center gap-3 mb-5">
         <span class="block w-9 h-px bg-[#8a6a45]"></span>
-        <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45]">Brick + Hardscapes</span>
+        <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#ecebea]">Brick + Hardscapes</span>
       </div>
       <h1 class="font-['Articulat_CF'] text-[clamp(38px,6vw,72px)] font-bold text-[#e6e3df] leading-[1.06] tracking-tight mb-5">
         Crafted to Last.<br>
-        <em class="italic text-[#8a6a45]">Designed to Impress.</em>
+        <em class="italic text-[#dcc6ad]">Designed to Impress.</em>
       </h1>
-      <p class="text-[clamp(15px,1.8vw,18px)] font-light text-[rgba(240,236,230,.65)] leading-relaxed max-w-xl mb-10">
+      <p class="text-[clamp(15px,1.8vw,18px)] font-light text-[#ecebea] leading-relaxed max-w-xl mb-10">
         Premium hardscape construction for homeowners who value craftsmanship, materials, and results that stand the test of time.
       </p>
       <div class="flex flex-wrap gap-3">
@@ -185,8 +250,8 @@ $faqs = [
       <!-- Side image + badge -->
       <div class="ev-reveal-right flex flex-col gap-4 lg:sticky lg:top-32">
         <div class="overflow-hidden border border-[#e6e3df] aspect-[4/5] bg-[#e0ddd6] flex items-center justify-center text-[11px] text-[#7a7f85] text-center px-8">
-          {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hardscape-detail.jpg" class="w-full h-full object-cover" alt="Hardscape detail — paver texture and craftsmanship"> --}}
-          Close-up of premium paver installation — joint lines, texture, border pattern at golden hour
+          <?php if($hardscape_detail_img):?><img src="<?php echo esc_url($hardscape_detail_img);?>" class="w-full h-full object-cover" loading="lazy" alt="Hardscape detail — paver texture and craftsmanship"><?php else:?>
+          Close-up of premium paver installation — joint lines, texture, border pattern at golden hour<?php endif;?>
         </div>
         <!-- Material badge -->
         <div class="bg-[#f5f2ef] border border-[#e6e3df] p-5 flex items-start gap-4">
@@ -214,7 +279,7 @@ $faqs = [
         <?php foreach ( $project_types as $i => $pt ) : ?>
         <div class="ev-reveal group relative overflow-hidden border border-[#e6e3df] aspect-[4/3] cursor-pointer bg-[#e0ddd6]"
              style="transition-delay:<?php echo $i * 80; ?>ms;">
-          {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hs-<?php echo $i+1; ?>.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" alt="<?php echo esc_attr($pt['label']); ?> - <?php echo esc_attr($pt['city']); ?>"> --}}
+          <?php if(!empty($hardscape_gallery[$i])):?><img src="<?php echo esc_url($hardscape_gallery[$i]);?>" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" alt=""><?php endif;?>
           <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6 transition-transform duration-500 group-hover:scale-105">
             <?php echo $pt['ph']; ?>
           </div>
@@ -288,7 +353,7 @@ $faqs = [
            style="transition-delay:<?php echo $i * 100; ?>ms;">
         <!-- Image -->
         <div class="aspect-video bg-[#e0ddd6] flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-8">
-          {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/material-<?php echo $i+1; ?>.jpg" class="w-full h-full object-cover" loading="lazy" alt="<?php echo esc_attr($m['title']); ?>"> --}}
+          <?php if(!empty($hardscape_material_imgs[$i])):?><img src="<?php echo esc_url($hardscape_material_imgs[$i]);?>" class="w-full h-full object-cover" loading="lazy" alt=""><?php endif;?>
           <?php echo $m['ph']; ?>
         </div>
         <!-- Body -->
@@ -335,13 +400,13 @@ $faqs = [
         <div class="ev-ba relative overflow-hidden border border-[#e6e3df] cursor-col-resize select-none" data-ba="<?php echo $i; ?>">
           <!-- Before -->
           <div class="aspect-[4/3] bg-[#ddd8d0] flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-8">
-            {{-- Before img: background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/hs-before-<?php echo $i+1; ?>.jpg') --}}
+            <?php if($hardscape_cta_img) echo "background-image:url(".esc_url($hardscape_cta_img).");background-attachment:fixed;"; ?>
             <?php echo $p['ph_b']; ?>
           </div>
           <!-- After (clipped) -->
           <div class="ev-ba-after absolute inset-0 bg-[#c8d4b8] flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-8"
                style="clip-path:inset(0 50% 0 0);background-size:cover;background-position:center;">
-            {{-- After img: background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/hs-after-<?php echo $i+1; ?>.jpg') --}}
+            <?php if($hardscape_cta_img) echo "background-image:url(".esc_url($hardscape_cta_img).");background-attachment:fixed;"; ?>
             <?php echo $p['ph_a']; ?>
           </div>
           <!-- Handle -->
@@ -406,7 +471,7 @@ $faqs = [
           <!-- Image right -->
           <div class="md:pl-14">
             <div class="border border-[#e6e3df] bg-[#e8e4de] h-48 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6">
-              {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/process-hs-<?php echo $i+1; ?>.jpg" class="w-full h-full object-cover" loading="lazy"> --}}
+              <?php if(!empty($hardscape_process_imgs[$i])):?><img src="<?php echo esc_url($hardscape_process_imgs[$i]);?>" class="w-full h-full object-cover" loading="lazy" alt=""><?php endif;?>
               <?php echo $step['ph']; ?>
             </div>
           </div>
@@ -415,7 +480,7 @@ $faqs = [
           <!-- Image left -->
           <div class="md:pr-14 mb-6 md:mb-0">
             <div class="border border-[#e6e3df] bg-[#e8e4de] h-48 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6">
-              {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/process-hs-<?php echo $i+1; ?>.jpg" class="w-full h-full object-cover" loading="lazy"> --}}
+              <?php if(!empty($hardscape_process_imgs[$i])):?><img src="<?php echo esc_url($hardscape_process_imgs[$i]);?>" class="w-full h-full object-cover" loading="lazy" alt=""><?php endif;?>
               <?php echo $step['ph']; ?>
             </div>
           </div>
@@ -520,48 +585,6 @@ $faqs = [
 
   </div>
 </section>
-
-
-<!-- ════════════════════════════════════════════════
-     SECTION 7 — CTA
-     ════════════════════════════════════════════════ -->
-<section class="relative overflow-hidden py-24 md:py-32">
-  <div class="absolute inset-0 bg-[#0e140c]" style="background-size:cover;background-position:center;background-attachment:fixed;">
-    {{-- Replace: background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/hardscape-cta.jpg') --}}
-    <div class="absolute inset-0 flex items-center justify-center text-[#2a2a24] text-xs tracking-widest uppercase">
-      Completed hardscape project — golden hour, clean, no equipment
-    </div>
-  </div>
-  <div class="absolute inset-0" style="background:rgba(0,0,0,.67);"></div>
-
-  <div class="relative z-10 max-w-[720px] mx-auto px-6 md:px-10 text-center">
-    <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-4">Get Started</span>
-    <h2 class="font-['Articulat_CF'] text-[clamp(30px,5vw,54px)] font-bold text-[#e6e3df] leading-[1.1] mb-5">
-      Ready to Build Something<br>
-      <em class="italic text-[#8a6a45]">That Lasts?</em>
-    </h2>
-    <p class="text-[15px] font-light text-[rgba(240,236,230,.58)] leading-relaxed mb-10 max-w-lg mx-auto">
-      Request a free estimate and see your project in 3D before we break ground. No pressure. No obligation.
-    </p>
-    <a href="tel:+17705550192"
-       class="block font-['Articulat_CF'] font-bold text-[#8a6a45] text-[clamp(26px,4vw,42px)] mb-9 hover:opacity-75 transition-opacity tracking-tight">
-      (770) 555-0192
-    </a>
-    <div class="flex flex-wrap gap-3 justify-center">
-      <a href="/contact"
-         class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-9 py-4 hover:opacity-85 transition-opacity"
-         style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
-        Request a Free Estimate
-        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-      </a>
-      <a href="/our-work"
-         class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.75)] border border-[rgba(240,236,230,.2)] px-8 py-4 hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
-        View Our Work
-      </a>
-    </div>
-  </div>
-</section>
-
 
 <!-- ════════════════════════════════════════════════
      JAVASCRIPT

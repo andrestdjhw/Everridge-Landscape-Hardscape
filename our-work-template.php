@@ -7,6 +7,37 @@
 get_header(); ?>
 
 <?php
+/* ── Our Work — IMAGE URLS ────────────────────────────────────────────────────
+ * Paste URLs from: WP Admin → Media → click image → Copy URL to clipboard
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+// Hero background image
+$ourwork_hero_img = '/wp-content/uploads/2026/05/ProjectsPortfolioEverridge-scaled.jpg'; // e.g. /wp-content/uploads/2026/05/ourwork-hero.jpg
+
+// CTA section background
+$ourwork_cta_img = ''; // e.g. /wp-content/uploads/2026/05/ourwork-cta.jpg
+
+// Project images — one URL per project ID (1–12)
+// Go to Media → click each image → Copy URL → paste here
+$ourwork_project_imgs = [
+  1  => '', // Premium Paver Patio — Birmingham
+  2  => '', // Front Yard Transformation — Troy
+  3  => '', // Outdoor Lighting System — Bloomfield Hills
+  4  => '', // Retaining Wall & Garden — Rochester Hills
+  5  => '', // 3D Rendering to Reality — Shelby Township
+  6  => '', // Driveway & Entryway — Clinton Township
+  7  => '', // Garden Design Installation — Washington Twp
+  8  => '', // Landscape Lighting Full — Birmingham
+  9  => '', // Hardscape Fire Pit Area — Troy
+  10 => '', // Seasonal Landscape Refresh — Bloomfield Hills
+  11 => '', // Multi-Level Retaining Wall — Rochester Hills
+  12 => '', // Complete Backyard — Shelby Township
+];
+?>
+
+
+
+<?php
 /* ── Project data ─────────────────────────────────────────────────────────── */
 $projects = [
   [
@@ -194,24 +225,20 @@ $categories = [
      PAGE HERO
      ════════════════════════════════════════════════ -->
 <section class="relative overflow-hidden -mt-[68px] md:-mt-[106px]" style="min-height:46vh;">
-  <div class="absolute inset-0 bg-[#0e140c]" style="background-size:cover;background-position:center;">
-    {{-- Replace: background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/portfolio-hero.jpg') --}}
-    <div class="absolute inset-0 flex items-center justify-center text-[#3a3a34] text-xs tracking-widest uppercase">
-      Hero — wide shot of the most impressive completed project
-    </div>
+  <div class="absolute inset-0 bg-[#0e140c]" style="background-size:cover;background-position:center;<?php if($ourwork_hero_img) echo 'background-image:url('.esc_url($ourwork_hero_img).');'; ?>">
   </div>
   <div class="absolute inset-0" style="background:linear-gradient(to right,rgba(0,0,0,.7) 0%,rgba(0,0,0,.35) 65%,rgba(0,0,0,.15) 100%);"></div>
 
   <div class="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10 flex flex-col justify-end pb-16 md:pb-20" style="min-height:46vh;padding-top:130px;">
     <div class="flex items-center gap-3 mb-4">
       <span class="block w-9 h-px bg-[#8a6a45]"></span>
-      <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45]">Portfolio</span>
+      <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#ecebea]">Portfolio</span>
     </div>
     <h1 class="font-['Playfair_Display'] text-[clamp(34px,5vw,64px)] font-bold text-[#e6e3df] leading-[1.08] tracking-tight max-w-2xl">
       Real Projects.<br>
-      <em class="italic text-[#8a6a45]">Real Results.</em>
+      <em class="italic text-[#dcc6ad]">Real Results.</em>
     </h1>
-    <p class="mt-4 text-[15px] font-light text-[rgba(240,236,230,.62)] max-w-lg leading-relaxed">
+    <p class="mt-4 text-[15px] font-light text-[#ecebea] max-w-lg leading-relaxed">
       Every project below started with a 3D rendering and was delivered to match it exactly. Browse by category to find work similar to your vision.
     </p>
   </div>
@@ -270,9 +297,16 @@ $categories = [
 
         <!-- Image -->
         <div class="relative overflow-hidden <?php echo $p['size'] === 'tall' ? 'aspect-[3/4]' : ($p['size'] === 'wide' ? 'aspect-[16/9]' : 'aspect-[4/3]'); ?> bg-[#e0ddd6]">
-          {{-- Replace: <img src="<?php echo get_template_directory_uri(); ?>/assets/images/project-<?php echo $p['id']; ?>-after.jpg"
+          <?php
+          // Project images: set $ourwork_project_imgs[$p['id']] above
+          // Example: $ourwork_project_imgs[1] = '/wp-content/uploads/2026/05/project-1.jpg';
+          if ( ! empty( $ourwork_project_imgs[ $p['id'] ] ) ) :
+          ?>
+          <img src="<?php echo esc_url( $ourwork_project_imgs[ $p['id'] ] ); ?>"
                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-               loading="lazy" alt="<?php echo esc_attr($p['title']); ?> - <?php echo esc_attr($p['city']); ?>"> --}}
+               loading="lazy"
+               alt="<?php echo esc_attr( $p['title'] ); ?> - <?php echo esc_attr( $p['city'] ); ?>">
+          <?php endif; ?>
 
           <!-- Placeholder -->
           <div class="absolute inset-0 flex items-end justify-center pb-4 text-[10px] text-[#7a7f85] text-center px-4 transition-transform duration-500 group-hover:scale-105">
@@ -437,42 +471,6 @@ $categories = [
     </div>
   </div>
 </div>
-
-
-<!-- ════════════════════════════════════════════════
-     BOTTOM CTA
-     ════════════════════════════════════════════════ -->
-<section class="relative overflow-hidden py-24">
-  <div class="absolute inset-0 bg-[#0e140c]" style="background-size:cover;background-position:center;">
-    {{-- Replace: background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/cta-portfolio.jpg') --}}
-    <div class="absolute inset-0 flex items-center justify-center text-[#2a2a24] text-xs tracking-widest uppercase">Most dramatic transformation — golden hour</div>
-  </div>
-  <div class="absolute inset-0" style="background:rgba(0,0,0,.65);"></div>
-  <div class="relative z-10 max-w-[700px] mx-auto px-6 text-center">
-    <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-4">Your Project</span>
-    <h2 class="font-['Playfair_Display'] text-[clamp(28px,4.5vw,50px)] font-bold text-[#e6e3df] leading-[1.12] mb-5">
-      See Your Property in This Gallery.<br>
-      <em class="italic text-[#8a6a45]">Let's Make It Happen.</em>
-    </h2>
-    <p class="text-[14px] font-light text-[rgba(240,236,230,.58)] leading-relaxed mb-10">
-      Every project starts with a free consultation and a 3D rendering. You approve the design before we break ground.
-    </p>
-    <div class="flex flex-wrap gap-3 justify-center">
-      <a href="/contact"
-         class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-9 py-4 rounded-md hover:opacity-85 transition-opacity"
-         style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
-        Request a Free Estimate
-        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-      </a>
-      <a href="tel:+17705550192"
-         class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.04em] text-[rgba(240,236,230,.75)] border border-[rgba(240,236,230,.2)] px-8 py-4 rounded-md hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
-        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd"/></svg>
-        (770) 555-0192
-      </a>
-    </div>
-  </div>
-</section>
-
 
 <!-- ════════════════════════════════════════════════
      PROJECT DATA FOR JS

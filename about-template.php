@@ -11,16 +11,22 @@ get_header(); ?>
      PAGE HERO
      ════════════════════════════════════════════════ -->
 <section class="relative overflow-hidden -mt-[68px] md:-mt-[106px]" style="min-height:52vh;">
-  <div class="absolute inset-0 bg-[#0e140c]">
+<?php
+  // HERO IMAGE — pega la URL desde Media > click imagen > Copy URL
+  $about_hero_img = '/wp-content/uploads/2026/05/AboutHeroEverridge-scaled.jpg'; // /wp-content/uploads/2026/05/about-hero.jpg
+?>
+  <div class="absolute inset-0 bg-[#0e140c]"<?php if ( $about_hero_img ) echo ' style="background-image:url(' . esc_url($about_hero_img) . ');background-size:cover;background-position:center;"'; ?>>
+    <?php if ( ! $about_hero_img ) : ?>
     <div class="absolute inset-0 flex items-center justify-center text-[#3a3a34] text-xs tracking-widest uppercase">
       Hero image — team on a premium completed project site
     </div>
+    <?php endif; ?>
   </div>
   <div class="absolute inset-0" style="background:linear-gradient(to right,rgba(0,0,0,.72) 0%,rgba(0,0,0,.42) 60%,rgba(0,0,0,.18) 100%);"></div>
   <div class="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10 flex flex-col justify-end pb-16 md:pb-20" style="min-height:52vh;padding-top:130px;">
     <div class="flex items-center gap-3 mb-4">
       <span class="block w-9 h-px bg-[#8a6a45]"></span>
-      <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45]">About Everridge</span>
+      <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#ecebea]">About Everridge</span>
     </div>
     <h1 class="font-['Articulat_CF'] text-[clamp(36px,5.5vw,68px)] font-bold text-[#e6e3df] leading-[1.08] tracking-tight max-w-3xl">
       Built on Expertise.<br>
@@ -84,12 +90,24 @@ get_header(); ?>
       <!-- Founder image + stat card -->
       <div class="ev-reveal-right flex flex-col gap-5 lg:sticky lg:top-32">
         <div class="relative overflow-hidden border border-[#e6e3df]">
-          <div class="aspect-[3/4] bg-[#e0ddd6] flex flex-col items-center justify-center text-[11px] text-[#7a7f85] text-center px-8 gap-2">
+  <?php
+          // FOUNDER PHOTO — pega la URL desde Media > click imagen > Copy URL
+          $founder_img = ''; // /wp-content/uploads/2026/05/hernan-chavarin.jpg
+        ?>
+        <div class="aspect-[3/4] bg-[#e0ddd6] relative overflow-hidden">
+          <?php if ( $founder_img ) : ?>
+          <img src="<?php echo esc_url($founder_img); ?>"
+               alt="Hernan Chavarin — Founder & Lead Designer"
+               class="absolute inset-0 w-full h-full object-cover object-top">
+          <?php else : ?>
+          <div class="absolute inset-0 flex flex-col items-center justify-center text-[11px] text-[#7a7f85] text-center px-8 gap-2">
             <svg class="w-10 h-10 text-[#c8c0b4]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
             </svg>
-            <span>Hernan Chavarin — Founder<br>Professional portrait on a completed project site</span>
+            <span>Hernan Chavarin — Founder<br>Professional portrait</span>
           </div>
+          <?php endif; ?>
+        </div>
           <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[rgba(0,0,0,.7)] to-transparent px-6 pt-10 pb-6">
             <div class="font-['Articulat_CF'] text-lg font-bold text-[#e6e3df]">Hernan Chavarin</div>
             <div class="text-[11px] text-[#8a6a45] tracking-[.1em] uppercase mt-0.5">Founder & Lead Designer</div>
@@ -169,13 +187,35 @@ get_header(); ?>
     <!-- 3D rendering proof -->
     <div class="ev-reveal">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#e8e2da] overflow-hidden border border-[#e6e3df]">
-        <div class="bg-[#e0ddd6] aspect-video flex flex-col items-center justify-center text-[11px] text-[#7a7f85] text-center px-10 gap-2">
-          <svg class="w-10 h-10 text-[#c8c0b4]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21"/></svg>
-          3D Rendering — photorealistic project visualization
+<?php
+        // 3D RENDERING IMAGE — pega la URL desde Media > click imagen > Copy URL
+        $proof_render_img = '/wp-content/uploads/2026/05/rendering-preview.png'; // /wp-content/uploads/2026/05/rendering-proof.jpg
+        ?>
+        <div class="bg-[#e0ddd6] aspect-video relative overflow-hidden">
+          <?php if ( $proof_render_img ) : ?>
+          <img src="<?php echo esc_url($proof_render_img); ?>" alt="3D Rendering — project visualization"
+               class="absolute inset-0 w-full h-full object-cover">
+          <?php else : ?>
+          <div class="absolute inset-0 flex flex-col items-center justify-center text-[11px] text-[#7a7f85] text-center px-10 gap-2">
+            <svg class="w-10 h-10 text-[#c8c0b4]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21"/></svg>
+            3D Rendering — photorealistic project visualization
+          </div>
+          <?php endif; ?>
         </div>
-        <div class="bg-[#d4d0c8] aspect-video flex flex-col items-center justify-center text-[11px] text-[#7a7f85] text-center px-10 gap-2">
-          <svg class="w-10 h-10 text-[#c8c0b4]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
-          Completed project — same angle as the rendering above
+<?php
+        // COMPLETED PROJECT IMAGE — pega la URL desde Media > click imagen > Copy URL
+        $proof_completed_img = '/wp-content/uploads/2026/05/completed-match.png'; // /wp-content/uploads/2026/05/completed-proof.jpg
+        ?>
+        <div class="bg-[#d4d0c8] aspect-video relative overflow-hidden">
+          <?php if ( $proof_completed_img ) : ?>
+          <img src="<?php echo esc_url($proof_completed_img); ?>" alt="Completed project — same angle as rendering"
+               class="absolute inset-0 w-full h-full object-cover">
+          <?php else : ?>
+          <div class="absolute inset-0 flex flex-col items-center justify-center text-[11px] text-[#7a7f85] text-center px-10 gap-2">
+            <svg class="w-10 h-10 text-[#c8c0b4]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+            Completed project — same angle as the rendering above
+          </div>
+          <?php endif; ?>
         </div>
       </div>
       <p class="text-center text-[12px] text-[#7a7f85] mt-4 italic">
@@ -313,11 +353,17 @@ get_header(); ?>
 <!-- ════════════════════════════════════════════════
      SECTION 5 — CTA
      ════════════════════════════════════════════════ -->
-<section class="relative overflow-hidden py-24 md:py-32">
-  <div class="absolute inset-0 bg-[#0e140c]">
+<!-- <section class="relative overflow-hidden py-24 md:py-32">
+<?php
+  // CTA BACKGROUND IMAGE — pega la URL desde Media > click imagen > Copy URL
+  $about_cta_img = ''; // /wp-content/uploads/2026/05/about-cta.jpg
+?>
+  <div class="absolute inset-0 bg-[#0e140c]"<?php if ( $about_cta_img ) echo ' style="background-image:url(' . esc_url($about_cta_img) . ');background-size:cover;background-position:center;background-attachment:fixed;"'; ?>>
+    <?php if ( ! $about_cta_img ) : ?>
     <div class="absolute inset-0 flex items-center justify-center text-[#2a2a24] text-xs tracking-widest uppercase">
       Premium completed project — golden hour hero shot
     </div>
+    <?php endif; ?>
   </div>
   <div class="absolute inset-0" style="background:rgba(0,0,0,.65);"></div>
   <div class="relative z-10 max-w-[720px] mx-auto px-6 md:px-10 text-center">
@@ -346,7 +392,7 @@ get_header(); ?>
       </a>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <!-- ════════════════════════════════════════════════
