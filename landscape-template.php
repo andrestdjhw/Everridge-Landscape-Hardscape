@@ -12,38 +12,38 @@ get_header(); ?>
  * ─────────────────────────────────────────────────────────────────────────── */
 
 // Hero background image
-$landscape_hero_img = '/wp-content/uploads/2026/05/LandscapeTransformationHero-scaled.jpg'; // e.g. /wp-content/uploads/2026/05/landscape-hero.jpg
+$landscape_hero_img = '/wp-content/uploads/2026/05/LandscapeTransformationHero-scaled.jpg';
 
 // Gallery project images — one per card
 $landscape_gallery = [
-  '', // image 1
-  '', // image 2
-  '', // image 3
-  '', // image 4
-  '', // image 5
-  '', // image 6
+  '/wp-content/uploads/2026/05/LandscapingProyect1-scaled.jpg', // image 1
+  '/wp-content/uploads/2026/05/LandscapingProyect2-scaled.jpg', // image 2
+  '/wp-content/uploads/2026/05/LandscapingProyect3-scaled.jpg', // image 3
+  '/wp-content/uploads/2026/05/LandscapingProyect4-scaled.jpg', // image 4
+  '/wp-content/uploads/2026/05/LandscapingProyect5-scaled.jpg', // image 5
+  '/wp-content/uploads/2026/05/LandscapingProyect6-scaled.jpg', // image 6
 ];
 
 // CTA/section background
-$landscape_cta_img = ''; // e.g. /wp-content/uploads/2026/05/landscape-cta.jpg
+$landscape_cta_img = '';
 
 // Side/detail image
-$landscape_detail_img = ''; // e.g. /wp-content/uploads/2026/05/landscape-detail.jpg
+$landscape_detail_img = '/wp-content/uploads/2026/05/LayeredPlanting-scaled.jpg';
+
+// Before images — one per B&A pair
+$landscape_ba_before = [
+  '/wp-content/uploads/2026/05/LanscapingAfter-scaled.jpg', // image 1
+  '/wp-content/uploads/2026/05/LanscapingAfter-scaled.jpg', // image 2
+  '/wp-content/uploads/2026/05/LanscapingAfter-scaled.jpg', // image 3
+];
+
+// After images — one per B&A pair
+$landscape_ba_after = [
+  '/wp-content/uploads/2026/05/LandscapingBefore-scaled.jpg', // image 1
+  '/wp-content/uploads/2026/05/LandscapingBefore-scaled.jpg', // image 2
+  '/wp-content/uploads/2026/05/LandscapingBefore-scaled.jpg', // image 3
+];
 ?>
-
-
-
-<?php
-
-/* ── Landscape Design IMAGE URLS ─────────────────────────────────────────────────────
- * Paste URLs from: WordPress Admin → Media → click image → Copy URL
- * ─────────────────────────────────────────────────────────────────────────── */
-
-// Side detail image
-$landscape_detail_img = '';
-?>
-
-
 
 <?php
 /* ── Data ─────────────────────────────────────────────────────────────────── */
@@ -141,7 +141,6 @@ $faqs = [
      ════════════════════════════════════════════════ -->
 <section class="relative overflow-hidden -mt-[104px]" style="min-height:88vh;">
   <div class="absolute inset-0 bg-[#0e1a0c]" style="background-size:cover;background-position:center;<?php if($landscape_hero_img) echo 'background-image:url('.esc_url($landscape_hero_img).');'; ?>">
-    <?php if($landscape_hero_img) echo "background-image:url(".esc_url($landscape_hero_img).");"; ?>
   </div>
   <div class="absolute inset-0" style="background:linear-gradient(105deg,rgba(0,0,0,.76) 0%,rgba(0,0,0,.44) 55%,rgba(0,0,0,.14) 100%);"></div>
 
@@ -172,7 +171,6 @@ $faqs = [
       </div>
     </div>
 
-    <!-- Floating trust badges -->
     <div class="absolute bottom-10 right-6 md:right-10 hidden md:flex flex-col gap-3">
       <?php foreach ( [['Year-Round','Maintenance Programs'],['Michigan','Climate Expertise'],['Priority','For Maintenance Clients']] as $b ) : ?>
       <div class="bg-[rgba(10,10,8,.75)] backdrop-blur-md border border-[rgba(255,255,255,.08)] px-5 py-3 text-right">
@@ -183,7 +181,6 @@ $faqs = [
     </div>
   </div>
 
-  <!-- Scroll indicator -->
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
     <span class="text-[9px] tracking-[.2em] uppercase text-white">Scroll</span>
     <div class="w-px h-8 bg-white animate-pulse"></div>
@@ -199,7 +196,6 @@ $faqs = [
 
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-16 items-start">
 
-      <!-- Text -->
       <div class="ev-reveal-left">
         <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-4">What We Do</span>
         <h2 class="font-['Articulat_CF'] text-[clamp(28px,3.5vw,44px)] font-bold text-[#0b0b0c] leading-[1.12] mb-7">
@@ -209,10 +205,9 @@ $faqs = [
         <div class="space-y-5 text-[15px] font-light text-[#7a7f85] leading-[1.8]">
           <p>Everridge provides complete landscape design, installation, and seasonal maintenance for residential properties across Southeast Michigan. Our landscaping work includes <strong class="font-semibold text-[#0b0b0c]">custom planting designs</strong> using trees, shrubs, perennials, and seasonal annuals selected specifically for Michigan's climate and your property's sun, shade, and soil conditions.</p>
           <p>We install sod for new lawns and lawn renovation projects. We design and install mulch beds with <strong class="font-semibold text-[#0b0b0c]">clean, defined edging</strong> that gives your property a polished, well-maintained appearance year round. Our seasonal maintenance programs cover spring cleanups, fall leaf removal, mulch replenishment, trimming and pruning, lawn treatment, and debris removal.</p>
-          <p>What separates Everridge from a typical landscaping company is that we approach every project as a design opportunity. <strong class="font-semibold text-[#0b0b0c]">We do not just plant shrubs and spread mulch.</strong> We design outdoor environments that complement your home's architecture, enhance your curb appeal, and increase your property's value. Every planting plan is intentional. Every material is selected with purpose.</p>
+          <p>What separates Everridge from a typical landscaping company is that we approach every project as a design opportunity. <strong class="font-semibold text-[#0b0b0c]">We do not just plant shrubs and spread mulch.</strong> We design outdoor environments that complement your home's architecture, enhance your curb appeal, and increase your property's value.</p>
         </div>
 
-        <!-- Services checklist -->
         <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3">
           <?php
           $services = [
@@ -238,14 +233,15 @@ $faqs = [
         </div>
       </div>
 
-      <!-- Side image + value prop card -->
       <div class="ev-reveal-right flex flex-col gap-4 lg:sticky lg:top-32">
-        <div class="overflow-hidden border border-[#e6e3df] aspect-[3/4] bg-[#d8e8d0] flex items-center justify-center text-[11px] text-[#7a7f85] text-center px-8">
-          <?php if($landscape_detail_img):?><img src="<?php echo esc_url($landscape_detail_img);?>" class="w-full h-full object-cover" loading="lazy" alt="Premium landscape planting detail"><?php else:?>
-          Layered planting beds — trees, shrubs, perennials, and seasonal color with fresh mulch and clean steel edging<?php endif;?>
+        <div class="overflow-hidden border border-[#e6e3df] aspect-[3/4] bg-[#d8e8d0] relative">
+          <?php if($landscape_detail_img):?>
+          <img src="<?php echo esc_url($landscape_detail_img);?>" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="Premium landscape planting detail">
+          <?php else:?>
+          <div class="absolute inset-0 flex items-center justify-center text-[11px] text-[#7a7f85] text-center px-8">Layered planting beds — trees, shrubs, perennials, and seasonal color with fresh mulch and clean steel edging</div>
+          <?php endif;?>
         </div>
 
-        <!-- Design-first card -->
         <div class="bg-[#f5f2ef] border border-[#e6e3df] p-5">
           <div class="flex items-start gap-4">
             <div class="w-10 h-10 bg-white border border-[#d8d4ce] flex items-center justify-center flex-shrink-0">
@@ -260,7 +256,6 @@ $faqs = [
           </div>
         </div>
 
-        <!-- Maintenance upsell card -->
         <div class="bg-[#1a1814] p-5">
           <div class="text-[10px] font-semibold tracking-[.15em] uppercase text-[#8a6a45] mb-2">Maintenance Clients</div>
           <p class="text-[13px] font-light text-[rgba(240,236,230,.7)] leading-relaxed mb-3">Get priority scheduling for hardscape, lighting, and larger project additions — plus first access to spring planting slots.</p>
@@ -283,10 +278,13 @@ $faqs = [
         <?php foreach ( $gallery_items as $i => $g ) : ?>
         <div class="ev-reveal group relative overflow-hidden border border-[#e6e3df] aspect-[4/3] cursor-pointer bg-[#d8e8d0]"
              style="transition-delay:<?php echo $i * 80; ?>ms;">
-          <?php if(!empty($landscape_gallery[$i])):?><img src="<?php echo esc_url($landscape_gallery[$i]);?>" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" alt=""><?php endif;?>
-          <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a9a7a] text-center px-6 transition-transform duration-500 group-hover:scale-105">
+          <?php if(!empty($landscape_gallery[$i])):?>
+          <img src="<?php echo esc_url($landscape_gallery[$i]);?>" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" alt="">
+          <?php else:?>
+          <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a9a7a] text-center px-6">
             <?php echo $g['ph']; ?>
           </div>
+          <?php endif;?>
           <div class="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,.65)] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
             <div class="text-[13px] font-semibold text-white"><?php echo $g['label']; ?></div>
@@ -321,15 +319,19 @@ $faqs = [
       <div class="ev-reveal" style="transition-delay:<?php echo $i * 100; ?>ms;">
         <div class="ev-ba relative overflow-hidden border border-[#e6e3df] cursor-col-resize select-none" data-ba="<?php echo $i; ?>">
           <!-- Before -->
-          <div class="aspect-[4/3] bg-[#d8d4cc] flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6">
-            <?php if($landscape_cta_img) echo "background-image:url(".esc_url($landscape_cta_img).");background-attachment:fixed;"; ?>
-            <?php echo $p['ph_b']; ?>
+          <div class="aspect-[4/3] bg-[#d8d4cc] relative overflow-hidden">
+            <?php if(!empty($landscape_ba_before[$i])):?>
+            <img src="<?php echo esc_url($landscape_ba_before[$i]);?>" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="">
+            <?php else:?>
+            <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6"><?php echo $p['ph_b']; ?></div>
+            <?php endif;?>
           </div>
           <!-- After (clipped) -->
-          <div class="ev-ba-after absolute inset-0 bg-[#b8d4a8] flex items-center justify-center text-[10px] text-[#7a9a7a] text-center px-6"
-               style="clip-path:inset(0 50% 0 0);background-size:cover;background-position:center;">
-            <?php if($landscape_cta_img) echo "background-image:url(".esc_url($landscape_cta_img).");background-attachment:fixed;"; ?>
-            <?php echo $p['ph_a']; ?>
+          <div class="ev-ba-after absolute inset-0 bg-[#b8d4a8]"
+               style="clip-path:inset(0 50% 0 0);background-size:cover;background-position:center;<?php if(!empty($landscape_ba_after[$i])) echo 'background-image:url('.esc_url($landscape_ba_after[$i]).');'; ?>">
+            <?php if(empty($landscape_ba_after[$i])):?>
+            <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a9a7a] text-center px-6"><?php echo $p['ph_a']; ?></div>
+            <?php endif;?>
           </div>
           <!-- Handle -->
           <div class="ev-ba-handle absolute top-0 bottom-0 w-0.5 bg-white left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none">
@@ -367,11 +369,10 @@ $faqs = [
         <span class="text-[#8a6a45]">Through Every Season.</span>
       </h2>
       <p class="mt-4 text-[15px] text-[#7a7f85] font-light max-w-2xl mx-auto leading-relaxed">
-        We handle everything so your property looks its best year round — without you having to think about it. Maintenance clients get priority scheduling for all larger project work.
+        We handle everything so your property looks its best year round. Maintenance clients get priority scheduling for all larger project work.
       </p>
     </div>
 
-    <!-- Season tabs -->
     <div class="flex justify-center gap-2 mb-10 ev-reveal">
       <?php foreach ( $seasonal as $key => $season ) : ?>
       <button class="ev-season-btn flex items-center gap-2 text-[12px] font-semibold tracking-[.06em] uppercase px-6 py-3 border transition-all duration-200
@@ -383,12 +384,10 @@ $faqs = [
       <?php endforeach; ?>
     </div>
 
-    <!-- Season panels -->
     <?php foreach ( $seasonal as $key => $season ) : ?>
     <div class="ev-season-panel <?php echo $key !== 'spring' ? 'hidden' : ''; ?>" data-panel="<?php echo $key; ?>">
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10 items-start">
 
-        <!-- Items list -->
         <div class="bg-[#f5f2ef] border border-[#e6e3df] p-8 md:p-10">
           <div class="flex items-center gap-3 mb-6">
             <span class="text-3xl"><?php echo $season['icon']; ?></span>
@@ -414,17 +413,18 @@ $faqs = [
           </div>
         </div>
 
-        <!-- Season property photo -->
         <div class="flex flex-col gap-4">
-          <div class="overflow-hidden border border-[#e6e3df] aspect-[4/3] flex items-center justify-center text-[11px] text-[#7a7f85] text-center px-8"
+          <div class="overflow-hidden border border-[#e6e3df] aspect-[4/3] relative"
                style="background:<?php echo $key === 'spring' ? '#d0e8c0' : ($key === 'summer' ? '#c8e4b0' : '#d4c8a0'); ?>">
-            <?php if($landscape_detail_img):?><img src="<?php echo esc_url($landscape_detail_img);?>" class="w-full h-full object-cover" loading="lazy" alt="Property in <?php echo $season['label']; ?>"><?php endif;?>
-            Property in <?php echo $season['label']; ?> — showing the same home looking maintained and polished
+            <?php if($landscape_detail_img):?>
+            <img src="<?php echo esc_url($landscape_detail_img);?>" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="Property in <?php echo $season['label']; ?>">
+            <?php else:?>
+            <div class="absolute inset-0 flex items-center justify-center text-[11px] text-[#7a7f85] text-center px-8">Property in <?php echo $season['label']; ?> — showing the same home looking maintained and polished</div>
+            <?php endif;?>
           </div>
-          <!-- Maintenance value prop -->
           <div class="bg-[#f5f2ef] border border-[#e6e3df] p-5">
             <div class="text-[11px] font-semibold text-[#8a6a45] tracking-[.1em] uppercase mb-2">Why Ongoing Maintenance Matters</div>
-            <p class="text-[13px] font-light text-[#7a7f85] leading-relaxed">Regular maintenance protects your landscape investment, prevents weed and pest damage, and ensures your property looks its best when you pull into your driveway — and when a buyer or guest does too. Maintenance clients also receive <strong class="font-semibold text-[#0b0b0c]">priority scheduling</strong> for hardscape and lighting additions.</p>
+            <p class="text-[13px] font-light text-[#7a7f85] leading-relaxed">Regular maintenance protects your landscape investment, prevents weed and pest damage, and ensures your property looks its best. Maintenance clients also receive <strong class="font-semibold text-[#0b0b0c]">priority scheduling</strong> for hardscape and lighting additions.</p>
           </div>
         </div>
 
@@ -511,6 +511,7 @@ $faqs = [
   </div>
 </section>
 
+
 <!-- ════════════════════════════════════════════════
      JAVASCRIPT
      ════════════════════════════════════════════════ -->
@@ -541,8 +542,6 @@ $faqs = [
   document.querySelectorAll('.ev-season-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const key = btn.dataset.season;
-
-      // Buttons
       document.querySelectorAll('.ev-season-btn').forEach(b => {
         const active = b.dataset.season === key;
         b.className = b.className.replace('bg-[#1a1814] text-white border-[#1a1814]','bg-white text-[#7a7f85] border-[#d8d4ce] hover:border-[#1a1814] hover:text-[#0b0b0c]');
@@ -551,8 +550,6 @@ $faqs = [
           b.classList.add('bg-[#1a1814]','text-white','border-[#1a1814]');
         }
       });
-
-      // Panels
       document.querySelectorAll('.ev-season-panel').forEach(p => {
         p.classList.toggle('hidden', p.dataset.panel !== key);
       });
@@ -588,8 +585,6 @@ $faqs = [
       const icon   = item.querySelector('.ev-faq-icon');
       const svg    = icon.querySelector('svg');
       const isOpen = btn.getAttribute('aria-expanded') === 'true';
-
-      // Close all
       document.querySelectorAll('.ev-faq-item').forEach(i => {
         i.querySelector('.ev-faq-btn').setAttribute('aria-expanded','false');
         i.querySelector('.ev-faq-body').style.maxHeight = '0';
@@ -600,7 +595,6 @@ $faqs = [
         s.classList.remove('rotate-45','text-white');
         s.classList.add('text-[#7a7f85]');
       });
-
       if (!isOpen) {
         btn.setAttribute('aria-expanded','true');
         body.style.maxHeight = body.scrollHeight + 'px';
