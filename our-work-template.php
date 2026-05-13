@@ -20,18 +20,18 @@ $ourwork_cta_img = ''; // e.g. /wp-content/uploads/2026/05/ourwork-cta.jpg
 // Project images — one URL per project ID (1–12)
 // Go to Media → click each image → Copy URL → paste here
 $ourwork_project_imgs = [
-  1  => '', // Premium Paver Patio — Birmingham
-  2  => '', // Front Yard Transformation — Troy
-  3  => '', // Outdoor Lighting System — Bloomfield Hills
-  4  => '', // Retaining Wall & Garden — Rochester Hills
-  5  => '', // 3D Rendering to Reality — Shelby Township
-  6  => '', // Driveway & Entryway — Clinton Township
-  7  => '', // Garden Design Installation — Washington Twp
-  8  => '', // Landscape Lighting Full — Birmingham
-  9  => '', // Hardscape Fire Pit Area — Troy
-  10 => '', // Seasonal Landscape Refresh — Bloomfield Hills
-  11 => '', // Multi-Level Retaining Wall — Rochester Hills
-  12 => '', // Complete Backyard — Shelby Township
+  1  => '/wp-content/uploads/2026/05/LandscapingProyect6-scaled.jpg', // Premium Paver Patio — Birmingham
+  2  => '/wp-content/uploads/2026/05/RetainingWalls-scaled.jpg', // Front Yard Transformation — Troy
+  3  => '/wp-content/uploads/2026/04/OutdoorLightingSystemHero-scaled.jpg', // Outdoor Lighting System — Bloomfield Hills
+  4  => '/wp-content/uploads/2026/05/LanscapingAfter-scaled.jpg', // Retaining Wall & Garden — Rochester Hills
+  5  => '/wp-content/uploads/2026/05/BrickandHardscapesService-scaled.jpg', // 3D Rendering to Reality — Shelby Township
+  6  => '/wp-content/uploads/2026/05/LandscapingProyect2-scaled.jpg', // Driveway & Entryway — Clinton Township
+  7  => '/wp-content/uploads/2026/05/LandscapingBefore-scaled.jpg', // Garden Design Installation — Washington Twp
+  8  => '/wp-content/uploads/2026/05/PremiunHardscapeHero-scaled.jpg', // Landscape Lighting Full — Birmingham
+  9  => '/wp-content/uploads/2026/05/OutdoorLightningHero-scaled.jpg', // Hardscape Fire Pit Area — Troy
+  10 => '/wp-content/uploads/2026/04/Landscaping3DModeling-.png', // Seasonal Landscape Refresh — Bloomfield Hills
+  11 => '/wp-content/uploads/2026/05/AboutHeroEverridge-scaled.jpg', // Multi-Level Retaining Wall — Rochester Hills
+  12 => '/wp-content/uploads/2026/04/terrazzo-product-display-podium-in-the-middle-of-t-2026-03-24-07-21-27-utc-scaled.jpg', // Complete Backyard — Shelby Township
 ];
 ?>
 

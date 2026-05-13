@@ -210,7 +210,7 @@ $faqs = [
     </div>
 
     <!-- Nighttime gallery -->
-    <div class="mt-16">
+    <!-- <div class="mt-16">
       <div class="text-center mb-10 ev-reveal">
         <h3 class="font-['Articulat_CF'] text-[clamp(22px,2.8vw,34px)] font-bold text-[#0b0b0c]">Lighting in Action</h3>
       </div>
@@ -229,7 +229,7 @@ $faqs = [
         <?php endforeach; ?>
       </div>
     </div>
-  </div>
+  </div> -->
 </section>
 
 
