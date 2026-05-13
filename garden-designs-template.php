@@ -12,7 +12,7 @@ get_header(); ?>
  * ─────────────────────────────────────────────────────────────────────────── */
 
 // Hero background image
-$threed_hero_img = ''; // e.g. /wp-content/uploads/2026/05/threed-hero.jpg
+$threed_hero_img = '/wp-content/uploads/2026/04/Landscaping3DModeling-.png'; // e.g. /wp-content/uploads/2026/05/threed-hero.jpg
 
 // Process step images — one per step
 $threed_process_imgs = [
@@ -129,83 +129,42 @@ $faqs = [
 <!-- ════════════════════════════════════════════════
      PAGE HERO — Split rendering vs reality
      ════════════════════════════════════════════════ -->
-<section class="relative overflow-hidden -mt-[104px]" style="min-height:90vh;">
-
-  <!-- Hero B&A drag slider — THE most important element on the site -->
-  <div id="ev-hero-ba" class="absolute inset-0 cursor-col-resize select-none">
-    <!-- Rendering side (left) -->
-    <div class="absolute inset-0 bg-[#141018] flex items-center justify-center text-[11px] text-[#5a5868] text-center px-10"
-         style="background-size:cover;background-position:center;<?php if($threed_hero_img) echo 'background-image:url('.esc_url($threed_hero_img).');'; ?>">
-      <?php if($threed_hero_img) echo "background-image:url(".esc_url($threed_hero_img).");"; ?>
+<section class="relative overflow-hidden -mt-[104px]" style="min-height:88vh;">
+  <div class="absolute inset-0 bg-[#141018]"
+       style="background-size:cover;background-position:center;<?php if($threed_hero_img) echo 'background-image:url('.esc_url($threed_hero_img).');'; ?>">
+    <?php if ( ! $threed_hero_img ) : ?>
+    <div class="absolute inset-0 flex items-center justify-center text-[#5a5868] text-xs tracking-widest uppercase text-center px-10">
+      Hero — photorealistic 3D rendering vs completed project
     </div>
-    <!-- Completed project side (right, clipped) -->
-    <div id="ev-hero-after"
-         class="absolute inset-0 bg-[#0e1a0c] flex items-center justify-center text-[11px] text-[#4a6048] text-center px-10"
-         style="clip-path:inset(0 50% 0 0);background-size:cover;background-position:center;">
-      <?php if($threed_hero_img) echo "background-image:url(".esc_url($threed_hero_img).");"; ?>
-    </div>
-    <!-- Handle -->
-    <div id="ev-hero-handle" class="absolute top-0 bottom-0 w-0.5 bg-white left-1/2 -translate-x-1/2 flex items-center justify-center z-20 pointer-events-none">
-      <div class="w-12 h-12 bg-white shadow-[0_4px_24px_rgba(0,0,0,.4)] flex items-center justify-center">
-        <svg class="w-5 h-5 text-[#0b0b0c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15M15.75 9L12 5.25 8.25 9"/>
-        </svg>
-      </div>
-    </div>
-    <!-- Side labels -->
-    <div class="absolute top-[120px] md:top-[140px] left-6 z-10">
-      <span class="bg-[rgba(0,0,0,.55)] backdrop-blur-sm text-[9px] font-bold tracking-[.16em] uppercase text-[rgba(255,255,255,.65)] px-3 py-1.5">3D Rendering</span>
-    </div>
-    <div class="absolute top-[120px] md:top-[140px] right-6 z-10">
-      <span class="bg-[rgba(0,0,0,.55)] backdrop-blur-sm text-[9px] font-bold tracking-[.16em] uppercase text-[rgba(255,255,255,.65)] px-3 py-1.5">Completed Project</span>
-    </div>
-    <!-- Drag hint -->
-    <div id="ev-hero-hint" class="absolute bottom-32 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 transition-opacity duration-500">
-      <div class="bg-[rgba(0,0,0,.6)] backdrop-blur-sm border border-[rgba(255,255,255,.15)] px-4 py-2 flex items-center gap-2">
-        <svg class="w-3.5 h-3.5 text-[#8a6a45]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/>
-        </svg>
-        <span class="text-[10px] font-semibold tracking-[.1em] uppercase text-white">Drag to Compare</span>
-      </div>
-    </div>
+    <?php endif; ?>
   </div>
+  <div class="absolute inset-0" style="background:linear-gradient(105deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.48) 55%,rgba(0,0,0,.18) 100%);"></div>
 
-  <!-- Dark gradient top for text readability -->
-  <div class="absolute top-0 left-0 right-0 h-64 pointer-events-none z-10"
-       style="background:linear-gradient(to bottom,rgba(0,0,0,.72) 0%,rgba(0,0,0,0) 100%);"></div>
-  <!-- Dark gradient bottom for dots/CTA -->
-  <div class="absolute bottom-0 left-0 right-0 h-56 pointer-events-none z-10"
-       style="background:linear-gradient(to top,rgba(0,0,0,.75) 0%,rgba(0,0,0,0) 100%);"></div>
-
-  <!-- Hero content overlay -->
-  <div class="relative z-20 max-w-[1280px] mx-auto px-6 md:px-10 pointer-events-none" style="min-height:90vh;display:flex;flex-direction:column;justify-content:space-between;padding-top:140px;padding-bottom:60px;">
-    <!-- Top: headline -->
+  <div class="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10 flex flex-col justify-center" style="min-height:88vh;padding-top:140px;padding-bottom:80px;">
     <div class="max-w-2xl">
       <div class="flex items-center gap-3 mb-5">
         <span class="block w-9 h-px bg-[#8a6a45]"></span>
         <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#ecebea]">Garden Design & 3D Renderings</span>
       </div>
-      <h1 class="font-['Articulat_CF'] text-[clamp(36px,5.5vw,68px)] font-bold text-[#e6e3df] leading-[1.06] tracking-tight mb-5">
+      <h1 class="font-['Articulat_CF'] text-[clamp(38px,6vw,72px)] font-bold text-[#e6e3df] leading-[1.06] tracking-tight mb-5">
         Your Vision,<br>
-        <em class="italic text-[#8a6a45]">Realized in 3D.</em>
+        <span class="text-[#dcc6ad]">Realized in 3D.</span>
       </h1>
-      <p class="text-[clamp(14px,1.6vw,17px)] font-light text-[#ecebea] leading-relaxed max-w-xl">
+      <p class="text-[clamp(15px,1.8vw,18px)] font-light text-[rgba(240,236,230,.65)] leading-relaxed max-w-xl mb-10">
         We do not ask you to imagine the result. We show it to you. Every Everridge project begins with a photorealistic 3D rendering of your property, fully transformed.
       </p>
-    </div>
-
-    <!-- Bottom: CTAs -->
-    <div class="flex flex-wrap gap-3 pointer-events-auto">
-      <a href="/contact"
-         class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-7 py-4 hover:opacity-85 transition-opacity"
-         style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
-        Schedule a Design Consultation
-        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-      </a>
-      <a href="#ev-gallery"
-         class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.75)] border border-[rgba(240,236,230,.2)] px-7 py-4 hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
-        See Rendering Examples
-      </a>
+      <div class="flex flex-wrap gap-3">
+        <a href="/contact"
+           class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-7 py-4 hover:opacity-85 transition-opacity"
+           style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
+          Schedule a Design Consultation
+          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </a>
+        <a href="#ev-gallery"
+           class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.75)] border border-[rgba(240,236,230,.2)] px-7 py-4 hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
+          See Rendering Examples
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -518,34 +477,53 @@ $faqs = [
   </div>
 </section>
 
+
+<!-- ════════════════════════════════════════════════
+     SECTION 4C — CTA
+     ════════════════════════════════════════════════ -->
+<section class="relative overflow-hidden py-24 md:py-32">
+  <div class="absolute inset-0 bg-[#12101a]" style="background-size:cover;background-position:center;background-attachment:fixed;">
+    <?php if($threed_hero_img) echo "background-image:url(".esc_url($threed_hero_img).");"; ?>
+    <div class="absolute inset-0 flex items-center justify-center text-[#2a2838] text-xs tracking-widest uppercase">
+      3D rendering and completed project side by side — most dramatic transformation available
+    </div>
+  </div>
+  <div class="absolute inset-0" style="background:rgba(0,0,0,.7);"></div>
+
+  <div class="relative z-10 max-w-[720px] mx-auto px-6 md:px-10 text-center">
+    <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-4">See Your Property in 3D</span>
+    <h2 class="font-['Articulat_CF'] text-[clamp(28px,5vw,52px)] font-bold text-[#e6e3df] leading-[1.1] mb-5">
+      Ready to See Your Property<br>
+      <em class="italic text-[#8a6a45]">Before We Build It?</em>
+    </h2>
+    <p class="text-[15px] font-light text-[rgba(240,236,230,.58)] leading-relaxed mb-10 max-w-lg mx-auto">
+      Schedule a design consultation. We'll visit your property, listen to your vision, and deliver a photorealistic 3D rendering within days. No obligation. No pressure.
+    </p>
+    <a href="tel:+17705550192"
+       class="block font-['Articulat_CF'] font-bold text-[#8a6a45] text-[clamp(24px,4vw,40px)] mb-9 hover:opacity-75 transition-opacity">
+      (770) 555-0192
+    </a>
+    <div class="flex flex-wrap gap-3 justify-center">
+      <a href="/contact"
+         class="inline-flex items-center gap-2 text-[12px] font-bold tracking-[.1em] uppercase text-[#0f0f0f] px-9 py-4 hover:opacity-85 transition-opacity"
+         style="background:linear-gradient(135deg,#8a6a45,#7a5c38);">
+        Schedule a Design Consultation
+        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+      </a>
+      <a href="/our-work"
+         class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[.08em] uppercase text-[rgba(240,236,230,.75)] border border-[rgba(240,236,230,.2)] px-8 py-4 hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
+        See More Renderings
+      </a>
+    </div>
+  </div>
+</section>
+
+
 <!-- ════════════════════════════════════════════════
      JAVASCRIPT
      ════════════════════════════════════════════════ -->
 <script>
 (function () {
-
-  /* ── HERO B&A DRAG ─────────────────────────────── */
-  const heroWrap   = document.getElementById('ev-hero-ba');
-  const heroAfter  = document.getElementById('ev-hero-after');
-  const heroHandle = document.getElementById('ev-hero-handle');
-  const heroHint   = document.getElementById('ev-hero-hint');
-  let heroDrag = false, heroMoved = false;
-
-  const setHeroPos = x => {
-    const r   = heroWrap.getBoundingClientRect();
-    const pct = Math.min(Math.max((x - r.left) / r.width, 0), 1) * 100;
-    heroAfter.style.clipPath  = `inset(0 ${100 - pct}% 0 0)`;
-    heroHandle.style.left     = pct + '%';
-    if (!heroMoved) { heroMoved = true; heroHint.style.opacity = '0'; }
-  };
-
-  heroWrap.addEventListener('mousedown',  e => { heroDrag = true; setHeroPos(e.clientX); });
-  heroWrap.addEventListener('touchstart', e => { heroDrag = true; setHeroPos(e.touches[0].clientX); }, { passive: true });
-  window.addEventListener('mousemove',  e => { if (heroDrag) setHeroPos(e.clientX); });
-  window.addEventListener('touchmove',  e => { if (heroDrag) setHeroPos(e.touches[0].clientX); }, { passive: true });
-  window.addEventListener('mouseup',    () => heroDrag = false);
-  window.addEventListener('touchend',   () => heroDrag = false);
-
 
   /* ── GALLERY B&A DRAGS ─────────────────────────── */
   document.querySelectorAll('.ev-ba').forEach(wrap => {

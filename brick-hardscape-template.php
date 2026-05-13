@@ -26,10 +26,10 @@ $hardscape_gallery = [
 
 // Material section images — one per material card
 $hardscape_material_imgs = [
-  '', // image 1
-  '', // image 2
-  '', // image 3
-  '', // image 4
+  '/wp-content/uploads/2026/05/InterlockingConcretePavers-scaled.jpg', // image 1
+  '/wp-content/uploads/2026/05/NaturalStone-scaled.jpg', // image 2
+  '/wp-content/uploads/2026/05/PolymericSand-scaled.jpg', // image 3
+  '/wp-content/uploads/2026/05/BaseMaterials-scaled.jpeg', // image 4
 ];
 
 // CTA/section background
@@ -37,10 +37,10 @@ $hardscape_cta_img = '/wp-content/uploads/2026/05/EstampadoEverridge-scaled.png'
 
 // Process step images — one per step
 $hardscape_process_imgs = [
-  '', // image 1
-  '', // image 2
-  '', // image 3
-  '', // image 4
+  '/wp-content/uploads/2026/05/Process1-scaled.jpg', // image 1
+  '/wp-content/uploads/2026/05/Process2-scaled.jpg', // image 2
+  '/wp-content/uploads/2026/05/crew-work-scaled.jpg', // image 3
+  '/wp-content/uploads/2026/05/3DRenderingComparison-e1778351002474.png', // image 4
 ];
 ?>
 
@@ -53,22 +53,22 @@ $hardscape_process_imgs = [
  * ─────────────────────────────────────────────────────────────────────────── */
 
 // Side detail image
-$hardscape_detail_img = '';
+$hardscape_detail_img = '/wp-content/uploads/2026/05/BricksHardscapeServicePage-scaled.jpg';
 
 // Before images — one per B&A pair
 $hardscape_ba_before = [
-  '', // image 1
-  '', // image 2
-  '', // image 3
-  '', // image 4
+  '/wp-content/uploads/2026/05/HardscapeAfter-2-scaled.jpg', // image 1
+  '/wp-content/uploads/2026/05/HardscapeAfter-2-scaled.jpg', // image 2
+  '/wp-content/uploads/2026/05/HardscapeAfter-2-scaled.jpg', // image 3
+  '/wp-content/uploads/2026/05/HardscapeAfter-2-scaled.jpg', // image 4
 ];
 
 // After images — one per B&A pair
 $hardscape_ba_after = [
-  '', // image 1
-  '', // image 2
-  '', // image 3
-  '', // image 4
+  '/wp-content/uploads/2026/05/HardscapeBefore-scaled.jpg', // image 1
+  '/wp-content/uploads/2026/05/HardscapeBefore-scaled.jpg', // image 2
+  '/wp-content/uploads/2026/05/HardscapeBefore-scaled.jpg', // image 3
+  '/wp-content/uploads/2026/05/HardscapeBefore-scaled.jpg', // image 4
 ];
 ?>
 
@@ -153,7 +153,6 @@ $faqs = [
      ════════════════════════════════════════════════ -->
 <section class="relative overflow-hidden -mt-[104px]" style="min-height:88vh;">
   <div class="absolute inset-0 bg-[#141008]" style="background-size:cover;background-position:center;<?php if($hardscape_hero_img) echo 'background-image:url('.esc_url($hardscape_hero_img).');'; ?>">
-    <?php if($hardscape_hero_img) echo "background-image:url(".esc_url($hardscape_hero_img).");"; ?>
   </div>
   <div class="absolute inset-0" style="background:linear-gradient(105deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.48) 55%,rgba(0,0,0,.18) 100%);"></div>
 
@@ -249,9 +248,12 @@ $faqs = [
 
       <!-- Side image + badge -->
       <div class="ev-reveal-right flex flex-col gap-4 lg:sticky lg:top-32">
-        <div class="overflow-hidden border border-[#e6e3df] aspect-[4/5] bg-[#e0ddd6] flex items-center justify-center text-[11px] text-[#7a7f85] text-center px-8">
-          <?php if($hardscape_detail_img):?><img src="<?php echo esc_url($hardscape_detail_img);?>" class="w-full h-full object-cover" loading="lazy" alt="Hardscape detail — paver texture and craftsmanship"><?php else:?>
-          Close-up of premium paver installation — joint lines, texture, border pattern at golden hour<?php endif;?>
+        <div class="overflow-hidden border border-[#e6e3df] aspect-[4/5] bg-[#e0ddd6] relative">
+          <?php if($hardscape_detail_img):?>
+          <img src="<?php echo esc_url($hardscape_detail_img);?>" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="Hardscape detail — paver texture and craftsmanship">
+          <?php else:?>
+          <div class="absolute inset-0 flex items-center justify-center text-[11px] text-[#7a7f85] text-center px-8">Close-up of premium paver installation — joint lines, texture, border pattern at golden hour</div>
+          <?php endif;?>
         </div>
         <!-- Material badge -->
         <div class="bg-[#f5f2ef] border border-[#e6e3df] p-5 flex items-start gap-4">
@@ -270,7 +272,7 @@ $faqs = [
     </div>
 
     <!-- Project type photo grid -->
-    <div id="ev-gallery" class="mt-20">
+    <!-- <div id="ev-gallery" class="mt-20">
       <div class="text-center mb-10 ev-reveal">
         <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">Project Gallery</span>
         <h3 class="font-['Articulat_CF'] text-[clamp(24px,3vw,36px)] font-bold text-[#0b0b0c]">Our Hardscape Work</h3>
@@ -279,10 +281,13 @@ $faqs = [
         <?php foreach ( $project_types as $i => $pt ) : ?>
         <div class="ev-reveal group relative overflow-hidden border border-[#e6e3df] aspect-[4/3] cursor-pointer bg-[#e0ddd6]"
              style="transition-delay:<?php echo $i * 80; ?>ms;">
-          <?php if(!empty($hardscape_gallery[$i])):?><img src="<?php echo esc_url($hardscape_gallery[$i]);?>" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" alt=""><?php endif;?>
-          <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6 transition-transform duration-500 group-hover:scale-105">
+          <?php if(!empty($hardscape_gallery[$i])):?>
+          <img src="<?php echo esc_url($hardscape_gallery[$i]);?>" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" alt="">
+          <?php else:?>
+          <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6">
             <?php echo $pt['ph']; ?>
           </div>
+          <?php endif;?>
           <div class="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,.65)] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
             <div class="text-[13px] font-semibold text-white"><?php echo $pt['label']; ?></div>
@@ -291,7 +296,7 @@ $faqs = [
         </div>
         <?php endforeach; ?>
       </div>
-    </div>
+    </div> -->
 
   </div>
 </section>
@@ -352,9 +357,12 @@ $faqs = [
       <div class="ev-reveal bg-white border border-[#e6e3df] overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
            style="transition-delay:<?php echo $i * 100; ?>ms;">
         <!-- Image -->
-        <div class="aspect-video bg-[#e0ddd6] flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-8">
-          <?php if(!empty($hardscape_material_imgs[$i])):?><img src="<?php echo esc_url($hardscape_material_imgs[$i]);?>" class="w-full h-full object-cover" loading="lazy" alt=""><?php endif;?>
-          <?php echo $m['ph']; ?>
+        <div class="aspect-video bg-[#e0ddd6] relative overflow-hidden">
+          <?php if(!empty($hardscape_material_imgs[$i])):?>
+          <img src="<?php echo esc_url($hardscape_material_imgs[$i]);?>" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="">
+          <?php else:?>
+          <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-8"><?php echo $m['ph']; ?></div>
+          <?php endif;?>
         </div>
         <!-- Body -->
         <div class="p-6">
@@ -399,15 +407,19 @@ $faqs = [
       <div class="ev-reveal" style="transition-delay:<?php echo ($i%2)*100; ?>ms;">
         <div class="ev-ba relative overflow-hidden border border-[#e6e3df] cursor-col-resize select-none" data-ba="<?php echo $i; ?>">
           <!-- Before -->
-          <div class="aspect-[4/3] bg-[#ddd8d0] flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-8">
-            <?php if($hardscape_cta_img) echo "background-image:url(".esc_url($hardscape_cta_img).");background-attachment:fixed;"; ?>
-            <?php echo $p['ph_b']; ?>
+          <div class="aspect-[4/3] bg-[#ddd8d0] relative overflow-hidden">
+            <?php if(!empty($hardscape_ba_before[$i])):?>
+            <img src="<?php echo esc_url($hardscape_ba_before[$i]);?>" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="">
+            <?php else:?>
+            <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-8"><?php echo $p['ph_b']; ?></div>
+            <?php endif;?>
           </div>
           <!-- After (clipped) -->
-          <div class="ev-ba-after absolute inset-0 bg-[#c8d4b8] flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-8"
-               style="clip-path:inset(0 50% 0 0);background-size:cover;background-position:center;">
-            <?php if($hardscape_cta_img) echo "background-image:url(".esc_url($hardscape_cta_img).");background-attachment:fixed;"; ?>
-            <?php echo $p['ph_a']; ?>
+          <div class="ev-ba-after absolute inset-0 bg-[#c8d4b8]"
+               style="clip-path:inset(0 50% 0 0);background-size:cover;background-position:center;<?php if(!empty($hardscape_ba_after[$i])) echo 'background-image:url('.esc_url($hardscape_ba_after[$i]).');'; ?>">
+            <?php if(empty($hardscape_ba_after[$i])):?>
+            <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-8"><?php echo $p['ph_a']; ?></div>
+            <?php endif;?>
           </div>
           <!-- Handle -->
           <div class="ev-ba-handle absolute top-0 bottom-0 w-0.5 bg-white left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none">
@@ -417,8 +429,8 @@ $faqs = [
               </svg>
             </div>
           </div>
-          <span class="absolute top-3 left-4 text-[9px] font-bold tracking-widest uppercase text-[rgba(255,255,255,.65)]">Before</span>
-          <span class="absolute top-3 right-4 text-[9px] font-bold tracking-widest uppercase text-[rgba(255,255,255,.65)]">After</span>
+          <span class="absolute top-3 left-4 text-[9px] font-bold tracking-widest uppercase text-[rgba(20,19,19,0.65)]">Before</span>
+          <span class="absolute top-3 right-4 text-[9px] font-bold tracking-widest uppercase text-[rgba(20,19,19,.65)]">After</span>
         </div>
         <div class="flex items-center justify-between pt-3 px-1">
           <span class="font-['Articulat_CF'] text-[15px] font-semibold text-[#0b0b0c]"><?php echo $p['label']; ?></span>
@@ -447,7 +459,6 @@ $faqs = [
     </div>
 
     <div class="relative">
-      <!-- Center line -->
       <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-[#e0dad2] -translate-x-1/2"></div>
 
       <?php foreach ( $steps as $i => $step ) : ?>
@@ -456,7 +467,6 @@ $faqs = [
            data-step="<?php echo $i; ?>">
 
         <?php if ( $left ) : ?>
-          <!-- Content left -->
           <div class="md:pr-14 md:text-right mb-6 md:mb-0">
             <div class="inline-flex items-center gap-2 mb-3 <?php echo $left ? 'md:flex-row-reverse' : ''; ?>">
               <span class="text-[10px] font-bold tracking-[.18em] uppercase text-[#8a6a45]">Step <?php echo $step['num']; ?></span>
@@ -464,31 +474,32 @@ $faqs = [
             <h3 class="font-['Articulat_CF'] text-xl font-bold text-[#0b0b0c] mb-3"><?php echo $step['title']; ?></h3>
             <p class="text-[13px] font-light text-[#7a7f85] leading-[1.75]"><?php echo $step['copy']; ?></p>
           </div>
-          <!-- Dot -->
           <div class="ev-step-dot hidden md:flex w-[52px] h-[52px] flex-shrink-0 items-center justify-center bg-white border-2 border-[#d8d4ce] z-10 transition-all duration-500 mx-auto shadow-sm">
             <span class="font-['Articulat_CF'] text-[13px] font-bold text-[#8a6a45]"><?php echo $step['num']; ?></span>
           </div>
-          <!-- Image right -->
           <div class="md:pl-14">
-            <div class="border border-[#e6e3df] bg-[#e8e4de] h-48 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6">
-              <?php if(!empty($hardscape_process_imgs[$i])):?><img src="<?php echo esc_url($hardscape_process_imgs[$i]);?>" class="w-full h-full object-cover" loading="lazy" alt=""><?php endif;?>
-              <?php echo $step['ph']; ?>
+            <div class="border border-[#e6e3df] bg-[#e8e4de] h-48 relative overflow-hidden">
+              <?php if(!empty($hardscape_process_imgs[$i])):?>
+              <img src="<?php echo esc_url($hardscape_process_imgs[$i]);?>" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="">
+              <?php else:?>
+              <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6"><?php echo $step['ph']; ?></div>
+              <?php endif;?>
             </div>
           </div>
 
         <?php else : ?>
-          <!-- Image left -->
           <div class="md:pr-14 mb-6 md:mb-0">
-            <div class="border border-[#e6e3df] bg-[#e8e4de] h-48 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6">
-              <?php if(!empty($hardscape_process_imgs[$i])):?><img src="<?php echo esc_url($hardscape_process_imgs[$i]);?>" class="w-full h-full object-cover" loading="lazy" alt=""><?php endif;?>
-              <?php echo $step['ph']; ?>
+            <div class="border border-[#e6e3df] bg-[#e8e4de] h-48 relative overflow-hidden">
+              <?php if(!empty($hardscape_process_imgs[$i])):?>
+              <img src="<?php echo esc_url($hardscape_process_imgs[$i]);?>" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="">
+              <?php else:?>
+              <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6"><?php echo $step['ph']; ?></div>
+              <?php endif;?>
             </div>
           </div>
-          <!-- Dot -->
           <div class="ev-step-dot hidden md:flex w-[52px] h-[52px] flex-shrink-0 items-center justify-center bg-white border-2 border-[#d8d4ce] z-10 transition-all duration-500 mx-auto shadow-sm">
             <span class="font-['Articulat_CF'] text-[13px] font-bold text-[#8a6a45]"><?php echo $step['num']; ?></span>
           </div>
-          <!-- Content right -->
           <div class="md:pl-14">
             <div class="text-[10px] font-bold tracking-[.18em] uppercase text-[#8a6a45] mb-3">Step <?php echo $step['num']; ?></div>
             <h3 class="font-['Articulat_CF'] text-xl font-bold text-[#0b0b0c] mb-3"><?php echo $step['title']; ?></h3>
@@ -510,24 +521,19 @@ $faqs = [
 <section class="bg-white py-24">
   <div class="max-w-[860px] mx-auto px-6 md:px-10 ev-reveal">
     <div class="bg-[#f5f2ef] border border-[#e6e3df] p-10 md:p-14 text-center relative overflow-hidden">
-      <!-- Decorative quote mark -->
       <div class="absolute top-6 left-8 opacity-[.06]">
         <svg class="w-24 h-24 text-[#0b0b0c]" fill="currentColor" viewBox="0 0 24 24">
           <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
         </svg>
       </div>
-
-      <!-- Stars -->
       <div class="flex justify-center gap-1 mb-6">
         <?php for ( $s = 0; $s < 5; $s++ ) : ?>
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#8a6a45"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         <?php endfor; ?>
       </div>
-
       <p class="font-['Articulat_CF'] italic text-[clamp(17px,2.5vw,22px)] text-[#0b0b0c] leading-[1.65] mb-8 relative z-10">
         "The patio Everridge built for us is absolutely stunning. We had three other quotes and Everridge was the only company that showed us a 3D rendering before asking us to sign anything. When it was done, we stood outside looking at it and it matched the rendering exactly. Every neighbor who sees it asks who built it. Worth every dollar."
       </p>
-
       <div class="flex items-center justify-center gap-4">
         <div class="w-12 h-12 bg-[#e0ddd6] flex items-center justify-center flex-shrink-0">
           <span class="font-['Articulat_CF'] text-[15px] font-bold text-[#8a7a6a]">DM</span>
@@ -536,7 +542,6 @@ $faqs = [
           <div class="font-semibold text-[14px] text-[#0b0b0c]">David M.</div>
           <div class="text-[11px] text-[#7a7f85]">Paver Patio + Seating Wall · Birmingham, MI</div>
         </div>
-        <!-- Google badge -->
         <div class="ml-4 flex items-center gap-1.5 bg-white border border-[#e6e3df] px-3 py-1.5">
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#8a8680"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
           <span class="text-[10px] text-[#7a7f85] font-medium">Google Review</span>
@@ -585,6 +590,7 @@ $faqs = [
 
   </div>
 </section>
+
 
 <!-- ════════════════════════════════════════════════
      JAVASCRIPT
@@ -664,7 +670,6 @@ $faqs = [
       const svg     = icon.querySelector('svg');
       const isOpen  = btn.getAttribute('aria-expanded') === 'true';
 
-      // Close all
       document.querySelectorAll('.ev-faq-item').forEach(i => {
         const b = i.querySelector('.ev-faq-btn');
         const d = i.querySelector('.ev-faq-body');
@@ -678,7 +683,6 @@ $faqs = [
         s.classList.add('text-[#7a7f85]');
       });
 
-      // Open clicked (if it was closed)
       if (!isOpen) {
         btn.setAttribute('aria-expanded','true');
         body.style.maxHeight = body.scrollHeight + 'px';
@@ -690,7 +694,6 @@ $faqs = [
     });
   });
 
-  // Open first FAQ on load
   const firstBody = document.querySelector('.ev-faq-body');
   if (firstBody) firstBody.style.maxHeight = firstBody.scrollHeight + 'px';
 
