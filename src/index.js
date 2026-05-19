@@ -3,7 +3,7 @@ import Footer      from "./scripts/Footer"
 import ContactForm from "./scripts/ContactForm"
 import React       from "react"
 import ReactDOM    from "react-dom/client"
-
+import Chatbot from './scripts/Chatbot';
 // ── Navbar ────────────────────────────────────────────────────────────────────
 const navEl = document.querySelector("#render-navbar-here")
 if (navEl) {
@@ -36,3 +36,13 @@ document.querySelectorAll('[id^="render-contact-form"]').forEach(el => {
     />
   )
 })
+
+// ── Chatbot mount ─────────────────────────────────────────────
+const chatbotContainer = document.getElementById('render-chatbot-here');
+if (chatbotContainer) {
+  ReactDOM.createRoot(chatbotContainer).render(
+    <React.StrictMode>
+      <Chatbot />
+    </React.StrictMode>
+  );
+}
