@@ -11,21 +11,22 @@ get_header(); ?>
      PAGE HERO
      ════════════════════════════════════════════════ -->
 <section class="relative overflow-hidden -mt-[104px]" style="min-height:40vh;">
-  <div class="absolute inset-0 bg-[#0b0b0c]">
-    <div class="absolute inset-0 flex items-center justify-center text-[#2a2a2a] text-xs tracking-widest uppercase">
-      Background — crew on a premium project site or aerial view of completed hardscape
-    </div>
-  </div>
+  <!-- Background image -->
+  <div class="absolute inset-0 bg-cover bg-center"
+       style="background-image:url('/wp-content/uploads/2026/05/ContactHeroEverridge-scaled.jpg');background-color:#0b0b0c;"></div>
+
+  <!-- Dark gradient overlay for text legibility -->
   <div class="absolute inset-0" style="background:linear-gradient(to right,rgba(0,0,0,.78) 0%,rgba(0,0,0,.48) 60%,rgba(0,0,0,.22) 100%);"></div>
+
   <div class="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10 flex flex-col justify-end pb-14"
        style="min-height:40vh;padding-top:130px;">
     <div class="flex items-center gap-3 mb-4">
       <span class="block w-9 h-px bg-[#8a6a45]"></span>
-      <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45]">Contact Us</span>
+      <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#ecebea]">Contact Us</span>
     </div>
     <h1 class="font-['Articulat_CF'] text-[clamp(32px,5vw,60px)] font-bold text-[#e6e3df] leading-[1.08] max-w-2xl">
       Ready to Transform<br>
-      <span class="text-[#8a6a45]">Your Outdoor Space?</span>
+      <span class="text-[#dcc6ad]">Your Outdoor Space?</span>
     </h1>
   </div>
 </section>
@@ -206,11 +207,16 @@ get_header(); ?>
       </h2>
     </div>
     <div class="overflow-hidden border border-[#e6e3df]" style="height:420px;">
-      <!--
-        1. Go to maps.google.com → search "Clinton Township, MI"
-        2. Click Share → Embed a map → copy the iframe src
-        3. Replace the div below with the <iframe> tag
-      -->
+      <iframe
+        title="Everridge Landscape Service Area — Clinton Township, MI"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188730.!2d-83.0338!3d42.5884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824e8a9b0c1d2e3%3A0xfedcba0987654321!2sClinton+Township%2C+MI!5e0!3m2!1sen!2sus!4v1700000000007"
+        width="100%"
+        height="480"
+        style="border:0;display:block;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
       <div class="w-full h-full bg-[#e6e3df] flex flex-col items-center justify-center gap-3">
         <svg class="w-10 h-10 text-[#8a6a45] opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0zM19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>

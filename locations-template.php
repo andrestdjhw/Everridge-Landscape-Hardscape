@@ -92,21 +92,25 @@ $locations = [
      PAGE HERO
      ════════════════════════════════════════════════ -->
 <section class="relative overflow-hidden -mt-[104px]" style="min-height:38vh;">
-  <div class="absolute inset-0 bg-[#0b0b0c]"></div>
+  <!-- Background image -->
+  <div class="absolute inset-0 bg-cover bg-center"
+       style="background-image:url('/wp-content/uploads/2026/05/LocationsHeroEverridge-scaled.jpg');background-color:#0b0b0c;"></div>
+
+  <!-- Dark gradient overlay for text legibility -->
   <div class="absolute inset-0" style="background:linear-gradient(to right,rgba(0,0,0,.8) 0%,rgba(0,0,0,.5) 60%,rgba(0,0,0,.2) 100%);"></div>
 
   <div class="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10 flex flex-col justify-end pb-14"
        style="min-height:38vh;padding-top:130px;">
     <div class="flex items-center gap-3 mb-4">
       <span class="block w-9 h-px bg-[#8a6a45]"></span>
-      <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45]">Service Areas</span>
+      <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#ecebea]">Service Areas</span>
     </div>
     <h1 class="font-['Articulat_CF'] text-[clamp(30px,5vw,58px)] font-bold text-[#e6e3df] leading-[1.08] max-w-2xl">
       Serving Southeast Michigan's<br>
-      <em class="italic text-[#8a6a45]">Most Valued Communities</em>
+      <em class="italic text-[#dcc6ad]">Most Valued Communities</em>
     </h1>
-    <p class="mt-4 text-[14px] font-light text-[rgba(230,227,223,.55)] max-w-lg leading-relaxed">
-      Based in Clinton Township — reaching every corner of the Oakland-Macomb corridor with the same premium quality, premium materials, and 3D design process on every project.
+    <p class="mt-4 text-[14px] font-light text-[#ecebea] max-w-lg leading-relaxed">
+      Based in Clinton Township reaching every corner of the Oakland-Macomb corridor with the same premium quality, premium materials, and 3D design process on every project.
     </p>
   </div>
 </section>

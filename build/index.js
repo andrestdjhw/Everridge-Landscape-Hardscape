@@ -212,7 +212,7 @@ function inputStyle(hasError, darkMode = false) {
     background: darkMode ? "rgba(255,255,255,.08)" : C.white,
     border: `1px solid ${hasError ? C.error : darkMode ? "rgba(255,255,255,.18)" : C.border}`,
     borderRadius: 0,
-    padding: "12px 16px",
+    padding: "11px 14px",
     outline: "none",
     transition: "border-color .2s, background .2s"
   };
@@ -226,7 +226,7 @@ function ContactForm({
   showTitle = true,
   bgColor = C.bg,
   compact = false,
-  // compact=true → no padding, transparent bg
+  // compact=true → no padding, transparent bg, denser 2-col layout
   darkMode = false // darkMode=true → inputs/labels optimised for dark backgrounds
 }) {
   useFonts();
@@ -388,6 +388,15 @@ function ContactForm({
   }
 
   // ── Form ─────────────────────────────────────────────────────────────────────
+  // Vertical gap between fields: smaller when compact
+  const fieldGap = compact ? 12 : 16;
+  // Textarea rows + min-height: smaller when compact
+  const textareaRows = compact ? 3 : 4;
+  const textareaMinHeight = compact ? 76 : 96;
+  // Submit button padding: tighter when compact
+  const submitPadding = compact ? "12px 0" : "15px 0";
+  // Trust line margin
+  const trustMarginTop = compact ? 14 : 18;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
       children: `
@@ -445,7 +454,7 @@ function ContactForm({
           style: {
             display: "flex",
             flexDirection: "column",
-            gap: 16
+            gap: fieldGap
           },
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             style: {
@@ -485,45 +494,94 @@ function ContactForm({
                 onBlur: e => e.target.style.borderColor = errors.phone ? C.error : C.border
               })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Field, {
-            darkMode: darkMode,
-            label: "Email Address",
-            required: true,
-            error: errors.email,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-              type: "email",
-              value: fields.email,
-              onChange: set("email"),
-              placeholder: "john@email.com",
-              className: "ev-input",
-              style: inputStyle(!!errors.email, darkMode),
-              onFocus: e => e.target.style.borderColor = C.borderF,
-              onBlur: e => e.target.style.borderColor = errors.email ? C.error : C.border
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Field, {
-            darkMode: darkMode,
-            label: "Service Needed",
-            required: true,
-            error: errors.service,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("select", {
-              value: fields.service,
-              onChange: set("service"),
-              className: "ev-input ev-select",
-              style: {
-                ...inputStyle(!!errors.service, darkMode),
-                cursor: "pointer"
-              },
-              onFocus: e => e.target.style.borderColor = C.borderF,
-              onBlur: e => e.target.style.borderColor = errors.service ? C.error : C.border,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                value: "",
-                disabled: true,
-                children: "Select a service..."
-              }), SERVICES.map(s => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                value: s,
-                children: s
-              }, s))]
-            })
+          }), compact ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            style: {
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: 14
+            },
+            className: "ev-form-2col",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Field, {
+              darkMode: darkMode,
+              label: "Email Address",
+              required: true,
+              error: errors.email,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                type: "email",
+                value: fields.email,
+                onChange: set("email"),
+                placeholder: "john@email.com",
+                className: "ev-input",
+                style: inputStyle(!!errors.email, darkMode),
+                onFocus: e => e.target.style.borderColor = C.borderF,
+                onBlur: e => e.target.style.borderColor = errors.email ? C.error : C.border
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Field, {
+              darkMode: darkMode,
+              label: "Service Needed",
+              required: true,
+              error: errors.service,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("select", {
+                value: fields.service,
+                onChange: set("service"),
+                className: "ev-input ev-select",
+                style: {
+                  ...inputStyle(!!errors.service, darkMode),
+                  cursor: "pointer"
+                },
+                onFocus: e => e.target.style.borderColor = C.borderF,
+                onBlur: e => e.target.style.borderColor = errors.service ? C.error : C.border,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                  value: "",
+                  disabled: true,
+                  children: "Select a service..."
+                }), SERVICES.map(s => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                  value: s,
+                  children: s
+                }, s))]
+              })
+            })]
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Field, {
+              darkMode: darkMode,
+              label: "Email Address",
+              required: true,
+              error: errors.email,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                type: "email",
+                value: fields.email,
+                onChange: set("email"),
+                placeholder: "john@email.com",
+                className: "ev-input",
+                style: inputStyle(!!errors.email, darkMode),
+                onFocus: e => e.target.style.borderColor = C.borderF,
+                onBlur: e => e.target.style.borderColor = errors.email ? C.error : C.border
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Field, {
+              darkMode: darkMode,
+              label: "Service Needed",
+              required: true,
+              error: errors.service,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("select", {
+                value: fields.service,
+                onChange: set("service"),
+                className: "ev-input ev-select",
+                style: {
+                  ...inputStyle(!!errors.service, darkMode),
+                  cursor: "pointer"
+                },
+                onFocus: e => e.target.style.borderColor = C.borderF,
+                onBlur: e => e.target.style.borderColor = errors.service ? C.error : C.border,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                  value: "",
+                  disabled: true,
+                  children: "Select a service..."
+                }), SERVICES.map(s => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                  value: s,
+                  children: s
+                }, s))]
+              })
+            })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Field, {
             darkMode: darkMode,
             label: "Property Address or City",
@@ -547,12 +605,12 @@ function ContactForm({
               value: fields.message,
               onChange: set("message"),
               placeholder: "Describe your vision, timeline, or any specific requirements...",
-              rows: 4,
+              rows: textareaRows,
               className: "ev-input",
               style: {
                 ...inputStyle(false, darkMode),
                 resize: "vertical",
-                minHeight: 96
+                minHeight: textareaMinHeight
               },
               onFocus: e => e.target.style.borderColor = C.borderF,
               onBlur: e => e.target.style.borderColor = C.border
@@ -594,7 +652,7 @@ function ContactForm({
               background: status === "sending" ? C.slate : `linear-gradient(135deg, ${C.gold}, ${C.goldDk})`,
               border: "none",
               borderRadius: 7,
-              padding: "15px 0",
+              padding: submitPadding,
               cursor: status === "sending" ? "not-allowed" : "pointer",
               transition: "opacity .2s",
               opacity: status === "sending" ? .75 : 1
@@ -637,7 +695,7 @@ function ContactForm({
           fontSize: 11,
           fontWeight: 300,
           color: darkMode ? "rgba(230,227,223,.35)" : C.slate,
-          marginTop: 18,
+          marginTop: trustMarginTop,
           textAlign: "center",
           lineHeight: 1.7
         },
@@ -771,14 +829,14 @@ const SOCIAL = [{
 // ── Tokens ────────────────────────────────────────────────────────────────────
 const GOLD = "#8a6a45";
 const GOLD_DK = "#7a5c38";
-const BG = "#0b0b0c";
-const BG2 = "#161618";
-const BG3 = "#1e1e20";
-const BORDER = "#2a2a2c";
+const BG = "#f5f2ef";
+const BG2 = "#ede9e3";
+const BG3 = "#e6e3df";
+const BORDER = "#d8d4ce";
 const GREEN = "#1f3a32";
-const TEXT_DIM = "#3a3a3c";
-const TEXT_MID = "#6a6a6c";
-const TEXT_LT = "#909092";
+const TEXT_DIM = "#6a6a6c";
+const TEXT_MID = "#5a5a5c";
+const TEXT_LT = "#2f3133";
 
 // ── Font loader ───────────────────────────────────────────────────────────────
 function useFonts() {
@@ -795,8 +853,8 @@ function ColLabel({
     style: {
       fontFamily: "'Gotham Book', sans-serif",
       fontSize: 9,
-      fontWeight: 600,
-      color: TEXT_DIM,
+      fontWeight: 700,
+      color: "#2f3133",
       letterSpacing: "0.22em",
       textTransform: "uppercase",
       marginBottom: 20,
@@ -873,515 +931,544 @@ function Footer() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("footer", {
     style: {
       background: BG,
-      borderTop: `1px solid ${BORDER}`
+      borderTop: `1px solid ${BORDER}`,
+      position: "relative"
     },
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       style: {
-        background: `linear-gradient(135deg, ${GREEN} 0%, #152a22 60%, #0f1f18 100%)`,
-        borderBottom: `1px solid #2a3a2a`
+        position: "absolute",
+        inset: 0,
+        backgroundImage: "url('/wp-content/uploads/2026/05/EstampadoEverridge-1-scaled.png')",
+        backgroundRepeat: "repeat",
+        backgroundSize: "340px auto",
+        opacity: 0.32,
+        pointerEvents: "none",
+        zIndex: 0
+      }
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      style: {
+        position: "relative",
+        zIndex: 1
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         style: {
-          maxWidth: 1280,
-          margin: "0 auto",
-          padding: "52px 40px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 32,
-          flexWrap: "wrap"
+          background: `linear-gradient(135deg, ${GREEN} 0%, #152a22 60%, #0f1f18 100%)`,
+          borderBottom: `1px solid #2a3a2a`
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            style: {
-              fontFamily: "'Articulat CF', sans-serif",
-              fontSize: 28,
-              fontWeight: 700,
-              color: "#f0ece6",
-              lineHeight: 1.2,
-              marginBottom: 8
-            },
-            children: "Ready to Transform Your Outdoor Space?"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            style: {
-              margin: 0,
-              fontFamily: "'Gotham Book', sans-serif",
-              fontSize: 14,
-              fontWeight: 300,
-              color: "rgba(240,236,230,0.5)",
-              letterSpacing: "0.02em"
-            },
-            children: "Schedule a free consultation \u2014 no commitment required."
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           style: {
+            maxWidth: 1280,
+            margin: "0 auto",
+            padding: "52px 40px",
             display: "flex",
             alignItems: "center",
-            gap: 12,
-            flexShrink: 0
+            justifyContent: "space-between",
+            gap: 32,
+            flexWrap: "wrap"
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-            href: "/contact",
-            style: {
-              display: "inline-block",
-              fontFamily: "'Gotham Book', sans-serif",
-              fontSize: 12,
-              fontWeight: 700,
-              color: "#0f0f0f",
-              background: `linear-gradient(135deg, ${GOLD}, ${GOLD_DK})`,
-              padding: "14px 28px",
-              borderRadius: 0,
-              textDecoration: "none",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              whiteSpace: "nowrap"
-            },
-            children: "Get Free Estimate"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-            href: `tel:${COMPANY.phone.replace(/\D/g, "")}`,
-            style: {
-              display: "inline-block",
-              fontFamily: "'Gotham Book', sans-serif",
-              fontSize: 12,
-              fontWeight: 500,
-              color: "rgba(240,236,230,0.6)",
-              border: "1px solid rgba(240,236,230,0.15)",
-              padding: "13px 24px",
-              borderRadius: 0,
-              textDecoration: "none",
-              letterSpacing: "0.04em",
-              whiteSpace: "nowrap",
-              transition: "color 0.2s, border-color 0.2s"
-            },
-            onMouseEnter: e => {
-              e.currentTarget.style.color = GOLD;
-              e.currentTarget.style.borderColor = GOLD;
-            },
-            onMouseLeave: e => {
-              e.currentTarget.style.color = "rgba(240,236,230,0.6)";
-              e.currentTarget.style.borderColor = "rgba(240,236,230,0.15)";
-            },
-            children: COMPANY.phone
-          })]
-        })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      style: {
-        maxWidth: 1280,
-        margin: "0 auto",
-        padding: "64px 40px 48px"
-      },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        style: {
-          display: "grid",
-          gridTemplateColumns: "2fr 1fr 1fr 1fr",
-          gap: "48px 40px"
-        },
-        className: "footer-grid",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-            href: "/",
-            style: {
-              display: "inline-flex",
-              alignItems: "center",
-              textDecoration: "none",
-              marginBottom: 24
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-              src: "/wp-content/uploads/2026/05/imagotipo_principal.png",
-              alt: "Everridge Landscape & Hardscape",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
               style: {
-                height: 44,
-                width: "auto",
-                display: "block",
-                objectFit: "contain"
-              }
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
-            style: {
-              fontFamily: "'Articulat CF', sans-serif",
-              fontStyle: "italic",
-              fontSize: 15,
-              fontWeight: 400,
-              color: TEXT_MID,
-              lineHeight: 1.6,
-              marginBottom: 28,
-              marginTop: 0
-            },
-            children: ["\"", COMPANY.tagline, "\""]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            style: {
-              display: "flex",
-              flexDirection: "column",
-              gap: 12
-            },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-              href: `tel:${COMPANY.phone.replace(/\D/g, "")}`,
-              style: {
-                display: "flex",
-                alignItems: "center",
-                gap: 10,
-                textDecoration: "none"
+                fontFamily: "'Articulat CF', sans-serif",
+                fontSize: 28,
+                fontWeight: 700,
+                color: "#f0ece6",
+                lineHeight: 1.2,
+                marginBottom: 8
               },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                style: {
-                  width: 30,
-                  height: 30,
-                  borderRadius: 0,
-                  background: BG3,
-                  border: `1px solid ${BORDER}`,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexShrink: 0
-                },
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-                  width: "13",
-                  height: "13",
-                  viewBox: "0 0 24 24",
-                  fill: GOLD,
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                    fillRule: "evenodd",
-                    d: "M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z",
-                    clipRule: "evenodd"
-                  })
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                style: {
-                  fontFamily: "'Gotham Book', sans-serif",
-                  fontSize: 13,
-                  fontWeight: 500,
-                  color: TEXT_LT
-                },
-                children: COMPANY.phone
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-              href: `mailto:${COMPANY.email}`,
-              style: {
-                display: "flex",
-                alignItems: "center",
-                gap: 10,
-                textDecoration: "none"
-              },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                style: {
-                  width: 30,
-                  height: 30,
-                  borderRadius: 0,
-                  background: BG3,
-                  border: `1px solid ${BORDER}`,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexShrink: 0
-                },
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-                  width: "13",
-                  height: "13",
-                  viewBox: "0 0 24 24",
-                  fill: "none",
-                  stroke: GOLD,
-                  strokeWidth: "2",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                    strokeLinecap: "round",
-                    strokeLinejoin: "round",
-                    d: "M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-                  })
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                style: {
-                  fontFamily: "'Gotham Book', sans-serif",
-                  fontSize: 13,
-                  fontWeight: 400,
-                  color: TEXT_MID
-                },
-                children: COMPANY.email
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              style: {
-                display: "flex",
-                alignItems: "flex-start",
-                gap: 10
-              },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                style: {
-                  width: 30,
-                  height: 30,
-                  borderRadius: 0,
-                  background: BG3,
-                  border: `1px solid ${BORDER}`,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexShrink: 0,
-                  marginTop: 1
-                },
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
-                  width: "13",
-                  height: "13",
-                  viewBox: "0 0 24 24",
-                  fill: "none",
-                  stroke: GOLD,
-                  strokeWidth: "2",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                    strokeLinecap: "round",
-                    strokeLinejoin: "round",
-                    d: "M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                    strokeLinecap: "round",
-                    strokeLinejoin: "round",
-                    d: "M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
-                  })]
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                style: {
-                  fontFamily: "'Gotham Book', sans-serif",
-                  fontSize: 12,
-                  fontWeight: 300,
-                  color: TEXT_DIM,
-                  lineHeight: 1.6,
-                  whiteSpace: "pre-line"
-                },
-                children: COMPANY.address
-              })]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            style: {
-              display: "flex",
-              gap: 8,
-              marginTop: 28
-            },
-            children: SOCIAL.map(s => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-              href: s.href,
-              target: "_blank",
-              rel: "noopener noreferrer",
-              title: s.label,
-              style: {
-                width: 36,
-                height: 36,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                background: BG3,
-                border: `1px solid ${BORDER}`,
-                borderRadius: 0,
-                color: TEXT_MID,
-                textDecoration: "none",
-                transition: "color 0.15s, border-color 0.15s, background 0.15s"
-              },
-              onMouseEnter: e => {
-                e.currentTarget.style.color = GOLD;
-                e.currentTarget.style.borderColor = `${GOLD}55`;
-                e.currentTarget.style.background = `${GOLD}10`;
-              },
-              onMouseLeave: e => {
-                e.currentTarget.style.color = TEXT_MID;
-                e.currentTarget.style.borderColor = BORDER;
-                e.currentTarget.style.background = BG3;
-              },
-              children: s.icon
-            }, s.label))
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(ColLabel, {
-            children: "Services"
-          }), SERVICES.map(s => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(FooterLink, {
-            href: s.href,
-            children: s.label
-          }, s.href)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            style: {
-              marginTop: 16
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-              href: "/services",
-              style: {
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 6,
-                fontFamily: "'Gotham Book', sans-serif",
-                fontSize: 11,
-                fontWeight: 600,
-                color: GOLD,
-                textDecoration: "none",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase"
-              },
-              children: ["View All Services", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-                width: "10",
-                height: "10",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                stroke: "currentColor",
-                strokeWidth: 2,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                })
-              })]
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(ColLabel, {
-            children: "Service Areas"
-          }), CITIES.map(c => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(FooterLink, {
-            href: c.href,
-            children: c.label
-          }, c.href)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            style: {
-              marginTop: 16
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-              href: "/locations",
-              style: {
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 6,
-                fontFamily: "'Gotham Book', sans-serif",
-                fontSize: 11,
-                fontWeight: 600,
-                color: GOLD,
-                textDecoration: "none",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase"
-              },
-              children: ["All Locations", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-                width: "10",
-                height: "10",
-                fill: "none",
-                viewBox: "0 0 24 24",
-                stroke: "currentColor",
-                strokeWidth: 2,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                })
-              })]
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(ColLabel, {
-            children: "Company"
-          }), [{
-            label: "About Us",
-            href: "/about"
-          }, {
-            label: "Our Work",
-            href: "/our-work"
-          }, {
-            label: "Testimonials",
-            href: "/reviews"
-          }, {
-            label: "Free Estimate",
-            href: "/contact"
-          }, {
-            label: "Contact",
-            href: "/contact"
-          }].map(l => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(FooterLink, {
-            href: l.href,
-            children: l.label
-          }, l.href + l.label)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            style: {
-              marginTop: 28,
-              padding: "14px 16px",
-              background: BG3,
-              border: `1px solid ${BORDER}`,
-              borderRadius: 0
-            },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              style: {
-                display: "flex",
-                alignItems: "center",
-                gap: 8,
-                marginBottom: 6
-              },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-                width: "13",
-                height: "13",
-                viewBox: "0 0 24 24",
-                fill: "none",
-                stroke: GOLD,
-                strokeWidth: "2",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  d: "M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                style: {
-                  fontFamily: "'Gotham Book', sans-serif",
-                  fontSize: 9,
-                  fontWeight: 600,
-                  color: GOLD,
-                  letterSpacing: "0.15em",
-                  textTransform: "uppercase"
-                },
-                children: "Licensed & Insured"
-              })]
+              children: "Ready to Transform Your Outdoor Space?"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
               style: {
                 margin: 0,
                 fontFamily: "'Gotham Book', sans-serif",
-                fontSize: 11,
+                fontSize: 14,
                 fontWeight: 300,
-                color: TEXT_DIM,
-                lineHeight: 1.5
+                color: "rgba(240,236,230,0.5)",
+                letterSpacing: "0.02em"
               },
-              children: COMPANY.license
+              children: "Schedule a free consultation \u2014 no commitment required."
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            style: {
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+              flexShrink: 0
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "/contact",
+              style: {
+                display: "inline-block",
+                fontFamily: "'Gotham Book', sans-serif",
+                fontSize: 12,
+                fontWeight: 700,
+                color: "#0f0f0f",
+                background: `linear-gradient(135deg, ${GOLD}, ${GOLD_DK})`,
+                padding: "14px 28px",
+                borderRadius: 0,
+                textDecoration: "none",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                whiteSpace: "nowrap"
+              },
+              children: "Get Free Estimate"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: `tel:${COMPANY.phone.replace(/\D/g, "")}`,
+              style: {
+                display: "inline-block",
+                fontFamily: "'Gotham Book', sans-serif",
+                fontSize: 12,
+                fontWeight: 500,
+                color: "rgba(240,236,230,0.6)",
+                border: "1px solid rgba(240,236,230,0.15)",
+                padding: "13px 24px",
+                borderRadius: 0,
+                textDecoration: "none",
+                letterSpacing: "0.04em",
+                whiteSpace: "nowrap",
+                transition: "color 0.2s, border-color 0.2s"
+              },
+              onMouseEnter: e => {
+                e.currentTarget.style.color = GOLD;
+                e.currentTarget.style.borderColor = GOLD;
+              },
+              onMouseLeave: e => {
+                e.currentTarget.style.color = "rgba(240,236,230,0.6)";
+                e.currentTarget.style.borderColor = "rgba(240,236,230,0.15)";
+              },
+              children: COMPANY.phone
             })]
           })]
-        })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      style: {
-        borderTop: `1px solid ${BORDER}`
-      },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         style: {
           maxWidth: 1280,
           margin: "0 auto",
-          padding: "20px 40px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 16,
-          flexWrap: "wrap"
+          padding: "64px 40px 48px"
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           style: {
-            margin: 0,
-            fontFamily: "'Gotham Book', sans-serif",
-            fontSize: 11,
-            fontWeight: 300,
-            color: TEXT_DIM,
-            letterSpacing: "0.03em"
+            display: "grid",
+            gridTemplateColumns: "2fr 1fr 1fr 1fr",
+            gap: "48px 40px"
           },
-          children: ["\xA9 ", new Date().getFullYear(), " Everridge Landscape & Hardscape. All rights reserved."]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "footer-grid",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "/",
+              style: {
+                display: "inline-flex",
+                alignItems: "center",
+                textDecoration: "none",
+                marginBottom: 24
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+                src: "/wp-content/uploads/2026/05/imagotipo_principal.png",
+                alt: "Everridge Landscape & Hardscape",
+                style: {
+                  height: 44,
+                  width: "auto",
+                  display: "block",
+                  objectFit: "contain"
+                }
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
+              style: {
+                fontFamily: "'Articulat CF', sans-serif",
+                fontStyle: "italic",
+                fontSize: 15,
+                fontWeight: 400,
+                color: TEXT_MID,
+                lineHeight: 1.6,
+                marginBottom: 28,
+                marginTop: 0
+              },
+              children: ["\"", COMPANY.tagline, "\""]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              style: {
+                display: "flex",
+                flexDirection: "column",
+                gap: 12
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+                href: `tel:${COMPANY.phone.replace(/\D/g, "")}`,
+                style: {
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                  textDecoration: "none"
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  style: {
+                    width: 30,
+                    height: 30,
+                    borderRadius: 0,
+                    background: BG3,
+                    border: `1px solid ${BORDER}`,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0
+                  },
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                    width: "13",
+                    height: "13",
+                    viewBox: "0 0 24 24",
+                    fill: GOLD,
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                      fillRule: "evenodd",
+                      d: "M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z",
+                      clipRule: "evenodd"
+                    })
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                  style: {
+                    fontFamily: "'Gotham Book', sans-serif",
+                    fontSize: 13,
+                    fontWeight: 500,
+                    color: TEXT_LT
+                  },
+                  children: COMPANY.phone
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+                href: `mailto:${COMPANY.email}`,
+                style: {
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                  textDecoration: "none"
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  style: {
+                    width: 30,
+                    height: 30,
+                    borderRadius: 0,
+                    background: BG3,
+                    border: `1px solid ${BORDER}`,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0
+                  },
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                    width: "13",
+                    height: "13",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    stroke: GOLD,
+                    strokeWidth: "2",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                      strokeLinecap: "round",
+                      strokeLinejoin: "round",
+                      d: "M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                    })
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                  style: {
+                    fontFamily: "'Gotham Book', sans-serif",
+                    fontSize: 13,
+                    fontWeight: 400,
+                    color: TEXT_MID
+                  },
+                  children: COMPANY.email
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+                href: "https://www.google.com/maps/place/Clinton+Township,+MI,+USA/@42.5848894,-82.9970678,12z/data=!3m1!4b1!4m6!3m5!1s0x8824df5dbcedcfeb:0x85542cfd06a6e1f1!8m2!3d42.600075!4d-82.9321168!16zL20vMHZjN2s?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D",
+                target: "_blank",
+                rel: "noopener noreferrer",
+                style: {
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: 10,
+                  textDecoration: "none"
+                },
+                onMouseEnter: e => {
+                  e.currentTarget.querySelector("span").style.color = "#1f3a32";
+                },
+                onMouseLeave: e => {
+                  e.currentTarget.querySelector("span").style.color = "#5a5a5c";
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  style: {
+                    width: 30,
+                    height: 30,
+                    borderRadius: 0,
+                    background: BG3,
+                    border: `1px solid ${BORDER}`,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                    marginTop: 1
+                  },
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+                    width: "13",
+                    height: "13",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    stroke: GOLD,
+                    strokeWidth: "2",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                      strokeLinecap: "round",
+                      strokeLinejoin: "round",
+                      d: "M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                      strokeLinecap: "round",
+                      strokeLinejoin: "round",
+                      d: "M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                    })]
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                  style: {
+                    fontFamily: "'Gotham Book', sans-serif",
+                    fontSize: 12,
+                    fontWeight: 400,
+                    color: "#5a5a5c",
+                    lineHeight: 1.6,
+                    whiteSpace: "pre-line",
+                    transition: "color 0.15s"
+                  },
+                  children: COMPANY.address
+                })]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              style: {
+                display: "flex",
+                gap: 8,
+                marginTop: 28
+              },
+              children: SOCIAL.map(s => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: s.href,
+                target: "_blank",
+                rel: "noopener noreferrer",
+                title: s.label,
+                style: {
+                  width: 36,
+                  height: 36,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  background: BG3,
+                  border: `1px solid ${BORDER}`,
+                  borderRadius: 0,
+                  color: TEXT_MID,
+                  textDecoration: "none",
+                  transition: "color 0.15s, border-color 0.15s, background 0.15s"
+                },
+                onMouseEnter: e => {
+                  e.currentTarget.style.color = GOLD;
+                  e.currentTarget.style.borderColor = `${GOLD}55`;
+                  e.currentTarget.style.background = `${GOLD}10`;
+                },
+                onMouseLeave: e => {
+                  e.currentTarget.style.color = TEXT_MID;
+                  e.currentTarget.style.borderColor = BORDER;
+                  e.currentTarget.style.background = BG3;
+                },
+                children: s.icon
+              }, s.label))
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(ColLabel, {
+              children: "Services"
+            }), SERVICES.map(s => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(FooterLink, {
+              href: s.href,
+              children: s.label
+            }, s.href)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              style: {
+                marginTop: 16
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+                href: "/services",
+                style: {
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 6,
+                  fontFamily: "'Gotham Book', sans-serif",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  color: "#1f3a32",
+                  textDecoration: "none",
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase"
+                },
+                children: ["View All Services", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                  width: "10",
+                  height: "10",
+                  fill: "none",
+                  viewBox: "0 0 24 24",
+                  stroke: "currentColor",
+                  strokeWidth: 2,
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    d: "M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                  })
+                })]
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(ColLabel, {
+              children: "Service Areas"
+            }), CITIES.map(c => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(FooterLink, {
+              href: c.href,
+              children: c.label
+            }, c.href)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              style: {
+                marginTop: 16
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+                href: "/locations",
+                style: {
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 6,
+                  fontFamily: "'Gotham Book', sans-serif",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  color: "#1f3a32",
+                  textDecoration: "none",
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase"
+                },
+                children: ["All Locations", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                  width: "10",
+                  height: "10",
+                  fill: "none",
+                  viewBox: "0 0 24 24",
+                  stroke: "currentColor",
+                  strokeWidth: 2,
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    d: "M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                  })
+                })]
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(ColLabel, {
+              children: "Company"
+            }), [{
+              label: "About Us",
+              href: "/about"
+            }, {
+              label: "Our Work",
+              href: "/our-work"
+            }, {
+              label: "Testimonials",
+              href: "/reviews"
+            }, {
+              label: "Free Estimate",
+              href: "/contact"
+            }, {
+              label: "Contact",
+              href: "/contact"
+            }].map(l => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(FooterLink, {
+              href: l.href,
+              children: l.label
+            }, l.href + l.label)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              style: {
+                marginTop: 28,
+                padding: "14px 16px",
+                background: BG3,
+                border: `1px solid ${BORDER}`,
+                borderRadius: 0
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                style: {
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 8,
+                  marginBottom: 6
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                  width: "13",
+                  height: "13",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: GOLD,
+                  strokeWidth: "2",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    d: "M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                  style: {
+                    fontFamily: "'Gotham Book', sans-serif",
+                    fontSize: 9,
+                    fontWeight: 600,
+                    color: "#1f3a32",
+                    letterSpacing: "0.15em",
+                    fontWeight: 700,
+                    textTransform: "uppercase"
+                  },
+                  children: "Licensed & Insured"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+                style: {
+                  margin: 0,
+                  fontFamily: "'Gotham Book', sans-serif",
+                  fontSize: 11,
+                  fontWeight: 300,
+                  color: TEXT_DIM,
+                  lineHeight: 1.5
+                },
+                children: COMPANY.license
+              })]
+            })]
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        style: {
+          borderTop: `1px solid ${BORDER}`
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           style: {
+            maxWidth: 1280,
+            margin: "0 auto",
+            padding: "20px 40px",
             display: "flex",
             alignItems: "center",
-            gap: 24
+            justifyContent: "space-between",
+            gap: 16,
+            flexWrap: "wrap"
           },
-          children: LEGAL.map(l => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-            href: l.href,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
             style: {
+              margin: 0,
               fontFamily: "'Gotham Book', sans-serif",
               fontSize: 11,
-              fontWeight: 400,
+              fontWeight: 300,
               color: TEXT_DIM,
-              textDecoration: "none",
-              transition: "color 0.15s"
+              letterSpacing: "0.03em"
             },
-            onMouseEnter: e => e.currentTarget.style.color = TEXT_MID,
-            onMouseLeave: e => e.currentTarget.style.color = TEXT_DIM,
-            children: l.label
-          }, l.href))
-        })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
-      children: `
+            children: ["\xA9 ", new Date().getFullYear(), " Everridge Landscape & Hardscape. All rights reserved."]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            style: {
+              display: "flex",
+              alignItems: "center",
+              gap: 24
+            },
+            children: LEGAL.map(l => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: l.href,
+              style: {
+                fontFamily: "'Gotham Book', sans-serif",
+                fontSize: 11,
+                fontWeight: 400,
+                color: TEXT_DIM,
+                textDecoration: "none",
+                transition: "color 0.15s"
+              },
+              onMouseEnter: e => e.currentTarget.style.color = TEXT_MID,
+              onMouseLeave: e => e.currentTarget.style.color = TEXT_DIM,
+              children: l.label
+            }, l.href))
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
+        children: `
         @media (max-width: 900px) {
           .footer-grid {
             grid-template-columns: 1fr 1fr !important;
@@ -1393,6 +1480,7 @@ function Footer() {
           }
         }
       `
+      })]
     })]
   });
 }
@@ -2013,7 +2101,7 @@ function Navbar() {
                 fontFamily: "'Gotham Book', sans-serif",
                 fontSize: 11,
                 fontWeight: 500,
-                color: GOLD,
+                color: "#ffffff",
                 textDecoration: "none",
                 transition: "opacity 0.15s"
               },
@@ -2033,12 +2121,12 @@ function Navbar() {
                 fontFamily: "'Gotham Book', sans-serif",
                 fontSize: 11,
                 fontWeight: 400,
-                color: "#686860",
+                color: "rgba(255,255,255,0.75)",
                 textDecoration: "none",
                 transition: "color 0.15s"
               },
-              onMouseEnter: e => e.currentTarget.style.color = GOLD,
-              onMouseLeave: e => e.currentTarget.style.color = "#686860",
+              onMouseEnter: e => e.currentTarget.style.color = "#ffffff",
+              onMouseLeave: e => e.currentTarget.style.color = "rgba(255,255,255,0.75)",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(EmailIcon, {
                 size: 11
               }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
@@ -2056,15 +2144,15 @@ function Navbar() {
               fontFamily: "'Gotham Book', sans-serif",
               fontSize: 11,
               fontWeight: 400,
-              color: "#686860",
+              color: "rgba(255,255,255,0.75)",
               textDecoration: "none",
               position: "absolute",
               left: "50%",
               transform: "translateX(-50%)",
               transition: "color 0.15s"
             },
-            onMouseEnter: e => e.currentTarget.style.color = GOLD,
-            onMouseLeave: e => e.currentTarget.style.color = "#686860",
+            onMouseEnter: e => e.currentTarget.style.color = "#ffffff",
+            onMouseLeave: e => e.currentTarget.style.color = "rgba(255,255,255,0.75)",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(MapPinIcon, {
               size: 11
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
@@ -2087,13 +2175,13 @@ function Navbar() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                color: "#585850",
+                color: "rgba(255,255,255,0.65)",
                 textDecoration: "none",
                 borderRadius: 0,
                 transition: "color 0.15s"
               },
-              onMouseEnter: e => e.currentTarget.style.color = GOLD,
-              onMouseLeave: e => e.currentTarget.style.color = "#585850",
+              onMouseEnter: e => e.currentTarget.style.color = "#ffffff",
+              onMouseLeave: e => e.currentTarget.style.color = "rgba(255,255,255,0.65)",
               children: s.icon
             }, s.label))
           })]

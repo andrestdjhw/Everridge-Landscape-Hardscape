@@ -189,7 +189,8 @@ function ev_bg_style( $url, $fallback_color = '#0e0e0e' ) {
 
 
 <!-- ════════════════════════════════════════════════
-     SECTION 1 — HERO: FORM LEFT / SLIDER RIGHT
+     SECTION 1 — HERO: HEADLINE LEFT / FORM RIGHT
+     Compact form layout for balanced vertical proportions
      ════════════════════════════════════════════════ -->
 <section id="ev-hero" class="relative w-full overflow-hidden bg-[#0b0b0c] -mt-[104px]" style="min-height:100vh;">
 
@@ -205,43 +206,54 @@ function ev_bg_style( $url, $fallback_color = '#0e0e0e' ) {
   <div class="absolute inset-0" style="background:linear-gradient(to right,rgba(0,0,0,.72) 0%,rgba(0,0,0,.42) 50%,rgba(0,0,0,.20) 100%);"></div>
 
   <!-- ── CONTENT LAYER ─────────────────────────────────────────────────── -->
-  <div class="relative z-10 w-full max-w-[1600px] mx-auto px-6 md:px-14 lg:px-20 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-12"
-       style="min-height:100vh;padding-top:calc(104px + 32px);padding-bottom:48px;">
+  <div class="relative z-10 w-full max-w-[1280px] mx-auto px-6 md:px-12 lg:px-14 grid grid-cols-1 lg:grid-cols-[1fr_520px] items-stretch gap-10 lg:gap-12"
+       style="padding-top:calc(104px + 40px);padding-bottom:60px;">
 
-    <!-- LEFT — headline -->
-    <div class="flex-1 max-w-lg">
-      <div class="flex items-center gap-3 mb-5">
+    <!-- LEFT — vertically centered within bounding box -->
+    <div class="flex flex-col justify-center max-w-[540px]">
+
+      <!-- Eyebrow -->
+      <div class="flex items-center gap-3 mb-7">
         <span class="block w-9 h-px bg-[#8a6a45]"></span>
         <span class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#ecebea]" id="ev-eyebrow">Premium Hardscape</span>
       </div>
-      <h1 class="font-['Articulat_CF'] text-[clamp(38px,5.5vw,70px)] font-bold text-[#e6e3df] leading-[1.08] tracking-tight mb-5">
+
+      <!-- Headline -->
+      <h1 class="font-['Articulat_CF'] text-[clamp(42px,5vw,76px)] font-bold text-[#e6e3df] leading-[1.04] tracking-tight mb-8">
         Your Property,<br>
         <span class="text-[#dcc6ad]">Redesigned.</span>
       </h1>
-      <p class="text-[clamp(14px,1.6vw,17px)] font-light text-[rgba(230,227,223,.65)] leading-relaxed max-w-md mb-8">
+
+      <!-- Paragraph -->
+      <p class="text-[clamp(15px,1.4vw,18px)] font-light text-[rgba(230,227,223,.72)] leading-[1.7] max-w-[460px] mb-10">
         Premium outdoor transformation across Southeast Michigan. Hardscape, landscape design, 3D renderings, and lighting systems built for properties that demand more.
       </p>
-      <a href="/our-work" class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[.08em] uppercase text-[rgba(230,227,223,.75)] border border-[rgba(230,227,223,.25)] px-7 py-3.5 hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
-        View Our Work
-        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-      </a>
+
+      <!-- Button -->
+      <div>
+        <a href="/our-work" class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[.08em] uppercase text-[rgba(230,227,223,.85)] border border-[rgba(230,227,223,.30)] px-8 py-4 hover:text-[#8a6a45] hover:border-[#8a6a45] transition-colors">
+          View Our Work
+          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </a>
+      </div>
+
     </div>
 
-    <!-- RIGHT — translucent form panel -->
-    <div class="w-full lg:w-[500px] flex-shrink-0"
-         style="background:rgba(8,8,10,.55);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:1px solid rgba(255,255,255,.10);border-top:2px solid #8a6a45;padding:36px 40px 32px;">
+    <!-- RIGHT — translucent form panel (more compact padding) -->
+    <div class="w-full"
+         style="background:rgba(8,8,10,.55);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:1px solid rgba(255,255,255,.10);border-top:2px solid #8a6a45;padding:28px 32px 26px;">
 
-      <div class="mb-5">
+      <div class="mb-4">
         <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-2">Free Estimate</span>
-        <h2 class="font-['Articulat_CF'] text-[24px] font-bold text-[#e6e3df] leading-snug">
+        <h2 class="font-['Articulat_CF'] text-[22px] font-bold text-[#e6e3df] leading-snug">
           Request a Free Estimate
         </h2>
-        <p class="text-[13px] font-light text-[rgba(230,227,223,.60)] mt-2 leading-relaxed">
+        <p class="text-[12px] font-light text-[rgba(230,227,223,.60)] mt-1.5 leading-relaxed">
           We respond within 24–48 hours. No pressure.
         </p>
       </div>
 
-      <!-- ContactForm React mount — dark mode for translucent hero panel -->
+      <!-- ContactForm React mount — compact + dark mode -->
       <div id="render-contact-form-here"
            data-compact="true"
            data-show-title="false"
@@ -262,7 +274,7 @@ function ev_bg_style( $url, $fallback_color = '#0e0e0e' ) {
   </button>
 
   <!-- Dots + eyebrow sync -->
-  <div id="ev-dots" class="absolute bottom-6 left-[8vw] z-10 flex gap-2"></div>
+  <div id="ev-dots" class="absolute bottom-6 left-1/2 -translate-x-1/2 w-full max-w-[1280px] px-6 md:px-12 lg:px-14 z-10 flex gap-2"></div>
 
   <!-- Progress bar -->
   <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-[rgba(255,255,255,.07)] z-10">
@@ -518,7 +530,47 @@ function ev_bg_style( $url, $fallback_color = '#0e0e0e' ) {
 
 
 <!-- ════════════════════════════════════════════════
-     SECTION 8 — TESTIMONIALS
+     SECTION 8 — SERVICE AREAS (TYPOGRAPHIC MARQUEE)
+     ════════════════════════════════════════════════ -->
+<section class="bg-white py-24">
+  <div class="max-w-[1280px] mx-auto px-10">
+    <div class="text-center mb-14 ev-reveal">
+      <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">Where We Work</span>
+      <h2 class="font-['Articulat_CF'] text-[clamp(24px,3vw,40px)] font-bold text-[#0b0b0c]">
+        Serving Southeast Michigan's<br>
+        <span class="text-[#8a6a45]">Most Valued Communities</span>
+      </h2>
+    </div>
+  </div>
+
+  <!-- Typographic marquee ribbon -->
+  <div class="ev-cities-ribbon relative w-full overflow-hidden bg-[#f5f2ef] border-t border-b border-[#e6e3df]" style="padding:28px 0;">
+
+    <!-- Track (rendered twice for seamless loop) -->
+    <div class="ev-cities-track flex w-max items-center">
+
+      <!-- Leading label -->
+      <div class="flex items-center flex-shrink-0">
+        <span class="text-[11px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] px-10">Service Areas</span>
+        <span class="block w-px h-4 bg-[#c8c3bc]"></span>
+      </div>
+
+      <?php foreach ( array_merge( $cities, $cities, $cities ) as $i => $city ) : ?>
+      <a href="<?php echo esc_url( $city['href'] ); ?>"
+         class="flex items-center flex-shrink-0 group"
+         aria-label="<?php echo esc_attr( $city['name'] ); ?>">
+        <span class="font-['Articulat_CF'] text-[15px] font-semibold tracking-[.14em] uppercase text-[#2f3133] group-hover:text-[#8a6a45] transition-colors px-10 whitespace-nowrap"><?php echo $city['name']; ?></span>
+        <span class="block w-px h-4 bg-[#c8c3bc]"></span>
+      </a>
+      <?php endforeach; ?>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     SECTION 9 — TESTIMONIALS
      ════════════════════════════════════════════════ -->
 <section class="bg-white py-24">
   <div class="max-w-[1280px] mx-auto px-10">
@@ -547,37 +599,23 @@ function ev_bg_style( $url, $fallback_color = '#0e0e0e' ) {
 </section>
 
 
-<!-- ════════════════════════════════════════════════
-     SECTION 9 — SERVICE AREAS
-     ════════════════════════════════════════════════ -->
-<section class="bg-[#f5f2ef] border-t border-b border-[#e6e3df] py-24">
-  <div class="max-w-[1280px] mx-auto px-10">
-    <div class="text-center mb-14 ev-reveal">
-      <span class="block text-[10px] font-semibold tracking-[.22em] uppercase text-[#8a6a45] mb-3">Where We Work</span>
-      <h2 class="font-['Articulat_CF'] text-[clamp(24px,3vw,40px)] font-bold text-[#0b0b0c]">
-        Serving Southeast Michigan's<br>
-        <span class="text-[#8a6a45]">Most Valued Communities</span>
-      </h2>
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <?php foreach ( $cities as $i => $city ) : ?>
-      <a href="<?php echo esc_url( $city['href'] ); ?>"
-         class="ev-reveal group relative overflow-hidden aspect-[4/3] block"
-         style="transition-delay:<?php echo ( $i % 4 ) * 80; ?>ms;"
-         aria-label="<?php echo esc_attr( $city['name'] ); ?>">
-        <div class="absolute inset-0 bg-[#c8c0b0] transition-transform duration-500 group-hover:scale-105 bg-cover bg-center"
-             style="<?php if ( ! empty( $city['img'] ) ) echo 'background-image:url(' . esc_url( $city['img'] ) . ');'; ?>">
-        </div>
-        <div class="absolute inset-0 bg-[rgba(0,0,0,.52)] group-hover:bg-[rgba(0,0,0,.38)] transition-colors duration-300 flex flex-col items-start justify-end p-5">
-          <span class="text-[9px] font-semibold tracking-[.18em] uppercase text-[#8a6a45] mb-1">Michigan</span>
-          <span class="font-['Articulat_CF'] text-base font-bold text-[#e6e3df]"><?php echo $city['name']; ?></span>
-          <span class="text-[10px] text-[rgba(230,227,223,.38)] mt-1">Premium hardscape & landscape</span>
-        </div>
-      </a>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
+<style>
+/* ── Cities ribbon marquee ── */
+@keyframes ev-cities-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+.ev-cities-ribbon .ev-cities-track {
+  animation: ev-cities-scroll 40s linear infinite;
+  will-change: transform;
+}
+.ev-cities-ribbon:hover .ev-cities-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ev-cities-ribbon .ev-cities-track { animation: none; }
+}
+</style>
 
 
 <!-- ════════════════════════════════════════════════

@@ -376,7 +376,7 @@ function Navbar() {
                 display: "flex", alignItems: "center", gap: 6,
                 fontFamily: "'Gotham Book', sans-serif",
                 fontSize: 11, fontWeight: 500,
-                color: GOLD, textDecoration: "none",
+                color: "#ffffff", textDecoration: "none",
                 transition: "opacity 0.15s",
               }}
                 onMouseEnter={e => e.currentTarget.style.opacity = "0.7"}
@@ -388,11 +388,11 @@ function Navbar() {
                 alignItems: "center", gap: 6,
                 fontFamily: "'Gotham Book', sans-serif",
                 fontSize: 11, fontWeight: 400,
-                color: "#686860", textDecoration: "none",
+                color: "rgba(255,255,255,0.75)", textDecoration: "none",
                 transition: "color 0.15s",
               }}
-                onMouseEnter={e => e.currentTarget.style.color = GOLD}
-                onMouseLeave={e => e.currentTarget.style.color = "#686860"}
+                onMouseEnter={e => e.currentTarget.style.color = "#ffffff"}
+                onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.75)"}
               >
                 <EmailIcon size={11} /> <span>{EMAIL}</span>
               </a>
@@ -405,12 +405,12 @@ function Navbar() {
                 alignItems: "center", gap: 6,
                 fontFamily: "'Gotham Book', sans-serif",
                 fontSize: 11, fontWeight: 400,
-                color: "#686860", textDecoration: "none",
+                color: "rgba(255,255,255,0.75)", textDecoration: "none",
                 position: "absolute", left: "50%", transform: "translateX(-50%)",
                 transition: "color 0.15s",
               }}
-              onMouseEnter={e => e.currentTarget.style.color = GOLD}
-              onMouseLeave={e => e.currentTarget.style.color = "#686860"}
+              onMouseEnter={e => e.currentTarget.style.color = "#ffffff"}
+              onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.75)"}
             >
               <MapPinIcon size={11} />
               <span>{ADDRESS}</span>
@@ -424,11 +424,11 @@ function Navbar() {
                   style={{
                     width: 28, height: 28,
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    color: "#585850", textDecoration: "none", borderRadius: 0,
+                    color: "rgba(255,255,255,0.65)", textDecoration: "none", borderRadius: 0,
                     transition: "color 0.15s",
                   }}
-                  onMouseEnter={e => e.currentTarget.style.color = GOLD}
-                  onMouseLeave={e => e.currentTarget.style.color = "#585850"}
+                  onMouseEnter={e => e.currentTarget.style.color = "#ffffff"}
+                  onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.65)"}
                 >
                   {s.icon}
                 </a>

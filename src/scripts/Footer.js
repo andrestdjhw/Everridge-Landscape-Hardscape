@@ -67,14 +67,14 @@ const SOCIAL = [
 // ── Tokens ────────────────────────────────────────────────────────────────────
 const GOLD    = "#8a6a45"
 const GOLD_DK = "#7a5c38"
-const BG      = "#0b0b0c"
-const BG2     = "#161618"
-const BG3     = "#1e1e20"
-const BORDER  = "#2a2a2c"
+const BG      = "#f5f2ef"
+const BG2     = "#ede9e3"
+const BG3     = "#e6e3df"
+const BORDER  = "#d8d4ce"
 const GREEN   = "#1f3a32"
-const TEXT_DIM = "#3a3a3c"
-const TEXT_MID = "#6a6a6c"
-const TEXT_LT  = "#909092"
+const TEXT_DIM = "#6a6a6c"
+const TEXT_MID = "#5a5a5c"
+const TEXT_LT  = "#2f3133"
 
 // ── Font loader ───────────────────────────────────────────────────────────────
 function useFonts() {
@@ -88,8 +88,8 @@ function ColLabel({ children }) {
   return (
     <div style={{
       fontFamily: "'Gotham Book', sans-serif",
-      fontSize: 9, fontWeight: 600,
-      color: TEXT_DIM,
+      fontSize: 9, fontWeight: 700,
+      color: "#2f3133",
       letterSpacing: "0.22em",
       textTransform: "uppercase",
       marginBottom: 20,
@@ -143,7 +143,21 @@ function Footer() {
   useFonts()
 
   return (
-    <footer style={{ background: BG, borderTop: `1px solid ${BORDER}` }}>
+    <footer style={{ background: BG, borderTop: `1px solid ${BORDER}`, position: "relative" }}>
+
+      {/* ── Background stamp pattern ── */}
+      <div style={{
+        position: "absolute", inset: 0,
+        backgroundImage: "url('/wp-content/uploads/2026/05/EstampadoEverridge-1-scaled.png')",
+        backgroundRepeat: "repeat",
+        backgroundSize: "340px auto",
+        opacity: 0.32,
+        pointerEvents: "none",
+        zIndex: 0,
+      }} />
+
+      {/* Wrap all content above the pattern */}
+      <div style={{ position: "relative", zIndex: 1 }}>
 
       {/* ── CTA Banner ── */}
       <div style={{
@@ -282,7 +296,12 @@ function Footer() {
                 }}>{COMPANY.email}</span>
               </a>
 
-              <div style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
+              <a href="https://www.google.com/maps/place/Clinton+Township,+MI,+USA/@42.5848894,-82.9970678,12z/data=!3m1!4b1!4m6!3m5!1s0x8824df5dbcedcfeb:0x85542cfd06a6e1f1!8m2!3d42.600075!4d-82.9321168!16zL20vMHZjN2s?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank" rel="noopener noreferrer"
+                style={{ display: "flex", alignItems: "flex-start", gap: 10, textDecoration: "none" }}
+                onMouseEnter={e => { e.currentTarget.querySelector("span").style.color = "#1f3a32" }}
+                onMouseLeave={e => { e.currentTarget.querySelector("span").style.color = "#5a5a5c" }}
+              >
                 <div style={{
                   width: 30, height: 30, borderRadius: 0,
                   background: BG3, border: `1px solid ${BORDER}`,
@@ -296,10 +315,11 @@ function Footer() {
                 </div>
                 <span style={{
                   fontFamily: "'Gotham Book', sans-serif",
-                  fontSize: 12, fontWeight: 300, color: TEXT_DIM,
+                  fontSize: 12, fontWeight: 400, color: "#5a5a5c",
                   lineHeight: 1.6, whiteSpace: "pre-line",
+                  transition: "color 0.15s",
                 }}>{COMPANY.address}</span>
-              </div>
+              </a>
             </div>
 
             {/* Social icons */}
@@ -340,8 +360,8 @@ function Footer() {
               <a href="/services" style={{
                 display: "inline-flex", alignItems: "center", gap: 6,
                 fontFamily: "'Gotham Book', sans-serif",
-                fontSize: 11, fontWeight: 600,
-                color: GOLD, textDecoration: "none",
+                fontSize: 11, fontWeight: 700,
+                color: "#1f3a32", textDecoration: "none",
                 letterSpacing: "0.08em", textTransform: "uppercase",
               }}>
                 View All Services
@@ -360,8 +380,8 @@ function Footer() {
               <a href="/locations" style={{
                 display: "inline-flex", alignItems: "center", gap: 6,
                 fontFamily: "'Gotham Book', sans-serif",
-                fontSize: 11, fontWeight: 600,
-                color: GOLD, textDecoration: "none",
+                fontSize: 11, fontWeight: 700,
+                color: "#1f3a32", textDecoration: "none",
                 letterSpacing: "0.08em", textTransform: "uppercase",
               }}>
                 All Locations
@@ -398,8 +418,8 @@ function Footer() {
                 <span style={{
                   fontFamily: "'Gotham Book', sans-serif",
                   fontSize: 9, fontWeight: 600,
-                  color: GOLD, letterSpacing: "0.15em",
-                  textTransform: "uppercase",
+                  color: "#1f3a32", letterSpacing: "0.15em",
+                  fontWeight: 700, textTransform: "uppercase",
                 }}>Licensed & Insured</span>
               </div>
               <p style={{
@@ -464,6 +484,7 @@ function Footer() {
         }
       `}</style>
 
+      </div>
     </footer>
   )
 }

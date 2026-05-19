@@ -154,7 +154,7 @@ function inputStyle(hasError, darkMode = false) {
     background: darkMode ? "rgba(255,255,255,.08)" : C.white,
     border: `1px solid ${hasError ? C.error : darkMode ? "rgba(255,255,255,.18)" : C.border}`,
     borderRadius: 0,
-    padding: "12px 16px",
+    padding: "11px 14px",
     outline: "none",
     transition: "border-color .2s, background .2s",
   }
@@ -167,7 +167,7 @@ function ContactForm({
   subtitle      = "Tell us about your project and we'll reach out within 24–48 hours.",
   showTitle     = true,
   bgColor       = C.bg,
-  compact       = false,   // compact=true → no padding, transparent bg
+  compact       = false,   // compact=true → no padding, transparent bg, denser 2-col layout
   darkMode      = false,   // darkMode=true → inputs/labels optimised for dark backgrounds
 }) {
   useFonts()
@@ -307,6 +307,16 @@ function ContactForm({
   }
 
   // ── Form ─────────────────────────────────────────────────────────────────────
+  // Vertical gap between fields: smaller when compact
+  const fieldGap   = compact ? 12 : 16
+  // Textarea rows + min-height: smaller when compact
+  const textareaRows      = compact ? 3 : 4
+  const textareaMinHeight = compact ? 76 : 96
+  // Submit button padding: tighter when compact
+  const submitPadding     = compact ? "12px 0" : "15px 0"
+  // Trust line margin
+  const trustMarginTop    = compact ? 14 : 18
+
   return (
     <>
       <style>{`
@@ -349,9 +359,9 @@ function ContactForm({
         )}
 
         <form onSubmit={handleSubmit} noValidate>
-          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: fieldGap }}>
 
-            {/* Name + Phone */}
+            {/* Row 1: Name + Phone */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}
                  className="ev-form-2col">
               <Field darkMode={darkMode} label="Full Name" required error={errors.full_name}>
@@ -378,35 +388,65 @@ function ContactForm({
               </Field>
             </div>
 
-            {/* Email */}
-            <Field darkMode={darkMode} label="Email Address" required error={errors.email}>
-              <input
-                type="email" value={fields.email}
-                onChange={set("email")}
-                placeholder="john@email.com"
-                className="ev-input"
-                style={inputStyle(!!errors.email, darkMode)}
-                onFocus={e => e.target.style.borderColor = C.borderF}
-                onBlur={e  => e.target.style.borderColor = errors.email ? C.error : C.border}
-              />
-            </Field>
+            {/* Row 2: Email + Service (compact mode) OR Email full width (default) */}
+            {compact ? (
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}
+                   className="ev-form-2col">
+                <Field darkMode={darkMode} label="Email Address" required error={errors.email}>
+                  <input
+                    type="email" value={fields.email}
+                    onChange={set("email")}
+                    placeholder="john@email.com"
+                    className="ev-input"
+                    style={inputStyle(!!errors.email, darkMode)}
+                    onFocus={e => e.target.style.borderColor = C.borderF}
+                    onBlur={e  => e.target.style.borderColor = errors.email ? C.error : C.border}
+                  />
+                </Field>
+                <Field darkMode={darkMode} label="Service Needed" required error={errors.service}>
+                  <select
+                    value={fields.service}
+                    onChange={set("service")}
+                    className="ev-input ev-select"
+                    style={{ ...inputStyle(!!errors.service, darkMode), cursor: "pointer" }}
+                    onFocus={e => e.target.style.borderColor = C.borderF}
+                    onBlur={e  => e.target.style.borderColor = errors.service ? C.error : C.border}
+                  >
+                    <option value="" disabled>Select a service...</option>
+                    {SERVICES.map(s => <option key={s} value={s}>{s}</option>)}
+                  </select>
+                </Field>
+              </div>
+            ) : (
+              <>
+                <Field darkMode={darkMode} label="Email Address" required error={errors.email}>
+                  <input
+                    type="email" value={fields.email}
+                    onChange={set("email")}
+                    placeholder="john@email.com"
+                    className="ev-input"
+                    style={inputStyle(!!errors.email, darkMode)}
+                    onFocus={e => e.target.style.borderColor = C.borderF}
+                    onBlur={e  => e.target.style.borderColor = errors.email ? C.error : C.border}
+                  />
+                </Field>
+                <Field darkMode={darkMode} label="Service Needed" required error={errors.service}>
+                  <select
+                    value={fields.service}
+                    onChange={set("service")}
+                    className="ev-input ev-select"
+                    style={{ ...inputStyle(!!errors.service, darkMode), cursor: "pointer" }}
+                    onFocus={e => e.target.style.borderColor = C.borderF}
+                    onBlur={e  => e.target.style.borderColor = errors.service ? C.error : C.border}
+                  >
+                    <option value="" disabled>Select a service...</option>
+                    {SERVICES.map(s => <option key={s} value={s}>{s}</option>)}
+                  </select>
+                </Field>
+              </>
+            )}
 
-            {/* Service */}
-            <Field darkMode={darkMode} label="Service Needed" required error={errors.service}>
-              <select
-                value={fields.service}
-                onChange={set("service")}
-                className="ev-input ev-select"
-                style={{ ...inputStyle(!!errors.service, darkMode), cursor: "pointer" }}
-                onFocus={e => e.target.style.borderColor = C.borderF}
-                onBlur={e  => e.target.style.borderColor = errors.service ? C.error : C.border}
-              >
-                <option value="" disabled>Select a service...</option>
-                {SERVICES.map(s => <option key={s} value={s}>{s}</option>)}
-              </select>
-            </Field>
-
-            {/* Address */}
+            {/* Address (full width — needs the space for full address strings) */}
             <Field darkMode={darkMode} label="Property Address or City" required error={errors.address}>
               <input
                 type="text" value={fields.address}
@@ -419,15 +459,15 @@ function ContactForm({
               />
             </Field>
 
-            {/* Message */}
+            {/* Message — fewer rows in compact mode */}
             <Field darkMode={darkMode} label="Tell Us About Your Project" error={errors.message}>
               <textarea
                 value={fields.message}
                 onChange={set("message")}
                 placeholder="Describe your vision, timeline, or any specific requirements..."
-                rows={4}
+                rows={textareaRows}
                 className="ev-input"
-                style={{ ...inputStyle(false, darkMode), resize: "vertical", minHeight: 96 }}
+                style={{ ...inputStyle(false, darkMode), resize: "vertical", minHeight: textareaMinHeight }}
                 onFocus={e => e.target.style.borderColor = C.borderF}
                 onBlur={e  => e.target.style.borderColor = C.border}
               />
@@ -469,7 +509,7 @@ function ContactForm({
                   ? C.slate
                   : `linear-gradient(135deg, ${C.gold}, ${C.goldDk})`,
                 border: "none", borderRadius: 7,
-                padding: "15px 0",
+                padding: submitPadding,
                 cursor: status === "sending" ? "not-allowed" : "pointer",
                 transition: "opacity .2s",
                 opacity: status === "sending" ? .75 : 1,
@@ -506,7 +546,7 @@ function ContactForm({
         <p style={{
           fontFamily: "'DM Sans', sans-serif",
           fontSize: 11, fontWeight: 300,
-          color: darkMode ? "rgba(230,227,223,.35)" : C.slate, marginTop: 18,
+          color: darkMode ? "rgba(230,227,223,.35)" : C.slate, marginTop: trustMarginTop,
           textAlign: "center", lineHeight: 1.7,
         }}>
           We respond within 24–48 hours · No pressure · Licensed & Insured · 17+ Years Experience
