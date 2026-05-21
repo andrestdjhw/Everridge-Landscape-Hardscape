@@ -1546,7 +1546,7 @@ __webpack_require__.r(__webpack_exports__);
 const COMPANY = {
   name: "Everridge Landscape & Hardscape",
   tagline: "Crafting Outdoor Spaces with Precision.",
-  phone: "(770) 555-0192",
+  phone: "(586) 381 9109",
   email: "info@everridgeus.com",
   address: "Clinton Township, Michigan",
   license: "MI Licensed & Insured Contractor"
@@ -1601,7 +1601,7 @@ const LEGAL = [{
 }];
 const SOCIAL = [{
   label: "Instagram",
-  href: "https://instagram.com",
+  href: "https://www.instagram.com/everridge_landscape?igsh=MWN0NnZ3Y2IzdDNubw==&utm_source=ig_contact_invite",
   icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
     width: "18",
     height: "18",
@@ -1613,7 +1613,7 @@ const SOCIAL = [{
   })
 }, {
   label: "Facebook",
-  href: "https://facebook.com",
+  href: "https://www.facebook.com/share/1D5bsCmUXT/?mibextid=wwXIfr",
   icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
     width: "18",
     height: "18",
@@ -1624,15 +1624,15 @@ const SOCIAL = [{
     })
   })
 }, {
-  label: "LinkedIn",
-  href: "https://linkedin.com",
+  label: "Tik Tok",
+  href: "https://www.tiktok.com/@chavarinlandscape",
   icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
     width: "18",
     height: "18",
     viewBox: "0 0 24 24",
     fill: "currentColor",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-      d: "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+      d: "M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.84-.1z"
     })
   })
 }];
@@ -2349,7 +2349,7 @@ const NAV_LINKS = [{
   label: "Contact",
   href: "/contact"
 }];
-const PHONE = "(770) 555-0192";
+const PHONE = "(586) 381 9109";
 const PHONE_HREF = "tel:+17705550192";
 const EMAIL = "info@everridgeus.com";
 const EMAIL_HREF = "mailto:info@everridgeus.com";
@@ -2358,7 +2358,7 @@ const MAPS_HREF = "https://maps.google.com/?q=Clinton+Township+MI";
 const CTA_HREF = "/contact";
 const SOCIAL_LINKS = [{
   label: "Instagram",
-  href: "https://instagram.com/everridgelandscape",
+  href: "https://www.instagram.com/everridge_landscape?igsh=MWN0NnZ3Y2IzdDNubw==&utm_source=ig_contact_invite",
   icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
     width: "15",
     height: "15",
@@ -2370,7 +2370,7 @@ const SOCIAL_LINKS = [{
   })
 }, {
   label: "Facebook",
-  href: "https://facebook.com/everridgelandscape",
+  href: "https://www.facebook.com/share/1D5bsCmUXT/?mibextid=wwXIfr",
   icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
     width: "15",
     height: "15",
@@ -2381,15 +2381,15 @@ const SOCIAL_LINKS = [{
     })
   })
 }, {
-  label: "LinkedIn",
-  href: "https://linkedin.com/company/everridgelandscape",
+  label: "Tik Tok",
+  href: "https://www.tiktok.com/@chavarinlandscape",
   icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
     width: "15",
     height: "15",
     viewBox: "0 0 24 24",
     fill: "currentColor",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-      d: "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+      d: "M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.84-.1z"
     })
   })
 }];
