@@ -58,17 +58,17 @@ $hardscape_detail_img = '/wp-content/uploads/2026/05/BricksHardscapeServicePage-
 // Before images — one per B&A pair
 $hardscape_ba_before = [
   '/wp-content/uploads/2026/05/HardscapeAfter-2-scaled.jpg', // image 1
-  '/wp-content/uploads/2026/05/HardscapeAfter-2-scaled.jpg', // image 2
-  '/wp-content/uploads/2026/05/HardscapeAfter-2-scaled.jpg', // image 3
-  '/wp-content/uploads/2026/05/HardscapeAfter-2-scaled.jpg', // image 4
+  '/wp-content/uploads/2026/05/FrontYardAfter-scaled.jpg', // image 2
+  '/wp-content/uploads/2026/05/RetainingWallAfter-scaled.jpg', // image 3
+  '/wp-content/uploads/2026/05/HardscapeAfter-scaled.jpg', // image 4
 ];
 
 // After images — one per B&A pair
 $hardscape_ba_after = [
   '/wp-content/uploads/2026/05/HardscapeBefore-scaled.jpg', // image 1
-  '/wp-content/uploads/2026/05/HardscapeBefore-scaled.jpg', // image 2
-  '/wp-content/uploads/2026/05/HardscapeBefore-scaled.jpg', // image 3
-  '/wp-content/uploads/2026/05/HardscapeBefore-scaled.jpg', // image 4
+  '/wp-content/uploads/2026/05/FrontYardBefore-scaled.jpg', // image 2
+  '/wp-content/uploads/2026/05/RetainingWallBefore-scaled.jpg', // image 3
+  '/wp-content/uploads/2026/05/HadscapeBefore-scaled.jpg', // image 4
 ];
 ?>
 

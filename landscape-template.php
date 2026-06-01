@@ -302,7 +302,7 @@ $faqs = [
 <!-- ════════════════════════════════════════════════
      SECTION 2 — BEFORE & AFTER
      ════════════════════════════════════════════════ -->
-<section class="bg-[#f5f2ef] border-t border-b border-[#e6e3df] py-24">
+<!-- <section class="bg-[#f5f2ef] border-t border-b border-[#e6e3df] py-24">
   <div class="max-w-[1280px] mx-auto px-6 md:px-10">
 
     <div class="text-center mb-14 ev-reveal">
@@ -318,7 +318,7 @@ $faqs = [
       <?php foreach ( $ba_projects as $i => $p ) : ?>
       <div class="ev-reveal" style="transition-delay:<?php echo $i * 100; ?>ms;">
         <div class="ev-ba relative overflow-hidden border border-[#e6e3df] cursor-col-resize select-none" data-ba="<?php echo $i; ?>">
-          <!-- Before -->
+          
           <div class="aspect-[4/3] bg-[#d8d4cc] relative overflow-hidden">
             <?php if(!empty($landscape_ba_before[$i])):?>
             <img src="<?php echo esc_url($landscape_ba_before[$i]);?>" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="">
@@ -326,14 +326,14 @@ $faqs = [
             <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-6"><?php echo $p['ph_b']; ?></div>
             <?php endif;?>
           </div>
-          <!-- After (clipped) -->
+          
           <div class="ev-ba-after absolute inset-0 bg-[#b8d4a8]"
                style="clip-path:inset(0 50% 0 0);background-size:cover;background-position:center;<?php if(!empty($landscape_ba_after[$i])) echo 'background-image:url('.esc_url($landscape_ba_after[$i]).');'; ?>">
             <?php if(empty($landscape_ba_after[$i])):?>
             <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a9a7a] text-center px-6"><?php echo $p['ph_a']; ?></div>
             <?php endif;?>
           </div>
-          <!-- Handle -->
+          
           <div class="ev-ba-handle absolute top-0 bottom-0 w-0.5 bg-white left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none">
             <div class="w-9 h-9 bg-white flex items-center justify-center shadow-[0_2px_12px_rgba(0,0,0,.2)]">
               <svg class="w-4 h-4 text-[#0b0b0c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
@@ -353,7 +353,7 @@ $faqs = [
     </div>
 
   </div>
-</section>
+</section> -->
 
 
 <!-- ════════════════════════════════════════════════

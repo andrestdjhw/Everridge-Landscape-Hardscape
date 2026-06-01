@@ -21,22 +21,6 @@ $threed_process_imgs = [
   '/wp-content/uploads/2026/05/Process2-scaled.jpg', // image 3
   '/wp-content/uploads/2026/05/PremiunHardscapeHero-scaled.jpg', // image 4
 ];
-
-// Side/detail image (rendering side of gallery)
-$threed_detail_img = '/wp-content/uploads/2026/05/completed-match.png'; // e.g. /wp-content/uploads/2026/05/threed-detail.jpg
-
-// Side/detail image 2 (completed side of gallery)
-$threed_side_img_2 = '/wp-content/uploads/2026/05/rendering-preview.png'; // e.g. /wp-content/uploads/2026/05/threed-detail.jpg
-
-// Gallery images — one URL per project card
-$threed_gallery = [
-  '', // image 1
-  '', // image 2
-  '', // image 3
-  '', // image 4
-  '', // image 5
-  '', // image 6
-];
 ?>
 
 <?php
@@ -68,13 +52,45 @@ $process_steps = [
   ],
 ];
 
+/* ── RENDERING vs REALITY — 4 proyectos, URL por cada uno ───────────────────────────
+ * Para cada proyecto pega DOS URLs:
+ *   'img_r' → la imagen del RENDERING (3D)
+ *   'img_c' → la imagen del proyecto COMPLETED (terminado)
+ * Si dejas una vacía, se muestra el placeholder con el texto de 'ph_r' / 'ph_c'.
+ * ─────────────────────────────────────────────────────────────────────────── */
 $render_pairs = [
-  [ 'label' => 'Paver Patio & Seating Wall', 'city' => 'Birmingham, MI',      'ph_r' => '3D Rendering — paver patio with seating wall and plantings, front-elevation angle',   'ph_c' => 'Completed project — same angle, exact match to rendering' ],
-  [ 'label' => 'Front Yard Landscape',       'city' => 'Bloomfield Hills, MI','ph_r' => '3D Rendering — full front yard redesign, layered plantings, new walkway',             'ph_c' => 'Completed project — same angle, same plantings, same walkway' ],
-  [ 'label' => 'Backyard Transformation',    'city' => 'Troy, MI',            'ph_r' => '3D Rendering — backyard with retaining wall, patio, and garden beds, aerial angle',    'ph_c' => 'Completed backyard — same aerial angle, retaining wall and patio delivered' ],
-  [ 'label' => 'Outdoor Lighting Design',    'city' => 'Rochester Hills, MI', 'ph_r' => '3D Rendering — nighttime lighting simulation, accent lights and pathway illumination', 'ph_c' => 'Completed property at night — lighting matches simulation exactly' ],
-  [ 'label' => 'Courtyard Garden',           'city' => 'Shelby Township, MI', 'ph_r' => '3D Rendering — intimate courtyard garden, water feature and raised beds',              'ph_c' => 'Completed courtyard — water feature and raised beds match rendering' ],
-  [ 'label' => 'Driveway & Entry Design',    'city' => 'Farmington Hills, MI','ph_r' => '3D Rendering — paver driveway with border, new entry stoop and plantings',            'ph_c' => 'Completed driveway and entry — same border, same stoop, same plants' ],
+  [
+    'label' => 'Paver Patio & Seating Wall',
+    'city'  => 'Birmingham, MI',
+    'img_r' => '/wp-content/uploads/2026/05/BackyardTransformationCompleted.png', // URL rendering
+    'img_c' => '/wp-content/uploads/2026/05/BackyardTransformation3DRenderings.jpg', // URL completed
+    'ph_r'  => '3D Rendering — paver patio with seating wall and plantings, front-elevation angle',
+    'ph_c'  => 'Completed project — same angle, exact match to rendering',
+  ],
+  [
+    'label' => 'Front Yard Landscape',
+    'city'  => 'Bloomfield Hills, MI',
+    'img_r' => '/wp-content/uploads/2026/05/FrontYard3DCompleted.png', // URL rendering
+    'img_c' => '/wp-content/uploads/2026/05/FontYard3DRendering.jpg', // URL completed
+    'ph_r'  => '3D Rendering — full front yard redesign, layered plantings, new walkway',
+    'ph_c'  => 'Completed project — same angle, same plantings, same walkway',
+  ],
+  [
+    'label' => 'Retaining Wall',
+    'city'  => 'Troy, MI',
+    'img_r' => '/wp-content/uploads/2026/05/RetainingWallCompleted.png', // URL rendering
+    'img_c' => '/wp-content/uploads/2026/05/RetainingWall3dRendering.jpg', // URL completed
+    'ph_r'  => '3D Rendering — backyard with retaining wall, patio, and garden beds, aerial angle',
+    'ph_c'  => 'Completed backyard — same aerial angle, retaining wall and patio delivered',
+  ],
+  [
+    'label' => 'Landscape Transformation',
+    'city'  => 'Rochester Hills, MI',
+    'img_r' => '/wp-content/uploads/2026/05/LandscapeTransformationCompleted.png', // URL rendering
+    'img_c' => '/wp-content/uploads/2026/05/LandscapeTransformation3D.jpg', // URL completed
+    'ph_r'  => '3D Rendering — nighttime lighting simulation, accent lights and pathway illumination',
+    'ph_c'  => 'Completed property at night — lighting matches simulation exactly',
+  ],
 ];
 
 $whats_included = [
@@ -259,7 +275,7 @@ $faqs = [
 
 
 <!-- ════════════════════════════════════════════════
-     SECTION 2 — RENDERING VS REALITY GALLERY
+     SECTION 2 — RENDERING VS REALITY GALLERY (4 proyectos, URL por cada uno)
      ════════════════════════════════════════════════ -->
 <section id="ev-gallery" class="bg-[#f5f2ef] border-t border-b border-[#e6e3df] py-24">
   <div class="max-w-[1280px] mx-auto px-6 md:px-10">
@@ -281,18 +297,18 @@ $faqs = [
 
           <!-- Desktop: drag slider -->
           <div class="hidden md:block ev-ba relative overflow-hidden border border-[#e6e3df] cursor-col-resize select-none" data-ba="<?php echo $i; ?>">
-            <!-- Rendering (base) — FIX: relative wrapper + absolute img + else -->
+            <!-- Rendering (base) -->
             <div class="aspect-[16/9] bg-[#dcd8e0] relative overflow-hidden">
-              <?php if($threed_detail_img):?>
-              <img src="<?php echo esc_url($threed_detail_img);?>" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="3D Rendering - <?php echo esc_attr($pair['label']); ?>">
+              <?php if(!empty($pair['img_r'])):?>
+              <img src="<?php echo esc_url($pair['img_r']);?>" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="3D Rendering - <?php echo esc_attr($pair['label']); ?>">
               <?php else:?>
               <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a7f85] text-center px-8"><?php echo $pair['ph_r']; ?></div>
               <?php endif;?>
             </div>
-            <!-- Completed (clipped) — FIX: background-image in style, else for placeholder -->
+            <!-- Completed (clipped) -->
             <div class="ev-ba-after absolute inset-0 bg-[#c8d4b8]"
-                 style="clip-path:inset(0 50% 0 0);background-size:cover;background-position:center;<?php if($threed_side_img_2) echo 'background-image:url('.esc_url($threed_side_img_2).');'; ?>">
-              <?php if(!$threed_side_img_2):?>
+                 style="clip-path:inset(0 50% 0 0);background-size:cover;background-position:center;<?php if(!empty($pair['img_c'])) echo 'background-image:url('.esc_url($pair['img_c']).');'; ?>">
+              <?php if(empty($pair['img_c'])):?>
               <div class="absolute inset-0 flex items-center justify-center text-[10px] text-[#7a9a7a] text-center px-8"><?php echo $pair['ph_c']; ?></div>
               <?php endif;?>
             </div>
@@ -308,19 +324,19 @@ $faqs = [
             <span class="absolute top-3 right-3 bg-[rgba(0,0,0,.5)] backdrop-blur-sm text-[9px] font-bold tracking-[.12em] uppercase text-white px-2.5 py-1">Completed</span>
           </div>
 
-          <!-- Mobile: stacked side-by-side — FIX: else on both placeholders -->
+          <!-- Mobile: stacked side-by-side -->
           <div class="md:hidden grid grid-cols-2 gap-2 overflow-hidden border border-[#e6e3df]">
             <div class="aspect-[4/3] bg-[#dcd8e0] relative overflow-hidden">
-              <?php if(!empty($threed_gallery[$i])):?>
-              <img src="<?php echo esc_url($threed_gallery[$i]);?>" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="">
+              <?php if(!empty($pair['img_r'])):?>
+              <img src="<?php echo esc_url($pair['img_r']);?>" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="3D Rendering - <?php echo esc_attr($pair['label']); ?>">
               <?php else:?>
               <div class="absolute inset-0 flex items-center justify-center text-[9px] text-[#7a7f85] text-center px-3"><?php echo $pair['ph_r']; ?></div>
               <?php endif;?>
               <span class="absolute top-2 left-2 bg-[rgba(0,0,0,.5)] text-[8px] font-bold text-white px-2 py-0.5">Rendering</span>
             </div>
             <div class="aspect-[4/3] bg-[#c8d4b8] relative overflow-hidden">
-              <?php if(!empty($threed_gallery[$i])):?>
-              <img src="<?php echo esc_url($threed_gallery[$i]);?>" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="">
+              <?php if(!empty($pair['img_c'])):?>
+              <img src="<?php echo esc_url($pair['img_c']);?>" class="absolute inset-0 w-full h-full object-cover" loading="lazy" alt="Completed - <?php echo esc_attr($pair['label']); ?>">
               <?php else:?>
               <div class="absolute inset-0 flex items-center justify-center text-[9px] text-[#7a9a7a] text-center px-3"><?php echo $pair['ph_c']; ?></div>
               <?php endif;?>

@@ -74,7 +74,7 @@ get_header(); ?>
               </div>
               <div>
                 <div class="text-[10px] font-semibold tracking-[.1em] uppercase text-[#7a7f85] mb-0.5">Phone</div>
-                <div class="text-[15px] font-semibold text-[#0b0b0c] group-hover:text-[#8a6a45] transition-colors">(770) 555-0192</div>
+                <div class="text-[15px] font-semibold text-[#0b0b0c] group-hover:text-[#8a6a45] transition-colors">(586) 381 9109</div>
               </div>
             </a>
 
@@ -258,7 +258,7 @@ get_header(); ?>
     </p>
     <a href="tel:+17705550192"
        class="block font-['Articulat_CF'] font-bold text-[#8a6a45] text-[clamp(28px,4.5vw,48px)] tracking-tight hover:opacity-75 transition-opacity mb-2">
-      (770) 555-0192
+      (586) 381 9109
     </a>
     <p class="text-[11px] text-[rgba(230,227,223,.3)] tracking-[.06em]">Mon–Fri 8AM–6PM · Sat 8AM–2PM · Clinton Township, MI</p>
   </div>

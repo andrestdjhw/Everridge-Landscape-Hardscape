@@ -112,26 +112,26 @@ $ba_projects = [
   [
     'label'      => 'Paver Patio',
     'city'       => 'Birmingham, MI',
-    'img_before' => '/wp-content/uploads/2026/05/BeforeAfter-1-e1778352789260.png',
-    'img_after'  => '/wp-content/uploads/2026/05/BeforeAfter-e1778352619870.png',
+    'img_before' => '/wp-content/uploads/2026/05/HardscapeAfter-scaled.jpg',
+    'img_after'  => '/wp-content/uploads/2026/05/HadscapeBefore-scaled.jpg',
   ],
   [
     'label'      => 'Front Yard Transformation',
     'city'       => 'Troy, MI',
-    'img_before' => '/wp-content/uploads/2026/05/BeforeAfter-1-e1778352789260.png',
-    'img_after'  => '/wp-content/uploads/2026/05/BeforeAfter-e1778352619870.png',
+    'img_before' => '/wp-content/uploads/2026/05/FrontYardAfter-scaled.jpg',
+    'img_after'  => '/wp-content/uploads/2026/05/FrontYardBefore-scaled.jpg',
   ],
   [
     'label'      => 'Landscape Lighting',
     'city'       => 'Rochester Hills, MI',
-    'img_before' => '/wp-content/uploads/2026/05/BeforeAfter-1-e1778352789260.png',
-    'img_after'  => '/wp-content/uploads/2026/05/BeforeAfter-e1778352619870.png',
+    'img_before' => '/wp-content/uploads/2026/05/OutdoorLightningNight-scaled.jpg',
+    'img_after'  => '/wp-content/uploads/2026/05/OutdoorLightningDay.jpeg',
   ],
   [
     'label'      => 'Retaining Wall & Garden',
     'city'       => 'Bloomfield Hills, MI',
-    'img_before' => '/wp-content/uploads/2026/05/BeforeAfter-1-e1778352789260.png',
-    'img_after'  => '/wp-content/uploads/2026/05/BeforeAfter-e1778352619870.png',
+    'img_before' => '/wp-content/uploads/2026/05/RetainingWallAfter-scaled.jpg',
+    'img_after'  => '/wp-content/uploads/2026/05/RetainingWallBefore-scaled.jpg',
   ],
 ];
 

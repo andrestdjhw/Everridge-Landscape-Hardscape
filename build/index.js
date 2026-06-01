@@ -1625,7 +1625,7 @@ const SOCIAL = [{
   })
 }, {
   label: "Tik Tok",
-  href: "https://www.tiktok.com/@chavarinlandscape",
+  href: "https://www.tiktok.com/@everridge_landscape?_r=1&_t=ZS-96r3LioVGML",
   icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
     width: "18",
     height: "18",
@@ -2382,7 +2382,7 @@ const SOCIAL_LINKS = [{
   })
 }, {
   label: "Tik Tok",
-  href: "https://www.tiktok.com/@chavarinlandscape",
+  href: "https://www.tiktok.com/@everridge_landscape?_r=1&_t=ZS-96r3LioVGML",
   icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
     width: "15",
     height: "15",

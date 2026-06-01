@@ -17,21 +17,56 @@ $ourwork_hero_img = '/wp-content/uploads/2026/05/ProjectsPortfolioEverridge-scal
 // CTA section background
 $ourwork_cta_img = ''; // e.g. /wp-content/uploads/2026/05/ourwork-cta.jpg
 
-// Project images — one URL per project ID (1–12)
-// Go to Media → click each image → Copy URL → paste here
+// ── PROJECT IMAGES (MAIN / "AFTER") — one URL per project ID (1–12) ──────────
+// Esta es la foto principal que sale en la TARJETA del grid Y en el tab "After" del popup.
 $ourwork_project_imgs = [
   1  => '/wp-content/uploads/2026/05/LandscapingProyect6-scaled.jpg', // Premium Paver Patio — Birmingham
-  2  => '/wp-content/uploads/2026/05/RetainingWalls-scaled.jpg', // Front Yard Transformation — Troy
-  3  => '/wp-content/uploads/2026/04/OutdoorLightingSystemHero-scaled.jpg', // Outdoor Lighting System — Bloomfield Hills
-  4  => '/wp-content/uploads/2026/05/LanscapingAfter-scaled.jpg', // Retaining Wall & Garden — Rochester Hills
-  5  => '/wp-content/uploads/2026/05/BrickandHardscapesService-scaled.jpg', // 3D Rendering to Reality — Shelby Township
-  6  => '/wp-content/uploads/2026/05/LandscapingProyect2-scaled.jpg', // Driveway & Entryway — Clinton Township
-  7  => '/wp-content/uploads/2026/05/LandscapingBefore-scaled.jpg', // Garden Design Installation — Washington Twp
+  2  => '/wp-content/uploads/2026/05/FrontYardAfter-scaled.jpg', // Front Yard Transformation — Troy
+  3  => '/wp-content/uploads/2026/05/OutdoorLightningNight-scaled.jpg', // Outdoor Lighting System — Bloomfield Hills
+  4  => '/wp-content/uploads/2026/05/LandscapeTransformation3D.jpg', // 3D Rendering to Reality — Shelby Township 
+  5  => '/wp-content/uploads/2026/05/BrickandHardscapesService-scaled.jpg', //Driveway & Entryway — Clinton Township 
+  6  => '/wp-content/uploads/2026/05/LandscapingProyect2-scaled.jpg', // Complete Property Overhaul
+  7  => '/wp-content/uploads/2026/05/LandscapingProyect4-scaled.jpg', // Garden Design Installation — Washington Twp
   8  => '/wp-content/uploads/2026/05/PremiunHardscapeHero-scaled.jpg', // Landscape Lighting Full — Birmingham
   9  => '/wp-content/uploads/2026/05/OutdoorLightningHero-scaled.jpg', // Hardscape Fire Pit Area — Troy
   10 => '/wp-content/uploads/2026/04/Landscaping3DModeling-.png', // Seasonal Landscape Refresh — Bloomfield Hills
-  11 => '/wp-content/uploads/2026/05/AboutHeroEverridge-scaled.jpg', // Multi-Level Retaining Wall — Rochester Hills
-  12 => '/wp-content/uploads/2026/04/terrazzo-product-display-podium-in-the-middle-of-t-2026-03-24-07-21-27-utc-scaled.jpg', // Complete Backyard — Shelby Township
+  11 => '/wp-content/uploads/2026/05/FrontYard3DCompleted.png', // Front & Back Full Redesign
+  12 => '/wp-content/uploads/2026/06/DrivewayHardscapeComplete-scaled.jpg', // Complete Frontyard — Shelby Township
+];
+
+// ── POPUP "BEFORE" IMAGES — one URL per project ID ───────────────────────────
+// Se muestra en el tab "Before" del popup y en el lado izquierdo del slider Before & After.
+// Para proyectos de 3D (garden), aquí va el RENDERING.
+$ourwork_before_imgs = [
+  1  => '/wp-content/uploads/2026/05/HardscapeBefore-scaled.jpg', // Premium Paver Patio — Birmingham
+  2  => '/wp-content/uploads/2026/05/FrontYardBefore-scaled.jpg', // Front Yard Transformation — Troy
+  3  => '/wp-content/uploads/2026/05/OutdoorLightningDay.jpeg', // Outdoor Lighting System — Bloomfield Hills
+  4  => '/wp-content/uploads/2026/05/LandscapeTransformationCompleted.png', // 3D Rendering to Reality — Rochester Hills
+  5  => '/wp-content/uploads/2026/06/Hardscape2Before.png', // Retaining Wall & Garden — Shelby Township
+  6  => '/wp-content/uploads/2026/06/CompleteOverhaulBefore.png', // Complete Property Overhaul — Farmington Hills
+  7  => '/wp-content/uploads/2026/05/LandscapingBefore-scaled.jpg', // Backyard Garden Design — Washington Twp
+  8  => '/wp-content/uploads/2026/06/OutdoorKitchenBefore.png', // Outdoor Kitchen & Fire Pit — Clinton Township
+  9  => '/wp-content/uploads/2026/06/Oudoor2PathBefore.png', // Tree & Pathway Lighting — Birmingham
+  10 => '/wp-content/uploads/2026/06/3DModelBefore.png', // Courtyard Garden Design — Troy
+  11 => '/wp-content/uploads/2026/05/FontYard3DRendering.jpg', // Front & Back Full Redesign — Bloomfield Hills
+  12 => '/wp-content/uploads/2026/06/DrivewayHardscapeBefore.png', // Driveway & Front Walkway — Rochester Hills
+];
+
+// ── POPUP "DETAIL" IMAGES — one URL per project ID ───────────────────────────
+// Se muestra en el tab "Detail" del popup (close-up de materiales, acabados, etc.).
+$ourwork_detail_imgs = [
+  1  => '/wp-content/uploads/2026/05/LandscapingProyect3-scaled.jpg', // Premium Paver Patio — Birmingham
+  2  => '/wp-content/uploads/2026/06/FrontYardDetail-scaled.jpg', // Front Yard Transformation — Troy
+  3  => '/wp-content/uploads/2026/05/OutdoorLightningNight-scaled.jpg', // Outdoor Lighting System — Bloomfield Hills
+  4  => '/wp-content/uploads/2026/05/LandscapeTransformationCompleted.png', // 3D Rendering to Reality — Rochester Hills
+  5  => '/wp-content/uploads/2026/06/DrivewayEntryDetail.png', // Retaining Wall & Garden — Shelby Township
+  6  => '/wp-content/uploads/2026/06/CompleteOverhaulDetail.png', // Complete Property Overhaul — Farmington Hills
+  7  => '/wp-content/uploads/2026/05/LandscapingProyect4-scaled.jpg', // Backyard Garden Design — Washington Twp
+  8  => '/wp-content/uploads/2026/06/OutdoorKitchenDetail.png', // Outdoor Kitchen & Fire Pit — Clinton Township
+  9  => '/wp-content/uploads/2026/05/OutdoorLightningHero-scaled.jpg', // Tree & Pathway Lighting — Birmingham
+  10 => '/wp-content/uploads/2026/06/3DRenderingDetail.png', // Courtyard Garden Design — Troy
+  11 => '/wp-content/uploads/2026/05/FrontYard3DCompleted.png', // Front & Back Full Redesign — Bloomfield Hills
+  12 => '/wp-content/uploads/2026/06/FrontYardDetail.png', // Driveway & Front Walkway — Rochester Hills
 ];
 ?>
 
@@ -100,8 +135,8 @@ $projects = [
     'id'        => 5,
     'category'  => 'hardscape',
     'cat_label' => 'Brick + Hardscapes',
-    'title'     => 'Retaining Wall & Garden Integration',
-    'city'      => 'Shelby Township, MI',
+    'title'     => 'Driveway & Entryway — Clinton Township',
+    'city'      => 'Clinton Township, MI',
     'desc'      => 'Multi-level retaining wall with integrated planting pockets, natural stone cap, and drainage system. Solved a severe grading issue while creating a beautiful tiered garden feature.',
     'materials' => 'Allan Block retaining wall · Natural stone cap · Drainage aggregate',
     'has_ba'    => false,
@@ -198,8 +233,8 @@ $projects = [
     'id'        => 12,
     'category'  => 'hardscape',
     'cat_label' => 'Brick + Hardscapes',
-    'title'     => 'Driveway & Front Walkway',
-    'city'      => 'Rochester Hills, MI',
+    'title'     => 'Complete Frontyard',
+    'city'      => 'Shelby Township, MI',
     'desc'      => 'Full driveway replacement in Brussels Block pavers with contrasting border, matching front walkway, and new stoop landing. Increased property value significantly.',
     'materials' => 'Unilock Brussels Block · Concrete base · Polymeric sand · Edging',
     'has_ba'    => true,
@@ -297,21 +332,17 @@ $categories = [
 
         <!-- Image -->
         <div class="relative overflow-hidden <?php echo $p['size'] === 'tall' ? 'aspect-[3/4]' : ($p['size'] === 'wide' ? 'aspect-[16/9]' : 'aspect-[4/3]'); ?> bg-[#e0ddd6]">
-          <?php
-          // Project images: set $ourwork_project_imgs[$p['id']] above
-          // Example: $ourwork_project_imgs[1] = '/wp-content/uploads/2026/05/project-1.jpg';
-          if ( ! empty( $ourwork_project_imgs[ $p['id'] ] ) ) :
-          ?>
+          <?php if ( ! empty( $ourwork_project_imgs[ $p['id'] ] ) ) : ?>
           <img src="<?php echo esc_url( $ourwork_project_imgs[ $p['id'] ] ); ?>"
                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                loading="lazy"
                alt="<?php echo esc_attr( $p['title'] ); ?> - <?php echo esc_attr( $p['city'] ); ?>">
-          <?php endif; ?>
-
-          <!-- Placeholder -->
+          <?php else : ?>
+          <!-- Placeholder (solo cuando no hay imagen) -->
           <div class="absolute inset-0 flex items-end justify-center pb-4 text-[10px] text-[#7a7f85] text-center px-4 transition-transform duration-500 group-hover:scale-105">
             <?php echo $p['ph_after']; ?>
           </div>
+          <?php endif; ?>
 
           <!-- Category badge -->
           <div class="absolute top-3 left-3 z-10">
@@ -402,7 +433,7 @@ $categories = [
       </div>
 
       <!-- Image display -->
-      <div id="ev-lb-img" class="w-full h-full min-h-[280px] md:min-h-[420px] flex items-center justify-center text-[11px] text-[#7a7f85] text-center px-8" style="background:#ddd8d0;">
+      <div id="ev-lb-img" class="w-full h-full min-h-[280px] md:min-h-[420px] flex items-center justify-center text-[11px] text-[#7a7f85] text-center px-8" style="background:#ddd8d0;background-size:cover;background-position:center;">
         <!-- Image rendered by JS -->
       </div>
 
@@ -476,7 +507,7 @@ $categories = [
      PROJECT DATA FOR JS
      ════════════════════════════════════════════════ -->
 <script>
-const EV_PROJECTS = <?php echo json_encode( array_map( function($p) {
+const EV_PROJECTS = <?php echo json_encode( array_map( function($p) use ( $ourwork_project_imgs, $ourwork_before_imgs, $ourwork_detail_imgs ) {
   return [
     'id'        => $p['id'],
     'category'  => $p['category'],
@@ -489,10 +520,10 @@ const EV_PROJECTS = <?php echo json_encode( array_map( function($p) {
     'ph_before' => $p['ph_before'],
     'ph_after'  => $p['ph_after'],
     'ph_detail' => $p['ph_detail'],
-    // When real images are available, add:
-    // 'img_after'  => get_template_directory_uri() . '/assets/images/project-' . $p['id'] . '-after.jpg',
-    // 'img_before' => get_template_directory_uri() . '/assets/images/project-' . $p['id'] . '-before.jpg',
-    // 'img_detail' => get_template_directory_uri() . '/assets/images/project-' . $p['id'] . '-detail.jpg',
+    // URLs reales (vacío = se muestra el placeholder de texto)
+    'img_after'  => ! empty( $ourwork_project_imgs[ $p['id'] ] ) ? esc_url( $ourwork_project_imgs[ $p['id'] ] ) : '',
+    'img_before' => ! empty( $ourwork_before_imgs[ $p['id'] ] )  ? esc_url( $ourwork_before_imgs[ $p['id'] ] )  : '',
+    'img_detail' => ! empty( $ourwork_detail_imgs[ $p['id'] ] )  ? esc_url( $ourwork_detail_imgs[ $p['id'] ] )  : '',
   ];
 }, $projects ) ); ?>;
 </script>
@@ -564,6 +595,17 @@ const EV_PROJECTS = <?php echo json_encode( array_map( function($p) {
 
   function getProject(id) { return EV_PROJECTS.find(p => p.id === id); }
 
+  // Helper: pinta una imagen real o cae al placeholder de texto
+  function paint(el, url, placeholder) {
+    if (url) {
+      el.style.backgroundImage = `url("${url}")`;
+      el.textContent = '';
+    } else {
+      el.style.backgroundImage = '';
+      el.textContent = placeholder || '';
+    }
+  }
+
   function openLightbox(id) {
     currentId = id;
     activeTab = 'after';
@@ -601,10 +643,10 @@ const EV_PROJECTS = <?php echo json_encode( array_map( function($p) {
         (active ? 'bg-[#1a1814] text-white' : 'bg-[rgba(0,0,0,.35)] text-white hover:bg-[rgba(0,0,0,.55)]');
     });
 
-    // Image area
-    const phMap = { after: p.ph_after, before: p.ph_before, detail: p.ph_detail };
-    lbImg.textContent = phMap[activeTab] || p.ph_after;
-    // When real images: lbImg.style.backgroundImage = `url(${p['img_' + activeTab]})`;
+    // Image area — usa URL real si existe, si no muestra el placeholder de texto
+    const imgMap = { after: p.img_after, before: p.img_before, detail: p.img_detail };
+    const phMap  = { after: p.ph_after,  before: p.ph_before,  detail: p.ph_detail  };
+    paint(lbImg, imgMap[activeTab], phMap[activeTab] || p.ph_after);
 
     // B&A toggle
     lbBaTWrap.classList.toggle('hidden', !p.has_ba);
@@ -614,8 +656,9 @@ const EV_PROJECTS = <?php echo json_encode( array_map( function($p) {
     lbBaWrap.classList.remove('flex');
     document.getElementById('ev-lb-tabs').style.display = '';
     if (baActive && p.has_ba) {
-      document.getElementById('ev-lb-ba-before').textContent = p.ph_before;
-      document.getElementById('ev-lb-ba-after').textContent  = p.ph_after;
+      // Lados del slider con imágenes reales (o placeholder de texto)
+      paint(document.getElementById('ev-lb-ba-before'), p.img_before, p.ph_before);
+      paint(document.getElementById('ev-lb-ba-after'),  p.img_after,  p.ph_after);
       // Reset handle to 50%
       document.getElementById('ev-lb-ba-after').style.clipPath = 'inset(0 50% 0 0)';
       document.getElementById('ev-lb-ba-handle').style.left    = '50%';
