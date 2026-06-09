@@ -20,7 +20,7 @@ const NAV_LINKS = [
 ]
 
 const PHONE      = "(586) 381 9109"
-const PHONE_HREF = "tel:+17705550192"
+const PHONE_HREF = "tel:+15863819109"
 const EMAIL      = "info@everridgeus.com"
 const EMAIL_HREF = "mailto:info@everridgeus.com"
 const ADDRESS    = "Clinton Township, MI"
